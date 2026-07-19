@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.hartmann.pixeldream.ads.ConsentManager
 import com.hartmann.pixeldream.onboarding.OnboardingNavGraph
 import com.hartmann.pixeldream.ui.theme.PixelDreamTheme
 
@@ -17,6 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        ConsentManager.requestConsentIfNeeded(this) {}
         setContent {
             PixelDreamTheme {
                 var onboardingComplete by remember { mutableStateOf(false) }

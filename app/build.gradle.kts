@@ -72,6 +72,9 @@ dependencies {
     implementation(project(":core-data"))
     implementation(project(":core-billing"))
     implementation(project(":core-ui"))
+    implementation(libs.play.services.ads)
+    implementation(libs.user.messaging.platform)
+    implementation(libs.billing.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

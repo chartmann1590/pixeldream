@@ -8,7 +8,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -16,6 +18,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hartmann.pixeldream.billing.BillingRepository
+import com.hartmann.pixeldream.billing.PaywallScreen
 import com.hartmann.pixeldream.gallery.GalleryScreen
 import com.hartmann.pixeldream.gallery.GenerationViewerScreen
 import com.hartmann.pixeldream.generation.GenerationScreen
@@ -24,12 +28,15 @@ private object MainRoute {
     const val GENERATE = "generate"
     const val GALLERY = "gallery"
     const val VIEWER = "viewer/{generationId}"
+    const val PAYWALL = "paywall"
     fun viewer(id: String) = "viewer/$id"
 }
 
 @Composable
 fun MainNavGraph() {
     val navController = rememberNavController()
+    val context = LocalContext.current
+    val billingRepository = remember { BillingRepository(context) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -61,6 +68,18 @@ fun MainNavGraph() {
                     icon = {},
                     label = { Text("Gallery") },
                 )
+                NavigationBarItem(
+                    selected = currentDestination?.hierarchy?.any { it.route == MainRoute.PAYWALL } == true,
+                    onClick = {
+                        navController.navigate(MainRoute.PAYWALL) {
+                            popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    icon = {},
+                    label = { Text("Go ad-free") },
+                )
             }
         },
     ) { innerPadding ->
@@ -80,6 +99,7 @@ fun MainNavGraph() {
                 val id = backStackEntry.arguments?.getString("generationId").orEmpty()
                 GenerationViewerScreen(initialGenerationId = id, onClose = { navController.popBackStack() })
             }
+            composable(MainRoute.PAYWALL) { PaywallScreen(billingRepository) }
         }
     }
 }

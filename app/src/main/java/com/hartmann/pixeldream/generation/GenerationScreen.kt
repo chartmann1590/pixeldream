@@ -10,13 +10,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import android.app.Activity
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hartmann.pixeldream.ads.InterstitialAdManager
 import com.hartmann.pixeldream.ui.components.GenerativeProgressIndicator
 import com.hartmann.pixeldream.ui.components.PixelDreamButton
 
@@ -24,6 +29,21 @@ import com.hartmann.pixeldream.ui.components.PixelDreamButton
 fun GenerationScreen() {
     val viewModel: GenerationViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
+    val adManager = remember { InterstitialAdManager(context) }
+
+    LaunchedEffect(Unit) { adManager.preload() }
+
+    LaunchedEffect(uiState.shouldShowAd) {
+        if (uiState.shouldShowAd) {
+            val activity = context as? Activity
+            if (activity != null) {
+                adManager.showIfLoaded(activity) { viewModel.adShown() }
+            } else {
+                viewModel.adShown()
+            }
+        }
+    }
 
     Column(
         modifier = Modifier

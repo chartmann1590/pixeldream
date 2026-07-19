@@ -25,6 +25,8 @@ dependencies {
     implementation(project(":core-data"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.billing.ktx)
+    implementation(libs.androidx.datastore.preferences)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
     testImplementation(libs.junit)
 }
