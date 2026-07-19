@@ -11,14 +11,25 @@ a SHA-256 checksum before use. Neither is bundled in the APK.
   chosen for its small footprint (~250 MB int4 quantized) given its job here
   is short prompt rewriting, not open-ended chat.
 - **File**: `gemma3-270m-it-q4_0-web.task`
-- **Gating**: this repository is a *gated* Hugging Face repo — downloading
-  requires an authenticated account that has accepted the Gemma Terms of Use.
-  This is a Google licensing requirement, not a hosting choice, and applies
-  to every official Gemma distribution channel (Hugging Face or Kaggle
-  Models). A consumer app cannot require every end user to hold a Hugging
-  Face account, so **PixelDream mirrors the unmodified file** to our own
-  Firebase Storage bucket after accepting the license once as the publisher.
-  The mirrored file is never modified, only re-served.
+- **Gating**: this repository is a *gated* Hugging Face repo — verified
+  directly with `curl` (unauthenticated requests to the actual `.task` file
+  return `401` with `X-Error-Code: GatedRepo`), across every official Gemma
+  repo checked. This is a Google licensing requirement enforced at the HTTP
+  level, not a hosting choice, and applies to every official Gemma
+  distribution channel (Hugging Face or Kaggle Models) — there is no
+  zero-auth public download URL for the real weights.
+- **How PixelDream handles this without hosting a copy**: a small Cloudflare
+  Worker (`cloudflare-worker/`, deployed at
+  `pixeldream-model-proxy.charles-h-hartmann1.workers.dev`) holds one
+  developer-side Hugging Face access token as a secret and transparently
+  proxies requests to Hugging Face's real resolve URLs, injecting the
+  `Authorization` header server-side. The app never sees or holds any
+  credential. This is a **live pass-through, not a re-hosted copy** — no
+  model bytes are stored on Cloudflare or any infrastructure we control;
+  every byte in the response to the app is streamed directly from
+  `huggingface.co` on that same request. See `cloudflare-worker/README.md`
+  for the one unavoidable human step (accepting the Gemma license once,
+  since that's tied to a real identity and can't be done by an agent).
 
 ## Diffusion (image generator)
 
@@ -48,8 +59,11 @@ a SHA-256 checksum before use. Neither is bundled in the APK.
 
 ## Manifest
 
-`models_manifest.json` (hosted at
-`https://storage.googleapis.com/pixeldream-app.firebasestorage.app/models/models_manifest.json`)
-lists the current mirrored URL, sha256, size, and minimum RAM for each model
-kind, fetched fresh at onboarding time so a model can be updated without an
-app release. See `ModelManifestFetcher`.
+`models_manifest.json` is served by the same Cloudflare Worker at
+`https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/models/manifest.json`
+(verified live, returns real JSON). It lists the current proxy URL, sha256,
+size, and minimum RAM for each model kind, fetched fresh at onboarding time
+so a model can be updated without an app release. See `ModelManifestFetcher`.
+
+Nothing model-related is hosted on Firebase. Firebase Storage was considered
+and explicitly rejected in favor of the Worker-proxy approach above.

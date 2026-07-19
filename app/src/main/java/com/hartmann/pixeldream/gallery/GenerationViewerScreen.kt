@@ -22,6 +22,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
+import com.hartmann.pixeldream.analytics.Analytics
 import java.io.File
 import kotlinx.coroutines.launch
 
@@ -64,14 +65,17 @@ fun GenerationViewerScreen(initialGenerationId: String, onClose: () -> Unit) {
                     horizontalArrangement = Arrangement.SpaceEvenly,
                 ) {
                     TextButton(onClick = {
+                        Analytics.imageExported()
                         scope.launch(kotlinx.coroutines.Dispatchers.IO) {
                             exportToGallery(context, File(current.imageFilePath))
                         }
                     }) { Text("Save") }
                     TextButton(onClick = {
+                        Analytics.imageShared()
                         context.startActivity(shareImageIntent(context, File(current.imageFilePath)))
                     }) { Text("Share") }
                     TextButton(onClick = {
+                        Analytics.contentReported("user_reported")
                         viewModel.report(current.id, "user_reported")
                     }) { Text("Report") }
                     TextButton(onClick = onClose) { Text("Close") }

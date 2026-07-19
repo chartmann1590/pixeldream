@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.hartmann.pixeldream.analytics.Analytics
 
 private object OnboardingRoute {
     const val WELCOME = "welcome"
@@ -28,7 +29,12 @@ fun OnboardingNavGraph(onOnboardingComplete: () -> Unit, modifier: Modifier = Mo
             WelcomeScreen(onContinue = { navController.navigate(OnboardingRoute.CONTENT_POLICY) })
         }
         composable(OnboardingRoute.CONTENT_POLICY) {
-            ContentPolicyScreen(onAgree = { navController.navigate(OnboardingRoute.DEVICE_CHECK) })
+            ContentPolicyScreen(
+                onAgree = {
+                    Analytics.contentPolicyAccepted()
+                    navController.navigate(OnboardingRoute.DEVICE_CHECK)
+                },
+            )
         }
         composable(OnboardingRoute.DEVICE_CHECK) {
             DeviceCheckScreen(
@@ -43,7 +49,10 @@ fun OnboardingNavGraph(onOnboardingComplete: () -> Unit, modifier: Modifier = Mo
                 downloadStates = uiState.downloadStates,
                 manifestError = uiState.manifestError,
                 onStart = viewModel::loadManifestAndStartDownloads,
-                onContinue = onOnboardingComplete,
+                onContinue = {
+                    Analytics.onboardingCompleted()
+                    onOnboardingComplete()
+                },
                 allReady = viewModel.allModelsReady(),
             )
         }

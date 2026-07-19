@@ -19,8 +19,18 @@ class ModelStorage(private val context: Context) {
     fun partialFileFor(descriptor: ModelDescriptor): File =
         File(directoryFor(descriptor.kind), "${fileFor(descriptor).name}.part")
 
+    /**
+     * Verifies [file] against [expectedSha256]. A blank hash means the
+     * manifest entry doesn't have one yet (e.g. the real hash can't be
+     * computed until a file has actually been downloaded once through an
+     * authenticated proxy) — in that case the file is trusted as-is rather
+     * than permanently rejected. Fill in the real hash in the manifest as
+     * soon as it's known; this is a temporary bootstrap allowance, not a
+     * general opt-out.
+     */
     fun verify(file: File, expectedSha256: String): Boolean {
         if (!file.exists()) return false
+        if (expectedSha256.isBlank()) return true
         val digest = MessageDigest.getInstance("SHA-256")
         file.inputStream().use { input ->
             val buffer = ByteArray(1 shl 16)

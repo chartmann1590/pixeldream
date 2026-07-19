@@ -3,6 +3,7 @@ package com.hartmann.pixeldream.onboarding
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.hartmann.pixeldream.analytics.Analytics
 import com.hartmann.pixeldream.model.DeviceTier
 import com.hartmann.pixeldream.model.DeviceTierDetector
 import com.hartmann.pixeldream.model.DownloadState
@@ -14,11 +15,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-// TODO(Phase 2 hosting): point at the real manifest once models are uploaded
-// to Firebase Storage (bucket: pixeldream-app.firebasestorage.app) mirroring
-// Hugging Face Hub source-of-truth checkpoints.
+// Served by the pixeldream-model-proxy Cloudflare Worker, which proxies live
+// to Google's official litert-community Hugging Face repos (auth injected
+// server-side since Gemma downloads are gated -- see
+// cloudflare-worker/README.md). No model bytes are stored on our own
+// infrastructure; every byte comes from huggingface.co per request.
 private const val MANIFEST_URL =
-    "https://storage.googleapis.com/pixeldream-app.firebasestorage.app/models/models_manifest.json"
+    "https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/models/manifest.json"
 
 data class OnboardingUiState(
     val deviceTier: DeviceTier? = null,
@@ -35,6 +38,7 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
     val uiState: StateFlow<OnboardingUiState> = _uiState.asStateFlow()
 
     init {
+        Analytics.onboardingStarted()
         val tier = DeviceTierDetector.tierFor(application)
         val ramMb = DeviceTierDetector.totalRamMb(application)
         _uiState.value = _uiState.value.copy(deviceTier = tier, totalRamMb = ramMb)
@@ -46,11 +50,19 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
                 val models = repository.fetchManifest()
                 _uiState.value = _uiState.value.copy(models = models, manifestError = null)
                 models.forEach { descriptor ->
+                    Analytics.modelDownloadStarted(descriptor.kind.name)
                     viewModelScope.launch {
                         repository.download(descriptor).collect { state ->
                             _uiState.value = _uiState.value.copy(
                                 downloadStates = _uiState.value.downloadStates + (descriptor.kind to state),
                             )
+                            when (state) {
+                                is com.hartmann.pixeldream.model.DownloadState.Ready ->
+                                    Analytics.modelDownloadCompleted(descriptor.kind.name)
+                                is com.hartmann.pixeldream.model.DownloadState.Failed ->
+                                    Analytics.modelDownloadFailed(descriptor.kind.name, state.reason)
+                                else -> Unit
+                            }
                         }
                     }
                 }
