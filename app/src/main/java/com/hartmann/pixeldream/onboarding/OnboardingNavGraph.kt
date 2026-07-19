@@ -3,6 +3,7 @@ package com.hartmann.pixeldream.onboarding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -17,12 +18,12 @@ private object OnboardingRoute {
 }
 
 @Composable
-fun OnboardingNavGraph(onOnboardingComplete: () -> Unit) {
+fun OnboardingNavGraph(onOnboardingComplete: () -> Unit, modifier: Modifier = Modifier) {
     val navController: NavHostController = rememberNavController()
     val viewModel: OnboardingViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
 
-    NavHost(navController = navController, startDestination = OnboardingRoute.WELCOME) {
+    NavHost(navController = navController, startDestination = OnboardingRoute.WELCOME, modifier = modifier) {
         composable(OnboardingRoute.WELCOME) {
             WelcomeScreen(onContinue = { navController.navigate(OnboardingRoute.CONTENT_POLICY) })
         }
