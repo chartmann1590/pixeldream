@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+*/build/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystores & secrets — never commit
+*.jks
+*.keystore
+google-services.json
+key.properties
+
+# Downloaded model files (fetched at runtime, not checked in)
+*.task
+*.tflite
+
+# Logs
+*.log
