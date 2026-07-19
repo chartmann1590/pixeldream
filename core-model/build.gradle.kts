@@ -32,9 +32,11 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-    // MediaPipe GenAI (Gemma) task API. Diffusion runtime dependency TBD pending
-    // Phase 2 verification of the supported on-device image-generation path.
-    // implementation(libs.mediapipe.tasks.genai)
+    // MediaPipe GenAI (Gemma) task API for prompt enhancement.
+    implementation(libs.mediapipe.tasks.genai)
+    // Diffusion runtime dependency TBD: MediaPipe's Image Generator has no
+    // pre-converted Google-hosted model (see docs/models/README.md) — wiring
+    // deferred until a converted model is actually hosted.
 
     testImplementation(libs.junit)
 }

@@ -8,7 +8,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.hartmann.pixeldream.generation.GenerationScreen
 import com.hartmann.pixeldream.onboarding.OnboardingNavGraph
 import com.hartmann.pixeldream.ui.theme.PixelDreamTheme
 
@@ -20,9 +25,12 @@ class MainActivity : ComponentActivity() {
             PixelDreamTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
-                        OnboardingNavGraph(
-                            onOnboardingComplete = { /* TODO(Phase 3): navigate to the prompt/home screen */ },
-                        )
+                        var onboardingComplete by remember { mutableStateOf(false) }
+                        if (onboardingComplete) {
+                            GenerationScreen()
+                        } else {
+                            OnboardingNavGraph(onOnboardingComplete = { onboardingComplete = true })
+                        }
                     }
                 }
             }
