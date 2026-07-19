@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Cache Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Decode google-services.json
+        env:
+          GOOGLE_SERVICES_JSON_B64: ${{ secrets.GOOGLE_SERVICES_JSON_B64 }}
+        run: |
+          if [ -n "$GOOGLE_SERVICES_JSON_B64" ]; then
+            echo "$GOOGLE_SERVICES_JSON_B64" | base64 -d > app/google-services.json
+          else
+            echo "GOOGLE_SERVICES_JSON_B64 not set; skipping (Firebase plugin stays disabled)."
+          fi
+
+      - name: Lint
+        run: ./gradlew lint
+
+      - name: Unit tests
+        run: ./gradlew testDebugUnitTest
+
+      - name: Assemble release (unsigned)
+        run: ./gradlew assembleRelease
+
+      - name: Verify 16 KB native library page alignment
+        run: |
+          set -e
+          APK=$(find app/build/outputs/apk/release -name "*.apk" | head -n1)
+          if [ -z "$APK" ]; then
+            echo "No release APK found; skipping alignment check."
+            exit 0
+          fi
+          echo "Checking $APK for 16 KB page alignment..."
+          mkdir -p /tmp/apk-extract
+          unzip -o "$APK" 'lib/*.so' -d /tmp/apk-extract || true
+          FAILED=0
+          while read -r SO; do
+            ALIGN=$(python3 - "$SO" <<'EOF'
+import struct, sys
+path = sys.argv[1]
+with open(path, "rb") as f:
+    data = f.read(64)
+if data[:4] != b"\x7fELF":
+    sys.exit(0)
+is64 = data[4] == 2
+# Minimal ELF program header parse to find LOAD segment alignment.
+with open(path, "rb") as f:
+    f.seek(0)
+    elf = f.read()
+if is64:
+    e_phoff = struct.unpack_from("<Q", elf, 0x20)[0]
+    e_phentsize = struct.unpack_from("<H", elf, 0x36)[0]
+    e_phnum = struct.unpack_from("<H", elf, 0x38)[0]
+else:
+    e_phoff = struct.unpack_from("<I", elf, 0x1C)[0]
+    e_phentsize = struct.unpack_from("<H", elf, 0x2A)[0]
+    e_phnum = struct.unpack_from("<H", elf, 0x2C)[0]
+min_align = None
+for i in range(e_phnum):
+    off = e_phoff + i * e_phentsize
+    p_type = struct.unpack_from("<I", elf, off)[0]
+    if p_type != 1:  # PT_LOAD
+        continue
+    if is64:
+        p_align = struct.unpack_from("<Q", elf, off + 48)[0]
+    else:
+        p_align = struct.unpack_from("<I", elf, off + 28)[0]
+    if min_align is None or p_align < min_align:
+        min_align = p_align
+if min_align is not None and min_align < 16384:
+    print(f"NOT ALIGNED ({min_align}): {path}")
+    sys.exit(1)
+EOF
+)
+            if [ $? -ne 0 ]; then
+              echo "$ALIGN"
+              FAILED=1
+            fi
+          done < <(find /tmp/apk-extract -name "*.so")
+          if [ "$FAILED" -ne 0 ]; then
+            echo "One or more native libraries are not 16 KB page-aligned."
+            exit 1
+          fi
+          echo "All native libraries are 16 KB page-aligned (or none were found)."
