@@ -44,7 +44,7 @@ LISTING = {
     ),
     "benefits": [
         "No banner or interstitial ads",
-        "Everything else in PixelDream stays exactly the same",
+        "Everything else stays exactly the same",
         "Cancel anytime from Google Play",
     ],
 }
