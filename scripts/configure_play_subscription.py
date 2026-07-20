@@ -116,7 +116,7 @@ def create_subscription(service):
             packageName=PACKAGE,
             productId=PRODUCT_ID,
             body=body,
-            **{"regionsVersion.version": region_version},
+            regionsVersion_version=region_version,
         )
         .execute()
     )
