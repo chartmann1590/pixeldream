@@ -83,6 +83,27 @@ jobs:
       - name: Cache Gradle
         uses: gradle/actions/setup-gradle@v3
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure Google Play store listing (graphics, descriptions, promo video)
+        env:
+          PLAY_SA_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          PLAY_PROMO_VIDEO: ${{ vars.PLAY_PROMO_VIDEO }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pip install --quiet google-api-python-client google-auth
+          sa_file="$(mktemp)"
+          printf '%s' "$PLAY_SA_JSON" > "$sa_file"
+          trap 'rm -f "$sa_file"' EXIT
+          python scripts/configure_play_listing.py "$sa_file"
+          rm -f "$sa_file"
+          trap - EXIT
+          echo "Store listing configured."
+
       - name: Materialize google-services.json
         env:
           GOOGLE_SERVICES_JSON_B64: ${{ secrets.GOOGLE_SERVICES_JSON_B64 }}
