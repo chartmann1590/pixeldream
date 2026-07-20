@@ -108,7 +108,7 @@ fun SettingsScreen(onOpenAdFree: () -> Unit) {
                     context.startActivity(
                         Intent(
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://pixeldream-app.web.app/privacy/"),
+                            Uri.parse("https://chartmann1590.github.io/pixeldream/privacy/"),
                         ),
                     )
                 }) { Text("View") }
@@ -135,7 +135,7 @@ fun SettingsScreen(onOpenAdFree: () -> Unit) {
                     context.startActivity(
                         Intent(
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://pixeldream-app.web.app/licenses/"),
+                            Uri.parse("https://chartmann1590.github.io/pixeldream/licenses/"),
                         ),
                     )
                 },

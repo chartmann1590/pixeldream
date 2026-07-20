@@ -61,7 +61,7 @@ fun GenerationViewerScreen(
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 CircularProgressIndicator()
                 Spacer(Modifier.height(12.dp))
-                Text("Loading imageâ€¦")
+                Text("Loading image…")
                 TextButton(onClick = onClose) { Text("Close") }
             }
         }

@@ -1,13 +1,12 @@
 /**
  * PixelDream model proxy.
  *
- * Google's official Gemma distribution on Hugging Face (litert-community org)
- * is a gated repo -- downloading requires an authenticated account that has
- * accepted the Gemma Terms of Use (verified: unauthenticated requests return
- * 401 GatedRepo). A consumer app can't ask every end user to hold a Hugging
- * Face account, so this Worker holds ONE developer-side HF token (set as a
- * Cloudflare secret, never shipped in the app) and transparently forwards
- * requests to Hugging Face's real resolve URLs, injecting auth server-side.
+ * The pinned litert-community and second-state artifacts `OfficialModelCatalog`
+ * downloads directly are public, unauthenticated resolve URLs (verified: plain
+ * `curl` returns a 302 to a signed CDN URL with no HF_TOKEN sent). This Worker's
+ * `/models/hf/` route is kept only as a fallback for older clients or in case a
+ * future model revision moves behind a gated repo; it injects a developer-side
+ * HF token (set as a Cloudflare secret, never shipped in the app) server-side.
  *
  * This is a live pass-through proxy, not a re-hosted copy: no model bytes
  * are stored on Cloudflare or anywhere else we control. Every byte the app

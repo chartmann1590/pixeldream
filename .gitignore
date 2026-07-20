@@ -31,3 +31,6 @@ key.properties
 *.log
 .wrangler/
 .firebase/
+
+# Local browser-automation screenshot/tooling output
+.playwright-mcp/

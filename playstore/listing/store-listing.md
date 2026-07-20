@@ -1,0 +1,99 @@
+# PixelDream — Google Play store listing
+
+Copy-paste source for Play Console → Grow → Store presence → Main store listing.
+
+## App name
+
+```
+PixelDream: Offline AI Images
+```
+(29 characters — Play's limit is 30)
+
+## Short description (max 80 characters)
+
+```
+Private, offline AI image generator. Your prompts and pictures never leave.
+```
+(77 characters)
+
+## Full description (max 4000 characters)
+
+```
+PixelDream turns a short idea into a picture — entirely on your phone.
+
+Type a description of what you're imagining, and PixelDream paints it for you using on-device AI. No account to create, no images to upload, no internet required once you're set up. Your prompts and your pictures never leave your device unless you choose to share them.
+
+WHY PEOPLE LIKE PIXELDREAM
+
+🔒 Private by design
+Image generation runs completely on your device. Nothing about what you type or create is uploaded as part of making an image.
+
+✈️ Works anywhere
+After a one-time setup download, PixelDream creates images with no Wi-Fi and no mobile data — on a plane, off the grid, wherever you are.
+
+🎨 Genuinely simple
+Describe what you're imagining and tap Create. An on-device AI can expand your idea into a richer prompt before a local image model renders it — no prompt-engineering experience needed.
+
+🖼️ A gallery that's actually yours
+Every image is saved to a private, local gallery. Revisit, export, or share anything you've made, on your own terms.
+
+🎛️ You're in control
+Choose generation quality and image size to balance detail against speed, and turn AI prompt enhancement on or off.
+
+🛡️ Safety-minded
+On-device checks run before and after prompt enhancement to steer away from harmful content, and an in-app report option lets you flag anything that gets through.
+
+HOW IT WORKS
+
+1. Describe your idea in a sentence or two.
+2. PixelDream optionally expands it into a richer visual prompt, then a local diffusion model renders the image using your device's own hardware.
+3. Your finished image lands in your private gallery — ready to view, export, or share whenever you choose.
+
+WHAT YOU'LL NEED
+
+• Android 10 (API 29) or newer
+• An ARM64 device with 6 GB of RAM (8 GB+ recommended)
+• About 5 GB of free storage for the one-time model download
+
+The on-device models total roughly 4 GB and download once over Wi-Fi during setup. Older or lower-memory devices may run slowly or may not be supported.
+
+A NOTE ON GENERATED CONTENT
+
+PixelDream includes on-device checks that try to steer prompts and results away from harmful content, but no filter is perfect. Please use PixelDream responsibly, and use the in-app report option if something shouldn't have gotten through.
+
+PixelDream includes optional ads and an optional ad-free upgrade. Some diagnostics and the optional in-app feedback/bug-report tool use the network; image generation itself does not. See the full privacy policy for details on exactly what each service can see.
+
+Questions or found a bug? Use Settings → Report a Problem in the app, or visit github.com/chartmann1590/pixeldream.
+```
+(character count: keep under 4000 — current draft is ~2,150)
+
+## Category
+
+- Application type: App
+- Category: Art & Design (alternate: Photography)
+
+## Contact details
+
+- Email: (use the developer account email on file)
+- Website: https://chartmann1590.github.io/pixeldream/
+- Privacy policy: https://chartmann1590.github.io/pixeldream/privacy/
+
+  This is now the canonical, live GitHub Pages site (`gh-pages` branch, see `../../site/`). The app's in-app Privacy Policy link and Firebase-hosted `https://pixeldream-app.web.app/privacy/` still serve the same policy text — before submitting, either update `PrivacyPolicyUrl`/wherever Settings links out from in the app to point at the GitHub Pages URL, or deliberately keep Firebase as canonical and point Play Console there instead. Pick one and use it everywhere.
+
+## Store settings
+
+- Contains ads: Yes
+- In-app products: Yes (ad-free monthly subscription)
+
+## Graphic assets (see ../assets/)
+
+| Asset | Spec | File |
+|---|---|---|
+| App icon | 512×512 PNG, 32-bit | `../assets/icon/play-store-icon-512.png` |
+| Feature graphic | 1024×500 PNG/JPG | `../assets/feature-graphic/feature-graphic.png` |
+| Phone screenshots | 2–8 images, 16:9 or 9:16, 320–3840px per side | `../assets/screenshots/phone/` |
+| 7" tablet screenshots | 2–8 images | `../assets/screenshots/tablet-7in/` |
+| 10" tablet screenshots | 2–8 images | `../assets/screenshots/tablet-10in/` |
+| Promo video | YouTube URL, ≤30s recommended | `../promo-video/` (upload to YouTube, then paste the URL here) |
+
+See [`../../docs/play-store-release-checklist.md`](../../docs/play-store-release-checklist.md) for the non-visual Play Console declarations (data safety, content rating, ads, target audience) that still need a human to confirm against the live production configuration before submitting.

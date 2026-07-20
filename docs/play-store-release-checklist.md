@@ -12,7 +12,7 @@ This repository covers the binary-side requirements. Complete the Play Console d
 
 ## App content declarations
 
-- Privacy policy URL: `https://pixeldream-app.web.app/privacy/`
+- Privacy policy URL: `https://chartmann1590.github.io/pixeldream/privacy/`
 - Ads: declare that the app contains ads.
 - App access: no login or restricted access is required.
 - Target audience: do not select children under 13. If younger age groups are later selected, rework ads, identifiers, content, and Families-policy declarations first.
