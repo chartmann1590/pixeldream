@@ -17,12 +17,19 @@ Both come from an AdMob account with an app registered for
 
 ## Subscription
 
-- `core-billing/.../BillingRepository.kt`: `AD_FREE_SUBSCRIPTION_PRODUCT_ID`
-  (`pixeldream_ad_free_monthly`) must match a $1.99/month subscription
-  product created in Play Console for this exact `applicationId`. Play
-  Billing only resolves real products once the app is uploaded to at least
-  an internal testing track and the product exists — it cannot be tested
-  against `debug` builds installed via `adb install` alone.
+`core-billing/.../BillingRepository.kt`: `AD_FREE_SUBSCRIPTION_PRODUCT_ID`
+(`pixeldream_ad_free_monthly`) matches a $1.99 USD/month subscription with a
+single `monthly` base plan, created and activated in Play Console via
+`scripts/configure_play_subscription.py` (see
+`.github/workflows/configure-play-subscription.yml` — manual `workflow_dispatch`,
+safe/idempotent to re-run). It is priced across every region Play Billing
+supports.
+
+Play Billing only resolves real products once the app is uploaded to at
+least an internal testing track and the product exists — it cannot be
+tested against `debug` builds installed via `adb install` alone. To verify:
+upload a build to internal testing, add your Google account as a license
+tester in Play Console, then open the Ad-free screen in the app.
 
 ## Ad cadence
 
