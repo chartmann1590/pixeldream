@@ -156,17 +156,21 @@ fun DeviceCheckScreen(deviceTier: DeviceTier?, totalRamMb: Int, onContinue: () -
         Column {
             Eyebrow("Device check")
             Spacer(Modifier.height(22.dp))
-            Text("Ready to create", style = MaterialTheme.typography.headlineLarge)
+            Text(
+                if (deviceTier == DeviceTier.UNSUPPORTED) "More memory required" else "Ready to create",
+                style = MaterialTheme.typography.headlineLarge,
+            )
             Spacer(Modifier.height(24.dp))
             Card(shape = RoundedCornerShape(28.dp)) {
                 Column(Modifier.padding(24.dp)) {
                     Text("${"%.1f".format(ramGb)} GB", style = MaterialTheme.typography.displaySmall, color = MaterialTheme.colorScheme.primary)
-                    Text("available system memory", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text("total system memory", color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Spacer(Modifier.height(20.dp))
                     Text(
                         when (deviceTier) {
                             DeviceTier.RECOMMENDED -> "Great fit. Your phone has enough memory for smooth on-device processing."
                             DeviceTier.LOW -> "Compatible. Creation may take longer, so keep PixelDream open while it works."
+                            DeviceTier.UNSUPPORTED -> "PixelDream needs at least 6 GB of RAM to load its on-device models safely. This device is not supported."
                             null -> "Checking your phone…"
                         },
                         style = MaterialTheme.typography.bodyLarge,
@@ -174,7 +178,11 @@ fun DeviceCheckScreen(deviceTier: DeviceTier?, totalRamMb: Int, onContinue: () -
                 }
             }
         }
-        PixelDreamButton(text = "Continue", onClick = onContinue, enabled = deviceTier != null)
+        PixelDreamButton(
+            text = "Continue",
+            onClick = onContinue,
+            enabled = deviceTier != null && deviceTier != DeviceTier.UNSUPPORTED,
+        )
     }
 }
 

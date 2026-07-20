@@ -1,6 +1,8 @@
 package com.hartmann.pixeldream.settings
 
 import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -100,6 +102,17 @@ fun SettingsScreen(onOpenAdFree: () -> Unit) {
             SettingRow("Ad-free", "Manage the optional upgrade") {
                 OutlinedButton(onClick = onOpenAdFree) { Text("Open") }
             }
+            HorizontalDivider()
+            SettingRow("Privacy policy", "How ads, diagnostics, and optional feedback use data") {
+                OutlinedButton(onClick = {
+                    context.startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://pixeldream-app.web.app/privacy/"),
+                        ),
+                    )
+                }) { Text("View") }
+            }
             if (privacyOptionsRequired) {
                 HorizontalDivider()
                 SettingRow("Privacy choices", "Manage personalized advertising consent") {
@@ -112,10 +125,22 @@ fun SettingsScreen(onOpenAdFree: () -> Unit) {
             Spacer(Modifier.height(14.dp))
             Text("About", style = MaterialTheme.typography.titleMedium)
             Text(
-                "Version $versionName\nPrivate image generation powered by Gemma 4, Stable Diffusion 1.5, LiteRT-LM, and stable-diffusion.cpp. Models and images stay on this device.",
+                "Version $versionName\nOffline image generation powered by Gemma 4, Stable Diffusion 1.5, LiteRT-LM, and stable-diffusion.cpp. Prompts and images stay on this device unless you explicitly attach them to a feedback report or share them.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 style = MaterialTheme.typography.bodyMedium,
             )
+            Spacer(Modifier.height(12.dp))
+            OutlinedButton(
+                onClick = {
+                    context.startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://pixeldream-app.web.app/licenses/"),
+                        ),
+                    )
+                },
+                modifier = Modifier.fillMaxWidth(),
+            ) { Text("Model and open-source licenses") }
         }
         Spacer(Modifier.height(18.dp))
 

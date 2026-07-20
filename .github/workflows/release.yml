@@ -15,6 +15,7 @@ jobs:
       ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
       ADMOB_BANNER_ID: ${{ secrets.ADMOB_BANNER_ID }}
       ADMOB_INTERSTITIAL_ID: ${{ secrets.ADMOB_INTERSTITIAL_ID }}
+      ADMOB_FORCE_TEST_ADS: "false"
       FEEDBACK_PROXY_URL: ${{ secrets.FEEDBACK_PROXY_URL }}
       GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
       GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
@@ -49,6 +50,20 @@ jobs:
           RELEASE_KEYSTORE_B64: ${{ secrets.RELEASE_KEYSTORE_B64 }}
         run: echo "$RELEASE_KEYSTORE_B64" | base64 -d > release.keystore.jks
 
+      - name: Validate production ad configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$ADMOB_APP_ID"
+          test -n "$ADMOB_BANNER_ID"
+          test -n "$ADMOB_INTERSTITIAL_ID"
+          case "$ADMOB_APP_ID $ADMOB_BANNER_ID $ADMOB_INTERSTITIAL_ID" in
+            *ca-app-pub-3940256099942544*)
+              echo "Release configuration contains a Google sample ad ID"
+              exit 1
+              ;;
+          esac
+
       - name: Build signed APK and App Bundle
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/release.keystore.jks
@@ -56,6 +71,26 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: ./gradlew assembleRelease bundleRelease uploadCrashlyticsSymbolFileRelease
+
+      - name: Reject test ads in release artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=$(find app/build/outputs/apk/release -name "*.apk" -print -quit)
+          test -n "$APK"
+          if unzip -p "$APK" 'classes*.dex' | strings | grep -E 'ca-app-pub-3940256099942544/(6300978111|1033173712)'; then
+            echo "Google test ad unit ID found in release APK"
+            exit 1
+          fi
+          echo "Release APK contains no Google test ad unit IDs."
+
+      - name: Verify 16 KB APK alignment
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=$(find app/build/outputs/apk/release -name "*.apk" -print -quit)
+          test -n "$APK"
+          zipalign -c -P 16 -v 4 "$APK"
 
       - name: Clean up keystore
         if: always()

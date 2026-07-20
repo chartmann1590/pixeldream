@@ -8,8 +8,8 @@ object AdIds {
     private const val INTERSTITIAL_TEST_ID = "ca-app-pub-3940256099942544/1033173712"
 
     val banner: String
-        get() = if (BuildConfig.DEBUG) BANNER_TEST_ID else BuildConfig.ADMOB_BANNER_ID
+        get() = if (BuildConfig.DEBUG || BuildConfig.ADMOB_FORCE_TEST_ADS) BANNER_TEST_ID else BuildConfig.ADMOB_BANNER_ID
 
     val interstitial: String
-        get() = if (BuildConfig.DEBUG) INTERSTITIAL_TEST_ID else BuildConfig.ADMOB_INTERSTITIAL_ID
+        get() = if (BuildConfig.DEBUG || BuildConfig.ADMOB_FORCE_TEST_ADS) INTERSTITIAL_TEST_ID else BuildConfig.ADMOB_INTERSTITIAL_ID
 }

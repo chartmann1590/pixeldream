@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.hartmann.pixeldream.analytics.Analytics
+import com.hartmann.pixeldream.feedback.ReportProblemDialog
 import java.io.File
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -52,6 +53,7 @@ fun GenerationViewerScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var showDeleteConfirmation by remember { mutableStateOf(false) }
+    var showReportDialog by remember { mutableStateOf(false) }
     var statusMessage by remember { mutableStateOf<String?>(null) }
 
     if (generations.isEmpty()) {
@@ -139,8 +141,36 @@ fun GenerationViewerScreen(
                         onClick = { showDeleteConfirmation = true },
                     ) { Text("Delete") }
                 }
+                Spacer(Modifier.height(8.dp))
+                OutlinedButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = { showReportDialog = true },
+                ) { Text("Report offensive content") }
             }
         }
+    }
+
+    if (showReportDialog && current != null) {
+        AlertDialog(
+            onDismissRequest = { showReportDialog = false },
+            confirmButton = {},
+            text = {
+                ReportProblemDialog(
+                    onDismiss = { showReportDialog = false },
+                    initialTitle = "Report generated image",
+                    initialDescription = "Please explain why this generated image is offensive or unsafe.\n\nPrompt: ${current.originalPrompt}",
+                    initialAttachmentUri = runCatching {
+                        File(current.imageFilePath)
+                            .takeIf(File::exists)
+                            ?.let { imageContentUri(context, it) }
+                    }.getOrNull(),
+                    onSubmitted = {
+                        viewModel.report(current.id, "Reported as offensive content")
+                        Analytics.contentReported("offensive_content")
+                    },
+                )
+            },
+        )
     }
 
     if (showDeleteConfirmation && current != null) {

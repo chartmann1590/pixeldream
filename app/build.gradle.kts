@@ -28,6 +28,7 @@ val feedbackProxyUrl = buildSetting(
     "FEEDBACK_PROXY_URL",
     "https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/github/",
 )
+val forceTestAds = buildSetting("ADMOB_FORCE_TEST_ADS", "false").toBooleanStrictOrNull() ?: false
 val releaseKeystorePath = buildSetting("KEYSTORE_PATH").ifBlank { null }
 
 //
@@ -59,26 +60,30 @@ val githubRepoName: String = githubSetting("github.repo.name", "GH_REPO_NAME")
 
 android {
     namespace = "com.hartmann.pixeldream"
-    compileSdk = 35
+    compileSdk = 36
     ndkVersion = "27.0.12077973"
 
     defaultConfig {
         applicationId = "com.hartmann.pixeldream"
         minSdk = 29
-        targetSdk = 35
+        targetSdk = 36
         versionCode = androidVersionCode
         versionName = androidVersionName
 
         manifestPlaceholders["ADMOB_APP_ID"] = admobAppId
         buildConfigField("String", "ADMOB_BANNER_ID", "\"$admobBannerId\"")
         buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"$admobInterstitialId\"")
+        buildConfigField("boolean", "ADMOB_FORCE_TEST_ADS", forceTestAds.toString())
 
         buildConfigField("String", "FEEDBACK_PROXY_URL", "\"$feedbackProxyUrl\"")
         buildConfigField("String", "GITHUB_REPO_OWNER", "\"$githubRepoOwner\"")
         buildConfigField("String", "GITHUB_REPO_NAME", "\"$githubRepoName\"")
         buildConfigField("String", "FEEDBACK_ASSETS_DIR", "\"feedback-assets\"")
 
-        ndk.debugSymbolLevel = "FULL"
+        ndk {
+            abiFilters += "arm64-v8a"
+            debugSymbolLevel = "FULL"
+        }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

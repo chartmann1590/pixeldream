@@ -45,26 +45,12 @@ jobs:
           echo "$GOOGLE_SERVICES_JSON_B64" | base64 -d > app/google-services.json
 
       - name: Lint
-        env:
-          # In-app feedback reporter config. Token is consumed by Gradle only,
-          # never printed. Repo owner/name are public info.
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-          GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
-          GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
         run: ./gradlew lint
 
       - name: Unit tests
-        env:
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-          GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
-          GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
         run: ./gradlew testDebugUnitTest
 
       - name: Assemble release (unsigned)
-        env:
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-          GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
-          GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
         run: ./gradlew assembleRelease
 
       - name: Verify 16 KB native library page alignment
@@ -76,6 +62,7 @@ jobs:
             exit 0
           fi
           echo "Checking $APK for 16 KB page alignment..."
+          zipalign -c -P 16 -v 4 "$APK"
           mkdir -p /tmp/apk-extract
           unzip -o "$APK" 'lib/*.so' -d /tmp/apk-extract || true
           FAILED=0

@@ -12,6 +12,7 @@ import java.io.IOException
  * GitHub rejects line breaks in the JSON `content` field.
  */
 object ImageEncoder {
+    private const val MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024
 
     @Throws(IOException::class)
     fun uriToBase64(context: Context, uri: Uri): String {
@@ -22,6 +23,9 @@ object ImageEncoder {
             while (true) {
                 val read = input.read(buffer)
                 if (read == -1) break
+                if (outputStream.size() + read > MAX_ATTACHMENT_BYTES) {
+                    throw IOException("Attachment is too large. Choose an image under 4 MB.")
+                }
                 outputStream.write(buffer, 0, read)
             }
         } ?: throw IOException("Unable to open input stream for $uri")

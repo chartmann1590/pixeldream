@@ -85,16 +85,12 @@ jobs:
 
       - name: Materialize google-services.json
         env:
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+          GOOGLE_SERVICES_JSON_B64: ${{ secrets.GOOGLE_SERVICES_JSON_B64 }}
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "$GOOGLE_SERVICES_JSON" ]; then
-            echo "GOOGLE_SERVICES_JSON secret empty; falling back to base64 variant."
-            echo "${{ secrets.GOOGLE_SERVICES_JSON_B64 }}" | base64 -d > app/google-services.json
-          else
-            printf '%s' "$GOOGLE_SERVICES_JSON" > app/google-services.json
-          fi
+          test -n "$GOOGLE_SERVICES_JSON_B64"
+          printf '%s' "$GOOGLE_SERVICES_JSON_B64" | base64 -d > app/google-services.json
           # Validate it parses as JSON.
           python3 -c "import json,sys; json.load(open('app/google-services.json'))"
           grep -q '"package_name": "com.hartmann.pixeldream"' app/google-services.json
@@ -188,7 +184,7 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew testReleaseUnitTest
+        run: ./gradlew testReleaseUnitTest :core-model:testReleaseUnitTest
 
       - name: Build Play release AAB
         env:
@@ -213,6 +209,17 @@ jobs:
           else
             echo "No R8 mapping file found (minification may have been disabled)."
           fi
+
+      - name: Reject test ads in Play bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          AAB="${{ steps.artifacts.outputs.aab_path }}"
+          if unzip -p "$AAB" 'base/dex/classes*.dex' | strings | grep -E 'ca-app-pub-3940256099942544/(6300978111|1033173712)'; then
+            echo "::error::Google sample ad unit ID found in the Play bundle"
+            exit 1
+          fi
+          echo "Play bundle contains no Google sample ad unit IDs."
 
       - name: Upload AAB artifact
         uses: actions/upload-artifact@v4

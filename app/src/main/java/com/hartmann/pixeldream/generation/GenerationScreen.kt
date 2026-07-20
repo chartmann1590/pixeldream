@@ -87,7 +87,7 @@ fun GenerationScreen(
         Text("What are you imagining?", style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(8.dp))
         Text(
-            "Describe the moment. Gemma 4 will shape it into a richer visual prompt.",
+            "Describe the subject, mood, lighting, and style you want to see.",
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )

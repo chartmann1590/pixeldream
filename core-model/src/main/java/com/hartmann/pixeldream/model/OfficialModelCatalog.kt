@@ -6,7 +6,7 @@ object OfficialModelCatalog {
         ModelDescriptor(
             kind = ModelKind.GEMMA_PROMPT_ENHANCER,
             version = "gemma-4-e2b-it-litertlm",
-            url = "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it.litertlm",
+            url = "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/9262660a1676eed6d0c477ab1a86344430854664/gemma-4-E2B-it.litertlm",
             sha256 = "181938105e0eefd105961417e8da75903eacda102c4fce9ce90f50b97139a63c",
             sizeBytes = 2_588_147_712L,
             minRamMb = 6_144,

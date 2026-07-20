@@ -22,7 +22,7 @@ object DiagnosticsHelper {
         val pm = context.packageManager
         val pkgInfo = runCatching { pm.getPackageInfo(context.packageName, 0) }.getOrNull()
         val versionName = pkgInfo?.versionName ?: "unknown"
-        val versionCode = pkgInfo?.longVersionCode?.takeIf { it > 0 } ?: pkgInfo?.versionCode?.toLong() ?: -1L
+        val versionCode = pkgInfo?.longVersionCode?.takeIf { it > 0 } ?: -1L
 
         val appName = pm.getApplicationLabel(context.applicationInfo).toString()
         val device = Build.DEVICE ?: "unknown"

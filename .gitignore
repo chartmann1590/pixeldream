@@ -1,5 +1,6 @@
 # Gradle
 .gradle/
+.kotlin/
 build/
 */build/
 local.properties
@@ -12,7 +13,7 @@ captures/
 .externalNativeBuild/
 .cxx/
 
-# Keystores & secrets — never commit
+# Keystores and service configuration - never commit
 *.jks
 *.keystore
 google-services.json
@@ -21,6 +22,12 @@ key.properties
 # Downloaded model files (fetched at runtime, not checked in)
 *.task
 *.tflite
+*.gguf
 
-# Logs
+# Local test evidence and model backup
+.codex-*
+
+# Logs and local Cloudflare state
 *.log
+.wrangler/
+.firebase/

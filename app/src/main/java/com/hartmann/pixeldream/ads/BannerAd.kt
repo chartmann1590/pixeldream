@@ -24,7 +24,7 @@ fun BannerAd(modifier: Modifier = Modifier) {
     val adView = remember(context, widthDp) {
         AdView(context).apply {
             adUnitId = AdIds.banner
-            setAdSize(AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, widthDp))
+            setAdSize(AdSize.getLargeAnchoredAdaptiveBannerAdSize(context, widthDp))
             adListener = object : AdListener() {
                 override fun onAdFailedToLoad(error: LoadAdError) {
                     Firebase.crashlytics.log("Banner load failed: ${error.code}")

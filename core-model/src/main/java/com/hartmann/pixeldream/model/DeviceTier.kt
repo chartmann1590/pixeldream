@@ -3,7 +3,7 @@ package com.hartmann.pixeldream.model
 import android.app.ActivityManager
 import android.content.Context
 
-enum class DeviceTier { LOW, RECOMMENDED }
+enum class DeviceTier { UNSUPPORTED, LOW, RECOMMENDED }
 
 object DeviceTierDetector {
     private const val RECOMMENDED_RAM_MB = 8_192
@@ -18,6 +18,10 @@ object DeviceTierDetector {
 
     fun tierFor(context: Context): DeviceTier {
         val ramMb = totalRamMb(context)
-        return if (ramMb >= RECOMMENDED_RAM_MB) DeviceTier.RECOMMENDED else DeviceTier.LOW
+        return when {
+            ramMb >= RECOMMENDED_RAM_MB -> DeviceTier.RECOMMENDED
+            ramMb >= MINIMUM_RAM_MB -> DeviceTier.LOW
+            else -> DeviceTier.UNSUPPORTED
+        }
     }
 }

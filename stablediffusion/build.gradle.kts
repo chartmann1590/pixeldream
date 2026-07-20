@@ -5,11 +5,12 @@ plugins {
 
 android {
     namespace = "com.hartmann.pixeldream.diffusion"
-    compileSdk = 35
+    compileSdk = 36
     ndkVersion = "27.0.12077973"
 
     defaultConfig {
         minSdk = 29
+        consumerProguardFiles("consumer-rules.pro")
         ndk {
             abiFilters += "arm64-v8a"
         }

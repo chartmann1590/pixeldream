@@ -45,14 +45,18 @@ import coil.compose.AsyncImage
 @Composable
 fun ReportProblemDialog(
     onDismiss: () -> Unit,
+    initialTitle: String = "",
+    initialDescription: String = "",
+    initialAttachmentUri: Uri? = null,
+    onSubmitted: (BugReport) -> Unit = {},
     viewModel: FeedbackViewModel = viewModel(),
 ) {
-    var title by remember { mutableStateOf("") }
-    var description by remember { mutableStateOf("") }
+    var title by remember(initialTitle) { mutableStateOf(initialTitle) }
+    var description by remember(initialDescription) { mutableStateOf(initialDescription) }
     var includeDiagnostics by remember { mutableStateOf(true) }
     var contactName by remember { mutableStateOf("") }
     var contactEmail by remember { mutableStateOf("") }
-    var attachmentUri by remember { mutableStateOf<Uri?>(null) }
+    var attachmentUri by remember(initialAttachmentUri) { mutableStateOf(initialAttachmentUri) }
     var submitting by remember { mutableStateOf(false) }
     var userError by remember { mutableStateOf<String?>(null) }
     var userMessage by remember { mutableStateOf<String?>(null) }
@@ -191,6 +195,7 @@ fun ReportProblemDialog(
                             submitting = false
                             when (result) {
                                 is FeedbackResult.Success -> {
+                                    onSubmitted(result.value)
                                     userMessage = "Report #${result.value.number} submitted. Thank you!"
                                     title = ""
                                     description = ""

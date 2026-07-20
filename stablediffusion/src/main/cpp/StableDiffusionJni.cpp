@@ -15,7 +15,7 @@ struct ProgressBridge {
 
 static void progress_callback(int step, int steps, float, void* data) {
     auto* bridge = static_cast<ProgressBridge*>(data);
-    if (!bridge || !bridge->callback) return;
+    if (!bridge || !bridge->callback || !bridge->invoke) return;
     JNIEnv* env = nullptr;
     bool attached = false;
     if (bridge->vm->GetEnv(reinterpret_cast<void**>(&env), JNI_VERSION_1_6) != JNI_OK) {
@@ -57,12 +57,19 @@ Java_com_hartmann_pixeldream_diffusion_StableDiffusion_generateImageNative(
     JavaVM* vm = nullptr;
     env->GetJavaVM(&vm);
     jclass callback_class = env->GetObjectClass(progress);
+    jmethodID progress_method = callback_class == nullptr
+        ? nullptr
+        : env->GetMethodID(callback_class, "onProgress", "(II)V");
+    if (progress_method == nullptr && env->ExceptionCheck()) {
+        env->ExceptionClear();
+        LOGE("Progress callback method was unavailable; generation will continue without progress events");
+    }
     ProgressBridge bridge{
         vm,
         env->NewGlobalRef(progress),
-        env->GetMethodID(callback_class, "onProgress", "(II)V")
+        progress_method
     };
-    env->DeleteLocalRef(callback_class);
+    if (callback_class != nullptr) env->DeleteLocalRef(callback_class);
     sd_set_progress_callback(progress_callback, &bridge);
 
     sd_img_gen_params_t params;

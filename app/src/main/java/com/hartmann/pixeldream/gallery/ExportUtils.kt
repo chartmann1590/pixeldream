@@ -30,7 +30,7 @@ fun exportToGallery(context: Context, imageFile: File): Boolean {
 
 /** Builds a share intent for a generated image via FileProvider, for the system share sheet. */
 fun shareImageIntent(context: Context, imageFile: File): Intent {
-    val uri = FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", imageFile)
+    val uri = imageContentUri(context, imageFile)
     val sendIntent = Intent(Intent.ACTION_SEND).apply {
         type = "image/png"
         putExtra(Intent.EXTRA_STREAM, uri)
@@ -43,3 +43,7 @@ fun shareImageIntent(context: Context, imageFile: File): Intent {
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
 }
+
+/** Returns a temporary, app-owned content URI suitable for sharing or feedback attachments. */
+fun imageContentUri(context: Context, imageFile: File) =
+    FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", imageFile)

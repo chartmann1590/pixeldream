@@ -76,3 +76,14 @@ Not proxied here because there is nothing to proxy: Google has no
 pre-converted, downloadable on-device diffusion artifact at all (their own
 docs say to convert a Stable Diffusion v1.5 checkpoint yourself). See
 `docs/models/README.md` in the repo root.
+
+## GitHub feedback proxy
+
+The same Worker exposes `/github/repos/<owner>/<repo>/...` for the in-app bug
+reporter. It only permits issue creation/status, issue comments, and PNG writes
+under `feedback-assets/` for the single configured repository. Paths and payload
+sizes are validated. Set `GH_API_TOKEN`, `GH_REPO_OWNER`, and `GH_REPO_NAME` as
+encrypted Worker secrets with `wrangler secret put`.
+
+The Android build receives only `FEEDBACK_PROXY_URL` and the non-secret repo
+coordinates. Never add the GitHub PAT to `BuildConfig`; APK values are readable.

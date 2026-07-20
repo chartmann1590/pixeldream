@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.hartmann.pixeldream.ui"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 29

@@ -4,6 +4,10 @@ import android.content.Context
 import android.graphics.Bitmap
 import com.hartmann.pixeldream.diffusion.StableDiffusion
 import java.io.File
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
@@ -23,6 +27,7 @@ class ModelSessionManager(
     private var enhancer: GemmaPromptEnhancer? = null
     private var imageGenerator: StableDiffusion? = null
     private val safetyChecker: PromptSafetyChecker = LocalPromptSafetyChecker()
+    private val cleanupScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     suspend fun enhancePrompt(descriptor: ModelDescriptor, rawPrompt: String): Result<String> =
         lock.withLock {
@@ -91,9 +96,12 @@ class ModelSessionManager(
         imageGenerator = null
     }
 
-    /** Non-suspending teardown for use from lifecycle callbacks like `onCleared()`. */
+    /**
+     * Lifecycle-safe teardown for callbacks like `onCleared()`. Cleanup waits
+     * for an in-flight native generation to release [lock], avoiding both a
+     * native use-after-free and a multi-gigabyte model leak.
+     */
     fun releaseImmediate() {
-        enhancer?.release()
-        enhancer = null
+        cleanupScope.launch { release() }
     }
 }
