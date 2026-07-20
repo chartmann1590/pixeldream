@@ -68,42 +68,42 @@ jobs:
           FAILED=0
           while read -r SO; do
             ALIGN=$(python3 - "$SO" <<'EOF'
-import struct, sys
-path = sys.argv[1]
-with open(path, "rb") as f:
-    data = f.read(64)
-if data[:4] != b"\x7fELF":
-    sys.exit(0)
-is64 = data[4] == 2
-# Minimal ELF program header parse to find LOAD segment alignment.
-with open(path, "rb") as f:
-    f.seek(0)
-    elf = f.read()
-if is64:
-    e_phoff = struct.unpack_from("<Q", elf, 0x20)[0]
-    e_phentsize = struct.unpack_from("<H", elf, 0x36)[0]
-    e_phnum = struct.unpack_from("<H", elf, 0x38)[0]
-else:
-    e_phoff = struct.unpack_from("<I", elf, 0x1C)[0]
-    e_phentsize = struct.unpack_from("<H", elf, 0x2A)[0]
-    e_phnum = struct.unpack_from("<H", elf, 0x2C)[0]
-min_align = None
-for i in range(e_phnum):
-    off = e_phoff + i * e_phentsize
-    p_type = struct.unpack_from("<I", elf, off)[0]
-    if p_type != 1:  # PT_LOAD
-        continue
-    if is64:
-        p_align = struct.unpack_from("<Q", elf, off + 48)[0]
-    else:
-        p_align = struct.unpack_from("<I", elf, off + 28)[0]
-    if min_align is None or p_align < min_align:
-        min_align = p_align
-if min_align is not None and min_align < 16384:
-    print(f"NOT ALIGNED ({min_align}): {path}")
-    sys.exit(1)
-EOF
-)
+          import struct, sys
+          path = sys.argv[1]
+          with open(path, "rb") as f:
+              data = f.read(64)
+          if data[:4] != b"\x7fELF":
+              sys.exit(0)
+          is64 = data[4] == 2
+          # Minimal ELF program header parse to find LOAD segment alignment.
+          with open(path, "rb") as f:
+              f.seek(0)
+              elf = f.read()
+          if is64:
+              e_phoff = struct.unpack_from("<Q", elf, 0x20)[0]
+              e_phentsize = struct.unpack_from("<H", elf, 0x36)[0]
+              e_phnum = struct.unpack_from("<H", elf, 0x38)[0]
+          else:
+              e_phoff = struct.unpack_from("<I", elf, 0x1C)[0]
+              e_phentsize = struct.unpack_from("<H", elf, 0x2A)[0]
+              e_phnum = struct.unpack_from("<H", elf, 0x2C)[0]
+          min_align = None
+          for i in range(e_phnum):
+              off = e_phoff + i * e_phentsize
+              p_type = struct.unpack_from("<I", elf, off)[0]
+              if p_type != 1:  # PT_LOAD
+                  continue
+              if is64:
+                  p_align = struct.unpack_from("<Q", elf, off + 48)[0]
+              else:
+                  p_align = struct.unpack_from("<I", elf, off + 28)[0]
+              if min_align is None or p_align < min_align:
+                  min_align = p_align
+          if min_align is not None and min_align < 16384:
+              print(f"NOT ALIGNED ({min_align}): {path}")
+              sys.exit(1)
+          EOF
+          )
             if [ $? -ne 0 ]; then
               echo "$ALIGN"
               FAILED=1
