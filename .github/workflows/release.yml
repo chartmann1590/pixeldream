@@ -90,7 +90,9 @@ jobs:
           set -euo pipefail
           APK=$(find app/build/outputs/apk/release -name "*.apk" -print -quit)
           test -n "$APK"
-          zipalign -c -P 16 -v 4 "$APK"
+          ZIPALIGN=$(find "$ANDROID_SDK_ROOT/build-tools" -type f -name zipalign -print | sort -V | tail -n 1)
+          test -x "$ZIPALIGN"
+          "$ZIPALIGN" -c -P 16 -v 4 "$APK"
 
       - name: Clean up keystore
         if: always()

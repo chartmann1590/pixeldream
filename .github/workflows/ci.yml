@@ -62,7 +62,9 @@ jobs:
             exit 0
           fi
           echo "Checking $APK for 16 KB page alignment..."
-          zipalign -c -P 16 -v 4 "$APK"
+          ZIPALIGN=$(find "$ANDROID_SDK_ROOT/build-tools" -type f -name zipalign -print | sort -V | tail -n 1)
+          test -x "$ZIPALIGN"
+          "$ZIPALIGN" -c -P 16 -v 4 "$APK"
           mkdir -p /tmp/apk-extract
           unzip -o "$APK" 'lib/*.so' -d /tmp/apk-extract || true
           FAILED=0
