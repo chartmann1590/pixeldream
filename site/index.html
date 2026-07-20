@@ -33,7 +33,7 @@
   }
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.2px;}
   .brand img{width:32px;height:32px;border-radius:8px;display:block;}
-  nav.links{display:flex;gap:22px;font-size:14px;color:var(--ink-dim);}
+  nav.links{display:flex;gap:22px;font-size:14px;color:var(--ink-dim);flex-wrap:wrap;}
   nav.links a{color:var(--ink-dim);text-decoration:none;}
   nav.links a:hover{color:var(--ink);}
 
@@ -136,8 +136,21 @@
     display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
   }
   @media (max-width:700px){ .privacy-band{grid-template-columns:1fr;text-align:center;} }
-  .privacy-band h2{margin:0 0 10px;font-size:24px;}
+    .privacy-band h2{margin:0 0 10px;font-size:24px;}
   .privacy-band p{margin:0;color:var(--ink-dim);max-width:56ch;}
+
+  .video-band{
+    border-radius:24px;padding:40px;
+    background:linear-gradient(135deg, rgba(201,166,245,.08), rgba(255,159,214,.06));
+    border:1px solid rgba(201,166,245,.2);
+  }
+  .video-band h2{margin:0 0 8px;font-size:24px;text-align:center;}
+  .video-band .sub{margin:0 auto 24px;color:var(--ink-dim);max-width:60ch;text-align:center;}
+  .video-band video{
+    width:100%;max-width:960px;margin:0 auto;display:block;border-radius:16px;
+    border:1px solid rgba(255,255,255,.1);background:#000;
+  }
+  .video-band .download{display:block;text-align:center;margin-top:14px;font-size:13px;}
 
   .support{
     text-align:center;border-radius:24px;padding:56px 32px;
@@ -156,10 +169,12 @@
 
 <header class="nav">
   <div class="brand"><img src="assets/icon-512.png" alt=""> PixelDream</div>
-  <nav class="links">
+    <nav class="links">
     <a href="#features">Features</a>
     <a href="#screens">Screens</a>
+    <a href="#video">Video</a>
     <a href="#privacy">Privacy</a>
+    <a href="https://github.com/chartmann1590/pixeldream/releases/latest">Releases</a>
     <a href="https://buymeacoffee.com/charleshartmann">Support</a>
   </nav>
 </header>
@@ -178,6 +193,7 @@
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.hartmann.pixeldream">▶ Get it on Google Play</a>
+        <a class="btn btn-ghost" href="https://github.com/chartmann1590/pixeldream/releases/latest">Download APK</a>
         <a class="btn btn-ghost" href="#features">See how it works</a>
       </div>
       <p class="fineprint">Free with optional ad-free upgrade · Android 10+ · ~5&nbsp;GB one-time download</p>
@@ -262,6 +278,17 @@
     </div>
   </section>
 
+  <section id="video">
+    <div class="video-band">
+      <h2>See it in motion</h2>
+      <p class="sub">A 20-second walkthrough of the Create → Generate → Gallery flow, all running on-device.</p>
+      <video src="assets/pixeldream-promo.mp4" controls muted preload="metadata" poster="assets/shot-generating.png">
+        Your browser does not support embedded video.
+      </video>
+      <a class="download" href="https://github.com/chartmann1590/pixeldream/releases/latest">⬇ Download the latest release on GitHub →</a>
+    </div>
+  </section>
+
   <section id="privacy">
     <div class="privacy-band">
       <div>
@@ -292,6 +319,7 @@
       <a href="privacy/">Privacy Policy</a> ·
       <a href="licenses/">Model &amp; open-source notices</a> ·
       <a href="https://github.com/chartmann1590/pixeldream">GitHub</a> ·
+      <a href="https://github.com/chartmann1590/pixeldream/releases/latest">Releases</a> ·
       <a href="https://github.com/chartmann1590/pixeldream/issues">Support</a>
     </span>
   </div>

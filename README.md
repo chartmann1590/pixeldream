@@ -10,8 +10,13 @@
 
 <p align="center">
   <a href="https://chartmann1590.github.io/pixeldream/">Website</a> ·
+  <a href="https://github.com/chartmann1590/pixeldream/releases/latest">Latest release</a> ·
   <a href="https://chartmann1590.github.io/pixeldream/privacy/">Privacy Policy</a> ·
   <a href="https://buymeacoffee.com/charleshartmann">☕ Support this project</a>
+</p>
+
+<p align="center">
+  <a href="playstore/promo-video/pixeldream-promo.mp4">🎬 Watch the 20-second promo video</a>
 </p>
 
 ---
@@ -39,6 +44,24 @@ them.
   you can revisit, export, or share it whenever you like.
 - 🎛️ **Control the details.** Choose image quality and size to balance
   speed against how detailed the result looks.
+
+## Screenshots
+
+<p align="center">
+  <img src="site/assets/shot-create.png" width="240" alt="Create screen">
+  &nbsp;
+  <img src="site/assets/shot-generating.png" width="240" alt="Generating screen">
+  &nbsp;
+  <img src="site/assets/shot-settings.png" width="240" alt="Settings screen">
+</p>
+
+## Promo video
+
+A ~20-second walkthrough of the Create → Generate → Gallery flow:
+
+<video src="playstore/promo-video/pixeldream-promo.mp4" controls muted width="100%" poster="site/assets/shot-generating.png">
+  Your browser does not support embedded video. <a href="playstore/promo-video/pixeldream-promo.mp4">Watch the MP4 directly</a>.
+</video>
 
 ## Getting started
 
