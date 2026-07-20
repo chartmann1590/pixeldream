@@ -1,0 +1,398 @@
+name: Crash Fix Checker
+
+# Daily check that:
+#   1. Matches recent fix/crash-related commits to open Crashlytics issues and
+#      posts a "fix detected" status comment with a hidden pending-review marker.
+#   2. Tracks Crashlytics event activity per issue and auto-closes issues that
+#      have been silent for >= STALE_DAYS days, also PATCHing the Crashlytics
+#      REST API to mark the upstream issue CLOSED.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+env:
+  FIREBASE_PROJECT_NUMBER: '5726655228'
+  FIREBASE_APP_ID: '1:5726655228:android:10a95dd61a3581a5e2fd79'
+  FIREBASE_PROJECT_ID: 'pixeldream-app'
+  STALE_DAYS: '5'
+  LOOKBACK_DAYS: '90'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve Crashlytics access token
+        id: auth
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_OAUTH_CLIENT_ID: ${{ secrets.FIREBASE_OAUTH_CLIENT_ID }}
+          FIREBASE_OAUTH_CLIENT_SECRET: ${{ secrets.FIREBASE_OAUTH_CLIENT_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Prefer a pre-baked ACCESS_TOKEN secret if the maintainer provided one.
+          if [ -n "${ACCESS_TOKEN}" ]; then
+            echo "::add-mask::${ACCESS_TOKEN}"
+            echo "access_token=${ACCESS_TOKEN}" >> "$GITHUB_OUTPUT"
+            echo "source=access-token-secret" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Otherwise exchange the stored Firebase refresh token (same flow as
+          # crashlytics-monitor.yml; secrets already configured for this repo).
+          RESPONSE=$(curl -s -X POST "https://oauth2.googleapis.com/token" \
+            --data-urlencode "client_id=${FIREBASE_OAUTH_CLIENT_ID}" \
+            --data-urlencode "client_secret=${FIREBASE_OAUTH_CLIENT_SECRET}" \
+            --data-urlencode "refresh_token=${FIREBASE_TOKEN}" \
+            --data-urlencode "grant_type=refresh_token")
+          TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
+          if [ "$TOKEN" = "null" ] || [ -z "$TOKEN" ]; then
+            echo "Failed to obtain access token"; echo "$RESPONSE" | jq .; exit 1
+          fi
+          echo "::add-mask::${TOKEN}"
+          echo "access_token=$TOKEN" >> "$GITHUB_OUTPUT"
+          echo "source=oauth-refresh" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch live Crashlytics issues (for activity tracking)
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          set -euo pipefail
+          curl -s \
+            -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+            "https://firebasecrashlytics.googleapis.com/v1alpha/projects/${FIREBASE_PROJECT_NUMBER}/apps/${FIREBASE_APP_ID}/reports/topIssues?pageSize=50" \
+            > crashlytics_live.json
+          echo "Live issue groups:"
+          jq '.groups?.length // .issues?.length // 0' crashlytics_live.json || true
+
+      - name: Collect commits with changed files (last ${{ env.LOOKBACK_DAYS }} days)
+        run: |
+          mkdir -p .crash-fix
+          # Tab-separated header per commit; filenames follow. __COMMIT__ is a
+          # block delimiter the JS side splits on.
+          git log --name-only --since="${LOOKBACK_DAYS} days ago" \
+            --pretty=format:"__COMMIT__%h%x09%ad%x09%s" --date=short \
+            > .crash-fix/raw.log
+          echo "Collected $(grep -c '^__COMMIT__' .crash-fix/raw.log || true) commits"
+
+      - name: Run crash fix + stale-close tracker
+        uses: actions/github-script@v7
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+          FIREBASE_PROJECT_NUMBER: ${{ env.FIREBASE_PROJECT_NUMBER }}
+          FIREBASE_APP_ID: ${{ env.FIREBASE_APP_ID }}
+          STALE_DAYS: ${{ env.STALE_DAYS }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const projectNumber = process.env.FIREBASE_PROJECT_NUMBER;
+            const appId = process.env.FIREBASE_APP_ID;
+            const accessToken = process.env.ACCESS_TOKEN;
+            const staleDays = parseInt(process.env.STALE_DAYS || '5', 10);
+            const now = new Date();
+            const isoToday = now.toISOString().slice(0, 10);
+
+            // ---------- 1. Parse fix-related commits from git log ----------
+            // Keywords: generic "fix"/"resolve"/"close"/"patch", Conventional
+            // Commits "fix:", plus crash/JVM-exception terms relevant to an
+            // Android/Kotlin codebase.
+            const FIX_KEYWORDS = new RegExp(
+              '\\b(fix|fixes|fixed|fixing|resolve|resolves|resolved|' +
+              'close|closes|closed|patch|patches|patched)\\b' +
+              '|\\bfix:' +
+              '|crash|crashes|crashing' +
+              '|NPE|NullPointerException|NullPointer' +
+              '|RuntimeException|IllegalStateException|IllegalArgumentException' +
+              '|ANR|\\bbug\\b|hotfix',
+              'i'
+            );
+
+            const raw = fs.readFileSync('.crash-fix/raw.log', 'utf8');
+            const fixCommits = [];
+            for (const block of raw.split('__COMMIT__')) {
+              const trimmed = block.trim();
+              if (!trimmed) continue;
+              const lines = trimmed.split('\n');
+              const header = lines[0].split('\t');
+              if (header.length < 3) continue;
+              const hash = header[0].trim();
+              const date = header[1].trim();
+              const subject = header.slice(2).join('\t').trim();
+              if (!FIX_KEYWORDS.test(subject)) continue;
+              const files = lines.slice(1).map(l => l.trim()).filter(Boolean);
+              fixCommits.push({ hash, date, subject, files });
+            }
+            core.info(`Found ${fixCommits.length} fix-related commits in the last ${process.env.LOOKBACK_DAYS || '90'} days`);
+
+            // ---------- 2. Load live Crashlytics data (activity sync) ----------
+            const liveMap = {}; // crashlyticsId -> { eventCount, state }
+            try {
+              const data = JSON.parse(fs.readFileSync('crashlytics_live.json', 'utf8'));
+              const groups = data.groups || data.issues || [];
+              for (const entry of groups) {
+                const inner = entry.issue || entry;
+                const m = entry.metrics?.[0] || {};
+                const id = inner.id || inner.issueId;
+                if (!id) continue;
+                liveMap[id] = {
+                  eventCount: parseInt(String(m.eventsCount || inner.eventCount || '0'), 10),
+                  state: (inner.state || 'OPEN').toUpperCase(),
+                };
+              }
+              core.info(`Live Crashlytics sync: ${Object.keys(liveMap).length} issues`);
+            } catch (e) {
+              core.warning(`Could not parse live Crashlytics data: ${e.message}`);
+            }
+
+            // ---------- 3. Helpers ----------
+            const EVENTS_RE = /<!--\s*crashlytics-events:(\d+)\s*-->/;
+            const ACTIVITY_RE = /<!--\s*crash-last-activity:(\d{4}-\d{2}-\d{2})\s*-->/;
+            const PENDING_REVIEW_RE = /pending\s+(store|deploy|review)\s+review|<!--\s*crash-fix-tracker:pending-review\s*-->/i;
+
+            function daysBetween(a, b) {
+              const da = new Date(a + 'T00:00:00Z');
+              const db = new Date(b + 'T00:00:00Z');
+              return Math.floor((db - da) / 86400000);
+            }
+
+            // Blame frame -> candidate source-file identifiers.
+            // e.g. "[base.apk] com.hartmann.pixeldream.model.ModelRepository.isReady"
+            //   -> ["com/hartmann/pixeldream/model/ModelRepository", "ModelRepository"]
+            function blameToCandidates(blameFrame) {
+              if (!blameFrame) return [];
+              const stripped = blameFrame.replace(/^\[[^\]]*\]\s*/, '').trim();
+              const parts = stripped.split('.');
+              if (parts.length < 2) return [];
+              parts.pop(); // drop trailing method name
+              const candidates = [];
+              if (parts.length) candidates.push(parts.join('/'));
+              for (let i = parts.length - 1; i >= 0; i--) {
+                if (/^[A-Z]/.test(parts[i])) {
+                  candidates.push(parts[i]); // simple class name (handles inner classes)
+                  break;
+                }
+              }
+              return candidates;
+            }
+
+            function fileMatches(filePath, candidates) {
+              for (const c of candidates) {
+                if (c.includes('/')) {
+                  if (filePath.includes(c + '.')) return true;
+                } else {
+                  const base = filePath.split('/').pop();
+                  if (base === c + '.kt' || base === c + '.java') return true;
+                }
+              }
+              return false;
+            }
+
+            async function listComments(issueNumber) {
+              const out = [];
+              for (let page = 1; page <= 10; page++) {
+                const { data } = await github.rest.issues.listComments({
+                  owner, repo, issue_number: issueNumber, per_page: 100, page
+                });
+                if (!data.length) break;
+                out.push(...data);
+                if (data.length < 100) break;
+              }
+              return out;
+            }
+
+            async function closeUpstream(crashId) {
+              if (!crashId || !accessToken) return false;
+              // The Crashlytics v1alpha close mutation is not part of the public
+              // docs; try the two most likely resource paths. Best-effort only.
+              const candidates = [
+                `https://firebasecrashlytics.googleapis.com/v1alpha/projects/${projectNumber}/apps/${appId}/issues/${crashId}`,
+                `https://firebasecrashlytics.googleapis.com/v1alpha/projects/${projectNumber}/apps/${appId}/problems/${crashId}`,
+              ];
+              for (const url of candidates) {
+                try {
+                  const resp = await fetch(url, {
+                    method: 'PATCH',
+                    headers: {
+                      'Authorization': `Bearer ${accessToken}`,
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ state: 'CLOSED' }),
+                  });
+                  core.info(`Crashlytics PATCH ${url} -> HTTP ${resp.status}`);
+                  if (resp.ok) return true;
+                  const text = await resp.text().catch(() => '');
+                  core.warning(`PATCH body: ${text.slice(0, 300)}`);
+                } catch (e) {
+                  core.warning(`Upstream close failed for ${crashId}: ${e.message}`);
+                }
+              }
+              return false;
+            }
+
+            // ---------- 4. Iterate open Crashlytics issues ----------
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner, repo, labels: 'crashlytics', state: 'open', per_page: 100
+            });
+            core.info(`Processing ${openIssues.length} open crashlytics issues`);
+
+            let postedFixComments = 0;
+            let closedStale = 0;
+
+            for (const issue of openIssues) {
+              const body = issue.body || '';
+              core.info(`\n=== Issue #${issue.number}: ${issue.title} ===`);
+
+              let crashId = null;
+              for (const lbl of issue.labels) {
+                if (lbl.name?.startsWith('crashlytics:')) {
+                  crashId = lbl.name.slice('crashlytics:'.length);
+                }
+              }
+
+              // ---- Activity tracking via hidden <crash-last-activity> marker ----
+              const eventsMatch = body.match(EVENTS_RE);
+              const storedEvents = eventsMatch ? parseInt(eventsMatch[1], 10) : null;
+              const live = crashId ? liveMap[crashId] : null;
+              const activityMatch = body.match(ACTIVITY_RE);
+              let activityDate = activityMatch ? activityMatch[1] : null;
+              let newBody = body;
+
+              const newEventsDetected = !!(live && storedEvents !== null && live.eventCount > storedEvents);
+              if (newEventsDetected) {
+                activityDate = isoToday;
+                newBody = newBody.replace(EVENTS_RE, `<!-- crashlytics-events:${live.eventCount} -->`);
+                if (activityMatch) {
+                  newBody = newBody.replace(ACTIVITY_RE, `<!-- crash-last-activity:${isoToday} -->`);
+                } else {
+                  newBody = newBody.replace(/\s*$/, '') + `\n<!-- crash-last-activity:${isoToday} -->`;
+                }
+                core.info(`New events: ${storedEvents} -> ${live.eventCount}; activity date -> ${isoToday}`);
+              } else if (!activityMatch && live && storedEvents !== null && live.eventCount > 0) {
+                // First observation: baseline the activity marker to today.
+                activityDate = isoToday;
+                newBody = newBody.replace(/\s*$/, '') + `\n<!-- crash-last-activity:${isoToday} -->`;
+                core.info(`Initializing activity baseline -> ${isoToday}`);
+              }
+
+              if (newBody !== body) {
+                await github.rest.issues.update({
+                  owner, repo, issue_number: issue.number, body: newBody
+                });
+              }
+
+              // ---- Stale closure check (>= STALE_DAYS silent days) ----
+              if (activityDate) {
+                const silent = daysBetween(activityDate, isoToday);
+                core.info(`#${issue.number}: activity=${activityDate}, silent=${silent}d (threshold ${staleDays}d)`);
+                if (silent >= staleDays) {
+                  const staleComment = [
+                    ` 🔇 **Auto-closing: no new crash events in ${silent} days**`,
+                    ``,
+                    `| Detail | Value |`,
+                    `|--------|-------|`,
+                    `| Last crash activity | \`${activityDate}\` |`,
+                    `| Days silent | ${silent} |`,
+                    `| Stale threshold | ${staleDays} days |`,
+                    `| Crashlytics ID | \`${crashId || '—'}\` |`,
+                    ``,
+                    `This issue has had no new Crashlytics events for ${silent} consecutive days and is being closed automatically. The upstream Crashlytics issue is also being marked **CLOSED**.`,
+                    ``,
+                    `*Checked: ${now.toISOString()}*`,
+                    `<!-- crash-fix-tracker:auto-closed-stale -->`,
+                  ].join('\n');
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issue.number, body: staleComment
+                  });
+                  await github.rest.issues.update({
+                    owner, repo, issue_number: issue.number,
+                    state: 'closed', state_reason: 'not_planned'
+                  });
+                  const upstream = await closeUpstream(crashId);
+                  core.info(`Closed #${issue.number} (stale). Upstream CLOSED=${upstream}`);
+                  closedStale++;
+                  continue;
+                }
+              }
+
+              // ---- Commit-matching for fix detection ----
+              const comments = await listComments(issue.number);
+              const alreadyTracked = comments.some(c => PENDING_REVIEW_RE.test(c.body || ''));
+              if (alreadyTracked) {
+                core.info(`#${issue.number}: pending-review marker already present; skipping commit match.`);
+                continue;
+              }
+
+              const blameMatch = body.match(/\*\*Blame frame\*\*\s*\|\s*`([^`]+)`/);
+              const blameFrame = blameMatch ? blameMatch[1].trim() : null;
+              if (!blameFrame) {
+                core.info(`#${issue.number}: no blame frame in body; skipping commit match.`);
+                continue;
+              }
+              const candidates = blameToCandidates(blameFrame);
+              core.info(`#${issue.number}: blame="${blameFrame}" -> candidates=${JSON.stringify(candidates)}`);
+              if (!candidates.length) continue;
+
+              const matching = fixCommits.filter(c => c.files.some(f => fileMatches(f, candidates)));
+              if (!matching.length) {
+                core.info(`#${issue.number}: no fix commits touched the blamed source file.`);
+                continue;
+              }
+
+              const excMatch = body.match(/\*\*Exception\*\*\s*\|\s*([^\n|]+)/);
+              const typeMatch = body.match(/\*\*Error type\*\*\s*\|\s*([^\n|]+)/);
+              const summary = (excMatch?.[1]?.trim()) ||
+                              (typeMatch?.[1]?.trim()) ||
+                              issue.title.replace(/^\[Crashlytics\]\s*/i, '');
+
+              const commitRows = matching.map(c => {
+                const link = `https://github.com/${owner}/${repo}/commit/${c.hash}`;
+                const fileList = c.files.map(f => `\`${f}\``).join('<br>');
+                const safeSubject = c.subject.replace(/\|/g, '\\|').replace(/\n/g, ' ');
+                return `| [\`${c.hash}\`](${link}) | ${c.date} | ${safeSubject} | ${fileList} |`;
+              }).join('\n');
+
+              const fixComment = [
+                ` ## 🛠️ Crash Fix Detected`,
+                ``,
+                `**Crash:** ${summary}`,
+                ``,
+                `A recent commit appears to touch the source file blamed for this crash (\`${candidates[0]}\`). It is being tracked as a candidate fix.`,
+                ``,
+                `### Fix commits`,
+                `| Commit | Date | Message | Files changed |`,
+                `|--------|------|---------|---------------|`,
+                commitRows,
+                ``,
+                `### Status`,
+                `| Stage | State |`,
+                `|-------|-------|`,
+                `| Fix committed | ✅ |`,
+                `| Review / deploy pending | ⏳ |`,
+                `| Live for users | ⏳ |`,
+                ``,
+                `_This issue will be **auto-closed** once the fix is confirmed live — i.e. once Crashlytics reports no new events for ${staleDays} consecutive days._`,
+                ``,
+                `*Detected: ${now.toISOString()}*`,
+                `<!-- crash-fix-tracker:pending-review -->`,
+              ].join('\n');
+
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number, body: fixComment
+              });
+              core.info(`Posted fix-detected comment on #${issue.number} (${matching.length} commit(s))`);
+              postedFixComments++;
+            }
+
+            core.info(`\nDone. Fix comments posted: ${postedFixComments}. Stale auto-closes: ${closedStale}.`);
