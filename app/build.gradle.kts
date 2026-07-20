@@ -31,6 +31,18 @@ val feedbackProxyUrl = buildSetting(
 val releaseKeystorePath = buildSetting("KEYSTORE_PATH").ifBlank { null }
 
 //
+// Version overrides for release automation.
+//
+// Precedence: ANDROID_VERSION_CODE / ANDROID_VERSION_NAME environment variable
+// (CI release workflow) > local.properties (developer) > baseline.
+// Local builds and ordinary CI keep the baseline values when neither is set,
+// so existing behavior is unchanged unless a release pipeline sets the vars.
+val androidVersionCode = buildSetting("ANDROID_VERSION_CODE").ifBlank { null }?.toIntOrNull()
+    ?: 1
+val androidVersionName = buildSetting("ANDROID_VERSION_NAME").ifBlank { null }
+    ?: "0.1.0"
+
+//
 // GitHub feedback reporter configuration.
 //
 // Precedence: environment variable (CI) > local.properties (developer, gitignored) > blank.
@@ -54,8 +66,8 @@ android {
         applicationId = "com.hartmann.pixeldream"
         minSdk = 29
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = androidVersionCode
+        versionName = androidVersionName
 
         manifestPlaceholders["ADMOB_APP_ID"] = admobAppId
         buildConfigField("String", "ADMOB_BANNER_ID", "\"$admobBannerId\"")
