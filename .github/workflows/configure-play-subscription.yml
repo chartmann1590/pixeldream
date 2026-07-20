@@ -1,0 +1,51 @@
+name: Configure Play ad-free subscription
+
+# =====================================================================
+# MANUAL-ONLY workflow. No automatic triggers — dispatch it by hand from
+# the Actions tab whenever the ad-free subscription needs to be created
+# or re-verified in Play Console. Safe to re-run: it only creates what's
+# missing and activates a draft/inactive base plan, it never deletes or
+# re-prices an existing one.
+# =====================================================================
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  configure-subscription:
+    name: Create/activate pixeldream_ad_free_monthly in Play Console
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verify Play service account secret is present
+        shell: bash
+        env:
+          PLAY_SA_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$PLAY_SA_JSON" ]; then
+            echo "::error::GOOGLE_PLAY_SERVICE_ACCOUNT_JSON secret is missing."
+            exit 1
+          fi
+          echo "GOOGLE_PLAY_SERVICE_ACCOUNT_JSON secret is present."
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure ad-free subscription
+        env:
+          PLAY_SA_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pip install --quiet google-api-python-client google-auth
+          sa_file="$(mktemp)"
+          printf '%s' "$PLAY_SA_JSON" > "$sa_file"
+          trap 'rm -f "$sa_file"' EXIT
+          python scripts/configure_play_subscription.py "$sa_file"
