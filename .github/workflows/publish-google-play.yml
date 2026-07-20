@@ -20,6 +20,14 @@ on:
         description: 'Optional release notes (overrides auto-generated commit log)'
         required: false
         type: string
+      release_status:
+        description: 'Release status: completed (roll out immediately) or draft (first publish of a new app must be draft)'
+        required: false
+        type: choice
+        default: completed
+        options:
+          - completed
+          - draft
 
 permissions:
   contents: read
@@ -265,14 +273,14 @@ jobs:
           packageName: com.hartmann.pixeldream
           releaseFiles: ${{ steps.artifacts.outputs.aab_path }}
           track: production
-          status: completed
+          status: ${{ inputs.release_status }}
           whatsNewDirectory: distribution/whatsnew
           mappingFile: ${{ steps.artifacts.outputs.mapping_path }}
 
       - name: Report published version
         shell: bash
         run: |
-          echo "::notice::Published com.hartmann.pixeldream to production — versionCode=${ANDROID_VERSION_CODE} versionName=${ANDROID_VERSION_NAME}"
+          echo "::notice::Published com.hartmann.pixeldream to production (status=${{ inputs.release_status }}) — versionCode=${ANDROID_VERSION_CODE} versionName=${ANDROID_VERSION_NAME}"
 
       - name: Clean up keystore
         if: always()
