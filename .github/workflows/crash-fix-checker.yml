@@ -72,8 +72,15 @@ jobs:
             -H "Authorization: Bearer ${ACCESS_TOKEN}" \
             "https://firebasecrashlytics.googleapis.com/v1alpha/projects/${FIREBASE_PROJECT_NUMBER}/apps/${FIREBASE_APP_ID}/reports/topIssues?pageSize=50" \
             > crashlytics_live.json
+          # Fail fast on API errors so a transient outage does not look like
+          # "no crashes" and trigger false stale-auto-closes downstream.
+          if jq -e '.error' crashlytics_live.json > /dev/null 2>&1; then
+            echo "Crashlytics API returned an error:"; jq . crashlytics_live.json; exit 1
+          fi
           echo "Live issue groups:"
-          jq '.groups?.length // .issues?.length // 0' crashlytics_live.json || true
+          # NOTE: `.length` is field-access in jq (errors on arrays); use the
+          # `length` builtin via piping instead.
+          jq '(.groups // .issues // []) | length' crashlytics_live.json
 
       - name: Collect commits with changed files (last ${{ env.LOOKBACK_DAYS }} days)
         run: |
@@ -137,9 +144,16 @@ jobs:
             core.info(`Found ${fixCommits.length} fix-related commits in the last ${process.env.LOOKBACK_DAYS || '90'} days`);
 
             // ---------- 2. Load live Crashlytics data (activity sync) ----------
+            // If the live sync failed or returned nothing, set a flag so we
+            // do NOT auto-close issues as stale based on stale local data —
+            // an empty liveMap must never look like "the crash stopped".
             const liveMap = {}; // crashlyticsId -> { eventCount, state }
+            let liveSyncOk = false;
             try {
               const data = JSON.parse(fs.readFileSync('crashlytics_live.json', 'utf8'));
+              if (data && data.error) {
+                throw new Error(`Crashlytics API error: ${JSON.stringify(data.error)}`);
+              }
               const groups = data.groups || data.issues || [];
               for (const entry of groups) {
                 const inner = entry.issue || entry;
@@ -151,9 +165,13 @@ jobs:
                   state: (inner.state || 'OPEN').toUpperCase(),
                 };
               }
+              liveSyncOk = true;
               core.info(`Live Crashlytics sync: ${Object.keys(liveMap).length} issues`);
             } catch (e) {
               core.warning(`Could not parse live Crashlytics data: ${e.message}`);
+            }
+            if (!liveSyncOk) {
+              core.warning('Live Crashlytics sync unavailable — stale auto-close is DISABLED for this run to avoid false closures.');
             }
 
             // ---------- 3. Helpers ----------
@@ -293,10 +311,13 @@ jobs:
               }
 
               // ---- Stale closure check (>= STALE_DAYS silent days) ----
+              // Guard: only auto-close when this run actually synced live
+              // Crashlytics data; otherwise an API outage would look like "no
+              // crashes" and falsely close live issues.
               if (activityDate) {
                 const silent = daysBetween(activityDate, isoToday);
-                core.info(`#${issue.number}: activity=${activityDate}, silent=${silent}d (threshold ${staleDays}d)`);
-                if (silent >= staleDays) {
+                core.info(`#${issue.number}: activity=${activityDate}, silent=${silent}d (threshold ${staleDays}d)${liveSyncOk ? '' : ' [liveSync=OFF, stale-close skipped]'}`);
+                if (liveSyncOk && silent >= staleDays) {
                   const staleComment = [
                     ` 🔇 **Auto-closing: no new crash events in ${silent} days**`,
                     ``,
