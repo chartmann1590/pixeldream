@@ -8,6 +8,7 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.hartmann.pixeldream.analytics.Analytics
 
 /**
  * Preloads and shows the between-generations interstitial for free-tier
@@ -23,7 +24,7 @@ class InterstitialAdManager(private val context: Context) {
         isLoading = true
         InterstitialAd.load(
             context,
-            AdIds.INTERSTITIAL_TEST_ID,
+            AdIds.interstitial,
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(interstitialAd: InterstitialAd) {
@@ -46,6 +47,14 @@ class InterstitialAdManager(private val context: Context) {
             return
         }
         loadedAd.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdShowedFullScreenContent() {
+                Analytics.interstitialShown()
+            }
+
+            override fun onAdClicked() {
+                Analytics.interstitialClicked()
+            }
+
             override fun onAdDismissedFullScreenContent() {
                 ad = null
                 preload()

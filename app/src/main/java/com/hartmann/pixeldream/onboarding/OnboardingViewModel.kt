@@ -13,15 +13,8 @@ import com.hartmann.pixeldream.model.ModelRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-
-// Served by the pixeldream-model-proxy Cloudflare Worker, which proxies live
-// to Google's official litert-community Hugging Face repos (auth injected
-// server-side since Gemma downloads are gated -- see
-// cloudflare-worker/README.md). No model bytes are stored on our own
-// infrastructure; every byte comes from huggingface.co per request.
-private const val MANIFEST_URL =
-    "https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/models/manifest.json"
 
 data class OnboardingUiState(
     val deviceTier: DeviceTier? = null,
@@ -32,7 +25,8 @@ data class OnboardingUiState(
 )
 
 class OnboardingViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository = ModelRepository(application, MANIFEST_URL)
+    private val repository = ModelRepository(application)
+    private var downloadJob: Job? = null
 
     private val _uiState = MutableStateFlow(OnboardingUiState())
     val uiState: StateFlow<OnboardingUiState> = _uiState.asStateFlow()
@@ -45,30 +39,38 @@ class OnboardingViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun loadManifestAndStartDownloads() {
-        viewModelScope.launch {
+        if (downloadJob?.isActive == true) return
+        downloadJob = viewModelScope.launch {
             try {
                 val models = repository.fetchManifest()
-                _uiState.value = _uiState.value.copy(models = models, manifestError = null)
+                _uiState.value = _uiState.value.copy(
+                    models = models,
+                    manifestError = null,
+                    downloadStates = models.associate { it.kind to DownloadState.Queued },
+                )
                 models.forEach { descriptor ->
+                    if (repository.isReady(descriptor)) {
+                        _uiState.value = _uiState.value.copy(
+                            downloadStates = _uiState.value.downloadStates +
+                                (descriptor.kind to DownloadState.Ready),
+                        )
+                        return@forEach
+                    }
                     Analytics.modelDownloadStarted(descriptor.kind.name)
-                    viewModelScope.launch {
-                        repository.download(descriptor).collect { state ->
-                            _uiState.value = _uiState.value.copy(
-                                downloadStates = _uiState.value.downloadStates + (descriptor.kind to state),
-                            )
-                            when (state) {
-                                is com.hartmann.pixeldream.model.DownloadState.Ready ->
-                                    Analytics.modelDownloadCompleted(descriptor.kind.name)
-                                is com.hartmann.pixeldream.model.DownloadState.Failed ->
-                                    Analytics.modelDownloadFailed(descriptor.kind.name, state.reason)
-                                else -> Unit
-                            }
+                    repository.download(descriptor).collect { state ->
+                        _uiState.value = _uiState.value.copy(
+                            downloadStates = _uiState.value.downloadStates + (descriptor.kind to state),
+                        )
+                        when (state) {
+                            is DownloadState.Ready -> Analytics.modelDownloadCompleted(descriptor.kind.name)
+                            is DownloadState.Failed -> Analytics.modelDownloadFailed(descriptor.kind.name, state.reason)
+                            else -> Unit
                         }
                     }
                 }
             } catch (t: Throwable) {
                 _uiState.value = _uiState.value.copy(
-                    manifestError = "Check your connection and try again.",
+                    manifestError = t.message ?: "Check your connection and try again.",
                 )
             }
         }

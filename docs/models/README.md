@@ -1,69 +1,39 @@
 # Model sourcing
 
-PixelDream does not train or own any model weights. Both on-device models are
-official Google artifacts, downloaded during onboarding and verified against
-a SHA-256 checksum before use. Neither is bundled in the APK.
+PixelDream downloads publisher-hosted artifacts directly during onboarding.
+Both entries are pinned by exact byte count and SHA-256 in
+`OfficialModelCatalog`; the app does not depend on an application-owned model
+proxy or remote manifest.
 
-## Gemma (prompt enhancer)
+## Gemma 4 prompt enhancer
 
-- **Official source**: [`litert-community/gemma-3-270m-it`](https://huggingface.co/litert-community/gemma-3-270m-it)
-  on Hugging Face — Google's own LiteRT-converted distribution of Gemma 3 270M,
-  chosen for its small footprint (~250 MB int4 quantized) given its job here
-  is short prompt rewriting, not open-ended chat.
-- **File**: `gemma3-270m-it-q4_0-web.task`
-- **Gating**: this repository is a *gated* Hugging Face repo — verified
-  directly with `curl` (unauthenticated requests to the actual `.task` file
-  return `401` with `X-Error-Code: GatedRepo`), across every official Gemma
-  repo checked. This is a Google licensing requirement enforced at the HTTP
-  level, not a hosting choice, and applies to every official Gemma
-  distribution channel (Hugging Face or Kaggle Models) — there is no
-  zero-auth public download URL for the real weights.
-- **How PixelDream handles this without hosting a copy**: a small Cloudflare
-  Worker (`cloudflare-worker/`, deployed at
-  `pixeldream-model-proxy.charles-h-hartmann1.workers.dev`) holds one
-  developer-side Hugging Face access token as a secret and transparently
-  proxies requests to Hugging Face's real resolve URLs, injecting the
-  `Authorization` header server-side. The app never sees or holds any
-  credential. This is a **live pass-through, not a re-hosted copy** — no
-  model bytes are stored on Cloudflare or any infrastructure we control;
-  every byte in the response to the app is streamed directly from
-  `huggingface.co` on that same request. See `cloudflare-worker/README.md`
-  for the one unavoidable human step (accepting the Gemma license once,
-  since that's tied to a real identity and can't be done by an agent).
+- Official distribution: `litert-community/gemma-4-E2B-it-litert-lm`
+- Artifact: `gemma-4-E2B-it.litertlm`
+- Size: `2,588,147,712` bytes
+- SHA-256: `181938105e0eefd105961417e8da75903eacda102c4fce9ce90f50b97139a63c`
 
-## Diffusion (image generator)
+The repository model card identifies this as Google's Android-ready Gemma 4
+distribution. The app loads it with Google's current LiteRT-LM Android runtime;
+the legacy MediaPipe `.task` path is not used for Gemma 4.
 
-- **Official guidance**: [MediaPipe Image Generator, Android guide](https://developers.google.com/edge/mediapipe/solutions/vision/image_generator/android).
-  Google does **not** host a ready-to-download on-device diffusion model.
-  Their own docs state models must "match the
-  `stable-diffusion-v1-5/stable-diffusion-v1-5 EMA-only` model format" and be
-  produced by running Google's conversion script
-  (`tools/image_generator_converter/convert.py` in
-  [google-ai-edge/mediapipe-samples](https://github.com/google-ai-edge/mediapipe-samples))
-  against a Stable Diffusion v1.5-architecture checkpoint you supply.
-- Google's docs explicitly say: *"For production deployment, host the
-  converted model on a server and download it during runtime. The model is
-  too large to be bundled in an APK."* — i.e. self-hosting the conversion
-  output is the intended, documented production pattern, not a deviation
-  from it.
-- **Status**: not yet converted/hosted. This is a manual, one-time step
-  (Python/PyTorch conversion environment, ~4-5GB checkpoint download, GPU
-  recommended) that needs to happen outside of app code before the diffusion
-  path in Phase 3 can be exercised end-to-end. Until then, `ModelRepository`
-  will report `DownloadState.Failed` for this model kind if a manifest entry
-  isn't present.
-- **License**: whichever SD1.5 checkpoint is used carries its own license
-  (CreativeML OpenRAIL-M for the canonical `runwayml`/`stable-diffusion-v1-5`
-  checkpoint) with use-based restrictions — see the in-app Licenses screen
-  requirement in the project plan.
+## Stable Diffusion image generator
 
-## Manifest
+- Runtime distribution: `second-state/stable-diffusion-v1-5-GGUF`
+- Artifact: `stable-diffusion-v1-5-pruned-emaonly-Q8_0.gguf`
+- Pinned revision: `031b5f5df991f511b3f5fa8fed6d99048ababb69`
+- Size: `1,566,768,416` bytes
+- SHA-256: `b8944e9fe0b69b36ae1b5bb0185b3a7b8ef14347fe0fa9af6c64c4829022261f`
 
-`models_manifest.json` is served by the same Cloudflare Worker at
-`https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/models/manifest.json`
-(verified live, returns real JSON). It lists the current proxy URL, sha256,
-size, and minimum RAM for each model kind, fetched fresh at onboarding time
-so a model can be updated without an app release. See `ModelManifestFetcher`.
+The previous raw PyTorch checkpoint could not be executed by the Android app.
+PixelDream now downloads the higher-quality Q8 GGUF conversion and executes it
+fully offline through the bundled `stable-diffusion.cpp` ARM64 runtime. The
+runtime source is pinned as a Git submodule at commit
+`c97702e1057c2fe13a7074cd9069cb9dd6edc1bf`.
 
-Nothing model-related is hosted on Firebase. Firebase Storage was considered
-and explicitly rejected in favor of the Worker-proxy approach above.
+## Download behavior
+
+Android `DownloadManager` owns transfers, follows the publishers' signed CDN
+redirects, allows metered networks, persists active download IDs, and resumes
+across process restarts. Downloads run serially to avoid competing multi-GB
+transfers. Verification runs on an IO dispatcher and an invalid file is never
+reported as ready.

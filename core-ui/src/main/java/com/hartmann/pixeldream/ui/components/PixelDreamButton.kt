@@ -7,6 +7,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -41,7 +42,7 @@ fun PixelDreamButton(
             .fillMaxWidth()
             .height(56.dp)
             .graphicsLayer { scaleX = scale; scaleY = scale },
-        shape = ButtonDefaults.shape,
+        shape = RoundedCornerShape(18.dp),
     ) {
         Text(text)
     }

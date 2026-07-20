@@ -1,6 +1,7 @@
 package com.hartmann.pixeldream.model
 
 import android.content.Context
+import android.net.Uri
 import java.io.File
 import java.security.MessageDigest
 
@@ -13,24 +14,27 @@ class ModelStorage(private val context: Context) {
         return dir
     }
 
-    fun fileFor(descriptor: ModelDescriptor): File =
-        File(directoryFor(descriptor.kind), "${descriptor.version}-${File(descriptor.url).name}")
+    fun fileFor(descriptor: ModelDescriptor): File = File(
+        directoryFor(descriptor.kind),
+        "${descriptor.version}-${Uri.parse(descriptor.url).lastPathSegment ?: "model.bin"}",
+    )
 
     fun partialFileFor(descriptor: ModelDescriptor): File =
         File(directoryFor(descriptor.kind), "${fileFor(descriptor).name}.part")
 
     /**
-     * Verifies [file] against [expectedSha256]. A blank hash means the
-     * manifest entry doesn't have one yet (e.g. the real hash can't be
-     * computed until a file has actually been downloaded once through an
-     * authenticated proxy) — in that case the file is trusted as-is rather
-     * than permanently rejected. Fill in the real hash in the manifest as
-     * soon as it's known; this is a temporary bootstrap allowance, not a
-     * general opt-out.
+     * Verifies [file] against [expectedSha256]. Fails closed: a blank hash
+     * (manifest entry not yet populated with a real one) is treated as
+     * unverifiable, not as automatically trusted — the download will
+     * correctly never report Ready until the manifest carries a real hash.
+     * Do not change this to trust blank hashes; fill in the manifest instead.
      */
     fun verify(file: File, expectedSha256: String): Boolean {
         if (!file.exists()) return false
-        if (expectedSha256.isBlank()) return true
+        if (expectedSha256.isBlank()) return false
+        val marker = File(file.parentFile, "${file.name}.verified")
+        val markerValue = "$expectedSha256:${file.length()}:${file.lastModified()}"
+        if (marker.exists() && marker.readText() == markerValue) return true
         val digest = MessageDigest.getInstance("SHA-256")
         file.inputStream().use { input ->
             val buffer = ByteArray(1 shl 16)
@@ -41,6 +45,25 @@ class ModelStorage(private val context: Context) {
             }
         }
         val actual = digest.digest().joinToString("") { "%02x".format(it) }
-        return actual.equals(expectedSha256, ignoreCase = true)
+        val verified = actual.equals(expectedSha256, ignoreCase = true)
+        if (verified) marker.writeText(markerValue) else marker.delete()
+        return verified
+    }
+
+    /** Removes obsolete artifacts for the same model kind after a replacement is verified. */
+    fun pruneOtherVersions(descriptor: ModelDescriptor) {
+        val current = fileFor(descriptor)
+        directoryFor(descriptor.kind).listFiles()?.forEach { candidate ->
+            if (candidate != current && candidate.name != "${current.name}.verified") {
+                candidate.delete()
+            }
+        }
+    }
+
+    fun delete(descriptor: ModelDescriptor) {
+        val file = fileFor(descriptor)
+        file.delete()
+        File(file.parentFile, "${file.name}.verified").delete()
+        partialFileFor(descriptor).delete()
     }
 }

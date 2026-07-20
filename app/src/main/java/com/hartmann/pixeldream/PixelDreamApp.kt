@@ -1,14 +1,17 @@
 package com.hartmann.pixeldream
 
 import android.app.Application
-import com.google.android.gms.ads.MobileAds
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
+import com.google.firebase.crashlytics.crashlytics
+import com.google.firebase.perf.performance
 
 class PixelDreamApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        // UMP consent (required before ad requests in EEA/UK) is resolved from
-        // MainActivity, since it needs an Activity context -- see
-        // ConsentManager.requestConsentIfNeeded().
-        MobileAds.initialize(this) {}
+        Firebase.analytics.setAnalyticsCollectionEnabled(true)
+        Firebase.crashlytics.setCrashlyticsCollectionEnabled(true)
+        Firebase.crashlytics.log("PixelDream application started")
+        Firebase.performance.isPerformanceCollectionEnabled = true
     }
 }

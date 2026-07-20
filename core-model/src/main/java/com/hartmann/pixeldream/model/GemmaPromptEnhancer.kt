@@ -1,7 +1,10 @@
 package com.hartmann.pixeldream.model
 
 import android.content.Context
-import com.google.mediapipe.tasks.genai.llminference.LlmInference
+import com.google.ai.edge.litertlm.Backend
+import com.google.ai.edge.litertlm.Content
+import com.google.ai.edge.litertlm.Engine
+import com.google.ai.edge.litertlm.EngineConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -12,37 +15,40 @@ private const val ENHANCER_SYSTEM_PREFIX =
         "style in one or two sentences. Respond with only the rewritten " +
         "prompt, no preamble.\n\nIdea: "
 
-/**
- * Wraps MediaPipe's [LlmInference] to turn a rough user idea into a detailed
- * image-generation prompt. The underlying engine is expensive to load, so
- * callers should reuse one instance per session via [ModelSessionManager]
- * rather than constructing this per request.
- */
+/** Gemma 4 prompt enhancement using Google's current LiteRT-LM runtime. */
 class GemmaPromptEnhancer(
     private val context: Context,
     private val modelFile: File,
 ) {
-    private var engine: LlmInference? = null
+    private var engine: Engine? = null
 
-    private fun ensureLoaded(): LlmInference {
-        return engine ?: run {
-            val options = LlmInference.LlmInferenceOptions.builder()
-                .setModelPath(modelFile.absolutePath)
-                .setMaxTokens(256)
-                .build()
-            LlmInference.createFromOptions(context, options).also { engine = it }
+    private suspend fun ensureLoaded(): Engine = withContext(Dispatchers.IO) {
+        engine ?: Engine(
+            EngineConfig(
+                modelPath = modelFile.absolutePath,
+                backend = Backend.CPU(),
+                cacheDir = context.cacheDir.absolutePath,
+            ),
+        ).also {
+            it.initialize()
+            engine = it
         }
     }
 
     suspend fun enhance(rawPrompt: String): Result<String> = withContext(Dispatchers.Default) {
         runCatching {
-            val llm = ensureLoaded()
-            val response = llm.generateResponse(ENHANCER_SYSTEM_PREFIX + rawPrompt)
-            response.trim().ifEmpty { rawPrompt }
+            val activeEngine = ensureLoaded()
+            activeEngine.createConversation().use { conversation ->
+                conversation.sendMessage(ENHANCER_SYSTEM_PREFIX + rawPrompt)
+                    .contents.contents
+                    .filterIsInstance<Content.Text>()
+                    .joinToString(separator = "") { it.text }
+                    .trim()
+                    .ifEmpty { rawPrompt }
+            }
         }
     }
 
-    /** Releases the loaded engine. Call before loading the diffusion model on low-RAM devices. */
     fun release() {
         engine?.close()
         engine = null

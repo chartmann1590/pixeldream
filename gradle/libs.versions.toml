@@ -1,25 +1,29 @@
 [versions]
 agp = "8.6.0"
-kotlin = "2.0.20"
+kotlin = "2.3.10"
 coreKtx = "1.13.1"
 lifecycle = "2.8.6"
 activityCompose = "1.9.2"
 composeBom = "2024.09.03"
-composeCompiler = "2.0.20"
+composeCompiler = "2.3.10"
 navigationCompose = "2.8.1"
-room = "2.6.1"
+room = "2.8.4"
 datastore = "1.1.1"
 workManager = "2.9.1"
 coil = "2.7.0"
 mediapipeGenai = "0.10.27"
-firebaseBom = "33.4.0"
-firebasePerfPlugin = "1.4.2"
-googleServicesPlugin = "4.4.2"
-crashlyticsPlugin = "3.0.2"
+firebaseBom = "34.15.0"
+firebasePerfPlugin = "2.0.2"
+googleServicesPlugin = "4.5.0"
+crashlyticsPlugin = "3.0.7"
 billing = "7.1.1"
-playServicesAds = "23.4.0"
-umpSdk = "3.0.0"
+playServicesAds = "25.4.0"
+umpSdk = "4.0.0"
 cropper = "4.5.0"
+retrofit = "2.11.0"
+okhttp = "4.12.0"
+kotlinxSerialization = "1.7.3"
+retrofitKotlinxSerialization = "1.0.0"
 junit = "4.13.2"
 androidxTestExt = "1.2.1"
 espresso = "3.6.1"
@@ -44,13 +48,19 @@ androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx"
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 mediapipe-tasks-genai = { group = "com.google.mediapipe", name = "tasks-genai", version.ref = "mediapipeGenai" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
-firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
-firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx" }
-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-crashlytics-ndk = { group = "com.google.firebase", name = "firebase-crashlytics-ndk" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 billing-ktx = { group = "com.android.billingclient", name = "billing-ktx", version.ref = "billing" }
 play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "playServicesAds" }
 user-messaging-platform = { group = "com.google.android.ump", name = "user-messaging-platform", version.ref = "umpSdk" }
 cropper = { group = "com.canhub", name = "cropper", version.ref = "cropper" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerialization" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
@@ -62,7 +72,9 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "composeCompiler" }
-kotlin-ksp = { id = "com.google.devtools.ksp", version = "2.0.20-1.0.25" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version = "2.3.4" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }

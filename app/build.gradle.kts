@@ -1,12 +1,49 @@
+import java.util.Properties
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
     alias(libs.plugins.firebase.perf)
 }
+
+val localProperties = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) file.inputStream().use(::load)
+}
+
+fun buildSetting(name: String, fallback: String = ""): String =
+    providers.environmentVariable(name).orNull
+        ?: localProperties.getProperty(name)
+        ?: fallback
+
+val admobAppId = buildSetting("ADMOB_APP_ID", "ca-app-pub-3940256099942544~3347511713")
+val admobBannerId = buildSetting("ADMOB_BANNER_ID", "ca-app-pub-3940256099942544/6300978111")
+val admobInterstitialId = buildSetting("ADMOB_INTERSTITIAL_ID", "ca-app-pub-3940256099942544/1033173712")
+val feedbackProxyUrl = buildSetting(
+    "FEEDBACK_PROXY_URL",
+    "https://pixeldream-model-proxy.charles-h-hartmann1.workers.dev/github/",
+)
+val releaseKeystorePath = buildSetting("KEYSTORE_PATH").ifBlank { null }
+
+//
+// GitHub feedback reporter configuration.
+//
+// Precedence: environment variable (CI) > local.properties (developer, gitignored) > blank.
+// Missing values compile to empty strings; the in-app reporter disables itself
+// with a clear UI message when the token or repo are not configured.
+//
+fun githubSetting(propertyKey: String, envName: String): String =
+    providers.environmentVariable(envName).orNull
+        ?: localProperties.getProperty(propertyKey)
+        ?: ""
+
+val githubRepoOwner: String = githubSetting("github.repo.owner", "GH_REPO_OWNER")
+val githubRepoName: String = githubSetting("github.repo.name", "GH_REPO_NAME")
 
 android {
     namespace = "com.hartmann.pixeldream"
@@ -20,17 +57,27 @@ android {
         versionCode = 1
         versionName = "0.1.0"
 
+        manifestPlaceholders["ADMOB_APP_ID"] = admobAppId
+        buildConfigField("String", "ADMOB_BANNER_ID", "\"$admobBannerId\"")
+        buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"$admobInterstitialId\"")
+
+        buildConfigField("String", "FEEDBACK_PROXY_URL", "\"$feedbackProxyUrl\"")
+        buildConfigField("String", "GITHUB_REPO_OWNER", "\"$githubRepoOwner\"")
+        buildConfigField("String", "GITHUB_REPO_NAME", "\"$githubRepoName\"")
+        buildConfigField("String", "FEEDBACK_ASSETS_DIR", "\"feedback-assets\"")
+
+        ndk.debugSymbolLevel = "FULL"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    val releaseKeystorePath = System.getenv("KEYSTORE_PATH")
     if (releaseKeystorePath != null) {
         signingConfigs {
             create("release") {
                 storeFile = file(releaseKeystorePath)
-                storePassword = System.getenv("KEYSTORE_PASSWORD")
-                keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
+                storePassword = buildSetting("KEYSTORE_PASSWORD")
+                keyAlias = buildSetting("KEY_ALIAS")
+                keyPassword = buildSetting("KEY_PASSWORD")
             }
         }
     }
@@ -39,6 +86,9 @@ android {
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            configure<CrashlyticsExtension> {
+                nativeSymbolUploadEnabled = true
+            }
             if (releaseKeystorePath != null) {
                 signingConfig = signingConfigs.getByName("release")
             }
@@ -58,12 +108,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
@@ -89,12 +142,21 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.coil.compose)
 
+    // GitHub feedback reporter: networking + serialization
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.kotlinx.serialization)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.datastore.preferences)
+
     debugImplementation(libs.androidx.ui.tooling)
 
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics.ktx)
-    implementation(libs.firebase.perf.ktx)
-    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.crashlytics.ndk)
+    implementation(libs.firebase.perf)
+    implementation(libs.firebase.analytics)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

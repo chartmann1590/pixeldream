@@ -1,6 +1,7 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
@@ -8,9 +9,20 @@ on:
 jobs:
   build-signed-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
+      ADMOB_BANNER_ID: ${{ secrets.ADMOB_BANNER_ID }}
+      ADMOB_INTERSTITIAL_ID: ${{ secrets.ADMOB_INTERSTITIAL_ID }}
+      FEEDBACK_PROXY_URL: ${{ secrets.FEEDBACK_PROXY_URL }}
+      GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
+      GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -20,6 +32,9 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+
+      - name: Install native build tools
+        run: sdkmanager "ndk;27.0.12077973" "cmake;3.22.1"
 
       - name: Cache Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -34,13 +49,13 @@ jobs:
           RELEASE_KEYSTORE_B64: ${{ secrets.RELEASE_KEYSTORE_B64 }}
         run: echo "$RELEASE_KEYSTORE_B64" | base64 -d > release.keystore.jks
 
-      - name: Build signed App Bundle
+      - name: Build signed APK and App Bundle
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/release.keystore.jks
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew bundleRelease
+        run: ./gradlew assembleRelease bundleRelease uploadCrashlyticsSymbolFileRelease
 
       - name: Clean up keystore
         if: always()
@@ -51,6 +66,18 @@ jobs:
         with:
           name: pixeldream-release-aab
           path: app/build/outputs/bundle/release/*.aab
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixeldream-release-apk
+          path: app/build/outputs/apk/release/*.apk
+
+      - name: Upload obfuscation mapping
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixeldream-release-mapping
+          path: app/build/outputs/mapping/release/mapping.txt
 
       # Uncomment once the Play Console app listing and a service-account JSON
       # secret (PLAY_SERVICE_ACCOUNT_JSON) exist:

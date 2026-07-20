@@ -8,6 +8,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DreamDarkScheme = darkColorScheme(
@@ -15,6 +16,10 @@ private val DreamDarkScheme = darkColorScheme(
     secondary = DreamCyan80,
     background = DreamSurfaceDark,
     surface = DreamSurfaceDark,
+    surfaceVariant = Color(0xFF2B2438),
+    onSurfaceVariant = Color(0xFFD0C6DC),
+    primaryContainer = Color(0xFF552598),
+    secondaryContainer = Color(0xFF164D4A),
     error = DreamError,
     onPrimary = DreamIndigo10,
     onBackground = DreamIndigo90,
@@ -26,6 +31,10 @@ private val DreamLightScheme = lightColorScheme(
     secondary = DreamCyan40,
     background = DreamSurfaceLight,
     surface = DreamSurfaceLight,
+    surfaceVariant = Color(0xFFECE5F3),
+    onSurfaceVariant = Color(0xFF625A69),
+    primaryContainer = Color(0xFFEBDDFF),
+    secondaryContainer = Color(0xFFB8F2EC),
     error = DreamError,
     onPrimary = DreamSurfaceLight,
     onBackground = DreamIndigo20,

@@ -23,20 +23,21 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
 dependencies {
+    implementation(project(":stablediffusion"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.work.runtime.ktx)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-    // MediaPipe GenAI (Gemma) task API for prompt enhancement.
-    implementation(libs.mediapipe.tasks.genai)
-    // Diffusion runtime dependency TBD: MediaPipe's Image Generator has no
-    // pre-converted Google-hosted model (see docs/models/README.md) — wiring
-    // deferred until a converted model is actually hosted.
+    // Current Google runtime for Gemma 4 .litertlm artifacts.
+    implementation("com.google.ai.edge.litertlm:litertlm-android:0.14.0")
 
     testImplementation(libs.junit)
 }

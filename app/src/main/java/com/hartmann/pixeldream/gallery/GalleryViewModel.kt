@@ -17,8 +17,12 @@ class GalleryViewModel(application: Application) : AndroidViewModel(application)
     val generations: StateFlow<List<GenerationEntity>> = repository.observeAll()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
-    fun delete(id: String) {
-        viewModelScope.launch { repository.delete(id) }
+    fun delete(generation: GenerationEntity) {
+        viewModelScope.launch {
+            repository.delete(generation.id)
+            java.io.File(generation.imageFilePath).delete()
+            generation.thumbnailPath?.let { java.io.File(it).delete() }
+        }
     }
 
     fun report(id: String, reason: String) {
