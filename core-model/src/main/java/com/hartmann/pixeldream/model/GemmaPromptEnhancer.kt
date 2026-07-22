@@ -26,7 +26,15 @@ class GemmaPromptEnhancer(
         engine ?: Engine(
             EngineConfig(
                 modelPath = modelFile.absolutePath,
-                backend = Backend.CPU(),
+                // Explicitly bound the OpenMP thread pool rather than leaving it null
+                // (library default = all available cores). Uncapped thread counts have
+                // been linked to native SIGSEGV crashes inside libomp.so's task-invoke
+                // path on devices with unusual core configurations (e.g. big.LITTLE
+                // asymmetry, thermal core parking mid-inference).
+                backend = Backend.CPU(
+                    threadCount = safeThreadCount(),
+                    numOfThreads = safeThreadCount(),
+                ),
                 cacheDir = context.cacheDir.absolutePath,
             ),
         ).also {
@@ -34,6 +42,9 @@ class GemmaPromptEnhancer(
             engine = it
         }
     }
+
+    private fun safeThreadCount(): Int =
+        Runtime.getRuntime().availableProcessors().coerceIn(1, 4)
 
     suspend fun enhance(rawPrompt: String): Result<String> = withContext(Dispatchers.Default) {
         runCatching {

@@ -7,12 +7,15 @@ import com.hartmann.pixeldream.analytics.Analytics
 import com.hartmann.pixeldream.billing.BillingRepository
 import com.hartmann.pixeldream.data.generation.GenerationEntity
 import com.hartmann.pixeldream.data.generation.RoomGenerationRepository
+import com.hartmann.pixeldream.model.DeviceTier
+import com.hartmann.pixeldream.model.DeviceTierDetector
 import com.hartmann.pixeldream.model.ModelDescriptor
 import com.hartmann.pixeldream.model.ModelKind
 import com.hartmann.pixeldream.model.ModelRepository
 import com.hartmann.pixeldream.model.ModelSessionManager
 import com.hartmann.pixeldream.model.ModelStorage
 import com.hartmann.pixeldream.model.SafetyResult
+import com.hartmann.pixeldream.settings.GenerationDefaults
 import com.hartmann.pixeldream.settings.GenerationPreferences
 import com.google.firebase.Firebase
 import com.google.firebase.crashlytics.crashlytics
@@ -82,7 +85,7 @@ class GenerationViewModel(application: Application) : AndroidViewModel(applicati
             )
             if (!allow(prompt)) return@launch
 
-            val defaults = GenerationPreferences.read(getApplication())
+            val defaults = clampForDeviceTier(GenerationPreferences.read(getApplication()))
             val gemma = findDescriptor(ModelKind.GEMMA_PROMPT_ENHANCER)
             val diffusion = findDescriptor(ModelKind.DIFFUSION_IMAGE_GENERATOR)
             if (diffusion == null || (defaults.enhancePrompts && gemma == null)) {
@@ -206,6 +209,29 @@ class GenerationViewModel(application: Application) : AndroidViewModel(applicati
 
     private suspend fun findDescriptor(kind: ModelKind): ModelDescriptor? =
         modelRepository.fetchManifest().firstOrNull { it.kind == kind && modelRepository.isReady(it) }
+
+    /**
+     * Native Stable Diffusion inference (stable-diffusion.cpp via JNI) has been observed to
+     * crash natively (SIGSEGV/SIGABRT) rather than throw a catchable OOM on memory-constrained
+     * devices when asked for the largest image size / step count. Device tier was previously
+     * only advisory (shown during onboarding) but never actually enforced at generation time -
+     * clamp here so a LOW/UNSUPPORTED-tier device can't request a configuration known to be
+     * unsafe for its available RAM, degrading gracefully instead of crashing.
+     */
+    private fun clampForDeviceTier(defaults: GenerationDefaults): GenerationDefaults {
+        val tier = DeviceTierDetector.tierFor(getApplication())
+        return when (tier) {
+            DeviceTier.RECOMMENDED -> defaults
+            DeviceTier.LOW -> defaults.copy(
+                imageSize = defaults.imageSize.coerceAtMost(256),
+                steps = defaults.steps.coerceAtMost(12),
+            )
+            DeviceTier.UNSUPPORTED -> defaults.copy(
+                imageSize = 256,
+                steps = defaults.steps.coerceAtMost(8),
+            )
+        }
+    }
 
     override fun onCleared() {
         sessionManager.releaseImmediate()
