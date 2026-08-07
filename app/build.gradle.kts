@@ -143,6 +143,7 @@ dependencies {
     implementation(project(":core-billing"))
     implementation(project(":core-ui"))
     implementation(libs.play.services.ads)
+    implementation(libs.play.review.ktx)
     implementation(libs.user.messaging.platform)
     implementation(libs.billing.ktx)
 

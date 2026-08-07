@@ -1,5 +1,6 @@
 package com.hartmann.pixeldream.generation
 
+import android.app.Activity
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,6 +16,7 @@ import com.hartmann.pixeldream.model.ModelRepository
 import com.hartmann.pixeldream.model.ModelSessionManager
 import com.hartmann.pixeldream.model.ModelStorage
 import com.hartmann.pixeldream.model.SafetyResult
+import com.hartmann.pixeldream.review.ReviewPrompter
 import com.hartmann.pixeldream.settings.GenerationDefaults
 import com.hartmann.pixeldream.settings.GenerationPreferences
 import com.google.firebase.Firebase
@@ -46,6 +48,10 @@ data class GenerationUiState(
 )
 
 class GenerationViewModel(application: Application) : AndroidViewModel(application) {
+    fun maybeRequestReview(activity: Activity) {
+        viewModelScope.launch { ReviewPrompter.maybeRequestReview(activity) }
+    }
+
     private val modelRepository = ModelRepository(application)
     private val sessionManager = ModelSessionManager(application, ModelStorage(application))
     private val generationRepository = RoomGenerationRepository(application)

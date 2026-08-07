@@ -63,10 +63,22 @@ fun GenerationScreen(
         if (uiState.shouldShowAd) {
             val activity = context as? Activity
             if (adsReady && activity != null) {
-                adManager.showIfLoaded(activity) { viewModel.adShown() }
+                adManager.showIfLoaded(activity) {
+                    viewModel.adShown()
+                    viewModel.maybeRequestReview(activity)
+                }
             } else {
                 viewModel.adShown()
+                activity?.let { viewModel.maybeRequestReview(it) }
             }
+        }
+    }
+
+    // Covers the (more common) case where this generation didn't trigger an ad — the effect
+    // above already handles requesting a review once any pending ad has resolved.
+    LaunchedEffect(uiState.imagePath) {
+        if (uiState.imagePath != null && !uiState.shouldShowAd) {
+            (context as? Activity)?.let { viewModel.maybeRequestReview(it) }
         }
     }
 
