@@ -44,7 +44,7 @@ import com.hartmann.pixeldream.model.ModelKind
 import com.hartmann.pixeldream.ads.ConsentManager
 
 @Composable
-fun SettingsScreen(onOpenAdFree: () -> Unit) {
+fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
     val viewModel: SettingsViewModel = viewModel()
     val state by viewModel.uiState.collectAsState()
     val context = LocalContext.current
@@ -101,6 +101,10 @@ fun SettingsScreen(onOpenAdFree: () -> Unit) {
         SettingsCard {
             SettingRow("Ad-free", "Manage the optional upgrade") {
                 OutlinedButton(onClick = onOpenAdFree) { Text("Open") }
+            }
+            HorizontalDivider()
+            SettingRow("More apps", "Check out our other privacy-first apps") {
+                OutlinedButton(onClick = onOpenMoreApps) { Text("Open") }
             }
             HorizontalDivider()
             SettingRow("Privacy policy", "How ads, diagnostics, and optional feedback use data") {

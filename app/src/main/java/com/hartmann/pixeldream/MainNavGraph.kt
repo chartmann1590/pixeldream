@@ -30,6 +30,7 @@ import com.hartmann.pixeldream.billing.PaywallScreen
 import com.hartmann.pixeldream.gallery.GalleryScreen
 import com.hartmann.pixeldream.gallery.GenerationViewerScreen
 import com.hartmann.pixeldream.generation.GenerationScreen
+import com.hartmann.pixeldream.moreapps.MoreAppsScreen
 import com.hartmann.pixeldream.settings.SettingsScreen
 
 private object MainRoute {
@@ -38,6 +39,7 @@ private object MainRoute {
     const val VIEWER = "viewer"
     const val PAYWALL = "paywall"
     const val SETTINGS = "settings"
+    const val MORE_APPS = "more_apps"
 }
 
 @Composable
@@ -135,7 +137,13 @@ fun MainNavGraph(adsReady: Boolean) {
             }
             composable(MainRoute.PAYWALL) { PaywallScreen(billingRepository) }
             composable(MainRoute.SETTINGS) {
-                SettingsScreen(onOpenAdFree = { navController.navigate(MainRoute.PAYWALL) })
+                SettingsScreen(
+                    onOpenAdFree = { navController.navigate(MainRoute.PAYWALL) },
+                    onOpenMoreApps = { navController.navigate(MainRoute.MORE_APPS) },
+                )
+            }
+            composable(MainRoute.MORE_APPS) {
+                MoreAppsScreen(onBack = { navController.popBackStack() })
             }
         }
     }
