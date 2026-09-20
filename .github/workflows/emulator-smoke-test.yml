@@ -44,6 +44,12 @@ jobs:
       - name: Install native build tools
         run: sdkmanager "ndk;27.0.12077973" "cmake;3.22.1"
 
+      # The bundled qemu-system-x86_64 (emulator 37.x) fails to start on
+      # ubuntu-24.04 runners without libpulse0:
+      # "error while loading shared libraries: libpulse.so.0".
+      - name: Install emulator system libraries
+        run: sudo apt-get update && sudo apt-get install -y libpulse0
+
       - name: Cache Gradle
         uses: gradle/actions/setup-gradle@v3
 
