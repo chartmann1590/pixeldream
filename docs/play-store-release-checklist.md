@@ -24,8 +24,21 @@ This repository covers the binary-side requirements. Complete the Play Console d
 ## Store listing accuracy
 
 - Describe the app as offline **after the initial model downloads**. Ads, analytics, diagnostics, privacy choices, and optional feedback still use the network.
-- Disclose the approximate 4.1 GB model download and device/RAM requirements before users install.
+- Disclose the model download and device requirements before users install (see "Minimum system requirements" below).
 - Do not claim that generated content is guaranteed safe, private after export, or factually accurate.
 - Include model/runtime notices and comply with the Gemma, Stable Diffusion/OpenRAIL, LiteRT-LM, and stable-diffusion.cpp license and acceptable-use terms.
+
+### Minimum system requirements (also add to the Play Store listing description)
+
+- Android 10 or higher
+- 6 GB of RAM or more
+- 64-bit ARM processor (arm64-v8a)
+- Octa-core (8) CPU or better
+- 5 GB of free storage or more
+- Approximately 4.1 GB model download on first run
+
+Recommended: Android 13 or higher, 8 GB+ RAM, 8 GB+ free storage.
+
+Note: the Play Console store listing description itself must be updated by the account owner; repository changes cannot submit it.
 
 These answers must be reviewed against the actual production configuration at submission time; repository code cannot submit or certify Play Console declarations on the account owner's behalf.
