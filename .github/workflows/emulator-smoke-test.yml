@@ -19,13 +19,13 @@ jobs:
             api-level: 30
             ram-size: 2048M
             disk-size: 4096M
-            emulator-options: "-no-window"
+            emulator-options: "-no-window -no-boot-anim -no-audio"
           # Meets the minimums: NO dialog should appear, app goes to main screen.
           - config: high-spec
             api-level: 34
             ram-size: 6144M
             disk-size: 12288M
-            emulator-options: "-no-window -qemu -smp 8"
+            emulator-options: "-no-window -no-boot-anim -no-audio -qemu -smp 8"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,6 +49,20 @@ jobs:
       # "error while loading shared libraries: libpulse.so.0".
       - name: Install emulator system libraries
         run: sudo apt-get update && sudo apt-get install -y libpulse0
+
+      # /dev/kvm exists on the runner but the runner user cannot open it
+      # ("ProbeKVM: This user doesn't have permissions to use KVM"), forcing
+      # the emulator onto TCG software emulation where cold boot takes 15+
+      # minutes and hits the action's boot timeout. Granting access enables
+      # hardware acceleration.
+      - name: Enable KVM for emulator hardware acceleration
+        run: |
+          if [ -e /dev/kvm ]; then
+            sudo chmod 666 /dev/kvm
+            ls -la /dev/kvm
+          else
+            echo "No /dev/kvm; emulator will fall back to software acceleration"
+          fi
 
       - name: Cache Gradle
         uses: gradle/actions/setup-gradle@v3
