@@ -52,10 +52,12 @@ HOW IT WORKS
 WHAT YOU'LL NEED
 
 • Android 10 (API 29) or newer
-• An ARM64 device with 6 GB of RAM (8 GB+ recommended)
-• About 5 GB of free storage for the one-time model download
+• 6 GB of RAM or more (8 GB+ recommended)
+• A 64-bit ARM processor (arm64-v8a)
+• An octa-core (8) CPU or better
+• At least 5 GB of free storage
 
-The on-device models total roughly 4 GB and download once over Wi-Fi during setup. Older or lower-memory devices may run slowly or may not be supported.
+The on-device models total roughly 4.1 GB and download once over Wi-Fi during setup. For the best experience, we recommend Android 13 or newer with 8 GB+ of RAM and 8 GB+ of free storage. Older or lower-spec devices may run slowly or may not be supported.
 
 A NOTE ON GENERATED CONTENT
 

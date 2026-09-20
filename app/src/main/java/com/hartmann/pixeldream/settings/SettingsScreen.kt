@@ -42,6 +42,8 @@ import com.hartmann.pixeldream.model.DownloadState
 import com.hartmann.pixeldream.model.ModelDescriptor
 import com.hartmann.pixeldream.model.ModelKind
 import com.hartmann.pixeldream.ads.ConsentManager
+import com.hartmann.pixeldream.requirements.DeviceRequirements
+import com.hartmann.pixeldream.requirements.RequirementCheck
 
 @Composable
 fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
@@ -53,6 +55,11 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
     }
     var defaults by remember { mutableStateOf(GenerationPreferences.read(context)) }
     val privacyOptionsRequired = remember { ConsentManager.isPrivacyOptionsRequired(context) }
+    // Model downloads/deletes can shift free space by gigabytes; recompute the report when a
+    // model's download state changes so the storage status never goes stale. Keying on the state
+    // classes (rather than progress) avoids re-running the check on every progress tick.
+    val modelStateClasses = state.states.mapValues { it.value?.let { downloadState -> downloadState::class } }
+    val requirementsReport = remember(modelStateClasses) { DeviceRequirements.evaluateDevice(context) }
 
     fun save(updated: GenerationDefaults) {
         defaults = updated
@@ -94,6 +101,21 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
             ChoiceRow(listOf(30, 40), defaults.steps) { save(defaults.copy(steps = it)) }
             Text("Image size", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 14.dp))
             ChoiceRow(listOf(256, 512), defaults.imageSize, suffix = " px") { save(defaults.copy(imageSize = it)) }
+        }
+        Spacer(Modifier.height(18.dp))
+
+        SectionTitle("Device requirements")
+        SettingsCard {
+            requirementsReport.checks.forEachIndexed { index, check ->
+                RequirementRow(check)
+                if (index < requirementsReport.checks.lastIndex) HorizontalDivider()
+            }
+            Spacer(Modifier.height(12.dp))
+            Text(
+                "PixelDream generates images on-device. Devices below these specs will generate more slowly and at lower quality.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
         Spacer(Modifier.height(18.dp))
 
@@ -187,6 +209,25 @@ private fun ModelCard(
                 else -> Button(onClick = onDownload) { Text(if (state is DownloadState.Failed) "Retry" else "Download") }
             }
         }
+    }
+}
+
+@Composable
+private fun RequirementRow(check: RequirementCheck) {
+    val mark = if (check.passed) "✓" else "✗"
+    val markColor = if (check.passed) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.error
+    Column(Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
+        Text(
+            "$mark ${check.label}",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.SemiBold,
+            color = markColor,
+        )
+        Text(
+            "Required: ${check.required} • This device: ${check.actual}",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
     }
 }
 
