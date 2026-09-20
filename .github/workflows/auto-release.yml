@@ -123,7 +123,14 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew assembleRelease bundleRelease uploadCrashlyticsSymbolFileRelease
+        run: |
+          ./gradlew assembleRelease bundleRelease
+          for i in 1 2 3; do
+            ./gradlew uploadCrashlyticsSymbolFileRelease && break || {
+              echo "Crashlytics symbol upload attempt $i failed; retrying in 10s..."
+              sleep 10
+            }
+          done || echo "::warning::Crashlytics symbol upload failed after 3 attempts; continuing."
 
       - name: Reject test ads in release artifacts
         shell: bash
