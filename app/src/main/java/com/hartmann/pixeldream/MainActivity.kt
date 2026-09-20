@@ -19,6 +19,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,6 +33,8 @@ import com.hartmann.pixeldream.onboarding.OnboardingNavGraph
 import com.hartmann.pixeldream.requirements.DeviceRequirements
 import com.hartmann.pixeldream.requirements.RequirementReport
 import com.hartmann.pixeldream.ui.theme.PixelDreamTheme
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
     private var adsReady by mutableStateOf(false)
@@ -53,12 +56,17 @@ class MainActivity : ComponentActivity() {
                             preferences.getInt("model_catalog_version", 0) == MODEL_CATALOG_VERSION,
                     )
                 }
-                val requirementsReport = remember { DeviceRequirements.evaluateDevice(this@MainActivity) }
-                var showRequirementsDialog by remember {
-                    mutableStateOf(
-                        !requirementsReport.meetsMinimum &&
-                            !preferences.getBoolean("requirements_warning_dismissed", false),
-                    )
+                var requirementsReport by remember { mutableStateOf<RequirementReport?>(null) }
+                var showRequirementsDialog by remember { mutableStateOf(false) }
+                // Collecting specs performs blocking I/O (ActivityManager, StatFs), so it runs
+                // off the main thread; the dialog appears once the result is in.
+                LaunchedEffect(Unit) {
+                    val report = withContext(Dispatchers.IO) {
+                        DeviceRequirements.evaluateDevice(this@MainActivity)
+                    }
+                    requirementsReport = report
+                    showRequirementsDialog = !report.meetsMinimum &&
+                        !preferences.getBoolean("requirements_warning_dismissed", false)
                 }
                 Surface(modifier = Modifier.fillMaxSize()) {
                     if (onboardingComplete) {
@@ -77,9 +85,10 @@ class MainActivity : ComponentActivity() {
                                 .windowInsetsPadding(WindowInsets.safeDrawing),
                         )
                     }
-                    if (showRequirementsDialog) {
+                    val report = requirementsReport
+                    if (showRequirementsDialog && report != null) {
                         RequirementsWarningDialog(
-                            report = requirementsReport,
+                            report = report,
                             onConfirm = { dontShowAgain ->
                                 preferences.edit()
                                     .putBoolean("requirements_warning_dismissed", dontShowAgain)
