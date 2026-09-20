@@ -106,7 +106,7 @@ private fun RequirementsWarningDialog(
     var dontShowAgain by remember { mutableStateOf(false) }
     AlertDialog(
         onDismissRequest = { onConfirm(dontShowAgain) },
-        title = { Text("This device is below the recommended specs") },
+        title = { Text("This device is below the minimum specs") },
         text = {
             Column {
                 Text("PixelDream runs AI image generation entirely on your phone. This device is below the minimum recommended specs, so images may take much longer to generate and quality may be lower:")
