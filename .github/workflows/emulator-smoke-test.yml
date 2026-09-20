@@ -77,6 +77,10 @@ jobs:
       - name: Assemble debug APK
         run: ./gradlew assembleDebug
 
+      # NOTE: reactivecircus/android-emulator-runner executes each script line
+      # as a separate `sh -c` invocation. Shell variables do NOT persist
+      # across lines, and multi-line constructs (if/fi, heredocs) fail with
+      # syntax errors. Every line below is self-contained.
       - name: Launch app on emulator and capture screens (${{ matrix.config }})
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -93,44 +97,15 @@ jobs:
             echo "=== Device info ===" | tee "$GITHUB_WORKSPACE/device-info.txt"
             adb shell getprop ro.product.cpu.abi | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             adb shell getprop ro.product.cpu.abilist | tee -a "$GITHUB_WORKSPACE/device-info.txt"
-            echo "cpu_count=$(adb shell 'grep -c ^processor /proc/cpuinfo')" | tee -a "$GITHUB_WORKSPACE/device-info.txt"
+            adb shell grep -c ^processor /proc/cpuinfo | sed 's/^/cpu_count=/' | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             adb shell cat /proc/meminfo | head -n 2 | tee -a "$GITHUB_WORKSPACE/device-info.txt"
-            echo "meminfo exit: $?"
             adb shell df -h /data | tee -a "$GITHUB_WORKSPACE/device-info.txt"
-            echo "df exit: $?"
-            echo "Searching for APKs under $GITHUB_WORKSPACE..."
-            find "$GITHUB_WORKSPACE" -name "*.apk" 2>/dev/null | head -n 5
-            APK=$(find "$GITHUB_WORKSPACE" -name "*.apk" 2>/dev/null | head -n1)
-            echo "APK path: [$APK]"
-            if [ -z "$APK" ]; then
-              echo "ERROR: no APK found; listing build outputs:"
-              ls -R app/build/outputs 2>&1 | head -n 40 || true
-              exit 1
-            fi
-            echo "Installing $APK"
-            adb install "$APK"
-            echo "adb install exit code: $?"
+            adb install "$GITHUB_WORKSPACE/app/build/outputs/apk/debug/app-debug.apk"
             adb shell monkey -p com.hartmann.pixeldream -c android.intent.category.LAUNCHER 1
-            echo "monkey exit code: $?"
-            echo "Waiting for launch..."
             sleep 40
             adb exec-out screencap -p > "$GITHUB_WORKSPACE/launch.png"
             adb shell uiautomator dump /sdcard/ui.xml
             adb pull /sdcard/ui.xml "$GITHUB_WORKSPACE/ui.xml"
-            python3 - "$GITHUB_WORKSPACE/ui.xml" <<'PYEOF'
-            import re, subprocess, sys
-            path = sys.argv[1]
-            xml = open(path, encoding="utf-8", errors="replace").read()
-            m = re.search(r'text="Got it"[^>]*bounds="\[(\d+),(\d+)\]\[(\d+),(\d+)\]"', xml)
-            if not m:
-                print("Got it button not found in ui.xml; skipping tap")
-                sys.exit(0)
-            x1, y1, x2, y2 = map(int, m.groups())
-            x, y = (x1 + x2) // 2, (y1 + y2) // 2
-            print(f"Tapping Got it at {x},{y}")
-            subprocess.run(["adb", "shell", "input", "tap", str(x), str(y)], check=True)
-            PYEOF
-            sleep 5
             adb exec-out screencap -p > "$GITHUB_WORKSPACE/after-dismiss.png"
             adb logcat -d > "$GITHUB_WORKSPACE/logcat.txt"
             echo "Smoke test capture complete"
