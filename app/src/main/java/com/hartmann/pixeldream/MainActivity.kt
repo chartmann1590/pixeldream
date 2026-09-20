@@ -118,7 +118,7 @@ private fun RequirementsWarningDialog(
         title = { Text("This device is below the minimum specs") },
         text = {
             Column {
-                Text("PixelDream runs AI image generation entirely on your phone. This device is below the minimum recommended specs, so images may take much longer to generate and quality may be lower:")
+                Text("PixelDream runs AI image generation entirely on your phone. This device is below the minimum specs, so images may take much longer to generate and quality may be lower:")
                 Spacer(Modifier.height(8.dp))
                 report.checks.filter { !it.passed }.forEach { check ->
                     Text("• ${check.label}: ${check.actual} (${check.required} required)")
