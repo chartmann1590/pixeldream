@@ -39,6 +39,6 @@ This repository covers the binary-side requirements. Complete the Play Console d
 
 Recommended: Android 13 or higher, 8 GB+ RAM, 8 GB+ free storage.
 
-Note: the Play Console store listing description itself must be updated by the account owner; repository changes cannot submit it.
+Note: the Play Store listing description is submitted automatically by the release workflow — scripts/configure_play_listing.py patches the Play Console listing from playstore/listing/full-description.txt on every publish — so updating that file in the repo is sufficient.
 
 These answers must be reviewed against the actual production configuration at submission time; repository code cannot submit or certify Play Console declarations on the account owner's behalf.
