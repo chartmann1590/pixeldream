@@ -55,7 +55,11 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
     }
     var defaults by remember { mutableStateOf(GenerationPreferences.read(context)) }
     val privacyOptionsRequired = remember { ConsentManager.isPrivacyOptionsRequired(context) }
-    val requirementsReport = remember { DeviceRequirements.evaluateDevice(context) }
+    // Model downloads/deletes can shift free space by gigabytes; recompute the report when a
+    // model's download state changes so the storage status never goes stale. Keying on the state
+    // classes (rather than progress) avoids re-running the check on every progress tick.
+    val modelStateClasses = state.states.mapValues { it.value?.let { downloadState -> downloadState::class } }
+    val requirementsReport = remember(modelStateClasses) { DeviceRequirements.evaluateDevice(context) }
 
     fun save(updated: GenerationDefaults) {
         defaults = updated
