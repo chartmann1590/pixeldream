@@ -1,10 +1,10 @@
 # TEMPORARY smoke-test scaffolding for PR #42 verification.
-# This workflow is intentionally manual-only (workflow_dispatch) so it never
-# slows down normal CI. DELETE BEFORE MERGING.
+# TEMPORARY: push-triggered so the run starts on push to this branch.
+# DELETE BEFORE MERGING.
 name: Emulator smoke test (temporary)
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   smoke-test:
