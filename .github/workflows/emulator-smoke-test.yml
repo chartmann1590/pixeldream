@@ -90,17 +90,21 @@ jobs:
           disable-animations: true
           emulator-options: ${{ matrix.emulator-options }}
           script: |
-            set -e
             echo "=== Device info ===" | tee "$GITHUB_WORKSPACE/device-info.txt"
             adb shell getprop ro.product.cpu.abi | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             adb shell getprop ro.product.cpu.abilist | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             echo "cpu_count=$(adb shell 'grep -c ^processor /proc/cpuinfo')" | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             adb shell cat /proc/meminfo | head -n 2 | tee -a "$GITHUB_WORKSPACE/device-info.txt"
+            echo "meminfo exit: $?"
             adb shell df -h /data | tee -a "$GITHUB_WORKSPACE/device-info.txt"
+            echo "df exit: $?"
             APK=$(find app/build/outputs/apk/debug -name "*.apk" | head -n1)
+            echo "APK path: [$APK]"
             echo "Installing $APK"
             adb install "$APK"
+            echo "adb install exit code: $?"
             adb shell monkey -p com.hartmann.pixeldream -c android.intent.category.LAUNCHER 1
+            echo "monkey exit code: $?"
             echo "Waiting for launch..."
             sleep 40
             adb exec-out screencap -p > "$GITHUB_WORKSPACE/launch.png"
