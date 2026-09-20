@@ -98,8 +98,15 @@ jobs:
             echo "meminfo exit: $?"
             adb shell df -h /data | tee -a "$GITHUB_WORKSPACE/device-info.txt"
             echo "df exit: $?"
-            APK=$(find app/build/outputs/apk/debug -name "*.apk" | head -n1)
+            echo "Searching for APKs under $GITHUB_WORKSPACE..."
+            find "$GITHUB_WORKSPACE" -name "*.apk" 2>/dev/null | head -n 5
+            APK=$(find "$GITHUB_WORKSPACE" -name "*.apk" 2>/dev/null | head -n1)
             echo "APK path: [$APK]"
+            if [ -z "$APK" ]; then
+              echo "ERROR: no APK found; listing build outputs:"
+              ls -R app/build/outputs 2>&1 | head -n 40 || true
+              exit 1
+            fi
             echo "Installing $APK"
             adb install "$APK"
             echo "adb install exit code: $?"
