@@ -27,7 +27,7 @@ android {
                     "-DSD_WEBM=OFF",
                     "-DSD_CUDA=OFF",
                     "-DSD_METAL=OFF",
-                    "-DSD_VULKAN=OFF",
+                    "-DPIXELDREAM_GPU=ON",
                     "-DSD_OPENCL=OFF",
                     "-DGGML_BUILD_TESTS=OFF",
                     "-DGGML_BUILD_EXAMPLES=OFF",

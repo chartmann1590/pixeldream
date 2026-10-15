@@ -20,11 +20,25 @@ class StableDiffusion {
 
     val isLoaded: Boolean get() = handle != 0L
 
-    suspend fun load(modelPath: String, threads: Int): Boolean = withContext(Dispatchers.Default) {
-        close()
-        handle = loadModelNative(modelPath, threads)
-        handle != 0L
-    }
+    /** True when the loaded model runs on the GPU (Vulkan); false on the CPU or when nothing is loaded. */
+    var isGpuActive: Boolean = false
+        private set
+
+    /** True when this build carries the GPU (Vulkan) backend at all. */
+    val supportsGpu: Boolean get() = isGpuBuildNative()
+
+    /**
+     * Loads the model. With [useGpu] the GPU (Vulkan) backend is tried first; if the
+     * phone has no usable Vulkan device the engine quietly uses the CPU instead, which
+     * [isGpuActive] reports. With [useGpu] false the GPU is never touched.
+     */
+    suspend fun load(modelPath: String, threads: Int, useGpu: Boolean = false): Boolean =
+        withContext(Dispatchers.Default) {
+            close()
+            handle = loadModelNative(modelPath, threads, useGpu)
+            isGpuActive = handle != 0L && isGpuActiveNative()
+            handle != 0L
+        }
 
     suspend fun generate(
         prompt: String,
@@ -50,6 +64,7 @@ class StableDiffusion {
             freeContextNative(handle)
             handle = 0L
         }
+        isGpuActive = false
     }
 
     private fun rgbToBitmap(rgb: ByteArray, width: Int, height: Int): Bitmap {
@@ -65,7 +80,9 @@ class StableDiffusion {
         return Bitmap.createBitmap(pixels, width, height, Bitmap.Config.ARGB_8888)
     }
 
-    private external fun loadModelNative(modelPath: String, threads: Int): Long
+    private external fun loadModelNative(modelPath: String, threads: Int, useGpu: Boolean): Long
+    private external fun isGpuActiveNative(): Boolean
+    private external fun isGpuBuildNative(): Boolean
     private external fun generateImageNative(
         handle: Long,
         prompt: String,
