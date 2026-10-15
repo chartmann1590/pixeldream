@@ -44,6 +44,9 @@ import com.hartmann.pixeldream.model.ModelKind
 import com.hartmann.pixeldream.ads.ConsentManager
 import com.hartmann.pixeldream.model.DeviceTier
 import com.hartmann.pixeldream.model.DeviceTierDetector
+import com.hartmann.pixeldream.model.GpuBackendStore
+import com.hartmann.pixeldream.model.GpuMode
+import com.hartmann.pixeldream.model.GpuStatus
 import com.hartmann.pixeldream.requirements.DeviceRequirements
 import com.hartmann.pixeldream.requirements.RequirementCheck
 
@@ -63,6 +66,8 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
     val modelStateClasses = state.states.mapValues { it.value?.let { downloadState -> downloadState::class } }
     val requirementsReport = remember(modelStateClasses) { DeviceRequirements.evaluateDevice(context) }
     val deviceProfile = remember { DeviceTierDetector.profileFor(context) }
+    val gpuStore = remember { GpuBackendStore(context) }
+    var gpuStatus by remember { mutableStateOf(gpuStore.status()) }
 
     fun save(updated: GenerationDefaults) {
         defaults = updated
@@ -124,6 +129,42 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.error,
+                )
+            }
+        }
+        Spacer(Modifier.height(18.dp))
+
+        SectionTitle("Speed")
+        SettingsCard {
+            Text("Use GPU (faster)", style = MaterialTheme.typography.titleMedium)
+            Text(
+                "Runs the image model on your phone's graphics chip. If the GPU misbehaves on this phone, PixelDream switches back to the CPU by itself and remembers it.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf(GpuMode.AUTO to "Auto", GpuMode.ON to "On", GpuMode.OFF to "Off").forEach { (mode, label) ->
+                    val onClick = {
+                        gpuStore.setMode(mode)
+                        gpuStatus = gpuStore.status()
+                    }
+                    if (gpuStatus.mode == mode) Button(onClick = onClick, modifier = Modifier.weight(1f)) { Text(label) }
+                    else OutlinedButton(onClick = onClick, modifier = Modifier.weight(1f)) { Text(label) }
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            val blocked = gpuStatus.blockedReason != null
+            Text(
+                gpuStatusText(gpuStatus, deviceProfile.tier),
+                style = MaterialTheme.typography.bodySmall,
+                color = if (blocked) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            gpuTimingText(gpuStatus)?.let { timing ->
+                Text(
+                    timing,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 4.dp),
                 )
             }
         }
@@ -304,6 +345,23 @@ private fun ChoiceRow(values: List<Int>, selected: Int, suffix: String = " steps
             else OutlinedButton(onClick = { onSelect(value) }, modifier = Modifier.weight(1f)) { Text("$value$suffix") }
         }
     }
+}
+
+private fun gpuStatusText(status: GpuStatus, tier: DeviceTier): String = when {
+    status.mode == GpuMode.OFF -> "Off. Images are made on the CPU."
+    status.blockedReason != null -> status.blockedReason + " Tap On to try the GPU again."
+    status.mode == GpuMode.AUTO && tier != DeviceTier.RECOMMENDED ->
+        "Auto keeps this phone on the CPU because it is below the performance check. Tap On to try the GPU anyway."
+    status.verified -> "The GPU is working on this phone."
+    else -> "The GPU will be used for your next image. If it misbehaves, PixelDream goes back to the CPU on its own."
+}
+
+private fun gpuTimingText(status: GpuStatus): String? {
+    val parts = buildList {
+        status.lastGpuSeconds?.let { add("%.0f s on the GPU".format(it)) }
+        status.lastCpuSeconds?.let { add("%.0f s on the CPU".format(it)) }
+    }
+    return if (parts.isEmpty()) null else "Last image: " + parts.joinToString(", ")
 }
 
 private fun percent(state: DownloadState.Downloading): Int =
