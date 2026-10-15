@@ -349,6 +349,7 @@ private fun ChoiceRow(values: List<Int>, selected: Int, suffix: String = " steps
 
 private fun gpuStatusText(status: GpuStatus, tier: DeviceTier): String = when {
     status.mode == GpuMode.OFF -> "Off. Images are made on the CPU."
+    status.hardwareBlocked -> status.blockedReason ?: "This phone's GPU isn't supported yet, so images are made on the CPU."
     status.blockedReason != null -> status.blockedReason + " Tap On to try the GPU again."
     status.mode == GpuMode.AUTO && tier != DeviceTier.RECOMMENDED ->
         "Auto keeps this phone on the CPU because it is below the performance check. Tap On to try the GPU anyway."

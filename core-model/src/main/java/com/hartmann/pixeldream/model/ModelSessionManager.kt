@@ -74,8 +74,9 @@ class ModelSessionManager(
             enhancer = null
 
             val generator = imageGenerator ?: StableDiffusion().also { imageGenerator = it }
-            val threads = Runtime.getRuntime().availableProcessors().coerceIn(4, 8)
+            val threads = GpuBackendStore.debugThreads() ?: CpuTopology.imageThreads()
             val wantGpu = generator.supportsGpu && gpu.shouldTryGpu(DeviceTierDetector.tierFor(context))
+            Log.i(TAG, "Image engine: threads=$threads wantGpu=$wantGpu")
             ensureLoaded(generator, modelFile.absolutePath, threads, wantGpu)
 
             suspend fun render(stepCount: Int, renderSeed: Long): Bitmap = generator.generate(

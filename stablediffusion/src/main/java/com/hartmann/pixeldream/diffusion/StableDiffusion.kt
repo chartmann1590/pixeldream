@@ -28,6 +28,11 @@ class StableDiffusion {
     val supportsGpu: Boolean get() = isGpuBuildNative()
 
     /**
+     * The phone's GPU as reported by Vulkan, or null if it has none. Never loads a model.
+     */
+    fun gpuDevice(): VulkanDevice? = runCatching { gpuDeviceNative() }.getOrNull()?.let(VulkanDevice::parse)
+
+    /**
      * Loads the model. With [useGpu] the GPU (Vulkan) backend is tried first; if the
      * phone has no usable Vulkan device the engine quietly uses the CPU instead, which
      * [isGpuActive] reports. With [useGpu] false the GPU is never touched.
@@ -83,6 +88,7 @@ class StableDiffusion {
     private external fun loadModelNative(modelPath: String, threads: Int, useGpu: Boolean): Long
     private external fun isGpuActiveNative(): Boolean
     private external fun isGpuBuildNative(): Boolean
+    private external fun gpuDeviceNative(): String?
     private external fun generateImageNative(
         handle: Long,
         prompt: String,
@@ -95,4 +101,26 @@ class StableDiffusion {
         progress: NativeProgressListener,
     ): ByteArray?
     private external fun freeContextNative(handle: Long)
+}
+
+/** A Vulkan GPU: PCI-style vendor and device ids plus the driver's name for it. */
+data class VulkanDevice(val vendorId: Int, val deviceId: Int, val name: String) {
+    /** ARM Mali / Immortalis. */
+    val isMali: Boolean get() = vendorId == VENDOR_ARM
+
+    companion object {
+        const val VENDOR_ARM = 0x13B5
+        const val VENDOR_QUALCOMM = 0x5143
+        const val VENDOR_IMAGINATION = 0x1010
+        const val VENDOR_SAMSUNG = 0x144D
+
+        /** Parses "vendorHex:deviceHex:name". */
+        fun parse(text: String): VulkanDevice? {
+            val parts = text.split(':', limit = 3)
+            if (parts.size < 3) return null
+            val vendor = parts[0].toIntOrNull(16) ?: return null
+            val device = parts[1].toLongOrNull(16)?.toInt() ?: return null
+            return VulkanDevice(vendor, device, parts[2])
+        }
+    }
 }

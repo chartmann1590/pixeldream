@@ -78,7 +78,7 @@ endif()
 
 add_subdirectory(${SD_ROOT} sd_build)
 add_library(pixeldream_diffusion SHARED StableDiffusionJni.cpp)
-target_include_directories(pixeldream_diffusion PRIVATE ${SD_ROOT}/include)
+target_include_directories(pixeldream_diffusion PRIVATE ${SD_ROOT}/include ${SD_ROOT}/ggml/include)
 if(PIXELDREAM_GPU)
     target_compile_definitions(pixeldream_diffusion PRIVATE PIXELDREAM_GPU=1)
 endif()

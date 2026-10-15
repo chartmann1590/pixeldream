@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.util.Log
+import com.hartmann.pixeldream.diffusion.StableDiffusion
+import com.hartmann.pixeldream.diffusion.VulkanDevice
 
 /** The "Use GPU (faster)" setting. */
 enum class GpuMode { AUTO, ON, OFF }
@@ -19,6 +21,8 @@ data class GpuStatus(
     val lastBackend: String?,
     val lastGpuSeconds: Double?,
     val lastCpuSeconds: Double?,
+    /** True when [blockedReason] is about the GPU model itself, which "On" cannot override. */
+    val hardwareBlocked: Boolean = false,
 )
 
 /**
@@ -33,6 +37,8 @@ data class GpuStatus(
  * - A failure (the model would not load on the GPU, an error while generating, or a
  *   noise image) is remembered for this phone and build of Android, so an OS update
  *   with a newer GPU driver gets one fresh try.
+ * - GPU families that crash in the Vulkan engine (ARM Mali, see [hardwareAllowed])
+ *   are never used, whatever the mode; the phone stays on the CPU.
  * - Crash guard: a flag is written synchronously before every GPU load or run and
  *   cleared afterwards. If the app starts and finds the flag still set, the process
  *   died during GPU work (a GPU driver crash cannot be caught). One such death blocks
@@ -60,8 +66,30 @@ class GpuBackendStore(context: Context) {
 
     fun shouldTryGpu(tier: DeviceTier, socModel: String = currentSoc()): Boolean = when (mode()) {
         GpuMode.OFF -> false
-        GpuMode.ON -> blockedReason() == null
-        GpuMode.AUTO -> autoAllowed(tier, socModel) && blockedReason() == null
+        GpuMode.ON -> blockedReason() == null && hardwareBlockReason() == null
+        GpuMode.AUTO -> autoAllowed(tier, socModel) && blockedReason() == null && hardwareBlockReason() == null
+    }
+
+    /** The phone's Vulkan GPU, looked up once per build of Android and remembered. */
+    fun gpuDevice(): VulkanDevice? {
+        if (prefs.getString(KEY_DEVICE_BUILD, null) == Build.FINGERPRINT) {
+            val cached = prefs.getString(KEY_DEVICE, null)
+            if (cached != null) return if (cached.isEmpty()) null else VulkanDevice.parse(cached)
+        }
+        val device = runCatching { StableDiffusion().gpuDevice() }.getOrNull()
+        prefs.edit()
+            .putString(KEY_DEVICE, device?.let { "%x:%x:%s".format(it.vendorId, it.deviceId, it.name) } ?: "")
+            .putString(KEY_DEVICE_BUILD, Build.FINGERPRINT)
+            .apply()
+        Log.i(TAG, "Vulkan GPU: ${device ?: "none"}")
+        return device
+    }
+
+    /** Why this phone's GPU model is never used, or null when it may be. */
+    fun hardwareBlockReason(): String? {
+        val device = gpuDevice() ?: return null
+        return if (hardwareAllowed(device, debugAllowMali())) null
+        else "This phone's GPU (${device.name}) isn't supported by PixelDream's GPU engine yet, so images are made on the CPU."
     }
 
     /** Call once per process before any GPU work. Returns true if a GPU crash was detected. */
@@ -118,14 +146,18 @@ class GpuBackendStore(context: Context) {
         }
     }
 
-    fun status(): GpuStatus = GpuStatus(
-        mode = mode(),
-        blockedReason = blockedReason(),
-        verified = prefs.getBoolean(KEY_VERIFIED, false),
-        lastBackend = prefs.getString(KEY_LAST_BACKEND, null),
-        lastGpuSeconds = prefs.getFloat(KEY_LAST_GPU_SECONDS, -1f).takeIf { it > 0f }?.toDouble(),
-        lastCpuSeconds = prefs.getFloat(KEY_LAST_CPU_SECONDS, -1f).takeIf { it > 0f }?.toDouble(),
-    )
+    fun status(): GpuStatus {
+        val hardware = if (mode() == GpuMode.OFF) null else hardwareBlockReason()
+        return GpuStatus(
+            mode = mode(),
+            blockedReason = hardware ?: blockedReason(),
+            hardwareBlocked = hardware != null,
+            verified = prefs.getBoolean(KEY_VERIFIED, false),
+            lastBackend = prefs.getString(KEY_LAST_BACKEND, null),
+            lastGpuSeconds = prefs.getFloat(KEY_LAST_GPU_SECONDS, -1f).takeIf { it > 0f }?.toDouble(),
+            lastCpuSeconds = prefs.getFloat(KEY_LAST_CPU_SECONDS, -1f).takeIf { it > 0f }?.toDouble(),
+        )
+    }
 
     companion object {
         private const val TAG = "PixelDreamGpu"
@@ -141,6 +173,8 @@ class GpuBackendStore(context: Context) {
         private const val KEY_LAST_CPU_SECONDS = "last_cpu_seconds"
         private const val KEY_GPU_SECONDS_FOR = "gpu_seconds_"
         private const val KEY_CPU_SECONDS_FOR = "cpu_seconds_"
+        private const val KEY_DEVICE = "vulkan_device"
+        private const val KEY_DEVICE_BUILD = "vulkan_device_build"
         private const val SLOWER_MARGIN = 1.1f
 
         /**
@@ -163,10 +197,27 @@ class GpuBackendStore(context: Context) {
          * `adb shell setprop debug.pixeldream.gpu_fail init` (the GPU load fails) or
          * `noise` (the GPU image is treated as noise). Unset in normal use.
          */
-        fun debugFailure(): String? = runCatching {
+        fun debugFailure(): String? = sysprop("debug.pixeldream.gpu_fail")
+            ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() && it != "0" && it != "off" }
+
+        /**
+         * ARM Mali GPUs abort inside the Vulkan engine a few seconds into the first
+         * image (seen on the Pixel 8 Pro's Mali-G715, Oct 2026), and a native abort
+         * cannot be caught, so they stay on the CPU. Everything else may use the GPU
+         * when the mode allows it.
+         */
+        fun hardwareAllowed(device: VulkanDevice, allowMali: Boolean = false): Boolean = !device.isMali || allowMali
+
+        /** Test hook: `adb shell setprop debug.pixeldream.gpu_allow_mali 1` lets a Mali phone try the GPU. */
+        fun debugAllowMali(): Boolean = sysprop("debug.pixeldream.gpu_allow_mali")?.trim() == "1"
+
+        /** Test hook: `adb shell setprop debug.pixeldream.threads N` overrides the CPU thread count. */
+        fun debugThreads(): Int? = sysprop("debug.pixeldream.threads")?.trim()?.toIntOrNull()?.takeIf { it in 1..16 }
+
+        private fun sysprop(name: String): String? = runCatching {
             val clazz = Class.forName("android.os.SystemProperties")
             val get = clazz.getMethod("get", String::class.java, String::class.java)
-            (get.invoke(null, "debug.pixeldream.gpu_fail", "") as String).trim().lowercase()
-        }.getOrNull()?.takeIf { it.isNotEmpty() && it != "0" && it != "off" }
+            get.invoke(null, name, "") as String
+        }.getOrNull()
     }
 }
