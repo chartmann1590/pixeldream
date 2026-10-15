@@ -352,6 +352,8 @@ private fun gpuStatusText(status: GpuStatus, tier: DeviceTier): String = when {
     status.blockedReason != null -> status.blockedReason + " Tap On to try the GPU again."
     status.mode == GpuMode.AUTO && tier != DeviceTier.RECOMMENDED ->
         "Auto keeps this phone on the CPU because it is below the performance check. Tap On to try the GPU anyway."
+    status.mode == GpuMode.AUTO && !GpuBackendStore.autoAllowed(tier, GpuBackendStore.currentSoc()) ->
+        "Auto uses the CPU on this phone: the GPU has not been shown to be faster on this chip yet. Tap On to try it."
     status.verified -> "The GPU is working on this phone."
     else -> "The GPU will be used for your next image. If it misbehaves, PixelDream goes back to the CPU on its own."
 }

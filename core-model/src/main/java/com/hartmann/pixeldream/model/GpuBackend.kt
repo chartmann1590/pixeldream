@@ -24,9 +24,12 @@ data class GpuStatus(
 /**
  * Remembers, per phone, whether the GPU (Vulkan) backend can be trusted.
  *
- * - AUTO tries the GPU only on phones that pass the performance check and have not
- *   had a GPU failure. ON tries it on any phone (and clears a remembered failure).
- *   OFF never touches it.
+ * - AUTO uses the GPU only on chips where it was measured to be faster than the CPU
+ *   and to give clean images ([AUTO_GPU_SOCS]), on phones that pass the performance
+ *   check and have not had a GPU failure. ON tries it on any phone (and clears a
+ *   remembered failure). OFF never touches it.
+ * - In AUTO, a GPU image that took longer than the last CPU image of the same size
+ *   and step count switches the phone back to the CPU.
  * - A failure (the model would not load on the GPU, an error while generating, or a
  *   noise image) is remembered for this phone and build of Android, so an OS update
  *   with a newer GPU driver gets one fresh try.
@@ -55,10 +58,10 @@ class GpuBackendStore(context: Context) {
         return if (prefs.getString(KEY_BLOCKED_BUILD, null) == Build.FINGERPRINT) reason else null
     }
 
-    fun shouldTryGpu(tier: DeviceTier): Boolean = when (mode()) {
+    fun shouldTryGpu(tier: DeviceTier, socModel: String = currentSoc()): Boolean = when (mode()) {
         GpuMode.OFF -> false
         GpuMode.ON -> blockedReason() == null
-        GpuMode.AUTO -> tier == DeviceTier.RECOMMENDED && blockedReason() == null
+        GpuMode.AUTO -> autoAllowed(tier, socModel) && blockedReason() == null
     }
 
     /** Call once per process before any GPU work. Returns true if a GPU crash was detected. */
@@ -97,12 +100,22 @@ class GpuBackendStore(context: Context) {
             .commit()
     }
 
-    fun recordRun(onGpu: Boolean, seconds: Double) {
+    fun recordRun(onGpu: Boolean, seconds: Double, width: Int, steps: Int) {
+        val shape = "${width}_$steps"
         val editor = prefs.edit()
             .putString(KEY_LAST_BACKEND, if (onGpu) "GPU" else "CPU")
             .putFloat(if (onGpu) KEY_LAST_GPU_SECONDS else KEY_LAST_CPU_SECONDS, seconds.toFloat())
+            .putFloat((if (onGpu) KEY_GPU_SECONDS_FOR else KEY_CPU_SECONDS_FOR) + shape, seconds.toFloat())
         if (onGpu) editor.putBoolean(KEY_VERIFIED, true).putInt(KEY_DEATHS, 0)
         editor.apply()
+        if (onGpu && mode() == GpuMode.AUTO) {
+            val cpu = prefs.getFloat(KEY_CPU_SECONDS_FOR + shape, -1f)
+            if (cpu > 0f && seconds > cpu * SLOWER_MARGIN) {
+                recordFailure(
+                    "The GPU was slower than the CPU on this phone (%.0f s vs %.0f s), so PixelDream uses the CPU.".format(seconds, cpu),
+                )
+            }
+        }
     }
 
     fun status(): GpuStatus = GpuStatus(
@@ -126,6 +139,24 @@ class GpuBackendStore(context: Context) {
         private const val KEY_LAST_BACKEND = "last_backend"
         private const val KEY_LAST_GPU_SECONDS = "last_gpu_seconds"
         private const val KEY_LAST_CPU_SECONDS = "last_cpu_seconds"
+        private const val KEY_GPU_SECONDS_FOR = "gpu_seconds_"
+        private const val KEY_CPU_SECONDS_FOR = "cpu_seconds_"
+        private const val SLOWER_MARGIN = 1.1f
+
+        /**
+         * Chips where the Vulkan backend was measured faster than the CPU with clean
+         * images. Auto mode only uses the GPU on these; everywhere else the GPU is
+         * opt-in (Settings > Speed > On). Matched case-insensitively against
+         * Build.SOC_MODEL. Empty until a chip has been measured.
+         */
+        val AUTO_GPU_SOCS: Set<String> = emptySet()
+
+        fun autoAllowed(tier: DeviceTier, socModel: String): Boolean =
+            tier == DeviceTier.RECOMMENDED && AUTO_GPU_SOCS.any { it.equals(socModel.trim(), ignoreCase = true) }
+
+        fun currentSoc(): String = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            runCatching { Build.SOC_MODEL }.getOrDefault("")
+        } else ""
 
         /**
          * Test hook for checking the fallback on a real phone without a broken GPU:

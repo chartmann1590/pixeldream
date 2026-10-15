@@ -133,7 +133,7 @@ class ModelSessionManager(
             }
             val seconds = (SystemClock.elapsedRealtime() - started) / 1000.0
             val onGpu = generator.isGpuActive
-            gpu.recordRun(onGpu, seconds)
+            gpu.recordRun(onGpu, seconds, width, steps)
             Log.i(TIMING_TAG, "backend=%s size=%dx%d steps=%d seconds=%.1f".format(if (onGpu) "GPU" else "CPU", width, height, steps, seconds))
             persist(bitmap)
         }
