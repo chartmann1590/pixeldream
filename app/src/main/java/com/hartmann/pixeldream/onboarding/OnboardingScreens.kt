@@ -169,8 +169,8 @@ fun DeviceCheckScreen(deviceTier: DeviceTier?, totalRamMb: Int, onContinue: () -
                     Text(
                         when (deviceTier) {
                             DeviceTier.RECOMMENDED -> "Great fit. Your phone has enough memory for smooth on-device processing."
-                            DeviceTier.LOW -> "Compatible. Creation may take longer, so keep PixelDream open while it works."
-                            DeviceTier.UNSUPPORTED -> "PixelDream needs at least 6 GB of RAM to load its on-device models safely. This device is not supported."
+                            DeviceTier.LOW -> "Compatible, but below what the image model works best on. Images will take longer and look rougher, so PixelDream will use its lighter settings on this phone. Keep the app open while it works."
+                            DeviceTier.UNSUPPORTED -> "PixelDream needs at least 6 GB of RAM and a 64-bit processor to load its on-device models safely. This device is not supported."
                             null -> "Checking your phone…"
                         },
                         style = MaterialTheme.typography.bodyLarge,

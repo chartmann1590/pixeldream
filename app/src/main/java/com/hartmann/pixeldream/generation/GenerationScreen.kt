@@ -37,6 +37,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hartmann.pixeldream.ads.InterstitialAdManager
+import com.hartmann.pixeldream.model.DeviceTier
+import com.hartmann.pixeldream.model.DeviceTierDetector
 import com.hartmann.pixeldream.ui.components.GenerativeProgressIndicator
 import com.hartmann.pixeldream.ui.components.PixelDreamButton
 import coil.compose.AsyncImage
@@ -50,6 +52,7 @@ fun GenerationScreen(
     val viewModel: GenerationViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
     val context = LocalContext.current
+    val deviceProfile = remember { DeviceTierDetector.profileFor(context.applicationContext) }
     val adManager = remember { InterstitialAdManager(context) }
 
     LaunchedEffect(adsReady) { if (adsReady) adManager.preload() }
@@ -104,6 +107,28 @@ fun GenerationScreen(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Spacer(Modifier.height(22.dp))
+
+        deviceProfile.warning?.let { warning ->
+            Card(
+                shape = RoundedCornerShape(20.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer),
+            ) {
+                Column(Modifier.padding(16.dp)) {
+                    Text(
+                        if (deviceProfile.tier == DeviceTier.LOW) "Lower-powered phone" else "Below minimum requirements",
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        warning,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                    )
+                }
+            }
+            Spacer(Modifier.height(16.dp))
+        }
 
         Card(
             shape = RoundedCornerShape(26.dp),

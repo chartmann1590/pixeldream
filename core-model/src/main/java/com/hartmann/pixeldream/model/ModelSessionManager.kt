@@ -2,6 +2,7 @@ package com.hartmann.pixeldream.model
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.util.Log
 import com.hartmann.pixeldream.diffusion.StableDiffusion
 import java.io.File
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +24,12 @@ class ModelSessionManager(
     private val context: Context,
     private val storage: ModelStorage,
 ) {
+    private companion object {
+        const val TAG = "ModelSessionManager"
+        const val NEGATIVE_PROMPT = "blurry, low quality, distorted, deformed, watermark, text"
+        const val SAFE_RETRY_STEPS = 20
+    }
+
     private val lock = Mutex()
     private var enhancer: GemmaPromptEnhancer? = null
     private var imageGenerator: StableDiffusion? = null
@@ -66,9 +73,9 @@ class ModelSessionManager(
                     "Could not load the Stable Diffusion model"
                 }
             }
-            val bitmap = generator.generate(
+            var bitmap = generator.generate(
                 prompt = prompt,
-                negativePrompt = "blurry, low quality, distorted, deformed, watermark, text",
+                negativePrompt = NEGATIVE_PROMPT,
                 width = width,
                 height = height,
                 steps = steps,
@@ -76,8 +83,36 @@ class ModelSessionManager(
                 seed = seed,
                 onProgress = onProgress,
             )
+            if (looksDegenerate(bitmap)) {
+                // A frame of pure noise or a blank frame is a run that never converged or a
+                // decode that failed, not a picture. Try once more with the safe profile
+                // (a fresh seed, at least SAFE_RETRY_STEPS steps) before giving up.
+                Log.w(TAG, "Generated image looks degenerate; retrying once with the safe profile")
+                bitmap.recycle()
+                bitmap = generator.generate(
+                    prompt = prompt,
+                    negativePrompt = NEGATIVE_PROMPT,
+                    width = width,
+                    height = height,
+                    steps = maxOf(steps, SAFE_RETRY_STEPS),
+                    cfgScale = cfgScale,
+                    seed = seed + 1,
+                    onProgress = onProgress,
+                )
+                check(!looksDegenerate(bitmap)) {
+                    "That one came out as noise instead of a picture. Please try again, or try a simpler description."
+                }
+            }
             persist(bitmap)
         }
+    }
+
+    private fun looksDegenerate(bitmap: Bitmap): Boolean {
+        val pixels = IntArray(bitmap.width * bitmap.height)
+        bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
+        val stats = ImageSanity.stats(pixels, bitmap.width, bitmap.height)
+        Log.i(TAG, "Image sanity: std=%.1f neighbour=%.1f ratio=%.2f verdict=%s".format(stats.std, stats.neighbourDiff, stats.ratio, stats.verdict))
+        return stats.verdict != ImageSanity.Verdict.OK
     }
 
     private fun persist(bitmap: Bitmap): File {

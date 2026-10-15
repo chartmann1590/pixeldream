@@ -42,6 +42,8 @@ import com.hartmann.pixeldream.model.DownloadState
 import com.hartmann.pixeldream.model.ModelDescriptor
 import com.hartmann.pixeldream.model.ModelKind
 import com.hartmann.pixeldream.ads.ConsentManager
+import com.hartmann.pixeldream.model.DeviceTier
+import com.hartmann.pixeldream.model.DeviceTierDetector
 import com.hartmann.pixeldream.requirements.DeviceRequirements
 import com.hartmann.pixeldream.requirements.RequirementCheck
 
@@ -60,6 +62,7 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
     // classes (rather than progress) avoids re-running the check on every progress tick.
     val modelStateClasses = state.states.mapValues { it.value?.let { downloadState -> downloadState::class } }
     val requirementsReport = remember(modelStateClasses) { DeviceRequirements.evaluateDevice(context) }
+    val deviceProfile = remember { DeviceTierDetector.profileFor(context) }
 
     fun save(updated: GenerationDefaults) {
         defaults = updated
@@ -97,15 +100,52 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
             }
             HorizontalDivider()
             Text("Quality steps", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 14.dp))
-            ChoiceRow(listOf(8, 12, 20), defaults.steps) { save(defaults.copy(steps = it)) }
+            Text(
+                "20 is the sweet spot. Fewer steps are faster but look rougher.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            ChoiceRow(listOf(12, 20), defaults.steps) { save(defaults.copy(steps = it)) }
             ChoiceRow(listOf(30, 40), defaults.steps) { save(defaults.copy(steps = it)) }
             Text("Image size", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 14.dp))
-            ChoiceRow(listOf(256, 512), defaults.imageSize, suffix = " px") { save(defaults.copy(imageSize = it)) }
+            Text(
+                "512 px is what the image model was trained at. 384 px is faster and uses less memory.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            ChoiceRow(GenerationPreferences.IMAGE_SIZES, defaults.imageSize, suffix = " px") { save(defaults.copy(imageSize = it)) }
+            if (deviceProfile.tier != DeviceTier.RECOMMENDED) {
+                Spacer(Modifier.height(10.dp))
+                Text(
+                    if (deviceProfile.tier == DeviceTier.LOW) {
+                        "On this phone PixelDream caps images at 384 px and 20 steps so generation stays stable."
+                    } else {
+                        "On this phone PixelDream caps images at 256 px and 12 steps so generation does not crash."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                )
+            }
         }
         Spacer(Modifier.height(18.dp))
 
         SectionTitle("Device requirements")
         SettingsCard {
+            SettingRow(
+                "Performance tier",
+                deviceProfile.summary,
+            ) {
+                Text(
+                    when (deviceProfile.tier) {
+                        DeviceTier.RECOMMENDED -> "Good"
+                        DeviceTier.LOW -> "Low"
+                        DeviceTier.UNSUPPORTED -> "Below minimum"
+                    },
+                    fontWeight = FontWeight.SemiBold,
+                    color = if (deviceProfile.tier == DeviceTier.RECOMMENDED) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.error,
+                )
+            }
+            HorizontalDivider()
             requirementsReport.checks.forEachIndexed { index, check ->
                 RequirementRow(check)
                 if (index < requirementsReport.checks.lastIndex) HorizontalDivider()

@@ -128,6 +128,7 @@ class GenerationViewModel(application: Application) : AndroidViewModel(applicati
             val trace = Firebase.performance.newTrace("offline_image_generation").apply {
                 putAttribute("model_version", diffusion.version.take(100))
                 putAttribute("image_size", defaults.imageSize.toString())
+                putAttribute("device_tier", DeviceTierDetector.tierFor(getApplication()).name)
                 putMetric("diffusion_steps", defaults.steps.toLong())
                 start()
             }
@@ -219,22 +220,26 @@ class GenerationViewModel(application: Application) : AndroidViewModel(applicati
     /**
      * Native Stable Diffusion inference (stable-diffusion.cpp via JNI) has been observed to
      * crash natively (SIGSEGV/SIGABRT) rather than throw a catchable OOM on memory-constrained
-     * devices when asked for the largest image size / step count. Device tier was previously
-     * only advisory (shown during onboarding) but never actually enforced at generation time -
-     * clamp here so a LOW/UNSUPPORTED-tier device can't request a configuration known to be
-     * unsafe for its available RAM, degrading gracefully instead of crashing.
+     * devices when asked for the largest image size / step count, so the device tier is
+     * enforced here, not just shown during onboarding.
+     *
+     * Stable Diffusion 1.5 is a 512 px model: below 384 px it paints smeared colour blobs
+     * instead of a picture, which is what the old 256 px default produced on every phone.
+     * LOW-tier phones therefore get 384 px (coherent, and roughly half the memory of 512)
+     * with fewer steps; only the UNSUPPORTED tier, which onboarding already blocks, is held
+     * at 256 px so a run cannot take the process down.
      */
     private fun clampForDeviceTier(defaults: GenerationDefaults): GenerationDefaults {
         val tier = DeviceTierDetector.tierFor(getApplication())
         return when (tier) {
             DeviceTier.RECOMMENDED -> defaults
             DeviceTier.LOW -> defaults.copy(
-                imageSize = defaults.imageSize.coerceAtMost(256),
-                steps = defaults.steps.coerceAtMost(12),
+                imageSize = defaults.imageSize.coerceAtMost(384),
+                steps = defaults.steps.coerceIn(12, 20),
             )
             DeviceTier.UNSUPPORTED -> defaults.copy(
                 imageSize = 256,
-                steps = defaults.steps.coerceAtMost(8),
+                steps = defaults.steps.coerceAtMost(12),
             )
         }
     }
