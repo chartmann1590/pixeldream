@@ -37,8 +37,8 @@ data class GpuStatus(
  * - A failure (the model would not load on the GPU, an error while generating, or a
  *   noise image) is remembered for this phone and build of Android, so an OS update
  *   with a newer GPU driver gets one fresh try.
- * - GPU families that crash in the Vulkan engine (ARM Mali, see [hardwareAllowed])
- *   are never used, whatever the mode; the phone stays on the CPU.
+ * - GPU families listed in [BLOCKED_GPU_VENDORS] are never used, whatever the mode
+ *   (empty today; see [hardwareAllowed]).
  * - Crash guard: a flag is written synchronously before every GPU load or run and
  *   cleared afterwards. If the app starts and finds the flag still set, the process
  *   died during GPU work (a GPU driver crash cannot be caught). One such death blocks
@@ -88,7 +88,7 @@ class GpuBackendStore(context: Context) {
     /** Why this phone's GPU model is never used, or null when it may be. */
     fun hardwareBlockReason(): String? {
         val device = gpuDevice() ?: return null
-        return if (hardwareAllowed(device, debugAllowMali())) null
+        return if (hardwareAllowed(device, debugAllowBlocked())) null
         else "This phone's GPU (${device.name}) isn't supported by PixelDream's GPU engine yet, so images are made on the CPU."
     }
 
@@ -181,9 +181,11 @@ class GpuBackendStore(context: Context) {
          * Chips where the Vulkan backend was measured faster than the CPU with clean
          * images. Auto mode only uses the GPU on these; everywhere else the GPU is
          * opt-in (Settings > Speed > On). Matched case-insensitively against
-         * Build.SOC_MODEL. Empty until a chip has been measured.
+         * Build.SOC_MODEL.
+         * - Tensor G3 (Pixel 8 / 8 Pro, Mali-G715): 512 px / 20 steps in 736 s on the
+         *   GPU vs 1712 s on the CPU, clean images (Oct 15 2026).
          */
-        val AUTO_GPU_SOCS: Set<String> = emptySet()
+        val AUTO_GPU_SOCS: Set<String> = setOf("Tensor G3")
 
         fun autoAllowed(tier: DeviceTier, socModel: String): Boolean =
             tier == DeviceTier.RECOMMENDED && AUTO_GPU_SOCS.any { it.equals(socModel.trim(), ignoreCase = true) }
@@ -201,15 +203,19 @@ class GpuBackendStore(context: Context) {
             ?.trim()?.lowercase()?.takeIf { it.isNotEmpty() && it != "0" && it != "off" }
 
         /**
-         * ARM Mali GPUs abort inside the Vulkan engine a few seconds into the first
-         * image (seen on the Pixel 8 Pro's Mali-G715, Oct 2026), and a native abort
-         * cannot be caught, so they stay on the CPU. Everything else may use the GPU
-         * when the mode allows it.
+         * Vulkan vendor ids whose GPUs must stay on the CPU. Empty: ARM Mali used to
+         * abort in the first UNet step (Pixel 8 Pro, Mali-G715, Oct 2026) until the
+         * ggml-vulkan descriptor-set patch in CMakeLists.txt; since then it makes clean
+         * images there, 2.3x faster than the CPU. Add a vendor here only for a crash
+         * that cannot be caught and has no fix.
          */
-        fun hardwareAllowed(device: VulkanDevice, allowMali: Boolean = false): Boolean = !device.isMali || allowMali
+        val BLOCKED_GPU_VENDORS: Set<Int> = emptySet()
 
-        /** Test hook: `adb shell setprop debug.pixeldream.gpu_allow_mali 1` lets a Mali phone try the GPU. */
-        fun debugAllowMali(): Boolean = sysprop("debug.pixeldream.gpu_allow_mali")?.trim() == "1"
+        fun hardwareAllowed(device: VulkanDevice, allowAnyway: Boolean = false): Boolean =
+            allowAnyway || device.vendorId !in BLOCKED_GPU_VENDORS
+
+        /** Test hook: `adb shell setprop debug.pixeldream.gpu_allow_blocked 1` lets a blocked GPU try anyway. */
+        fun debugAllowBlocked(): Boolean = sysprop("debug.pixeldream.gpu_allow_blocked")?.trim() == "1"
 
         /** Test hook: `adb shell setprop debug.pixeldream.threads N` overrides the CPU thread count. */
         fun debugThreads(): Int? = sysprop("debug.pixeldream.threads")?.trim()?.toIntOrNull()?.takeIf { it in 1..16 }

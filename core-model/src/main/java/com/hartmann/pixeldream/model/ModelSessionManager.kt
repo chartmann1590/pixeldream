@@ -74,7 +74,7 @@ class ModelSessionManager(
             enhancer = null
 
             val generator = imageGenerator ?: StableDiffusion().also { imageGenerator = it }
-            val threads = GpuBackendStore.debugThreads() ?: CpuTopology.imageThreads()
+            val threads = GpuBackendStore.debugThreads() ?: Runtime.getRuntime().availableProcessors().coerceIn(4, 8)
             val wantGpu = generator.supportsGpu && gpu.shouldTryGpu(DeviceTierDetector.tierFor(context))
             Log.i(TAG, "Image engine: threads=$threads wantGpu=$wantGpu")
             ensureLoaded(generator, modelFile.absolutePath, threads, wantGpu)

@@ -170,6 +170,10 @@ Java_com_hartmann_pixeldream_diffusion_StableDiffusion_loadModelNative(
     params.model_path = path;
     params.n_threads = static_cast<int>(threads);
     params.vae_decode_only = true;
+    // The app keeps one loaded model for many images. stable-diffusion.cpp's default
+    // frees each model's weights right after it is used, so the second image in the
+    // same session ran on freed weights (SIGSEGV one second in on the GPU).
+    params.free_params_immediately = false;
     params.enable_mmap = true;
     if (use_gpu) {
         params.diffusion_flash_attn = g_gpu_options.flash_attn;
