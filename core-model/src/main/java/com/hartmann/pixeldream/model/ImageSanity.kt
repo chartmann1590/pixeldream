@@ -83,6 +83,12 @@ object ImageSanity {
         return Stats(std, neighbour)
     }
 
-    fun looksDegenerate(argb: IntArray, width: Int, height: Int): Boolean =
-        stats(argb, width, height).verdict != Verdict.OK
+    /**
+     * True for a blank frame or a noise image. A buffer that is too small or does
+     * not match width * height is not an image to judge, so it is not flagged.
+     */
+    fun looksDegenerate(argb: IntArray, width: Int, height: Int): Boolean {
+        if (width <= 1 || height <= 1 || argb.size < width * height) return false
+        return stats(argb, width, height).verdict != Verdict.OK
+    }
 }
