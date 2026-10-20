@@ -37,6 +37,10 @@ Java_com_hartmann_pixeldream_diffusion_StableDiffusion_loadModelNative(
     params.n_threads = static_cast<int>(threads);
     params.vae_decode_only = true;
     params.enable_mmap = true;
+    // Keep the weights resident between images: stable-diffusion.cpp frees them after
+    // one generation by default, and the app reuses this context for the next image
+    // (and for the noise-retry), which crashed on the second run.
+    params.free_params_immediately = false;
     sd_set_log_callback([](sd_log_level_t level, const char* text, void*) {
         if (level == SD_LOG_ERROR) LOGE("%s", text); else if (level == SD_LOG_INFO) LOGI("%s", text);
     }, nullptr);
