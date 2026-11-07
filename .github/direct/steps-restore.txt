@@ -46,7 +46,7 @@ wait 2
 tap (?i)^open$
 wait 4
 shot 20-paywall
-tap (?i)^restore purchases$
+scrollto (?i)^restore purchases$
 wait 3
 shot 21-restore-email
 type hartmannstudios@mail.tab.bot
@@ -55,7 +55,7 @@ wait 15
 shot 22-after-restore
 back
 wait 2
-tap (?i)^create$
+tapxy 167 905
 wait 3
 shot 23-create-no-banner
 sh logcat -d -s DirectBilling
