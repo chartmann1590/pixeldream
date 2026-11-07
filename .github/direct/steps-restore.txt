@@ -39,7 +39,7 @@ wait 5
 taploop (?i)^(got it|ok|allow|consent|accept)$
 adclose
 shot 05-main
-tap (?i)^settings$
+tapxy 833 905
 wait 3
 scrollto (?i)^ad-free$
 wait 2

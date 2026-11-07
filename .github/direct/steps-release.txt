@@ -39,10 +39,10 @@ wait 5
 taploop (?i)^(got it|ok|allow|consent|accept)$
 adclose
 shot 05-main
-tap (?i)^gallery$
+tapxy 500 905
 wait 3
 shot 06-gallery
-tap (?i)^settings$
+tapxy 833 905
 wait 3
 shot 07-settings
 scrollto (?i)^ad-free$
