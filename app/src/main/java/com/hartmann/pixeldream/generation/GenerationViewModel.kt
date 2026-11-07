@@ -65,7 +65,8 @@ class GenerationViewModel(application: Application) : AndroidViewModel(applicati
     val uiState: StateFlow<GenerationUiState> = _uiState.asStateFlow()
 
     init {
-        viewModelScope.launch { entitlementRepository.refreshEntitlement() }
+        // Amazon Appstore build: never connect Play Billing.
+        if (!(com.hartmann.pixeldream.BuildConfig.STORE == "amazon")) viewModelScope.launch { entitlementRepository.refreshEntitlement() }
     }
 
     fun adShown() {

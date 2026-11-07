@@ -53,7 +53,8 @@ fun MainNavGraph(adsReady: Boolean) {
     var selectedGenerationId by rememberSaveable { androidx.compose.runtime.mutableStateOf<String?>(null) }
     var editPrompt by rememberSaveable { androidx.compose.runtime.mutableStateOf<String?>(null) }
 
-    LaunchedEffect(billingRepository) { billingRepository.refreshEntitlement() }
+    // Amazon Appstore build: Play Billing is never connected (no ad-free subscription on Fire); stays free + ads.
+    LaunchedEffect(billingRepository) { if (!(com.hartmann.pixeldream.BuildConfig.STORE == "amazon")) billingRepository.refreshEntitlement() }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -135,7 +136,7 @@ fun MainNavGraph(adsReady: Boolean) {
                     },
                 )
             }
-            composable(MainRoute.PAYWALL) { PaywallScreen(billingRepository) }
+            composable(MainRoute.PAYWALL) { if (!(com.hartmann.pixeldream.BuildConfig.STORE == "amazon")) PaywallScreen(billingRepository) }
             composable(MainRoute.SETTINGS) {
                 SettingsScreen(
                     onOpenAdFree = { navController.navigate(MainRoute.PAYWALL) },

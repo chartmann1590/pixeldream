@@ -1,0 +1,22 @@
+launch
+wait 15
+adclose
+shot 01-launch
+tap (?i)^set up pixeldream$
+wait 4
+shot 02-content-policy
+scrollto (?i)^i agree and understand$
+tap (?i)^i agree and understand$
+wait 6
+shot 03-device-check
+swipeup
+shot 04-device-check-bottom
+tap (?i)^continue$
+wait 8
+shot 05-after-continue
+tap (?i)^(start download|got it)$
+wait 10
+shot 06-model-download
+back
+wait 3
+shot 07-back

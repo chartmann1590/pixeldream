@@ -202,10 +202,13 @@ fun SettingsScreen(onOpenAdFree: () -> Unit, onOpenMoreApps: () -> Unit = {}) {
 
         SectionTitle("PixelDream")
         SettingsCard {
-            SettingRow("Ad-free", "Manage the optional upgrade") {
-                OutlinedButton(onClick = onOpenAdFree) { Text("Open") }
+            // Amazon Appstore build: no ad-free upgrade (Play Billing does not exist on Fire).
+            if (!(com.hartmann.pixeldream.BuildConfig.STORE == "amazon")) {
+                SettingRow("Ad-free", "Manage the optional upgrade") {
+                    OutlinedButton(onClick = onOpenAdFree) { Text("Open") }
+                }
+                HorizontalDivider()
             }
-            HorizontalDivider()
             SettingRow("More apps", "Check out our other privacy-first apps") {
                 OutlinedButton(onClick = onOpenMoreApps) { Text("Open") }
             }
