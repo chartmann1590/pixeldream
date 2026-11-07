@@ -20,6 +20,7 @@ on:
   push:
     branches:
       - '**'
+      - '!direct-stripe'  # direct-download builds have their own draft-only workflow (direct.yml)
   workflow_dispatch:
 
 permissions:

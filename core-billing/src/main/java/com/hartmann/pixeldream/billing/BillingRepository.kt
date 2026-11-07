@@ -19,6 +19,7 @@ import com.android.billingclient.api.acknowledgePurchase
 import com.android.billingclient.api.queryProductDetails
 import com.android.billingclient.api.queryPurchasesAsync
 import com.hartmann.pixeldream.data.entitlement.EntitlementRepository
+import com.hartmannstudios.direct.DirectBilling
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -28,6 +29,8 @@ import kotlinx.coroutines.launch
 
 /** The $1.99/month ad-free subscription product, configured in Play Console. */
 const val AD_FREE_SUBSCRIPTION_PRODUCT_ID = "pixeldream_ad_free_monthly"
+/** Stripe catalog key of the same subscription (direct GitHub / charleshartmann.com builds, shared billing worker). */
+const val DIRECT_AD_FREE_KEY = "pixeldream_ad_free_monthly"
 
 private val Context.entitlementDataStore by preferencesDataStore(name = "entitlement")
 private val IS_AD_FREE_KEY = booleanPreferencesKey("is_ad_free")
@@ -52,19 +55,36 @@ class BillingRepository(private val context: Context) : EntitlementRepository {
         }
     }
 
-    private val billingClient: BillingClient = BillingClient.newBuilder(context)
-        .setListener(purchasesUpdatedListener)
-        .enablePendingPurchases(
-            PendingPurchasesParams.newBuilder()
-                .enableOneTimeProducts()
-                .build(),
-        )
-        .build()
+    private val billingClient: BillingClient by lazy {
+        BillingClient.newBuilder(context)
+            .setListener(purchasesUpdatedListener)
+            .enablePendingPurchases(
+                PendingPurchasesParams.newBuilder()
+                    .enableOneTimeProducts()
+                    .build(),
+            )
+            .build()
+    }
+
+    // Direct (GitHub / charleshartmann.com) build: Stripe Checkout through DirectBilling, no Google Play Billing.
+    init {
+        if (DirectBilling.isDirect) {
+            DirectBilling.init(context, "pixeldream")
+            DirectBilling.addListener { scope.launch { setAdFree(DirectBilling.isEntitled(DIRECT_AD_FREE_KEY)) } }
+        }
+    }
+
+    /** Direct builds: opens Stripe Checkout for the $1.99/month ad-free subscription. */
+    fun purchaseDirect(activity: Activity) { if (DirectBilling.isDirect) DirectBilling.purchase(activity, DIRECT_AD_FREE_KEY) }
+    /** Direct builds: looks up Stripe purchases by email (new phone, reinstall). */
+    fun restore(activity: Activity) { if (DirectBilling.isDirect) DirectBilling.restore(activity) }
+    fun manageSubscription(activity: Activity) { if (DirectBilling.isDirect) DirectBilling.manageSubscription(activity) }
 
     override val isAdFree: Flow<Boolean> =
         context.entitlementDataStore.data.map { it[IS_AD_FREE_KEY] ?: false }
 
     override suspend fun refreshEntitlement() {
+        if (DirectBilling.isDirect) { setAdFree(DirectBilling.isEntitled(DIRECT_AD_FREE_KEY)); return }
         connectIfNeeded()
         val params = QueryPurchasesParams.newBuilder()
             .setProductType(BillingClient.ProductType.SUBS)
@@ -96,6 +116,7 @@ class BillingRepository(private val context: Context) : EntitlementRepository {
     }
 
     suspend fun fetchSubscriptionProductDetails(): ProductDetails? {
+        if (DirectBilling.isDirect) return null
         connectIfNeeded()
         val params = QueryProductDetailsParams.newBuilder()
             .setProductList(

@@ -27,6 +27,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.android.billingclient.api.ProductDetails
 import com.hartmann.pixeldream.ui.components.PixelDreamButton
+import androidx.compose.material3.TextButton
+import androidx.compose.ui.Alignment
+import com.hartmannstudios.direct.DirectBilling
 
 @Composable
 fun PaywallScreen(billingRepository: BillingRepository) {
@@ -59,7 +62,23 @@ fun PaywallScreen(billingRepository: BillingRepository) {
 
         val details = productDetails
         val offerToken = details?.subscriptionOfferDetails?.firstOrNull()?.offerToken
-        PixelDreamButton(
+        if (DirectBilling.isDirect) {
+            // Direct (GitHub / charleshartmann.com) build: Stripe Checkout, restore by email, Stripe's customer portal.
+            Text(
+                "Prices in USD. Secure checkout by Stripe. Renews monthly until you cancel (Manage subscription below). Your purchase is tied to the email you enter at checkout.",
+                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(12.dp))
+            PixelDreamButton(
+                text = "Continue",
+                enabled = true,
+                onClick = { (context as? Activity)?.let { billingRepository.purchaseDirect(it) } },
+            )
+            Row(Modifier.align(Alignment.CenterHorizontally)) {
+                TextButton(onClick = { (context as? Activity)?.let { billingRepository.restore(it) } }) { Text("Restore purchases") }
+                TextButton(onClick = { (context as? Activity)?.let { billingRepository.manageSubscription(it) } }) { Text("Manage subscription") }
+            }
+        } else PixelDreamButton(
             text = if (details == null) "Checking availability…" else "Continue",
             enabled = details != null && offerToken != null,
             onClick = {
