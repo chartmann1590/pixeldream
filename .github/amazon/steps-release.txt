@@ -1,22 +1,30 @@
 launch
 wait 15
+shot 01-below-spec-warning
+tap (?i)^got it$
+wait 3
 adclose
-shot 01-launch
+shot 02-welcome
 tap (?i)^set up pixeldream$
 wait 4
-shot 02-content-policy
+shot 03-content-policy
 scrollto (?i)^i agree and understand$
-tap (?i)^i agree and understand$
 wait 6
-shot 03-device-check
+shot 04-device-check
 swipeup
-shot 04-device-check-bottom
-tap (?i)^continue$
+swipeup
+shot 05-device-check-bottom
+scrollto (?i)^(continue|continue anyway|next)$
 wait 8
-shot 05-after-continue
-tap (?i)^(start download|got it)$
-wait 10
-shot 06-model-download
+taploop (?i)^(got it|ok)$
+shot 06-after-device-check
+swipeup
+shot 07-models
+scrollto (?i)^(start download|download|download models|download all)$
+wait 30
+shot 08-model-download
+swipeup
+shot 09-model-download-bottom
 back
 wait 3
-shot 07-back
+shot 10-back
