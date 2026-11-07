@@ -20,6 +20,8 @@ on:
   push:
     branches:
       - '**'
+      # Amazon Appstore branch builds with its own amazon.yml (draft only); never auto-publish it here.
+      - '!amazon'
   workflow_dispatch:
 
 permissions:
