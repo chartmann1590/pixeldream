@@ -40,10 +40,8 @@ shot 10-paywall
 scrollto (?i)^start 3-day free trial
 wait 3
 shot 11-email
-type hartmannstudios+pawdub1109e@mail.tab.bot
+type hartmannstudios+pawdub1109f@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
-back
-wait 6
-shot 13-after-close
+# leave Checkout open (closing it unpaid makes the app spend the 5/day email lookups)

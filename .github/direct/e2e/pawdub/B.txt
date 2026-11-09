@@ -30,7 +30,7 @@ tap (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+pawdub1109e@mail.tab.bot
+typefix hartmannstudios+pawdub1109f@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 10

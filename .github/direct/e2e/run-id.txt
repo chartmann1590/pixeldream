@@ -1,4 +1,4 @@
-E2E_ID=1109e
-E2E_APP=scamradar
-E2E_PKG=com.charles.scamradar.app
-E2E_APK=https://github.com/chartmann1590/ScamRadar/releases/download/direct-6/ScamRadar-direct-release.apk
+E2E_ID=1109f
+E2E_APP=pawdub
+E2E_PKG=com.charles.pawdub
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/pawdub-direct-1/Pawdub-direct-release.apk
