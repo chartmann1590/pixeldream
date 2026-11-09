@@ -1,4 +1,4 @@
 E2E_ID=1109c
-E2E_APP=aria
-E2E_PKG=com.aria.assistant
-E2E_APK=https://github.com/chartmann1590/aria-assistant/releases/download/direct-10/Aria-direct-release.apk
+E2E_APP=photobooth
+E2E_PKG=com.charles.photobooth
+E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-5/Photobooth-direct-release.apk
