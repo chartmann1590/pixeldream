@@ -36,7 +36,7 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
-        E2E_ID: ${{ github.event.inputs.e2e_id || '1109a' }}
+        E2E_ID: ${{ github.event.inputs.e2e_id || '1109b' }}
       with:
         api-level: 30
         profile: pixel_5
@@ -52,4 +52,4 @@ jobs:
       if: always()
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
-      run: bash .github/direct/direct-upload.sh /tmp/dsk-out pd_e2e_${{ github.event.inputs.e2e_id || '1109a' }}_r${{ github.run_number }}
+      run: bash .github/direct/direct-upload.sh /tmp/dsk-out pd_e2e_${{ github.event.inputs.e2e_id || '1109b' }}_r${{ github.run_number }}
