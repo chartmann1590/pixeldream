@@ -1,3 +1,5 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
@@ -7,15 +9,16 @@ shot 01-launch
 taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
 wait 3
 shot 02-menu
-adclose
-sh input tap 1032 1521; sleep 5; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1441; sleep 5; }; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1482; sleep 5; }; dumpsys activity activities | grep -m1 'topResumedActivity'
+tapxy 857 790
+wait 5
+sh dumpsys activity activities | grep -m1 -E 'mResumedActivity|topResumedActivity'
 wait 6
 shot 10-shop
 tap (?i)^BUY .*2\.99$
 wait 4
 shot 11-email
 tap @
-typefix hartmannstudios+deadtide1109b@mail.tab.bot
+typefix hartmannstudios+deadtide1109c@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 11b-email-typed
