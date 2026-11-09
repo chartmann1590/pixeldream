@@ -1,4 +1,4 @@
 E2E_ID=1109d
-E2E_APP=pixeldream
-E2E_PKG=com.hartmann.pixeldream
-E2E_APK=drop:pixeldream-ci-47
+E2E_APP=tipsybuddy
+E2E_PKG=com.tipsybuddy.app
+E2E_APK=https://github.com/chartmann1590/TipsyBuddy/releases/download/direct-9/TipsyBuddy-direct-release.apk
