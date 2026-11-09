@@ -1,0 +1,83 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^got it$
+wait 3
+adclose
+shot 02-welcome
+tap (?i)^set up pixeldream$
+wait 4
+scrollto (?i)^i agree and understand$
+wait 6
+shot 03-device-check
+scrollto (?i)^(continue|continue anyway|next)$
+wait 8
+taploop (?i)^(got it|ok)$
+shot 04-model-download
+scrollto (?i)^(start download|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 5
+taploop (?i)^(got it|ok|allow|consent|accept)$
+adclose
+shot 05-main
+tapxy 833 905
+wait 3
+scrollto (?i)^ad-free$
+wait 2
+tap (?i)^open$
+wait 4
+shot 20-paywall
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-restore-check-1109@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+pixeldream1109d@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+swipeup
+wait 1
+shot 22b-pixeldream-plus-after-restore
+back
+wait 2
+tapxy 167 905
+wait 3
+shot 23-create-no-banner
+sh logcat -d -s DirectBilling

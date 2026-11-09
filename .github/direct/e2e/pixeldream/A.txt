@@ -1,0 +1,67 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^got it$
+wait 3
+adclose
+shot 02-welcome
+tap (?i)^set up pixeldream$
+wait 4
+scrollto (?i)^i agree and understand$
+wait 6
+shot 03-device-check
+scrollto (?i)^(continue|continue anyway|next)$
+wait 8
+taploop (?i)^(got it|ok)$
+shot 04-model-download
+scrollto (?i)^(start download|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 5
+taploop (?i)^(got it|ok|allow|consent|accept)$
+adclose
+shot 05-main
+tapxy 500 905
+wait 3
+shot 06-gallery
+tapxy 833 905
+wait 3
+shot 07-settings
+scrollto (?i)^ad-free$
+wait 2
+tap (?i)^open$
+wait 4
+shot 10-paywall
+tap (?i)^continue$
+wait 3
+shot 11-email
+type hartmannstudios+pixeldream1109d@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
