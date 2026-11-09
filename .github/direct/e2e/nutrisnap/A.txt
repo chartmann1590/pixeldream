@@ -48,29 +48,27 @@ taploop (?i)^(next|continue|get started|skip|ok|got it|done|not now|maybe later|
 adclose
 adclose
 shot 03-home
-tap (?i)^diary$
+tapxy 300 892
 wait 3
 adclose
 shot 04-diary
-tap (?i)^trends$
+tapxy 700 892
 wait 3
 adclose
 shot 05-trends
-tap (?i)^me$
+tapxy 900 892
 wait 3
 adclose
 shot 06-me
-tap (?i)^open settings$
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Open settings"
 wait 4
 adclose
 shot 07-settings
-scrollto (?i)^go premium - .*month$
+sh sh /data/local/tmp/findtap.sh "Go Premium"
 wait 3
 shot 11-email
-type hartmannstudios+nutrisnap1109c@mail.tab.bot
+type hartmannstudios+nutrisnap1109d@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
-tap (?i)^close$
-wait 3
-shot 13-after-close

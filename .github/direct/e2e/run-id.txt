@@ -1,4 +1,4 @@
-E2E_ID=1109f
-E2E_APP=auracastweather
-E2E_PKG=com.auracast.weather
-E2E_APK=https://github.com/chartmann1590/auracast-weather/releases/download/direct-10/AuraCastWeather-direct-release.apk
+E2E_ID=1109d
+E2E_APP=nutrisnap
+E2E_PKG=com.charles.nutrisnap
+E2E_APK=https://github.com/chartmann1590/nutrisnap/releases/download/direct-7/NutriSnap-direct-release.apk
