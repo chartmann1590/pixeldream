@@ -1,4 +1,4 @@
 E2E_ID=1109
-E2E_APP=pantrytracker
-E2E_PKG=com.chartmann.pantrytracker
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/pantrytracker-direct-1/PantryTracker-direct-release.apk
+E2E_APP=gigmileagetracker
+E2E_PKG=com.chartmann.gigmileagetracker
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/gigmileagetracker-direct-1/GigMileage-direct-release.apk
