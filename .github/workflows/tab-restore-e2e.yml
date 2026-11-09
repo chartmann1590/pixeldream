@@ -17,8 +17,18 @@ jobs:
       run: |
         grep -E '^E2E_(ID|APP|PKG|APK)=' .github/direct/e2e/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/e2e/run-id.txt
     - name: Download released APK
+      env:
+        DROP_KEY: ${{ secrets.DROP_KEY }}
       run: |
-        mkdir -p dsk-apk && curl -sfL -o dsk-apk/app.apk "$E2E_APK" && sha256sum dsk-apk/app.apk && ls -la dsk-apk
+        mkdir -p dsk-apk
+        case "$E2E_APK" in
+          drop:*) N="${E2E_APK#drop:}"; U=https://hs-apk-drop.charles-h-hartmann1.workers.dev
+            C=$(curl -sf -H "X-Key: $DROP_KEY" "$U/c/$N.info/0" | python3 -c 'import sys,json;print(json.load(sys.stdin)["chunks"])')
+            for i in $(seq 0 $((C-1))); do curl -sf -H "X-Key: $DROP_KEY" "$U/c/$N/$i" >> /tmp/d.tgz; done
+            mkdir -p /tmp/dx && tar xzf /tmp/d.tgz -C /tmp/dx && mv "$(ls /tmp/dx/*.apk | head -1)" dsk-apk/app.apk;;
+          *) curl -sfL -o dsk-apk/app.apk "$E2E_APK";;
+        esac
+        sha256sum dsk-apk/app.apk && ls -la dsk-apk
     - name: Free runner disk
       run: |
         sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android/sdk/ndk 2>/dev/null || true

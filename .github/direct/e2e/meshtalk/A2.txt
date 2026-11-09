@@ -1,0 +1,13 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+stop
+wait 2
+launch
+wait 12
+taploop (?i)^(allow|while using the app|only this time|ok|continue|get started|next|skip|not now|got it|accept|agree|done|start)$
+shot 14-relaunch
+tap (?i)^(talk|walkie.talkie)$
+wait 4
+shot 15-talk-tab
+sh logcat -d -s DirectBilling
