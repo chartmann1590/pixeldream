@@ -5,14 +5,12 @@ wait 15
 taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$
 adclose
 shot 14-relaunch-after-purchase
-back
 wait 2
-tapxy 167 905
 wait 3
-shot 23-create-no-banner
 tapxy 833 905
-wait 3
+wait 4
+shot 24-settings
 scrollto (?i)^ad-free$
 wait 2
-shot 24-settings-adfree
+shot 25-settings-adfree-row
 sh logcat -d -s DirectBilling

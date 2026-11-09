@@ -53,7 +53,7 @@ shot 10-paywall
 tap (?i)^continue$
 wait 3
 shot 11-email
-type hartmannstudios+pixeldream1109@mail.tab.bot
+type hartmannstudios+pixeldream1109b@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
