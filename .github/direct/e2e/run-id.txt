@@ -1,4 +1,4 @@
 E2E_ID=1109
-E2E_APP=gigmileagetracker
-E2E_PKG=com.chartmann.gigmileagetracker
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/gigmileagetracker-direct-1/GigMileage-direct-release.apk
+E2E_APP=symptomdiary
+E2E_PKG=com.chartmann.symptomdiary
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/symptomdiary-direct-1/SymptomDiary-direct-release.apk
