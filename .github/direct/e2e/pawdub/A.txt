@@ -1,3 +1,5 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
@@ -35,12 +37,10 @@ wait 4
 tap (?i)^pawdub pro
 wait 4
 shot 10-paywall
-tap (?i)^start 3-day free trial
+scrollto (?i)^start 3-day free trial
 wait 3
 shot 11-email
-type hartmannstudios+pawdub1109@mail.tab.bot
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
+type hartmannstudios+pawdub1109d@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
