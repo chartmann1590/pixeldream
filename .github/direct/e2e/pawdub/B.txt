@@ -11,7 +11,7 @@ taploop (?i)^start dubbing$
 taploop (?i)^(while using the app|only this time|allow|ok)$
 taploop (?i)^(while using the app|only this time|allow|ok)$
 wait 3
-tapxy 940 60
+tapxy 920 99
 wait 4
 adclose
 shot 20-settings-before
@@ -30,7 +30,7 @@ tap (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+pawdub1109d@mail.tab.bot
+typefix hartmannstudios+pawdub1109e@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 10

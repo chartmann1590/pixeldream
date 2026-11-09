@@ -17,7 +17,7 @@ wait 3
 shot 02-voices
 back
 wait 2
-tapxy 940 60
+tapxy 920 99
 wait 4
 adclose
 shot 03-settings
@@ -27,12 +27,12 @@ adclose
 shot 04-packs
 back
 wait 2
-tapxy 860 60
+tapxy 797 99
 wait 4
 shot 05-library
 back
 wait 2
-tapxy 940 60
+tapxy 920 99
 wait 4
 tap (?i)^pawdub pro
 wait 4
@@ -40,7 +40,7 @@ shot 10-paywall
 scrollto (?i)^start 3-day free trial
 wait 3
 shot 11-email
-type hartmannstudios+pawdub1109d@mail.tab.bot
+type hartmannstudios+pawdub1109e@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
