@@ -7,6 +7,7 @@ stop
 wait 2
 launch
 wait 12
+taploop (?i)^(skip for now|allow|while using the app|only this time|ok)$
 taploop (?i)^(allow|while using the app|only this time|ok|continue|get started|next|skip|not now|got it|accept|agree|done|start)$
 shot 30-relaunch
 tap (?i)^(talk|walkie.talkie)$
