@@ -1,4 +1,4 @@
 E2E_ID=1109r
-E2E_APP=adhdfocuscompanion
-E2E_PKG=com.chartmann.adhdfocuscompanion
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/adhdfocuscompanion-direct-1/ADHDFocus-direct-release.apk
+E2E_APP=warmword
+E2E_PKG=com.charles.warmwords
+E2E_APK=https://github.com/chartmann1590/warmword/releases/download/direct-4/WarmWord-direct-release.apk
