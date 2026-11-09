@@ -18,7 +18,8 @@ shot 20-home
 tapxy 880 900
 wait 4
 adclose
-scrollto (?i)^restore purchases$
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Restore purchases"
 wait 3
 shot 21-restore-email
 tap @
@@ -30,11 +31,12 @@ wait 2
 shot 21b-wrong-email-result
 wait 8
 shot 21c-after-wrong-email
-scrollto (?i)^restore purchases$
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Restore purchases"
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+auracastweather1109e@mail.tab.bot
+typefix hartmannstudios+auracastweather1109f@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15
