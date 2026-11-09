@@ -21,54 +21,37 @@ taploop (?i)^(got it|ok)$
 shot 04-model-download
 scrollto (?i)^(start download|retry downloads)$
 wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
-tap (?i)^(start creating|retry downloads)$
-wait 60
+sh echo dD0wClsgLWYgL2RhdGEvbG9jYWwvdG1wL3dhaXRjLmRvbmUgXSAmJiB7IGVjaG8gd2FpdGMgYWxyZWFkeTsgZXhpdCAwOyB9CndoaWxlIFsgJHQgLWx0IDMgXTsgZG8KIHVpYXV0b21hdG9yIGR1bXAgL2RhdGEvbG9jYWwvdG1wL3cueG1sID4vZGV2L251bGwgMj4mMQogYj0kKGdyZXAgLWlvRSAndGV4dD0iKHN0YXJ0IGNyZWF0aW5nfHJldHJ5IGRvd25sb2FkcykiW14+XSpib3VuZHM9IlxbWzAtOV0qLFswLTldKlxdXFtbMC05XSosWzAtOV0qXF0iJyAvZGF0YS9sb2NhbC90bXAvdy54bWwgfCBoZWFkIC0xIHwgc2VkICdzLy4qYm91bmRzPS8vJyB8IHRyIC1jICcwLTknICcgJykKIGlmIFsgLW4gIiRiIiBdOyB0aGVuIHNldCAtLSAkYjsgaW5wdXQgdGFwICQoKCAoJDErJDMpLzIgKSkgJCgoICgkMiskNCkvMiApKTsgdG91Y2ggL2RhdGEvbG9jYWwvdG1wL3dhaXRjLmRvbmU7IGVjaG8gIndhaXRjIHRhcHBlZCAkdCI7IGV4aXQgMDsgZmkKIGdyZXAgLW9FICdbMC05Ll0rIFtHTV1CIG9mIFswLTkuXSsgR0InIC9kYXRhL2xvY2FsL3RtcC93LnhtbCB8IHRyICdcbicgJyAnOyBlY2hvCiBzbGVlcCA0NTsgdD0kKCh0KzEpKQpkb25lCmVjaG8gd2FpdGMgbm90IHlldAo= | base64 -d > /data/local/tmp/waitc.sh
+sh rm -f /data/local/tmp/waitc.done
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+wait 3
 tap (?i)^(start creating|retry downloads)$
 wait 5
 taploop (?i)^(got it|ok|allow|consent|accept)$
@@ -89,7 +72,7 @@ shot 10-paywall
 tap (?i)^continue$
 wait 3
 shot 11-email
-type hartmannstudios+pixeldream1109g@mail.tab.bot
+type hartmannstudios+pixeldream1109h@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
