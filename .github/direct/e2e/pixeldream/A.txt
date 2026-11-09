@@ -40,6 +40,36 @@ wait 60
 tap (?i)^(start creating|retry downloads)$
 wait 60
 tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
 wait 5
 taploop (?i)^(got it|ok|allow|consent|accept)$
 adclose
@@ -59,7 +89,7 @@ shot 10-paywall
 tap (?i)^continue$
 wait 3
 shot 11-email
-type hartmannstudios+pixeldream1109f@mail.tab.bot
+type hartmannstudios+pixeldream1109g@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout

@@ -40,6 +40,36 @@ wait 60
 tap (?i)^(start creating|retry downloads)$
 wait 60
 tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
+wait 60
+tap (?i)^(start creating|retry downloads)$
 wait 5
 taploop (?i)^(got it|ok|allow|consent|accept)$
 adclose
@@ -68,7 +98,7 @@ scrollto (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+pixeldream1109f@mail.tab.bot
+typefix hartmannstudios+pixeldream1109g@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15
