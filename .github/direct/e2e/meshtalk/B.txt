@@ -4,6 +4,13 @@ sh am force-stop com.brave.browser
 launch
 wait 12
 shot 01-launch
+tap (?i)^choose a nickname$
+typefix TabTester
+sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
+wait 1
+shot 01b-nickname
+tap (?i)^get started$
+wait 4
 taploop (?i)^(allow|while using the app|only this time|ok|continue|get started|next|skip|not now|got it|accept|agree|done|start)$
 wait 3
 taploop (?i)^(allow|while using the app|only this time|ok|continue|get started|next|skip|not now|got it|accept|agree|done|start)$
@@ -30,7 +37,7 @@ scrollto (?i)^restore purchase$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+meshtalk1109@mail.tab.bot
+typefix hartmannstudios+meshtalk1109b@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 21d-right-email-typed
