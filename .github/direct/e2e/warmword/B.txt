@@ -61,7 +61,7 @@ scrollto (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+warmword1109d@mail.tab.bot
+typefix hartmannstudios+warmword1109f@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15

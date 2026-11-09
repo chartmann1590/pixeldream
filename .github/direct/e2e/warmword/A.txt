@@ -66,7 +66,7 @@ shot 10-paywall
 scrollto (?i)^subscribe monthly$
 wait 3
 shot 11-email
-type hartmannstudios+warmword1109d@mail.tab.bot
+type hartmannstudios+warmword1109f@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
