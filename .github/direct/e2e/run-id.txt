@@ -1,4 +1,4 @@
 E2E_ID=1109d
-E2E_APP=scamradar
-E2E_PKG=com.charles.scamradar.app
-E2E_APK=https://github.com/chartmann1590/ScamRadar/releases/download/direct-6/ScamRadar-direct-release.apk
+E2E_APP=auracastweather
+E2E_PKG=com.auracast.weather
+E2E_APK=https://github.com/chartmann1590/auracast-weather/releases/download/direct-10/AuraCastWeather-direct-release.apk
