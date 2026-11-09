@@ -15,7 +15,7 @@ tapxy 920 99
 wait 4
 adclose
 shot 20-settings-before
-tap (?i)^restore purchases$
+tap (?i)^restore purchases
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
@@ -26,11 +26,11 @@ wait 2
 shot 21b-wrong-email-result
 wait 8
 shot 21c-after-wrong-email
-tap (?i)^restore purchases$
+tap (?i)^restore purchases
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+pawdub1109f@mail.tab.bot
+typefix hartmannstudios+pawdub1109g@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 10
