@@ -26,10 +26,23 @@ shot 07-rides
 tapxy 935 892
 wait 4
 shot 08-profile
+sh input swipe 540 1500 540 500 400
+wait 1
+sh input swipe 540 1500 540 500 400
+wait 1
+sh input swipe 540 1500 540 500 400
+wait 1
+sh input swipe 540 1500 540 500 400
+wait 1
+sh input swipe 540 1500 540 500 400
+wait 1
+sh input swipe 540 1500 540 500 400
+wait 1
+shot 08b-scrolled
 scrollto (?i)^subscribe to remove ads
 wait 3
 shot 11-email
-type hartmannstudios+tipsybuddy1109d@mail.tab.bot
+type hartmannstudios+tipsybuddy1109e@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
