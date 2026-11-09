@@ -50,6 +50,12 @@ shot 06-gallery
 tapxy 833 905
 wait 3
 shot 07-settings
+sh input swipe 540 1300 540 450 500
+wait 1
+sh input swipe 540 1300 540 450 500
+wait 1
+sh input swipe 540 1300 540 450 500
+wait 1
 scrollto (?i)^ad-free$
 wait 2
 tap (?i)^open$
@@ -58,7 +64,7 @@ shot 10-paywall
 tap (?i)^continue$
 wait 3
 shot 11-email
-type hartmannstudios+pixeldream1109d@mail.tab.bot
+type hartmannstudios+pixeldream1109e@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
