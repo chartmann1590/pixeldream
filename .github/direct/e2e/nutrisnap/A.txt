@@ -1,0 +1,76 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+# onboarding: the Continue button is drawn at y~2110-2210 of 2340 but its accessibility node reports 0,0 bounds, so tap it by position
+tapxy 500 923
+wait 3
+shot 01b-onboarding-step2
+tapxy 500 923
+wait 3
+shot 01c-onboarding-step3
+tapxy 500 923
+wait 3
+shot 01d-onboarding-step4
+tapxy 500 923
+wait 3
+shot 01e-onboarding-step5
+tapxy 500 923
+wait 4
+taploop (?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time|start tracking)$
+adclose
+wait 5
+shot 02-model-download
+wait 60
+wait 60
+shot 02b-download-2m
+wait 60
+wait 60
+wait 60
+shot 02c-download-5m
+wait 60
+wait 60
+wait 60
+shot 02d-download-8m
+wait 120
+wait 120
+wait 120
+shot 02e-download-14m
+wait 120
+wait 120
+wait 120
+shot 02f-download-20m
+taploop (?i)^(next|continue|get started|skip|ok|got it|done|not now|maybe later|no thanks|allow|while using the app)$
+adclose
+adclose
+shot 03-home
+tap (?i)^diary$
+wait 3
+adclose
+shot 04-diary
+tap (?i)^trends$
+wait 3
+adclose
+shot 05-trends
+tap (?i)^me$
+wait 3
+adclose
+shot 06-me
+tap (?i)^open settings$
+wait 4
+adclose
+shot 07-settings
+scrollto (?i)^go premium - .*month$
+wait 3
+shot 11-email
+type hartmannstudios+nutrisnap1109c@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
