@@ -7,7 +7,8 @@ launch
 wait 25
 taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
 shot 14-menu-relaunch
-sh am start -n com.deadtide.hordesurvivor/.ShopActivity
+adclose
+sh input tap 1032 1521; sleep 5; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1441; sleep 5; }; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1482; sleep 5; }; dumpsys activity activities | grep -m1 'topResumedActivity'
 wait 6
 shot 15-shop
 back

@@ -7,14 +7,15 @@ shot 01-launch
 taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
 wait 3
 shot 02-menu
-sh am start -n com.deadtide.hordesurvivor/.ShopActivity
+adclose
+sh input tap 1032 1521; sleep 5; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1441; sleep 5; }; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1482; sleep 5; }; dumpsys activity activities | grep -m1 'topResumedActivity'
 wait 6
 shot 10-shop
 tap (?i)^BUY .*2\.99$
 wait 4
 shot 11-email
 tap @
-typefix hartmannstudios+deadtide1109@mail.tab.bot
+typefix hartmannstudios+deadtide1109b@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 11b-email-typed

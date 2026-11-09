@@ -7,7 +7,8 @@ shot 01-launch
 taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
 wait 3
 shot 02-menu-banner
-sh am start -n com.deadtide.hordesurvivor/.ShopActivity
+adclose
+sh input tap 1032 1521; sleep 5; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1441; sleep 5; }; dumpsys activity activities | grep -q 'ResumedActivity.*ShopActivity' || { input tap 1032 1482; sleep 5; }; dumpsys activity activities | grep -m1 'topResumedActivity'
 wait 6
 shot 20-shop
 tap (?i)^RESTORE PURCHASES$
@@ -28,7 +29,7 @@ scrollto (?i)^RESTORE PURCHASES$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+deadtide1109@mail.tab.bot
+typefix hartmannstudios+deadtide1109b@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 21d-right-email-typed
