@@ -1,3 +1,6 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
 stop
 wait 2
 launch

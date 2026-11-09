@@ -1,3 +1,6 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
 launch
 wait 15
 shot 01-launch
@@ -25,6 +28,8 @@ scrollto (?i)^upgrade to plus.*month$
 wait 3
 shot 11-email
 type hartmannstudios+auracastweather1109@mail.tab.bot
+sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
+wait 1
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
