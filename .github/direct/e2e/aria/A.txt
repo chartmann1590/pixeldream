@@ -1,0 +1,71 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-meet-aria
+taploop (?i)^(allow|ok|while using the app|only this time)$
+scrollto (?i)^get started$
+shot 02-language
+tap (?i)^get started$
+wait 60
+shot 03-downloading
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 100
+tap (?i)^continue$
+wait 20
+shot 04-after-model
+tap (?i)^allow microphone access$
+wait 3
+taploop (?i)^(allow|ok|while using the app|only this time)$
+wait 2
+taploop (?i)^(allow|ok|while using the app|only this time|deny|don.t allow)$
+tap (?i)^skip$
+wait 3
+tap (?i)^skip$
+wait 3
+tap (?i)^done
+wait 10
+adclose
+taploop (?i)^(allow|ok|while using the app|only this time)$
+shot 05-main
+tap (?i)^(type a message|message|ask aria).*
+wait 2
+type Hello
+tap (?i)^send$
+wait 120
+shot 05b-chat-reply
+wait 30
+shot 05c-chat-reply-2
+tap (?i)^premium$
+wait 4
+shot 10-paywall
+swipeup
+shot 10b-paywall-bottom
+scrollto (?i)^subscribe$
+wait 3
+shot 11-email
+type hartmannstudios+aria1109c@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
