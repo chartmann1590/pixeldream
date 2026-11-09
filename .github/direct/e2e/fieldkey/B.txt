@@ -1,3 +1,5 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
@@ -28,7 +30,7 @@ scrollto (?i)restore
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+fieldkey1109b@mail.tab.bot
+typefix hartmannstudios+fieldkey1109c@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 21d-right-email-typed
