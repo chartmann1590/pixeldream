@@ -1,0 +1,50 @@
+launch
+wait 15
+adclose
+shot 01-launch
+taploop (?i)^(next)$
+shot 02-story-end
+tap (?i)^start protecting me$
+wait 4
+taploop (?i)^(get started|continue|allow|ok|got it|not now|while using the app)$
+taploop (?i)^(get started|continue|allow|ok|got it|not now|while using the app)$
+wait 3
+shot 03-model-setup
+tap (?i)^start with lite mode$
+wait 4
+taploop (?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$
+adclose
+taploop (?i)^(skip|not now|later|no thanks|got it|done|close)$
+tap (?i)^maybe later$
+wait 3
+adclose
+shot 04-scan-home
+tap (?i)^today$
+wait 4
+adclose
+shot 06-today
+tap (?i)^library$
+wait 4
+adclose
+shot 07-library
+tap (?i)^history$
+wait 4
+adclose
+shot 08-history
+tap (?i)^settings$
+wait 4
+adclose
+shot 09-settings
+scrollto (?i)^go premium$
+wait 4
+shot 10-paywall
+scrollto (?i)^subscribe$
+wait 3
+shot 11-email
+type hartmannstudios+scamradar1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close

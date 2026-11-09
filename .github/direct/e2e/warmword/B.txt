@@ -1,0 +1,70 @@
+launch
+wait 15
+tap (?i)^get started$
+wait 5
+shot 02-model-download
+wait 60
+wait 60
+shot 02b-download-2m
+wait 60
+wait 60
+shot 02c-download-4m
+wait 60
+wait 60
+wait 60
+shot 02d-download-7m
+tap (?i)^continue$
+wait 4
+shot 02e-language
+tap (?i)^no translation$
+wait 2
+tap (?i)^continue$
+wait 4
+shot 03-name
+tap (?i)^enter your name$
+wait 1
+type Alex
+wait 1
+tap (?i)^finish$
+wait 5
+taploop (?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$
+wait 5
+adclose
+taploop (?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$
+wait 3
+adclose
+shot 20-main
+tap (?i)^settings$
+wait 3
+adclose
+adclose
+tap (?i)^upgrade to premium$
+wait 4
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type nobody-restore-check-1109@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type hartmannstudios+warmword1109@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+swipedown
+swipedown
+shot 23-paywall-premium
+back
+wait 3
+shot 24-settings-premium
+sh logcat -d -s DirectBilling

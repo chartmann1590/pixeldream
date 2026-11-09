@@ -1,0 +1,10 @@
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$
+adclose
+shot 14-relaunch-after-purchase
+swipeup
+shot 22-settings-after
+sh logcat -d -s DirectBilling

@@ -5,9 +5,9 @@
 # uninstall + reinstall -> B: Restore with an unknown email (must be refused), then with the buyer's email -> B2: relaunch.
 set -u
 export OUT=/tmp/dsk-out; mkdir -p $OUT
-D=.github/direct; E=$D/e2e
-APK=dsk-apk/app.apk; PKG=$(cat $D/package.txt | tr -d '[:space:]')
-U=https://hs-apk-drop.charles-h-hartmann1.workers.dev; P="pd-e2e-${E2E_ID}"
+D=.github/direct; E=$D/e2e/$E2E_APP
+APK=dsk-apk/app.apk; PKG=$E2E_PKG
+U=https://hs-apk-drop.charles-h-hartmann1.workers.dev; P="e2e-${E2E_APP}-${E2E_ID}"
 put(){ echo "$2" | curl -s -m 30 -X PUT -H "X-Key: $DROP_KEY" --data-binary @- "$U/c/$P-$1/0" >/dev/null; }
 get(){ curl -sf -m 30 -H "X-Key: $DROP_KEY" "$U/c/$P-$1/0"; }
 log(){ echo "[$(date +%H:%M:%S)] $*" | tee -a "$OUT/e2e.log"; }

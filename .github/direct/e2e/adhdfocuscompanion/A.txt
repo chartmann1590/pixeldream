@@ -1,0 +1,39 @@
+launch
+wait 15
+shot 01-launch
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$
+adclose
+wait 3
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$
+adclose
+shot 02-focus
+tap (?i)^history$
+wait 4
+adclose
+shot 04-history
+tap (?i)^stats$
+wait 4
+adclose
+shot 05-stats
+tap (?i)^meds$
+wait 4
+shot 06-meds
+tap (?i)^settings$
+wait 4
+adclose
+shot 07-settings
+tap (?i)^focus pro$
+wait 3
+shot 08-paywall
+scrollto (?i)^monthly ·
+tap (?i)^monthly ·
+wait 3
+shot 11-email
+type hartmannstudios+adhdfocuscompanion1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
+sh logcat -d -s DirectBilling

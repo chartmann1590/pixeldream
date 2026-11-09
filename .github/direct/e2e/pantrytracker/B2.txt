@@ -1,0 +1,13 @@
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$
+adclose
+shot 30-relaunch-after-restore
+tap (?i)^(done|not now)$
+wait 2
+tap (?i)^settings$
+wait 3
+shot 323-settings-pro
+sh logcat -d -s DirectBilling

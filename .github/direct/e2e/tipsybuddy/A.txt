@@ -1,0 +1,33 @@
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(allow|while using the app|only this time|ok)$
+tap (?i)^skip$
+wait 4
+taploop (?i)^(allow|while using the app|only this time|ok|not now|got it|dismiss)$
+shot 02-tonight
+tap (?i)^log$
+wait 3
+shot 03-log
+tap (?i)^calendar$
+wait 3
+shot 04-calendar
+tap (?i)^health$
+wait 3
+shot 05-health
+tap (?i)^rides$
+wait 3
+shot 07-rides
+tap (?i)^profile$
+wait 4
+shot 08-profile
+scrollto (?i)^subscribe to remove ads
+wait 3
+shot 11-email
+type hartmannstudios+tipsybuddy1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close

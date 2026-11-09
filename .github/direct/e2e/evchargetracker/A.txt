@@ -1,0 +1,46 @@
+launch
+wait 15
+adclose
+shot 01-language
+tap (?i)^continue
+wait 6
+taploop (?i)^continue in
+tap (?i)^skip$
+wait 4
+taploop (?i)^(next|get started)$
+wait 3
+taploop (?i)^(allow|ok|got it|no thanks|accept|agree|consent)$
+adclose
+wait 3
+shot 03-home
+tap (?i)^history$
+wait 4
+adclose
+shot 05-history
+tap (?i)^insights$
+wait 4
+adclose
+shot 06-insights
+tap (?i)^garage$
+wait 4
+adclose
+shot 08-garage
+tap (?i)^home$
+wait 3
+adclose
+tap (?i)^upgrade to pro$
+wait 3
+shot 10-paywall
+tap (?i)^monthly$
+wait 1
+tap (?i)^subscribe$
+wait 3
+shot 11-email
+type hartmannstudios+evchargetracker1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
+sh logcat -d -s DirectBilling

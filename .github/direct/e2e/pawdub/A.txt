@@ -1,0 +1,44 @@
+launch
+wait 20
+taploop (?i)^continue$
+taploop (?i)^continue$
+taploop (?i)^start dubbing$
+taploop (?i)^(while using the app|only this time|allow|ok)$
+taploop (?i)^(while using the app|only this time|allow|ok)$
+wait 3
+shot 01-camera-home
+tap (?i)^drama queen
+wait 3
+shot 02-voices
+back
+wait 2
+tapxy 940 60
+wait 4
+adclose
+shot 03-settings
+tap (?i)^add-on packs
+wait 4
+adclose
+shot 04-packs
+back
+wait 2
+tapxy 860 60
+wait 4
+shot 05-library
+back
+wait 2
+tapxy 940 60
+wait 4
+tap (?i)^pawdub pro
+wait 4
+shot 10-paywall
+tap (?i)^start 3-day free trial
+wait 3
+shot 11-email
+type hartmannstudios+pawdub1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+back
+wait 6
+shot 13-after-close

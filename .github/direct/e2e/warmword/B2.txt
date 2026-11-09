@@ -1,0 +1,14 @@
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$
+adclose
+shot 30-relaunch-after-restore
+swipedown
+swipedown
+shot 323-paywall-premium
+back
+wait 3
+shot 324-settings-premium
+sh logcat -d -s DirectBilling

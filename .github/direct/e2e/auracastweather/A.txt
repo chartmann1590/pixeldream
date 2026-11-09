@@ -1,0 +1,33 @@
+launch
+wait 15
+shot 01-launch
+tap (?i)^english$
+wait 2
+taploop (?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$
+wait 5
+taploop (?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$
+adclose
+wait 8
+taploop (?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$
+adclose
+shot 02-home
+tap (?i)^radar$
+wait 6
+shot 04-radar
+tap (?i)^report$
+wait 5
+shot 05-report
+tap (?i)^settings$
+wait 4
+adclose
+shot 06-settings
+scrollto (?i)^upgrade to plus.*month$
+wait 3
+shot 11-email
+type hartmannstudios+auracastweather1109@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close

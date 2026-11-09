@@ -1,29 +1,24 @@
 name: Tab Stripe restore e2e (emulator)
 # Tab, Nov 9 2026: buy -> unlock -> uninstall -> reinstall -> Restore (unknown email refused, buyer email restored)
-# on the RELEASED direct APK. Manual only; builds nothing, publishes nothing.
+# on a RELEASED direct APK named in .github/direct/e2e/run-id.txt. Builds nothing, publishes nothing.
 on:
   push:
     branches: [direct-stripe]
     paths: ['.github/direct/e2e/run-id.txt']
-  workflow_dispatch:
-    inputs:
-      apk_url:
-        description: released direct APK
-        default: https://github.com/chartmann1590/pixeldream/releases/download/direct-8/PixelDream-direct-release.apk
-      e2e_id:
-        description: drop key prefix id
-        default: '1109'
 permissions:
   contents: read
 jobs:
   e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
     - uses: actions/checkout@v4
+    - name: Read run config
+      run: |
+        grep -E '^E2E_(ID|APP|PKG|APK)=' .github/direct/e2e/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/e2e/run-id.txt
     - name: Download released APK
       run: |
-        mkdir -p dsk-apk && curl -sfL -o dsk-apk/app.apk "${{ github.event.inputs.apk_url || 'https://github.com/chartmann1590/pixeldream/releases/download/direct-8/PixelDream-direct-release.apk' }}" && sha256sum dsk-apk/app.apk && ls -la dsk-apk
+        mkdir -p dsk-apk && curl -sfL -o dsk-apk/app.apk "$E2E_APK" && sha256sum dsk-apk/app.apk && ls -la dsk-apk
     - name: Free runner disk
       run: |
         sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android/sdk/ndk 2>/dev/null || true
@@ -36,7 +31,6 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
-        E2E_ID: ${{ github.event.inputs.e2e_id || '1109b' }}
       with:
         api-level: 30
         profile: pixel_5
@@ -52,4 +46,4 @@ jobs:
       if: always()
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
-      run: bash .github/direct/direct-upload.sh /tmp/dsk-out pd_e2e_${{ github.event.inputs.e2e_id || '1109b' }}_r${{ github.run_number }}
+      run: bash .github/direct/direct-upload.sh /tmp/dsk-out e2e_${E2E_APP}_${E2E_ID}_r${{ github.run_number }}

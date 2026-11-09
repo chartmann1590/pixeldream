@@ -1,0 +1,43 @@
+launch
+wait 15
+shot 01-launch
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$
+adclose
+wait 3
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$
+adclose
+tap (?i)^settings$
+wait 4
+adclose
+tap (?i)^focus pro$
+wait 3
+shot 20-paywall
+scrollto (?i)^restore purchases$
+tap (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type nobody-restore-check-1109@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+tap (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type hartmannstudios+adhdfocuscompanion1109@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+tap (?i)^(done|not now)$
+wait 2
+shot 23-settings-pro-active
+tap (?i)^stats$
+wait 4
+shot 24-stats-pro
+sh logcat -d -s DirectBilling

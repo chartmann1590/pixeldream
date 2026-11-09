@@ -1,0 +1,11 @@
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$
+adclose
+shot 30-relaunch-after-restore
+tap (?i)^get more photos$
+wait 3
+shot 323-unlimited-owned
+sh logcat -d -s DirectBilling

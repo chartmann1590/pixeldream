@@ -1,0 +1,39 @@
+launch
+wait 15
+shot 01-launch
+tap (?i)^continue in english$
+wait 4
+taploop (?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$
+wait 3
+adclose
+tap (?i)upgrade to pro|pantry pro|go pro
+wait 3
+shot 20-paywall
+scrollto (?i)^restore purchases$
+tap (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type nobody-restore-check-1109@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+tap (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type hartmannstudios+pantrytracker1109@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+tap (?i)^(done|not now)$
+wait 2
+tap (?i)^settings$
+wait 3
+shot 23-settings-pro
+sh logcat -d -s DirectBilling
