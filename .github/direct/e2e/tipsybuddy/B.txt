@@ -30,7 +30,7 @@ sh sh /data/local/tmp/findtap.sh "Restore purchases"
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+tipsybuddy1109f@mail.tab.bot
+typefix hartmannstudios+tipsybuddy1109g@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15
