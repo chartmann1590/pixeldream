@@ -19,13 +19,11 @@ scrollto (?i)^continue$
 wait 4
 shot 11-email
 tap @
-typefix hartmannstudios+fieldkey1109c@mail.tab.bot
+typefix hartmannstudios+fieldkey1109f@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 11b-email-typed
 tap (?i)^continue$
 wait 30
 shot 12-stripe-checkout
-back
-wait 3
-shot 13-after-close
+# leave Checkout open: closing it unpaid makes the app poll 6x and spend the server's 5-per-day email lookups

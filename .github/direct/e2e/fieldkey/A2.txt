@@ -10,16 +10,7 @@ taploop (?i)^(skip|allow|ok|while using the app|only this time|continue|get star
 shot 14-home-relaunch
 tap (?i)go pro
 wait 4
-scrollto (?i)restore
-wait 3
-tap @
-sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+fieldkey1109c@mail.tab.bot
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
-tap (?i)^continue$
-wait 15
-shot 15-after-buyer-restore
+shot 15-paywall-after-relaunch
 back
 wait 3
 shot 16-home-pro

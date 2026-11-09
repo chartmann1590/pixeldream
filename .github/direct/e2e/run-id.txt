@@ -1,4 +1,4 @@
-E2E_ID=1109e
-E2E_APP=meshtalk
-E2E_PKG=com.charles.meshtalk.app.github
-E2E_APK=drop:meshtalk-ci-65
+E2E_ID=1109f
+E2E_APP=fieldkey
+E2E_PKG=com.charles.fieldkey
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/fieldkey-direct-1/Fieldkey-direct-release.apk
