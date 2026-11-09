@@ -1,3 +1,5 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
@@ -32,8 +34,6 @@ shot 21-restore-email
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
 typefix nobody-restore-check-1109@example.com
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
 shot 21a-wrong-email-typed
 tap (?i)^continue$
 wait 2
@@ -44,9 +44,7 @@ scrollto (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+scamradar1109@mail.tab.bot
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
+typefix hartmannstudios+scamradar1109d@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15
