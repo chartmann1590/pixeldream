@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,6 +36,9 @@ import com.hartmannstudios.direct.DirectBilling
 fun PaywallScreen(billingRepository: BillingRepository) {
     var productDetails by remember { mutableStateOf<ProductDetails?>(null) }
     val context = LocalContext.current
+    // Tab, Nov 9 2026: show the active state once the ad-free license is present (bought or restored),
+    // instead of the price and Continue button.
+    val isAdFree by billingRepository.isAdFree.collectAsState(initial = false)
     LaunchedEffect(Unit) { productDetails = billingRepository.fetchSubscriptionProductDetails() }
 
     Column(
@@ -45,7 +49,7 @@ fun PaywallScreen(billingRepository: BillingRepository) {
     ) {
         Text("PIXELDREAM+", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         Spacer(Modifier.height(8.dp))
-        Text("Create without interruptions", style = MaterialTheme.typography.headlineLarge)
+        Text(if (isAdFree) "You're a PixelDream+ member" else "Create without interruptions", style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(10.dp))
         Text("Support private, on-device creation and remove ads between generations.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         Spacer(Modifier.height(24.dp))
@@ -55,14 +59,25 @@ fun PaywallScreen(billingRepository: BillingRepository) {
                 Benefit("✓", "All models stay on device")
                 Benefit("✓", "Cancel any time")
                 Spacer(Modifier.height(4.dp))
-                Text("$1.99 / month", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                if (isAdFree) {
+                    Text("Active", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    Text("Ad-free is on for this device. Thanks for supporting PixelDream!", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                } else {
+                    Text("$1.99 / month", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                }
             }
         }
         Spacer(Modifier.weight(1f))
 
         val details = productDetails
         val offerToken = details?.subscriptionOfferDetails?.firstOrNull()?.offerToken
-        if (DirectBilling.isDirect) {
+        if (isAdFree) {
+            if (DirectBilling.isDirect) {
+                Row(Modifier.align(Alignment.CenterHorizontally)) {
+                    TextButton(onClick = { (context as? Activity)?.let { billingRepository.manageSubscription(it) } }) { Text("Manage subscription") }
+                }
+            }
+        } else if (DirectBilling.isDirect) {
             // Direct (GitHub / charleshartmann.com) build: Stripe Checkout, restore by email, Stripe's customer portal.
             Text(
                 "Prices in USD. Secure checkout by Stripe. Renews monthly until you cancel (Manage subscription below). Your purchase is tied to the email you enter at checkout.",
