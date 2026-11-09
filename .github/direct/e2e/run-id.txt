@@ -1,1 +1,4 @@
-1109b
+E2E_ID=1109
+E2E_APP=photobooth
+E2E_PKG=com.charles.photobooth
+E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-5/Photobooth-direct-release.apk
