@@ -1,0 +1,15 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+stop
+wait 2
+launch
+wait 25
+taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
+shot 14-menu-relaunch
+sh am start -n com.deadtide.hordesurvivor/.ShopActivity
+wait 6
+shot 15-shop
+back
+wait 3
+sh logcat -d -s DirectBilling

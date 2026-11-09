@@ -1,0 +1,26 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 25
+shot 01-launch
+taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
+wait 3
+shot 02-menu
+sh am start -n com.deadtide.hordesurvivor/.ShopActivity
+wait 6
+shot 10-shop
+tap (?i)^BUY .*2\.99$
+wait 4
+shot 11-email
+tap @
+typefix hartmannstudios+deadtide1109@mail.tab.bot
+sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
+wait 1
+shot 11b-email-typed
+tap (?i)^continue$
+wait 30
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
