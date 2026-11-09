@@ -1,9 +1,13 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
 launch
 wait 12
 shot 01-launch
+tap (?i)^wait$
+wait 2
 tap (?i)^choose a nickname$
 typefix TabTester
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
@@ -23,7 +27,7 @@ tap (?i)^buy once
 wait 4
 shot 11-email
 tap @
-typefix hartmannstudios+meshtalk1109b@mail.tab.bot
+typefix hartmannstudios+meshtalk1109c@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 11b-email-typed
