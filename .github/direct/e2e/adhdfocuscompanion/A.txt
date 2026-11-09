@@ -1,3 +1,5 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
 sh am force-stop com.google.android.googlequicksearchbox
 sh am force-stop com.android.chrome
 sh am force-stop com.brave.browser
@@ -21,7 +23,7 @@ shot 05-stats
 tap (?i)^meds$
 wait 4
 shot 06-meds
-tap (?i)^settings$
+tapxy 900 892
 wait 4
 adclose
 shot 07-settings
@@ -32,9 +34,7 @@ scrollto (?i)^monthly ·
 tap (?i)^monthly ·
 wait 3
 shot 11-email
-type hartmannstudios+adhdfocuscompanion1109@mail.tab.bot
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
+type hartmannstudios+adhdfocuscompanion1109d@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
