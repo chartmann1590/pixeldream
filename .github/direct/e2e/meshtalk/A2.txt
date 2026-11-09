@@ -13,7 +13,7 @@ wait 5
 tap (?i)^skip for now$
 wait 2
 shot 14-relaunch
-tap (?i)^(talk|walkie.talkie)$
+tapxy 583 897
 wait 4
 shot 15-talk-tab
 sh logcat -d -s DirectBilling

@@ -25,7 +25,7 @@ shot 02-main
 wait 3
 tap (?i)^skip for now$
 wait 3
-tap (?i)^(talk|walkie.talkie)$
+tapxy 583 897
 wait 4
 shot 20-paywall
 tap (?i)^restore purchase$
@@ -46,7 +46,7 @@ scrollto (?i)^restore purchase$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+meshtalk1109e@mail.tab.bot
+typefix hartmannstudios+meshtalk1109g@mail.tab.bot
 sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
 wait 1
 shot 21d-right-email-typed
