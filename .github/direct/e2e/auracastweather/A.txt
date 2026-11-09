@@ -16,20 +16,20 @@ wait 8
 taploop (?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$
 adclose
 shot 02-home
-tap (?i)^radar$
+tapxy 400 900
 wait 6
 shot 04-radar
-tap (?i)^report$
+tapxy 620 900
 wait 5
 shot 05-report
-tap (?i)^settings$
+tapxy 880 900
 wait 4
 adclose
 shot 06-settings
 scrollto (?i)^upgrade to plus.*month$
 wait 3
 shot 11-email
-type hartmannstudios+auracastweather1109d@mail.tab.bot
+type hartmannstudios+auracastweather1109e@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout

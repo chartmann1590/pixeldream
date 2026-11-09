@@ -1,4 +1,4 @@
 E2E_ID=1109e
-E2E_APP=pawdub
-E2E_PKG=com.charles.pawdub
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/pawdub-direct-1/Pawdub-direct-release.apk
+E2E_APP=auracastweather
+E2E_PKG=com.auracast.weather
+E2E_APK=https://github.com/chartmann1590/auracast-weather/releases/download/direct-10/AuraCastWeather-direct-release.apk

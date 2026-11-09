@@ -15,7 +15,7 @@ wait 8
 taploop (?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$
 adclose
 shot 20-home
-tap (?i)^settings$
+tapxy 880 900
 wait 4
 adclose
 scrollto (?i)^restore purchases$
@@ -34,7 +34,7 @@ scrollto (?i)^restore purchases$
 wait 3
 tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
-typefix hartmannstudios+auracastweather1109d@mail.tab.bot
+typefix hartmannstudios+auracastweather1109e@mail.tab.bot
 shot 21d-right-email-typed
 tap (?i)^continue$
 wait 15
