@@ -1,0 +1,52 @@
+name: Tab Stripe restore e2e (emulator)
+# Tab, Nov 9 2026: buy -> unlock -> uninstall -> reinstall -> Restore (unknown email refused, buyer email restored)
+# on the RELEASED direct APK. Manual only; builds nothing, publishes nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: released direct APK
+        default: https://github.com/chartmann1590/pixeldream/releases/download/direct-8/PixelDream-direct-release.apk
+      e2e_id:
+        description: drop key prefix id
+        default: '1109'
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download released APK
+      run: |
+        mkdir -p dsk-apk && curl -sfL -o dsk-apk/app.apk "${{ github.event.inputs.apk_url }}" && sha256sum dsk-apk/app.apk && ls -la dsk-apk
+    - name: Free runner disk
+      run: |
+        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android/sdk/ndk 2>/dev/null || true
+        df -h / | tail -1
+    - name: Enable KVM
+      run: |
+        echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+        sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+    - name: Emulator e2e
+      uses: reactivecircus/android-emulator-runner@v2
+      env:
+        DROP_KEY: ${{ secrets.DROP_KEY }}
+        E2E_ID: ${{ github.event.inputs.e2e_id }}
+      with:
+        api-level: 30
+        profile: pixel_5
+        target: google_apis
+        arch: x86_64
+        ram-size: 7168M
+        disk-size: 12288M
+        emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+        disable-animations: true
+        emulator-boot-timeout: 1500
+        script: bash .github/direct/restore-e2e.sh
+    - name: Upload results to Tab's private drop
+      if: always()
+      env:
+        DROP_KEY: ${{ secrets.DROP_KEY }}
+      run: bash .github/direct/direct-upload.sh /tmp/dsk-out pd_e2e_${{ github.event.inputs.e2e_id }}_r${{ github.run_number }}
