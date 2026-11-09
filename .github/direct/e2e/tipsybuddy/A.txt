@@ -26,23 +26,11 @@ shot 07-rides
 tapxy 935 892
 wait 4
 shot 08-profile
-sh input swipe 540 1500 540 500 400
-wait 1
-sh input swipe 540 1500 540 500 400
-wait 1
-sh input swipe 540 1500 540 500 400
-wait 1
-sh input swipe 540 1500 540 500 400
-wait 1
-sh input swipe 540 1500 540 500 400
-wait 1
-sh input swipe 540 1500 540 500 400
-wait 1
-shot 08b-scrolled
-scrollto (?i)^subscribe to remove ads
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Subscribe to remove ads"
 wait 3
 shot 11-email
-type hartmannstudios+tipsybuddy1109e@mail.tab.bot
+type hartmannstudios+tipsybuddy1109f@mail.tab.bot
 tap (?i)^continue$
 wait 25
 shot 12-stripe-checkout
