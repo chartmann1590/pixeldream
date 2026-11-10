@@ -1,0 +1,25 @@
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(skip|next|continue|get started|allow|ok|got it)$
+wait 4
+adclose
+taploop (?i)^(allow|ok|not now|later|no thanks|got it|consent|accept|done)$
+tap (?i)^upgrade to pro$
+wait 3
+shot 20-paywall
+tap (?i)^restore$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+type hartmannstudios+symptomdiary1110rl@mail.tab.bot
+shot 21x-429-email-typed
+tap (?i)^continue$
+wait 1
+shot 21y-429-toast
+wait 2
+shot 21y2-429-toast-2s
+sh logcat -d -s DirectBilling
+wait 5
+shot 21z-after-429
