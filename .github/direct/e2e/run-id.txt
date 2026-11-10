@@ -1,4 +1,4 @@
 E2E_ID=1110q
-E2E_APP=pantrytrackerq
-E2E_PKG=com.chartmann.pantrytracker
-E2E_APK=drop:fx48_PantryTracker
+E2E_APP=evchargetrackerq
+E2E_PKG=com.chartmann.evchargetracker
+E2E_APK=drop:fx48_EVCharge
