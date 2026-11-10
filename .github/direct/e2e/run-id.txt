@@ -1,4 +1,5 @@
 E2E_ID=1110u
-E2E_APP=gigmileagetrackerq
-E2E_PKG=com.chartmann.gigmileagetracker
-E2E_APK=drop:fx48_GigMileage
+E2E_APP=scamradaru
+E2E_PKG=com.charles.scamradar.app
+E2E_APK=https://github.com/chartmann1590/ScamRadar/releases/download/direct-10/ScamRadar-direct-release.apk
+E2E_OLD_APK=https://github.com/chartmann1590/ScamRadar/releases/download/direct-8/ScamRadar-direct-release.apk
