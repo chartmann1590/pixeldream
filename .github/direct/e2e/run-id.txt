@@ -1,5 +1,5 @@
 E2E_ID=1110v
-E2E_APP=doselyv
-E2E_PKG=com.charles.dosely
-E2E_APK=https://github.com/chartmann1590/dosely/releases/download/direct-10/Dosely-direct-release.apk
-E2E_OLD_APK=https://github.com/chartmann1590/dosely/releases/download/direct-8/Dosely-direct-release.apk
+E2E_APP=pixeldreamv
+E2E_PKG=com.hartmann.pixeldream
+E2E_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-51/PixelDream-direct-release.apk
+E2E_OLD_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-48/PixelDream-direct-release.apk
