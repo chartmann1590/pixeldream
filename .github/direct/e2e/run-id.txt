@@ -1,4 +1,4 @@
 E2E_ID=1110q
-E2E_APP=nutrisnapq
-E2E_PKG=com.charles.nutrisnap
-E2E_APK=https://github.com/chartmann1590/nutrisnap/releases/download/direct-9/NutriSnap-direct-release.apk
+E2E_APP=pixeldreamq
+E2E_PKG=com.hartmann.pixeldream
+E2E_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-48/PixelDream-direct-release.apk
