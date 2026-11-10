@@ -1,0 +1,14 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+adclose
+shot 30-relaunch
+tapxy 900 895
+wait 3
+adclose
+shot 31-premium-screen
+scrollto (?i)^restore purchases$
+shot 32-paywall-bottom
+sh logcat -d -s DirectBilling
