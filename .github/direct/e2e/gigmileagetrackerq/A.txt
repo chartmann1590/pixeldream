@@ -20,6 +20,10 @@ wait 4
 taploop (?i)^(allow|ok|got it|not now|later|no thanks)$
 adclose
 wait 3
+wait 3
+taploop (?i)^not now
+wait 3
+adclose
 tap (?i)^upgrade to pro$
 wait 3
 shot 20-paywall
