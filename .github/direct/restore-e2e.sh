@@ -14,11 +14,14 @@ log(){ echo "[$(date +%H:%M:%S)] $*" | tee -a "$OUT/e2e.log"; }
 adb wait-for-device; adb shell getprop ro.build.version.release </dev/null | sed 's/^/android /' | tee $OUT/device.txt
 adb shell cat /proc/meminfo </dev/null | head -2 | tee -a $OUT/device.txt
 adb uninstall "$PKG" </dev/null >/dev/null 2>&1 || true
-log "phase A"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APK" "$PKG" "$E/A.txt" A
+APKA="$APK"; [ -f dsk-apk/old.apk ] && APKA=dsk-apk/old.apk && log "phase A runs the PREVIOUS release (old.apk); A2 installs the new APK over it as an update"
+log "phase A"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APKA" "$PKG" "$E/A.txt" A
+adb shell dumpsys package "$PKG" </dev/null | grep -E "versionCode|versionName|lastUpdateTime|firstInstallTime" | sed "s/^ *//" > $OUT/version-A.txt; cat $OUT/version-A.txt | tee -a $OUT/e2e.log
 put ready "$(date -u +%FT%TZ)"; log "ready posted; waiting for go"
 g=""; for i in $(seq 1 120); do g=$(get go) && [ -n "$g" ] && break; sleep 10; done
 log "go=$g"
 log "phase A2"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APK" "$PKG" "$E/A2.txt" A2
+adb shell dumpsys package "$PKG" </dev/null | grep -E "versionCode|versionName|lastUpdateTime|firstInstallTime" | sed "s/^ *//" > $OUT/version-A2.txt; cat $OUT/version-A2.txt | tee -a $OUT/e2e.log
 log "uninstall"; adb uninstall "$PKG" </dev/null | tee -a $OUT/e2e.log
 log "phase B"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APK" "$PKG" "$E/B.txt" B
 log "phase B2"; KEEP_APP=0 SETTLE=15 bash $D/e2e-driver.sh "$APK" "$PKG" "$E/B2.txt" B2

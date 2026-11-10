@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Read run config
       run: |
-        grep -E '^E2E_(ID|APP|PKG|APK|API)=' .github/direct/e2e/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/e2e/run-id.txt
+        grep -E '^E2E_(ID|APP|PKG|APK|API|OLD_APK)=' .github/direct/e2e/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/e2e/run-id.txt
     - name: Download released APK
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
@@ -28,6 +28,8 @@ jobs:
             mkdir -p /tmp/dx && tar xzf /tmp/d.tgz -C /tmp/dx && mv "$(ls /tmp/dx/*.apk | head -1)" dsk-apk/app.apk;;
           *) curl -sfL -o dsk-apk/app.apk "$E2E_APK";;
         esac
+        # Optional E2E_OLD_APK: phase A runs on the PREVIOUS release, then A2 installs the new APK over it (adb install -r = an update).
+        if [ -n "${E2E_OLD_APK:-}" ]; then curl -sfL -o dsk-apk/old.apk "$E2E_OLD_APK"; sha256sum dsk-apk/old.apk; fi
         sha256sum dsk-apk/app.apk && ls -la dsk-apk
     - name: Free runner disk
       run: |
