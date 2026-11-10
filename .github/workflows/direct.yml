@@ -74,9 +74,9 @@ jobs:
     - name: Build direct APK (store=direct)
       env:
         KEYSTORE_PATH: ${{ github.workspace }}/release.keystore.jks
-        KEYSTORE_PASSWORD: [redacted] secrets.KEYSTORE_PASSWORD }}
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-        KEY_PASSWORD: [redacted] secrets.KEY_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: |
         set -o pipefail
         ./gradlew :app:assembleRelease -Pstore=direct  2>&1 | tee -a /tmp/dsk-build.log
