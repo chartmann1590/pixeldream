@@ -1,4 +1,4 @@
-E2E_ID=1110c
-E2E_APP=photoboothfx
-E2E_PKG=com.charles.photobooth
-E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-8/Photobooth-direct-release.apk
+E2E_ID=1110s
+E2E_APP=evchargetrackerq
+E2E_PKG=com.chartmann.evchargetracker
+E2E_APK=drop:fx48_EVCharge
