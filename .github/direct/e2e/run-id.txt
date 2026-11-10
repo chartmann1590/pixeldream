@@ -1,5 +1,5 @@
 E2E_ID=1110v
-E2E_APP=photoboothv
-E2E_PKG=com.charles.photobooth
-E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-10/Photobooth-direct-release.apk
-E2E_OLD_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-8/Photobooth-direct-release.apk
+E2E_APP=nutrisnapv
+E2E_PKG=com.charles.nutrisnap
+E2E_APK=https://github.com/chartmann1590/nutrisnap/releases/download/direct-11/NutriSnap-direct-release.apk
+E2E_OLD_APK=https://github.com/chartmann1590/nutrisnap/releases/download/direct-9/NutriSnap-direct-release.apk
