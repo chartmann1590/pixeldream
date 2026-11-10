@@ -1,4 +1,4 @@
-E2E_ID=1110s
-E2E_APP=ariaq
-E2E_PKG=com.aria.assistant
-E2E_APK=https://github.com/chartmann1590/aria-assistant/releases/download/direct-11/Aria-direct-release.apk
+E2E_ID=1110c
+E2E_APP=photoboothfx
+E2E_PKG=com.charles.photobooth
+E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-8/Photobooth-direct-release.apk
