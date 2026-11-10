@@ -1,0 +1,61 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+adclose
+taploop (?i)^(next)$
+shot 02-story-end
+tap (?i)^start protecting me$
+wait 4
+taploop (?i)^(get started|continue|allow|ok|got it|not now|while using the app)$
+taploop (?i)^(get started|continue|allow|ok|got it|not now|while using the app)$
+wait 3
+shot 03-model-setup
+tap (?i)^start with lite mode$
+wait 4
+taploop (?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$
+adclose
+taploop (?i)^(skip|not now|later|no thanks|got it|done|close)$
+tap (?i)^maybe later$
+wait 3
+adclose
+shot 20-scan-home
+tapxy 900 892
+wait 4
+adclose
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Go Premium"
+wait 4
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Restore purchases"
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-restore-check-1109@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Restore purchases"
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+scamradar1109e@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+swipedown
+swipedown
+shot 23-premium-active
+back
+wait 3
+shot 24-settings-premium
+sh logcat -d -s DirectBilling
