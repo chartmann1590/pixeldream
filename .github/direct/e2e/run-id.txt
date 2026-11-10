@@ -1,4 +1,4 @@
 E2E_ID=1110q
-E2E_APP=gigmileagetrackerq
-E2E_PKG=com.chartmann.gigmileagetracker
-E2E_APK=drop:fx48_GigMileage
+E2E_APP=pantrytrackerq
+E2E_PKG=com.chartmann.pantrytracker
+E2E_APK=drop:fx48_PantryTracker
