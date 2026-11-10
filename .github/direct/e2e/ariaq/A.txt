@@ -30,6 +30,12 @@ wait 100
 tap (?i)^continue$
 wait 100
 tap (?i)^continue$
+wait 150
+tap (?i)^continue$
+wait 150
+tap (?i)^continue$
+wait 60
+tap (?i)^continue$
 wait 20
 shot 04-after-model
 tap (?i)^allow microphone access$

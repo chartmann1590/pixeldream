@@ -1,4 +1,4 @@
-E2E_ID=1110q
+E2E_ID=1110s
 E2E_APP=ariaq
 E2E_PKG=com.aria.assistant
 E2E_APK=https://github.com/chartmann1590/aria-assistant/releases/download/direct-11/Aria-direct-release.apk
