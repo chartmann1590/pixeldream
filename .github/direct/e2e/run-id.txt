@@ -1,4 +1,4 @@
-E2E_ID=1110a
+E2E_ID=1110b
 E2E_APP=photoboothfx
 E2E_PKG=com.charles.photobooth
 E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-7/Photobooth-direct-release.apk
