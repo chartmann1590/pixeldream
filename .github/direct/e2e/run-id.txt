@@ -1,4 +1,4 @@
-E2E_ID=1110q
-E2E_APP=symptomdiaryq
-E2E_PKG=com.chartmann.symptomdiary
-E2E_APK=drop:fx48_SymptomDiary
+E2E_ID=1110a
+E2E_APP=fieldkeyfx
+E2E_PKG=com.charles.fieldkey
+E2E_APK=drop:fx48_Fieldkey
