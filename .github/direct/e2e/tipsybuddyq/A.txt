@@ -20,8 +20,6 @@ tap @
 sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
 typefix hartmannstudios+tipsybuddy1110rl@mail.tab.bot
 shot 21x-429-email-typed
-sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
-wait 1
 tap (?i)^continue$
 wait 1
 shot 21y-429-toast

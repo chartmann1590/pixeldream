@@ -1,4 +1,4 @@
-E2E_ID=1110a
-E2E_APP=fieldkeyfx
-E2E_PKG=com.charles.fieldkey
-E2E_APK=drop:fx48_Fieldkey
+E2E_ID=1110r
+E2E_APP=tipsybuddyq
+E2E_PKG=com.tipsybuddy.app
+E2E_APK=https://github.com/chartmann1590/TipsyBuddy/releases/download/direct-11/TipsyBuddy-direct-release.apk
