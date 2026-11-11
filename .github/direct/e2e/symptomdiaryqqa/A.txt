@@ -1,0 +1,38 @@
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(skip|next|continue|get started|allow|ok|got it)$
+wait 4
+adclose
+taploop (?i)^(allow|ok|not now|later|no thanks|got it|consent|accept|done)$
+shot 02-today
+tap (?i)^journal$
+wait 3
+adclose
+shot 04-journal
+tap (?i)^insights$
+wait 3
+adclose
+shot 05-insights
+tap (?i)^reports$
+wait 3
+adclose
+shot 08-reports
+tap (?i)^today$
+wait 3
+tap (?i)^upgrade to pro$
+wait 3
+shot 10-paywall
+tap (?i)^monthly$
+wait 1
+tap (?i)^subscribe$
+wait 3
+shot 11-email
+type hartmannstudios+symptomdiary1110q@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
+sh logcat -d -s DirectBilling
