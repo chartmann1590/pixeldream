@@ -21,9 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 110
     env:
-      ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
-      ADMOB_BANNER_ID: ${{ secrets.ADMOB_BANNER_ID }}
-      ADMOB_INTERSTITIAL_ID: ${{ secrets.ADMOB_INTERSTITIAL_ID }}
+      ADMOB_APP_ID: 'ca-app-pub-8382831211800454~1558311941'  # direct-only AdMob app (Nov 11 2026, Play-linked app restricted)
+      ADMOB_BANNER_ID: 'ca-app-pub-8382831211800454/7316411792'  # direct-only AdMob app (Nov 11 2026, Play-linked app restricted)
+      ADMOB_INTERSTITIAL_ID: 'ca-app-pub-8382831211800454/3377166786'  # direct-only AdMob app (Nov 11 2026, Play-linked app restricted)
       ADMOB_FORCE_TEST_ADS: 'false'
       FEEDBACK_PROXY_URL: ${{ secrets.FEEDBACK_PROXY_URL }}
       GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
@@ -68,7 +68,7 @@ jobs:
     - name: Direct version (above every shipped code)
       # Play/Amazon codes are yyDDDHHMM dates; a fresh UTC stamp is always above every earlier code, so each direct build is an update.
       run: |
-        C=$(date -u +%y%j%H%M); N=0.1.2
+        C=$(date -u +%y%j%H%M); N=0.1.3
         { echo "ANDROID_VERSION_CODE=$C"; echo "ANDROID_VERSION_NAME=$N"; echo "VERSION_CODE=$C"; echo "VERSION_NAME=$N"; } >> "$GITHUB_ENV"
         echo "::notice title=Direct version::$N ($C)"
     - name: Build direct APK (store=direct)
