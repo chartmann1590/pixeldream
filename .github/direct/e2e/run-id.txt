@@ -1,4 +1,4 @@
-E2E_ID=1110q56598
-E2E_APP=pixeldreamqqa
-E2E_PKG=com.hartmann.pixeldream
-E2E_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-51/PixelDream-direct-release.apk
+E2E_ID=1110q56610
+E2E_APP=fieldkeyqqa
+E2E_PKG=com.charles.fieldkey
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/fieldkey-direct-2/Fieldkey-direct-release.apk

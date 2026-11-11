@@ -1,0 +1,17 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+stop
+wait 2
+launch
+wait 20
+taploop (?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$
+shot 14-home-relaunch
+tap (?i)go pro
+wait 4
+shot 15-paywall-after-relaunch
+back
+wait 3
+shot 16-home-pro
+sh logcat -d -s DirectBilling
