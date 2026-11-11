@@ -1,4 +1,4 @@
-E2E_ID=1110q56682
-E2E_APP=tipsybuddyqqa
-E2E_PKG=com.tipsybuddy.app
-E2E_APK=https://github.com/chartmann1590/TipsyBuddy/releases/download/direct-11/TipsyBuddy-direct-release.apk
+E2E_ID=1110q56694
+E2E_APP=nutrisnapqqa
+E2E_PKG=com.charles.nutrisnap
+E2E_APK=https://github.com/chartmann1590/nutrisnap/releases/download/direct-11/NutriSnap-direct-release.apk
