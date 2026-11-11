@@ -1,0 +1,113 @@
+[01:46:12] screen 1080x2340
+[01:46:12] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:47:14] launch
+[01:47:33] shot 01-language (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:47:35] tapped /(?i)^continue/ at 540 2063
+[01:47:45] not found /(?i)^continue in/
+[01:47:47] tapped /(?i)^skip$/ at 934 277
+[01:47:55] not found /(?i)^(next|get started)$/
+[01:48:00] not found /(?i)^(allow|ok|got it|no thanks|accept|agree|consent)$/
+[01:48:06] shot 03-home (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:48:08] not found /(?i)^history$/
+[01:48:18] shot 05-history (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:48:19] not found /(?i)^insights$/
+[01:48:29] shot 06-insights (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:48:30] not found /(?i)^garage$/
+[01:48:40] shot 08-garage (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:48:42] not found /(?i)^home$/
+[01:48:51] tapped /(?i)^upgrade to pro$/ at 871 233
+[01:48:58] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:49:00] tapped /(?i)^monthly$/ at 294 1316
+[01:49:05] tapped /(?i)^subscribe$/ at 540 1513
+[01:49:12] shot 11-email (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:49:20] type
+[01:49:23] tapped /(?i)^continue$/ at 847 1047
+[01:49:52] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[01:49:54] not found /(?i)^close$/
+[01:50:01] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{30e24d3 u0 com.chartmann.evchargetracker/.MainActivity t9})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-11 01:49:23.212  5689  7026 W DirectBilling: POST /v2/checkout -> 500 {"error":"Exceeded allowed rows read in Durable Objects free tier."}
+[01:50:03] pidof com.chartmann.evchargetracker: 5689
+[01:50:03] fatal lines: 0 crash-buffer lines: 0
+[01:50:03] ads lines: 51
+[02:50:58] screen 1080x2340
+[02:50:58] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:51:17] force-stop
+[02:51:19] launch
+[02:51:36] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[02:51:40] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{1bad328 u0 com.chartmann.evchargetracker/.MainActivity t10})
+[02:51:41] not found /(?i)^(done|not now)$/
+[02:51:47] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{1bad328 u0 com.chartmann.evchargetracker/.MainActivity t10})
+[02:51:49] not found /(?i)^pro unlocked$/
+[02:51:56] shot 24-paywall-pro (fg:  mResumedActivity: ActivityRecord{1bad328 u0 com.chartmann.evchargetracker/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-11 02:51:19.994 10461 10489 W DirectBilling: POST /v2/entitlement -> 503 {"error":"Sorry for any inconvenience — we've currently hit our plan limit.","code":"plan_limit","message":"Sorry for any inconvenience — we've currently hit our plan limit. Purchases and restores wil
+[02:51:58] pidof com.chartmann.evchargetracker: 10461
+[02:51:58] fatal lines: 0 crash-buffer lines: 0
+[02:51:58] ads lines: 30
+[02:51:59] screen 1080x2340
+[02:51:59] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:52:18] launch
+[02:52:37] shot 01-language (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:52:39] tapped /(?i)^continue/ at 540 2063
+[02:52:49] not found /(?i)^continue in/
+[02:52:51] tapped /(?i)^skip$/ at 934 277
+[02:52:59] not found /(?i)^(next|get started)$/
+[02:53:03] not found /(?i)^(allow|ok|got it|no thanks|accept|agree|consent)$/
+[02:53:10] tapped /(?i)^upgrade to pro$/ at 871 233
+[02:53:17] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:53:19] tapped /(?i)^restore$/ at 571 2027
+[02:53:26] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:53:29] tapped /@/ at 540 1227
+[02:53:36] type
+[02:53:40] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:53:42] tapped /(?i)^continue$/ at 847 1031
+[02:53:48] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:53:58] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:54:00] tapped /(?i)^restore$/ at 571 2053
+[02:54:07] tapped /@/ at 540 1227
+[02:54:20] type
+[02:54:23] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:54:26] tapped /(?i)^continue$/ at 847 1031
+[02:54:44] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:54:47] tapped /(?i)^(done|not now)$/ at 805 2053
+[02:54:53] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+[02:54:54] not found /(?i)^pro unlocked$/
+[02:55:01] shot 24-paywall-pro (fg:  mResumedActivity: ActivityRecord{47af40d u0 com.chartmann.evchargetracker/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-11 02:53:41.935 11227 11992 W DirectBilling: POST /v2/entitlement -> 503 {"error":"Sorry for any inconvenience — we've currently hit our plan limit.","code":"plan_limit","message":"Sorry for any inconvenience — we've currently hit our plan limit. Purchases and restores wil
+11-11 02:54:25.039 11227 12251 W DirectBilling: POST /v2/entitlement -> 503 {"error":"Sorry for any inconvenience — we've currently hit our plan limit.","code":"plan_limit","message":"Sorry for any inconvenience — we've currently hit our plan limit. Purchases and restores wil
+[02:55:03] pidof com.chartmann.evchargetracker: 11227
+[02:55:03] fatal lines: 0 crash-buffer lines: 0
+[02:55:03] ads lines: 38
+[02:55:03] screen 1080x2340
+[02:55:03] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:55:22] force-stop
+[02:55:25] launch
+[02:55:41] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[02:55:45] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{ddffd71 u0 com.chartmann.evchargetracker/.MainActivity t12})
+[02:55:47] not found /(?i)^(done|not now)$/
+[02:55:53] shot 323-pro-active (fg:  mResumedActivity: ActivityRecord{ddffd71 u0 com.chartmann.evchargetracker/.MainActivity t12})
+[02:55:54] not found /(?i)^pro unlocked$/
+[02:56:01] shot 324-paywall-pro (fg:  mResumedActivity: ActivityRecord{ddffd71 u0 com.chartmann.evchargetracker/.MainActivity t12})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-11 02:55:25.231 12581 12610 W DirectBilling: POST /v2/entitlement -> 503 {"error":"Sorry for any inconvenience — we've currently hit our plan limit.","code":"plan_limit","message":"Sorry for any inconvenience — we've currently hit our plan limit. Purchases and restores wil
+[02:56:03] pidof com.chartmann.evchargetracker: 12581
+[02:56:03] fatal lines: 0 crash-buffer lines: 0
+[02:56:03] ads lines: 23
