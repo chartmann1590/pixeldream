@@ -1,4 +1,4 @@
-E2E_ID=1110q56114
-E2E_APP=evchargetrackerqqa
-E2E_PKG=com.chartmann.evchargetracker
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/evchargetracker-direct-2/EVCharge-direct-release.apk
+E2E_ID=1110q56144
+E2E_APP=nightsayqqa
+E2E_PKG=com.charles.nightsay
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/nightsay-direct-6/Nightsay-direct-release.apk

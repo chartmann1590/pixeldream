@@ -1,0 +1,38 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+taploop (?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time)$
+adclose
+wait 3
+shot 02-after-onboarding
+# Nightsay opens the Premium paywall after onboarding (direct build: Stripe prices)
+scrollto (?i)^choose$
+wait 3
+shot 11-email
+type hartmannstudios+nightsay1110q@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
+back
+wait 3
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$
+adclose
+shot 03-main
+tap (?i)^history$
+wait 3
+shot 04-history
+tap (?i)^trends$
+wait 3
+shot 05-trends
+tap (?i)^settings$
+wait 3
+shot 06-settings
+swipeup
+swipeup
+shot 07-settings-bottom

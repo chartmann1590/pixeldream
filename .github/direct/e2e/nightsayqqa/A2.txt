@@ -1,0 +1,18 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$
+adclose
+shot 14-relaunch-after-purchase
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$
+shot 23-main-premium
+tap (?i)^settings$
+wait 3
+shot 24-settings
+swipeup
+shot 25-settings-2
+sh logcat -d -s DirectBilling
