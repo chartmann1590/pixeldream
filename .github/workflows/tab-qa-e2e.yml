@@ -4,7 +4,7 @@ name: Tab QA $0 Stripe e2e (emulator, GitHub signals)
 on:
   push:
     branches: [direct-stripe]
-    paths: ['.github/direct/qa/run-id.txt']
+    paths: ['.github/direct/e2e/qa-run-id.txt']
 permissions:
   contents: write
 jobs:
@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Read run config
       run: |
-        grep -E '^E2E_(ID|APP|PKG|APK|API|OLD_APK)=' .github/direct/qa/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/qa/run-id.txt
+        grep -E '^E2E_(ID|APP|PKG|APK|API|OLD_APK)=' .github/direct/e2e/qa-run-id.txt >> "$GITHUB_ENV"; cat .github/direct/e2e/qa-run-id.txt
     - name: Download released APK
       env:
         DROP_KEY: ${{ secrets.DROP_KEY }}
