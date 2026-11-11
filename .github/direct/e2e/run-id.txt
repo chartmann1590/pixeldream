@@ -1,4 +1,4 @@
-E2E_ID=1110q56742
-E2E_APP=morrowkeptqqa
-E2E_PKG=com.charles.morrowkept
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/morrowkept-direct-3/Morrowkept-direct-release.apk
+E2E_ID=1110q56754
+E2E_APP=owefolkqqa
+E2E_PKG=com.charles.owefolk
+E2E_APK=https://github.com/chartmann1590/owefolk/releases/download/direct-13/Owefolk-direct-release.apk
