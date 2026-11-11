@@ -18,7 +18,7 @@ APKA="$APK"; [ -f dsk-apk/old.apk ] && APKA=dsk-apk/old.apk && log "phase A runs
 log "phase A"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APKA" "$PKG" "$E/A.txt" A
 adb shell dumpsys package "$PKG" </dev/null | grep -E "versionCode|versionName|lastUpdateTime|firstInstallTime" | sed "s/^ *//" > $OUT/version-A.txt; cat $OUT/version-A.txt | tee -a $OUT/e2e.log
 put ready "$(date -u +%FT%TZ)"; log "ready posted; waiting for go"
-g=""; for i in $(seq 1 120); do g=$(get go) && [ -n "$g" ] && break; sleep 10; done
+g=""; for i in $(seq 1 360); do g=$(get go) && [ -n "$g" ] && break; sleep 10; done
 log "go=$g"
 log "phase A2"; KEEP_APP=1 SETTLE=15 bash $D/e2e-driver.sh "$APK" "$PKG" "$E/A2.txt" A2
 adb shell dumpsys package "$PKG" </dev/null | grep -E "versionCode|versionName|lastUpdateTime|firstInstallTime" | sed "s/^ *//" > $OUT/version-A2.txt; cat $OUT/version-A2.txt | tee -a $OUT/e2e.log
