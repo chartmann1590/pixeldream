@@ -1,0 +1,42 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^get started$
+wait 10
+taploop (?i)^(allow|ok|while using the app|only this time|continue|got it)$
+tap (?i)^not now$
+wait 5
+taploop (?i)^(allow|ok|while using the app|only this time|continue|got it)$
+adclose
+wait 8
+shot 02-map-home
+tap (?i)^plan a trip$
+wait 5
+adclose
+shot 03-plan
+back
+wait 3
+tap (?i)^profile$
+wait 4
+adclose
+shot 04-profile
+tap (?i)^settings$
+wait 4
+adclose
+shot 05-settings
+scrollto (?i)^remove ads$
+wait 4
+shot 10-paywall
+tap (?i)^subscribe
+wait 3
+shot 11-email
+type hartmannstudios+crowdtransit1110q@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
