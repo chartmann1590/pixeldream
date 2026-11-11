@@ -1,0 +1,87 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^get started$
+wait 5
+shot 02-model-download
+wait 60
+wait 60
+shot 02b-download-2m
+wait 60
+wait 60
+shot 02c-download-4m
+wait 60
+wait 60
+wait 60
+shot 02d-download-7m
+wait 120
+wait 120
+wait 120
+wait 120
+wait 120
+wait 120
+wait 120
+wait 120
+shot 02d2-download-23m
+wait 120
+wait 120
+wait 120
+wait 120
+shot 02d3-download-31m
+tap (?i)^continue$
+wait 4
+shot 02e-language
+tap (?i)^no translation$
+wait 2
+tap (?i)^continue$
+wait 4
+shot 03-name
+tap (?i)^enter your name$
+wait 1
+type Alex
+wait 1
+tap (?i)^finish$
+wait 5
+taploop (?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$
+wait 5
+adclose
+taploop (?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$
+wait 3
+adclose
+shot 04-main
+tap (?i)^chat$
+wait 3
+shot 05-chat
+tap (?i)^journal$
+wait 3
+adclose
+shot 06-journal
+tap (?i)^insights$
+wait 3
+shot 07-insights
+adclose
+tap (?i)^find help$
+wait 3
+shot 08-findhelp
+adclose
+tap (?i)^settings$
+wait 3
+adclose
+shot 09-settings
+adclose
+tap (?i)^upgrade to premium$
+wait 4
+shot 10-paywall
+scrollto (?i)^subscribe monthly$
+wait 3
+shot 11-email
+type hartmannstudios+warmword1110q@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close

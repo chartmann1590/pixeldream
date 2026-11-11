@@ -1,4 +1,4 @@
-E2E_ID=1110q56778
-E2E_APP=gigmileagetrackerqqa
-E2E_PKG=com.chartmann.gigmileagetracker
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/gigmileagetracker-direct-2/GigMileage-direct-release.apk
+E2E_ID=1110q56790
+E2E_APP=warmwordqqa
+E2E_PKG=com.charles.warmwords
+E2E_APK=https://github.com/chartmann1590/warmword/releases/download/direct-6/WarmWord-direct-release.apk
