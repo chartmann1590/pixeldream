@@ -1,0 +1,59 @@
+name: Tab QA $0 Stripe e2e (emulator, GitHub signals)
+# Tab, Nov 9 2026: buy -> unlock -> uninstall -> reinstall -> Restore (unknown email refused, buyer email restored)
+# on a RELEASED direct APK named in .github/direct/e2e/run-id.txt. Builds nothing, publishes nothing.
+on:
+  push:
+    branches: [direct-stripe]
+    paths: ['.github/direct/qa/run-id.txt']
+permissions:
+  contents: write
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+    - uses: actions/checkout@v4
+    - name: Read run config
+      run: |
+        grep -E '^E2E_(ID|APP|PKG|APK|API|OLD_APK)=' .github/direct/qa/run-id.txt >> "$GITHUB_ENV"; cat .github/direct/qa/run-id.txt
+    - name: Download released APK
+      env:
+        DROP_KEY: ${{ secrets.DROP_KEY }}
+      run: |
+        mkdir -p dsk-apk
+        case "$E2E_APK" in
+          drop:*) N="${E2E_APK#drop:}"; U=https://hs-apk-drop.charles-h-hartmann1.workers.dev
+            C=$(curl -sf -H "X-Key: $DROP_KEY" "$U/c/$N.info/0" | python3 -c 'import sys,json;print(json.load(sys.stdin)["chunks"])')
+            for i in $(seq 0 $((C-1))); do curl -sf -H "X-Key: $DROP_KEY" "$U/c/$N/$i" >> /tmp/d.tgz; done
+            mkdir -p /tmp/dx && tar xzf /tmp/d.tgz -C /tmp/dx && mv "$(ls /tmp/dx/*.apk | head -1)" dsk-apk/app.apk;;
+          *) curl -sfL -o dsk-apk/app.apk "$E2E_APK";;
+        esac
+        # Optional E2E_OLD_APK: phase A runs on the PREVIOUS release, then A2 installs the new APK over it (adb install -r = an update).
+        if [ -n "${E2E_OLD_APK:-}" ]; then curl -sfL -o dsk-apk/old.apk "$E2E_OLD_APK"; sha256sum dsk-apk/old.apk; fi
+        sha256sum dsk-apk/app.apk && ls -la dsk-apk
+    - name: Free runner disk
+      run: |
+        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /usr/local/lib/android/sdk/ndk 2>/dev/null || true
+        df -h / | tail -1
+    - name: Enable KVM
+      run: |
+        echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+        sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+    - name: Emulator e2e
+      uses: reactivecircus/android-emulator-runner@v2
+      env:
+        DROP_KEY: ${{ secrets.DROP_KEY }}
+      with:
+        api-level: ${{ env.E2E_API || 30 }}
+        profile: pixel_5
+        target: google_apis
+        arch: x86_64
+        ram-size: 7168M
+        disk-size: 12288M
+        emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+        disable-animations: true
+        emulator-boot-timeout: 1500
+        script: bash .github/direct/qa-e2e.sh
+    - name: Push evidence (screenshots + e2e log, no secrets) to branch tab-qa-evidence
+      if: always()
+      run: bash .github/direct/qa-evidence.sh /tmp/dsk-out "e2e_${E2E_APP}_${E2E_ID}"
