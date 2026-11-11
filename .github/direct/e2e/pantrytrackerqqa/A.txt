@@ -1,0 +1,42 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^continue in english$
+wait 4
+taploop (?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$
+wait 3
+adclose
+shot 03-home
+tap (?i)^pantry$
+wait 3
+shot 05-pantry
+tap (?i)^shopping$
+wait 3
+shot 06-shopping
+tap (?i)^insights$
+wait 3
+shot 07-insights
+tap (?i)^home$
+wait 3
+tap (?i)upgrade to pro|pantry pro|go pro
+wait 3
+shot 08-paywall
+tap (?i)^monthly
+wait 1
+scrollto (?i)^subscribe monthly$
+tap (?i)^subscribe monthly$
+wait 3
+shot 11-email
+type hartmannstudios+pantrytracker1110q@mail.tab.bot
+sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
+wait 1
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
+sh logcat -d -s DirectBilling

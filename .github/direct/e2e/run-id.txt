@@ -1,4 +1,4 @@
-E2E_ID=1110q56574
-E2E_APP=symptomdiaryqqa
-E2E_PKG=com.chartmann.symptomdiary
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/symptomdiary-direct-2/SymptomDiary-direct-release.apk
+E2E_ID=1110q56586
+E2E_APP=pantrytrackerqqa
+E2E_PKG=com.chartmann.pantrytracker
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/pantrytracker-direct-3/PantryTracker-direct-release.apk
