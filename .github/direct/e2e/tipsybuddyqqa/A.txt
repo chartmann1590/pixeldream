@@ -1,0 +1,39 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(allow|while using the app|only this time|ok)$
+tap (?i)^skip$
+wait 4
+taploop (?i)^(allow|while using the app|only this time|ok|not now|got it|dismiss)$
+shot 02-tonight
+tap (?i)^log$
+wait 3
+shot 03-log
+tap (?i)^calendar$
+wait 3
+shot 04-calendar
+tap (?i)^health$
+wait 3
+shot 05-health
+tap (?i)^rides$
+wait 3
+shot 07-rides
+tapxy 935 892
+wait 4
+shot 08-profile
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Subscribe to remove ads"
+wait 3
+shot 11-email
+tap @
+typefix hartmannstudios+tipsybuddy1110q@mail.tab.bot
+sh dumpsys input_method | grep -q 'mInputShown=true' && input keyevent 4
+wait 1
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
