@@ -1,5 +1,4 @@
-E2E_ID=1110v
-E2E_APP=pixeldreamv
-E2E_PKG=com.hartmann.pixeldream
-E2E_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-51/PixelDream-direct-release.apk
-E2E_OLD_APK=https://github.com/chartmann1590/pixeldream/releases/download/direct-48/PixelDream-direct-release.apk
+E2E_ID=1110q56114
+E2E_APP=evchargetrackerqqa
+E2E_PKG=com.chartmann.evchargetracker
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/evchargetracker-direct-2/EVCharge-direct-release.apk
