@@ -1,0 +1,44 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it)$
+wait 4
+adclose
+taploop (?i)^(allow|ok|not now|later|no thanks|got it|consent|accept)$
+shot 20-home
+tap (?i)^settings$
+wait 3
+adclose
+shot 21-settings-before
+scrollto (?i)^restore purchases$
+wait 2
+shot 22-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-shapeshade-1110q@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+shapeshade1110q@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 23-after-restore
+swipedown
+swipedown
+wait 2
+shot 24-settings-pro-active
+back
+wait 2
+shot 25-home-premium
+sh logcat -d -s DirectBilling

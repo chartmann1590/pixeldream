@@ -1,0 +1,37 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 20
+shot 01-launch
+taploop (?i)^(next|continue|get started|skip|allow|ok|got it)$
+wait 4
+adclose
+taploop (?i)^(allow|ok|not now|later|no thanks|got it|consent|accept)$
+shot 02-home
+tap (?i)^my scans$
+wait 3
+adclose
+shot 03-history
+back
+wait 2
+adclose
+tap (?i)^settings$
+wait 3
+adclose
+shot 04-settings
+tap (?i)^shape & shade pro$
+wait 4
+shot 10-paywall
+swipeup
+shot 10b-paywall-bottom
+tap (?i)^monthly$
+wait 3
+shot 11-email
+type hartmannstudios+shapeshade1110q@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 12-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 13-after-close
