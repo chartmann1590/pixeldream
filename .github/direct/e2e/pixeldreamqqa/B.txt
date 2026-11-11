@@ -1,0 +1,97 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 15
+shot 01-launch
+tap (?i)^got it$
+wait 3
+adclose
+shot 02-welcome
+tap (?i)^set up pixeldream$
+wait 4
+scrollto (?i)^i agree and understand$
+wait 6
+shot 03-device-check
+scrollto (?i)^(continue|continue anyway|next)$
+wait 8
+taploop (?i)^(got it|ok)$
+shot 04-model-download
+scrollto (?i)^(start download|retry downloads)$
+wait 60
+sh echo dD0wClsgLWYgL2RhdGEvbG9jYWwvdG1wL3dhaXRjLmRvbmUgXSAmJiB7IGVjaG8gd2FpdGMgYWxyZWFkeTsgZXhpdCAwOyB9CndoaWxlIFsgJHQgLWx0IDMgXTsgZG8KIHVpYXV0b21hdG9yIGR1bXAgL2RhdGEvbG9jYWwvdG1wL3cueG1sID4vZGV2L251bGwgMj4mMQogYj0kKGdyZXAgLWlvRSAndGV4dD0iKHN0YXJ0IGNyZWF0aW5nfHJldHJ5IGRvd25sb2FkcykiW14+XSpib3VuZHM9IlxbWzAtOV0qLFswLTldKlxdXFtbMC05XSosWzAtOV0qXF0iJyAvZGF0YS9sb2NhbC90bXAvdy54bWwgfCBoZWFkIC0xIHwgc2VkICdzLy4qYm91bmRzPS8vJyB8IHRyIC1jICcwLTknICcgJykKIGlmIFsgLW4gIiRiIiBdOyB0aGVuIHNldCAtLSAkYjsgaW5wdXQgdGFwICQoKCAoJDErJDMpLzIgKSkgJCgoICgkMiskNCkvMiApKTsgdG91Y2ggL2RhdGEvbG9jYWwvdG1wL3dhaXRjLmRvbmU7IGVjaG8gIndhaXRjIHRhcHBlZCAkdCI7IGV4aXQgMDsgZmkKIGdyZXAgLW9FICdbMC05Ll0rIFtHTV1CIG9mIFswLTkuXSsgR0InIC9kYXRhL2xvY2FsL3RtcC93LnhtbCB8IHRyICdcbicgJyAnOyBlY2hvCiBzbGVlcCA0NTsgdD0kKCh0KzEpKQpkb25lCmVjaG8gd2FpdGMgbm90IHlldAo= | base64 -d > /data/local/tmp/waitc.sh
+sh rm -f /data/local/tmp/waitc.done
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+sh sh /data/local/tmp/waitc.sh
+wait 3
+tap (?i)^(start creating|retry downloads)$
+wait 5
+taploop (?i)^(got it|ok|allow|consent|accept)$
+adclose
+shot 05-main
+tapxy 833 905
+wait 3
+sh echo dD0iJDEiOyBuPSIkezI6LTEyfSI7IGk9MAp3aGlsZSBbICRpIC1sdCAkbiBdOyBkbwogdWlhdXRvbWF0b3IgZHVtcCAvZGF0YS9sb2NhbC90bXAvdS54bWwgPi9kZXYvbnVsbCAyPiYxCiBiPSQoZ3JlcCAtaW8gInRleHQ9XCIkdFteXCJdKlwiW14+XSpib3VuZHM9XCJcW1swLTldKixbMC05XSpcXVxbWzAtOV0qLFswLTldKlxdXCIiIC9kYXRhL2xvY2FsL3RtcC91LnhtbCB8IGhlYWQgLTEgfCBzZWQgJ3MvLipib3VuZHM9Ly8nIHwgdHIgLWMgJzAtOScgJyAnKQogaWYgWyAtbiAiJGIiIF07IHRoZW4gc2V0IC0tICRiOyBpbnB1dCB0YXAgJCgoICgkMSskMykvMiApKSAkKCggKCQyKyQ0KS8yICkpOyBlY2hvICJmaW5kdGFwIG9rICRpIjsgZXhpdCAwOyBmaQogaW5wdXQgc3dpcGUgNTQwIDE1MDAgNTQwIDExMDAgNDAwOyBzbGVlcCAxOyBpPSQoKGkrMSkpCmRvbmUKZWNobyAiZmluZHRhcCBub25lIgo= | base64 -d > /data/local/tmp/findtap.sh
+sh sh /data/local/tmp/findtap.sh "Ad-free" 15
+wait 2
+tap (?i)^open$
+wait 4
+shot 20-paywall
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-pixeldream-1110q@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+pixeldream1110q@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+swipeup
+wait 1
+shot 22b-pixeldream-plus-after-restore
+back
+wait 2
+tapxy 167 905
+wait 3
+shot 23-create-no-banner
+sh logcat -d -s DirectBilling
