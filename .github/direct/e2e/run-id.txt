@@ -1,4 +1,4 @@
-E2E_ID=1110q56646
-E2E_APP=adhdfocuscompanionqqa
-E2E_PKG=com.chartmann.adhdfocuscompanion
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/adhdfocuscompanion-direct-2/ADHDFocus-direct-release.apk
+E2E_ID=1110q56658
+E2E_APP=scamradarqqa
+E2E_PKG=com.charles.scamradar.app
+E2E_APK=https://github.com/chartmann1590/ScamRadar/releases/download/direct-10/ScamRadar-direct-release.apk
