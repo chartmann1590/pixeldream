@@ -1,4 +1,4 @@
-E2E_ID=1110q56730
-E2E_APP=doselyqqa
-E2E_PKG=com.charles.dosely
-E2E_APK=https://github.com/chartmann1590/dosely/releases/download/direct-10/Dosely-direct-release.apk
+E2E_ID=1110q56742
+E2E_APP=morrowkeptqqa
+E2E_PKG=com.charles.morrowkept
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/morrowkept-direct-3/Morrowkept-direct-release.apk
