@@ -1,4 +1,4 @@
-E2E_ID=1110q44088
-E2E_APP=evchargetrackerqqa
-E2E_PKG=com.chartmann.evchargetracker
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/evchargetracker-direct-2/EVCharge-direct-release.apk
+E2E_ID=1110q44590
+E2E_APP=symptomdiaryqqa
+E2E_PKG=com.chartmann.symptomdiary
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/symptomdiary-direct-2/SymptomDiary-direct-release.apk
