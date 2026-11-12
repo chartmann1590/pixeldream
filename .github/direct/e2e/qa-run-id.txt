@@ -1,4 +1,4 @@
-E2E_ID=1110q44614
-E2E_APP=deadtideqqa
-E2E_PKG=com.deadtide.hordesurvivor
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/deadtide-direct-2/DeadTide-direct-release.apk
+E2E_ID=1110q44622
+E2E_APP=fieldkeyqqa
+E2E_PKG=com.charles.fieldkey
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/fieldkey-direct-2/Fieldkey-direct-release.apk
