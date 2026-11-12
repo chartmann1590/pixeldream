@@ -1,0 +1,150 @@
+[02:04:50] screen 1080x2340
+[02:04:50] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:05:36] launch
+[02:05:58] shot 01-launch (fg:  mResumedActivity: ActivityRecord{b7ff79f u0 com.charles.owefolk/.MainActivity t9})
+[02:06:00] tapped /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/ at 800 1523
+[02:06:04] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/
+[02:06:08] shot 02-auth (fg:  mResumedActivity: ActivityRecord{b7ff79f u0 com.charles.owefolk/.MainActivity t9})
+[02:06:11] tapped /(?i)^email address$/ at 420 1345
+[02:06:16] type
+[02:06:18] back
+[02:06:23] tapped /(?i)^password$/ at 280 1560
+[02:06:27] type
+[02:06:29] back
+[02:06:34] shot 02b-auth-filled (fg:  mResumedActivity: ActivityRecord{b7ff79f u0 com.charles.owefolk/.MainActivity t9})
+[02:06:36] tapped /(?i)^create account$/ at 332 1747
+[02:06:50] tapped /(?i)^sign in$/ at 748 1678
+[02:07:03] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it|skip|continue|done|next)$/
+[02:07:05] shot 02c-setup (fg:  mResumedActivity: ActivityRecord{b7ff79f u0 com.charles.owefolk/.MainActivity t9})
+[02:07:07] not found /(?i)^your name$/
+[02:07:10] type
+[02:07:12] back
+[02:07:15] launch
+[02:07:23] not found /(?i)^continue$/
+[02:07:30] shot 02d-payment (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:07:31] not found /(?i)^cash$/
+[02:07:35] not found /(?i)^cash$/
+[02:07:38] not found /(?i)^cash$/
+[02:07:42] not found /(?i)^cash$/
+[02:07:45] not found /(?i)^cash$/
+[02:07:49] not found /(?i)^cash$/
+[02:07:52] not found /(?i)^cash$/
+[02:07:56] not found /(?i)^cash$/
+[02:07:59] not found /(?i)^cash$/
+[02:08:02] not found /(?i)^cash$/
+[02:08:06] not found /(?i)^cash$/
+[02:08:09] not found /(?i)^cash$/
+[02:08:11] scrollto: never found /(?i)^cash$/
+[02:08:17] shot 02d2-cash (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:08:19] not found /(?i)^continue$/
+[02:08:26] shot 02e-group (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:08:27] not found /(?i)^skip for now$/
+[02:08:34] not found /(?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$/
+[02:08:40] shot 03-home (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:08:41] tapxy permille 370 897
+[02:08:48] shot 04-groups (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:08:48] tapxy permille 626 897
+[02:08:55] shot 05-activity (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:08:55] tapxy permille 880 897
+[02:09:04] shot 06-profile (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:09:06] tapped /(?i)^upgrade$/ at 380 902
+[02:09:13] shot 11-email (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:09:16] type
+[02:09:20] tapped /(?i)^continue$/ at 847 1047
+[02:09:48] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:09:51] tapped /(?i)^close$/ at 943 219
+[02:09:58] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{4cafe7 u0 com.charles.owefolk/.MainActivity t10})
+[02:10:00] pidof com.charles.owefolk: 5676
+[02:10:00] fatal lines: 0 crash-buffer lines: 0
+[02:10:00] ads lines: 20
+[03:11:09] screen 1080x2340
+[03:11:09] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[03:11:26] force-stop
+[03:11:29] launch
+[03:11:45] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[03:11:49] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{94a16b5 u0 com.charles.owefolk/.MainActivity t11})
+[03:11:51] shot 23-profile-premium (fg:  mResumedActivity: ActivityRecord{94a16b5 u0 com.charles.owefolk/.MainActivity t11})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+[03:11:53] pidof com.charles.owefolk: 11238
+[03:11:53] fatal lines: 0 crash-buffer lines: 0
+[03:11:53] ads lines: 2
+[03:11:54] screen 1080x2340
+[03:11:54] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[03:12:12] launch
+[03:12:34] tapped /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/ at 800 1523
+[03:12:37] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/
+[03:12:42] shot 02-auth (fg:  mResumedActivity: ActivityRecord{f34784e u0 com.charles.owefolk/.MainActivity t12})
+[03:12:44] tapped /(?i)^email address$/ at 420 1345
+[03:12:50] type
+[03:12:52] back
+[03:12:57] tapped /(?i)^password$/ at 280 1560
+[03:13:01] type
+[03:13:03] back
+[03:13:08] shot 02b-auth-filled (fg:  mResumedActivity: ActivityRecord{f34784e u0 com.charles.owefolk/.MainActivity t12})
+[03:13:10] tapped /(?i)^create account$/ at 332 1747
+[03:13:24] tapped /(?i)^sign in$/ at 748 1678
+[03:13:38] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it|skip|continue|done|next)$/
+[03:13:40] shot 02c-setup (fg:  mResumedActivity: ActivityRecord{f34784e u0 com.charles.owefolk/.MainActivity t12})
+[03:13:41] not found /(?i)^your name$/
+[03:13:45] type
+[03:13:46] back
+[03:13:49] launch
+[03:13:57] not found /(?i)^continue$/
+[03:14:04] shot 02d-payment (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:14:06] not found /(?i)^cash$/
+[03:14:09] not found /(?i)^cash$/
+[03:14:12] not found /(?i)^cash$/
+[03:14:16] not found /(?i)^cash$/
+[03:14:20] not found /(?i)^cash$/
+[03:14:23] not found /(?i)^cash$/
+[03:14:26] not found /(?i)^cash$/
+[03:14:30] not found /(?i)^cash$/
+[03:14:33] not found /(?i)^cash$/
+[03:14:37] not found /(?i)^cash$/
+[03:14:40] not found /(?i)^cash$/
+[03:14:44] not found /(?i)^cash$/
+[03:14:46] scrollto: never found /(?i)^cash$/
+[03:14:52] shot 02d2-cash (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:14:53] not found /(?i)^continue$/
+[03:15:00] shot 02e-group (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:15:02] not found /(?i)^skip for now$/
+[03:15:08] not found /(?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$/
+[03:15:15] shot 20-home (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:15:15] tapxy permille 880 897
+[03:15:24] tapped /(?i)^restore purchases$/ at 737 902
+[03:15:31] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:15:33] tapped /@/ at 540 1227
+[03:15:44] typefix field='nobody-owefolk-1110r@example.com'
+[03:15:46] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:15:48] tapped /(?i)^continue$/ at 847 1031
+[03:15:54] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:16:04] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:16:06] tapped /(?i)^restore purchases$/ at 737 902
+[03:16:13] tapped /@/ at 540 1227
+[03:16:27] typefix field='hartmannstudios+owefolk1110r@mail.tab.bot'
+[03:16:29] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:16:31] tapped /(?i)^continue$/ at 847 1031
+[03:16:50] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+[03:16:52] shot 23-profile-premium (fg:  mResumedActivity: ActivityRecord{6867397 u0 com.charles.owefolk/.MainActivity t13})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[03:16:54] pidof com.charles.owefolk: 12037
+[03:16:54] fatal lines: 0 crash-buffer lines: 0
+[03:16:54] ads lines: 1
+[03:16:54] screen 1080x2340
+[03:16:54] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[03:17:11] force-stop
+[03:17:14] launch
+[03:17:30] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[03:17:34] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{41c943b u0 com.charles.owefolk/.MainActivity t14})

@@ -1,0 +1,5 @@
+com.charles.owefolk|Checkout with Stripe||false|[138,927][942,1001]
+com.charles.owefolk|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[72,1001][1008,1164]
+com.charles.owefolk|you@example.com||true|[120,1180][960,1304]
+com.charles.owefolk|CANCEL||true|[508,1315][720,1464]
+com.charles.owefolk|CONTINUE||true|[720,1315][975,1464]

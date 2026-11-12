@@ -1,0 +1,5 @@
+com.charles.owefolk|Restore purchases||false|[138,943][942,1017]
+com.charles.owefolk|Enter the email you used at checkout.||false|[72,1017][1008,1076]
+com.charles.owefolk|you@example.com||true|[120,1165][960,1289]
+com.charles.owefolk|CANCEL||true|[508,1300][720,1449]
+com.charles.owefolk|CONTINUE||true|[720,1300][975,1449]
