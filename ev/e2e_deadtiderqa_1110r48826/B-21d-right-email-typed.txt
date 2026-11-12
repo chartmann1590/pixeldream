@@ -1,0 +1,5 @@
+com.deadtide.hordesurvivor|Restore purchases||false|[120,863][964,962]
+com.deadtide.hordesurvivor|Enter the email you used at checkout.||false|[131,996][964,1149]
+com.deadtide.hordesurvivor|hartmannstudios+deadtide1110r@mail.tab.bot||true|[140,1212][944,1344]
+com.deadtide.hordesurvivor|Continue||true|[98,1369][542,1501]
+com.deadtide.hordesurvivor|Cancel||true|[542,1369][986,1501]

@@ -1,0 +1,5 @@
+com.deadtide.hordesurvivor||Open Jaguar Land Rover Discovery, Defender &amp; More|true|[100,2071][980,2072]
+com.deadtide.hordesurvivor|Open||false|[0,0][0,0]
+com.deadtide.hordesurvivor|Jaguar Land Rover||false|[0,0][0,0]
+com.deadtide.hordesurvivor|Discovery, Defender &amp;&#10;More||false|[0,0][0,0]
+com.deadtide.hordesurvivor|Test Ad||false|[465,2071][614,2072]
