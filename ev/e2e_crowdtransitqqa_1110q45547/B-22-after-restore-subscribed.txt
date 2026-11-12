@@ -1,0 +1,5 @@
+com.charles.crowdtransit.app|You're subscribed — ads are off||false|[165,393][812,447]
+com.charles.crowdtransit.app|Thanks for supporting CrowdTransit. Manage or cancel anytime below.||false|[66,475][1014,584]
+com.charles.crowdtransit.app|Manage subscription||false|[99,623][458,678]
+com.charles.crowdtransit.app||Back|false|[44,200][110,266]
+com.charles.crowdtransit.app|Remove Ads||false|[154,197][447,269]

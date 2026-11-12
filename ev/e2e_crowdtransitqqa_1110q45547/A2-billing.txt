@@ -1,0 +1,1 @@
+11-12 01:14:47.768  7419  7573 I DirectBilling: license saved app=crowdtransit entitlements=["remove_ads_monthly"]

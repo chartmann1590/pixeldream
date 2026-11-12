@@ -1,0 +1,108 @@
+[01:07:40] screen 1080x2340
+[01:07:40] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:08:35] launch
+[01:08:52] shot 01-launch (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:08:54] tapped /(?i)^get started$/ at 540 1496
+[01:09:07] not found /(?i)^(allow|ok|while using the app|only this time|continue|got it)$/
+[01:09:09] not found /(?i)^not now$/
+[01:09:18] not found /(?i)^(allow|ok|while using the app|only this time|continue|got it)$/
+[01:09:29] shot 02-map-home (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:09:31] tapped /(?i)^plan a trip$/ at 959 1361
+[01:09:42] shot 03-plan (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:09:42] back
+[01:09:49] tapped /(?i)^profile$/ at 970 244
+[01:09:59] shot 04-profile (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:10:01] tapped /(?i)^settings$/ at 1003 233
+[01:10:10] shot 05-settings (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:10:13] tapped /(?i)^remove ads$/ at 299 1515
+[01:10:20] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:10:23] tapped /(?i)^subscribe/ at 540 955
+[01:10:29] shot 11-email (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:10:34] type
+[01:10:37] tapped /(?i)^continue$/ at 847 1047
+[01:11:06] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:11:08] tapped /(?i)^close$/ at 943 219
+[01:11:15] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{9fe764 u0 com.charles.crowdtransit.app/.MainActivity t9})
+[01:11:17] pidof com.charles.crowdtransit.app: 5626
+[01:11:17] fatal lines: 0 crash-buffer lines: 0
+[01:11:17] ads lines: 46
+[01:14:24] screen 1080x2340
+[01:14:24] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:14:44] force-stop
+[01:14:47] launch
+[01:15:03] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:15:07] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{4750b23 u0 com.charles.crowdtransit.app/.MainActivity t10})
+[01:15:07] back
+[01:15:12] back
+[01:15:16] back
+[01:15:23] shot 23-map-no-banner (fg:  mResumedActivity: ActivityRecord{d294ada u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:14:47.768  7419  7573 I DirectBilling: license saved app=crowdtransit entitlements=["remove_ads_monthly"]
+[01:15:25] pidof com.charles.crowdtransit.app: 7419
+[01:15:25] fatal lines: 0 crash-buffer lines: 0
+[01:15:26] ads lines: 17
+[01:15:26] screen 1080x2340
+[01:15:26] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:15:46] launch
+[01:16:03] shot 01-launch (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:16:05] tapped /(?i)^get started$/ at 540 1496
+[01:16:19] not found /(?i)^(allow|ok|while using the app|only this time|continue|got it)$/
+[01:16:21] not found /(?i)^not now$/
+[01:16:29] not found /(?i)^(allow|ok|while using the app|only this time|continue|got it)$/
+[01:16:41] shot 02-map-home (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:16:43] tapped /(?i)^profile$/ at 970 244
+[01:16:53] tapped /(?i)^settings$/ at 1003 233
+[01:17:02] tapped /(?i)^remove ads$/ at 299 1515
+[01:17:10] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:17:12] tapped /(?i)^restore purchases$/ at 540 1268
+[01:17:19] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:17:21] tapped /@/ at 540 1227
+[01:17:33] typefix field='nobody-crowdtransit-1110q@example.com'
+[01:17:35] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:17:37] tapped /(?i)^continue$/ at 847 1031
+[01:17:42] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:17:52] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:17:54] tapped /(?i)^restore purchases$/ at 540 1268
+[01:18:02] tapped /@/ at 540 1227
+[01:18:15] typefix field='hartmannstudios+crowdtransit1110q@mail.tab.bot'
+[01:18:17] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:18:19] tapped /(?i)^continue$/ at 847 1031
+[01:18:38] shot 22-after-restore-subscribed (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+[01:18:39] back
+[01:18:43] back
+[01:18:48] back
+[01:18:55] shot 23-map-no-banner (fg:  mResumedActivity: ActivityRecord{dcd16f8 u0 com.charles.crowdtransit.app/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 01:17:37.000  8371  9400 I DirectBilling: license saved app=crowdtransit entitlements=[]
+11-12 01:18:18.635  8371  9644 I DirectBilling: license saved app=crowdtransit entitlements=["remove_ads_monthly"]
+[01:18:57] pidof com.charles.crowdtransit.app: 8371
+[01:18:57] fatal lines: 0 crash-buffer lines: 0
+[01:18:57] ads lines: 22
+[01:18:57] screen 1080x2340
+[01:18:57] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:19:17] force-stop
+[01:19:19] launch
+[01:19:35] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:19:39] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{52e8f53 u0 com.charles.crowdtransit.app/.MainActivity t12})
+[01:19:40] back
+[01:19:44] back
+[01:19:49] back
+[01:19:56] shot 323-map-no-banner (fg:  mResumedActivity: ActivityRecord{d294ada u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:19:58] pidof com.charles.crowdtransit.app: 9991
+[01:19:58] fatal lines: 0 crash-buffer lines: 0
+[01:19:58] ads lines: 8

@@ -1,0 +1,4 @@
+com.charles.crowdtransit.app|CrowdTransit||false|[281,780][799,883]
+com.charles.crowdtransit.app|Find and rate transit stops near you.&#10;Real-time info from the community.||false|[190,927][890,1045]
+com.charles.crowdtransit.app|We'll ask for your location to show transit stops near you.||false|[275,1178][948,1287]
+com.charles.crowdtransit.app|Get Started||false|[421,1469][659,1523]

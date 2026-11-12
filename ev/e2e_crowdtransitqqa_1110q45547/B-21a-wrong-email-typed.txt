@@ -1,0 +1,5 @@
+com.charles.crowdtransit.app|Restore purchases||false|[138,600][942,674]
+com.charles.crowdtransit.app|Enter the email you used at checkout.||false|[72,674][1008,733]
+com.charles.crowdtransit.app|nobody-crowdtransit-1110q@example.com||true|[120,822][960,946]
+com.charles.crowdtransit.app|CANCEL||true|[506,957][719,1106]
+com.charles.crowdtransit.app|CONTINUE||true|[719,957][975,1106]

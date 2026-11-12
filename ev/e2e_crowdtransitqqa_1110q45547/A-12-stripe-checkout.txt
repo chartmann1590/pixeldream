@@ -1,0 +1,2 @@
+com.charles.crowdtransit.app|Secure checkout (Stripe)||false|[16,192][822,245]
+com.charles.crowdtransit.app|CLOSE||true|[822,153][1064,285]
