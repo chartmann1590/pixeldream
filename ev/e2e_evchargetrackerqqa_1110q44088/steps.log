@@ -1,0 +1,112 @@
+[00:43:45] screen 1080x2340
+[00:43:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:44:28] launch
+[00:44:46] shot 01-language (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:44:48] tapped /(?i)^continue/ at 540 2063
+[00:44:58] not found /(?i)^continue in/
+[00:45:00] tapped /(?i)^skip$/ at 934 277
+[00:45:08] not found /(?i)^(next|get started)$/
+[00:45:12] not found /(?i)^(allow|ok|got it|no thanks|accept|agree|consent)$/
+[00:45:19] shot 03-home (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:45:20] not found /(?i)^history$/
+[00:45:30] shot 05-history (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:45:31] not found /(?i)^insights$/
+[00:45:41] shot 06-insights (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:45:42] not found /(?i)^garage$/
+[00:45:51] shot 08-garage (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:45:53] not found /(?i)^home$/
+[00:46:02] tapped /(?i)^upgrade to pro$/ at 871 233
+[00:46:08] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:46:11] tapped /(?i)^monthly$/ at 294 1316
+[00:46:16] tapped /(?i)^subscribe$/ at 540 1513
+[00:46:22] shot 11-email (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:46:28] type
+[00:46:31] tapped /(?i)^continue$/ at 847 1047
+[00:47:00] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+[00:47:02] tapped /(?i)^close$/ at 943 219
+[00:47:09] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{3e57176 u0 com.chartmann.evchargetracker/.MainActivity t9})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 00:46:32.576  5188  5188 I DirectBilling: checkout opened app=evchargetracker product=ev_pro:monthly session=cs_live_acg74uHi5kh3Tl67Fpag0AEe9bJg5x1g6RnZXfSRAxuoNx7zKA2rHLK3dy
+[00:47:12] pidof com.chartmann.evchargetracker: 5188
+[00:47:12] fatal lines: 0 crash-buffer lines: 0
+[00:47:12] ads lines: 51
+[00:49:15] screen 1080x2340
+[00:49:15] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:49:33] force-stop
+[00:49:35] launch
+[00:49:52] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[00:49:55] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{9a2b6f7 u0 com.chartmann.evchargetracker/.MainActivity t10})
+[00:49:57] not found /(?i)^(done|not now)$/
+[00:50:03] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{9a2b6f7 u0 com.chartmann.evchargetracker/.MainActivity t10})
+[00:50:05] tapped /(?i)^pro unlocked$/ at 871 233
+[00:50:11] shot 24-paywall-pro (fg:  mResumedActivity: ActivityRecord{9a2b6f7 u0 com.chartmann.evchargetracker/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 00:49:36.387  7696  7723 I DirectBilling: license saved app=evchargetracker entitlements=["ev_pro:monthly"]
+[00:50:13] pidof com.chartmann.evchargetracker: 7696
+[00:50:14] fatal lines: 0 crash-buffer lines: 0
+[00:50:14] ads lines: 23
+[00:50:14] screen 1080x2340
+[00:50:14] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:50:32] launch
+[00:50:50] shot 01-language (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:50:52] tapped /(?i)^continue/ at 540 2063
+[00:51:02] not found /(?i)^continue in/
+[00:51:04] tapped /(?i)^skip$/ at 934 277
+[00:51:11] not found /(?i)^(next|get started)$/
+[00:51:16] not found /(?i)^(allow|ok|got it|no thanks|accept|agree|consent)$/
+[00:51:23] tapped /(?i)^upgrade to pro$/ at 871 233
+[00:51:29] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:51:31] tapped /(?i)^restore$/ at 571 2027
+[00:51:38] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:51:40] tapped /@/ at 540 1227
+[00:51:46] type
+[00:51:49] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:51:51] tapped /(?i)^continue$/ at 847 1031
+[00:51:57] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:52:07] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:52:09] tapped /(?i)^restore$/ at 571 2053
+[00:52:16] tapped /@/ at 540 1227
+[00:52:26] type
+[00:52:28] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:52:30] tapped /(?i)^continue$/ at 847 1031
+[00:52:49] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:52:51] tapped /(?i)^(done|not now)$/ at 834 1712
+[00:52:57] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+[00:52:59] tapped /(?i)^pro unlocked$/ at 871 233
+[00:53:06] shot 24-paywall-pro (fg:  mResumedActivity: ActivityRecord{7c3e799 u0 com.chartmann.evchargetracker/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of system
+--------- beginning of main
+11-12 00:51:52.283  8411  9262 I DirectBilling: license saved app=evchargetracker entitlements=[]
+11-12 00:52:30.494  8411  9558 I DirectBilling: license saved app=evchargetracker entitlements=["ev_pro:monthly"]
+[00:53:08] pidof com.chartmann.evchargetracker: 8411
+[00:53:08] fatal lines: 0 crash-buffer lines: 0
+[00:53:08] ads lines: 31
+[00:53:08] screen 1080x2340
+[00:53:08] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:53:26] force-stop
+[00:53:28] launch
+[00:53:44] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[00:53:48] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{4903cde u0 com.chartmann.evchargetracker/.MainActivity t12})
+[00:53:49] not found /(?i)^(done|not now)$/
+[00:53:55] shot 323-pro-active (fg:  mResumedActivity: ActivityRecord{4903cde u0 com.chartmann.evchargetracker/.MainActivity t12})
+[00:53:57] tapped /(?i)^pro unlocked$/ at 871 233
+[00:54:04] shot 324-paywall-pro (fg:  mResumedActivity: ActivityRecord{4903cde u0 com.chartmann.evchargetracker/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[00:54:06] pidof com.chartmann.evchargetracker: 9839
+[00:54:06] fatal lines: 0 crash-buffer lines: 0
+[00:54:06] ads lines: 4

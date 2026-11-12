@@ -1,0 +1,2 @@
+11-12 00:51:52.283  8411  9262 I DirectBilling: license saved app=evchargetracker entitlements=[]
+11-12 00:52:30.494  8411  9558 I DirectBilling: license saved app=evchargetracker entitlements=["ev_pro:monthly"]
