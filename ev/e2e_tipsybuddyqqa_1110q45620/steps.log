@@ -1,0 +1,94 @@
+[01:09:21] screen 1080x2340
+[01:09:21] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:09:59] launch
+[01:10:21] shot 01-launch (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:10:23] not found /(?i)^(allow|while using the app|only this time|ok)$/
+[01:10:25] tapped /(?i)^skip$/ at 945 176
+[01:10:32] not found /(?i)^(allow|while using the app|only this time|ok|not now|got it|dismiss)$/
+[01:10:34] shot 02-tonight (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:10:36] tapped /(?i)^log$/ at 225 2142
+[01:10:43] shot 03-log (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:10:45] tapped /(?i)^calendar$/ at 384 2142
+[01:10:52] shot 04-calendar (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:10:54] tapped /(?i)^health$/ at 541 2142
+[01:11:01] shot 05-health (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:11:03] tapped /(?i)^rides$/ at 855 2142
+[01:11:10] shot 07-rides (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:11:10] tapxy permille 935 892
+[01:11:18] shot 08-profile (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+findtap ok 6
+[01:11:45] shot 11-email (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:11:48] tapped /@/ at 540 1203
+[01:11:59] typefix field='hartmannstudios+tipsybuddy1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[01:12:02] tapped /(?i)^continue$/ at 847 1350
+[01:12:31] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{25d9484 u0 com.tipsybuddy.app/.MainActivity t9})
+[01:12:33] pidof com.tipsybuddy.app: 5352
+[01:12:33] fatal lines: 0 crash-buffer lines: 0
+[01:12:33] ads lines: 66
+[01:18:42] screen 1080x2340
+[01:18:42] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:19:01] force-stop
+[01:19:03] launch
+[01:19:19] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:19:23] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{a4ad12d u0 com.tipsybuddy.app/.MainActivity t10})
+[01:19:25] shot 23-profile-adfree (fg:  mResumedActivity: ActivityRecord{a4ad12d u0 com.tipsybuddy.app/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:19:03.871  7442  7465 I DirectBilling: license saved app=tipsybuddy entitlements=["tipsybuddy_ad_free_monthly"]
+[01:19:27] pidof com.tipsybuddy.app: 7442
+[01:19:27] fatal lines: 0 crash-buffer lines: 0
+[01:19:27] ads lines: 25
+[01:19:27] screen 1080x2340
+[01:19:27] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:19:46] launch
+[01:20:07] not found /(?i)^(allow|while using the app|only this time|ok)$/
+[01:20:10] tapped /(?i)^skip$/ at 945 176
+[01:20:17] not found /(?i)^(allow|while using the app|only this time|ok|not now|got it|dismiss)$/
+[01:20:19] shot 20-tonight (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:20:19] tapxy permille 935 892
+findtap ok 7
+[01:20:57] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:20:59] tapped /@/ at 540 1187
+[01:21:10] typefix field='nobody-tipsybuddy-1110q@example.com'
+[01:21:11] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:21:13] tapped /(?i)^continue$/ at 847 992
+[01:21:19] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:21:29] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+findtap ok 0
+[01:21:36] tapped /@/ at 540 1187
+[01:21:50] typefix field='hartmannstudios+tipsybuddy1110q@mail.tab.bot'
+[01:21:51] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:21:54] tapped /(?i)^continue$/ at 847 992
+[01:22:12] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+[01:22:14] shot 23-profile-adfree (fg:  mResumedActivity: ActivityRecord{f3f5b5a u0 com.tipsybuddy.app/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:21:14.048  8176  9001 I DirectBilling: license saved app=tipsybuddy entitlements=[]
+11-12 01:21:53.386  8176  9283 I DirectBilling: license saved app=tipsybuddy entitlements=["tipsybuddy_ad_free_monthly"]
+[01:22:16] pidof com.tipsybuddy.app: 8176
+[01:22:16] fatal lines: 0 crash-buffer lines: 0
+[01:22:16] ads lines: 36
+[01:22:16] screen 1080x2340
+[01:22:16] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:22:35] force-stop
+[01:22:37] launch
+[01:22:53] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:22:57] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{2846d5d u0 com.tipsybuddy.app/.MainActivity t12})
+[01:22:58] shot 323-profile-adfree (fg:  mResumedActivity: ActivityRecord{2846d5d u0 com.tipsybuddy.app/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:23:01] pidof com.tipsybuddy.app: 9595
+[01:23:01] fatal lines: 0 crash-buffer lines: 0
+[01:23:01] ads lines: 7

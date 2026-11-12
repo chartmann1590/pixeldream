@@ -1,0 +1,2 @@
+com.tipsybuddy.app|Secure checkout (Stripe)||false|[16,113][822,166]
+com.tipsybuddy.app|CLOSE||true|[822,74][1064,206]

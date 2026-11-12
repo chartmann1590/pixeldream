@@ -1,0 +1,2 @@
+11-12 01:21:14.048  8176  9001 I DirectBilling: license saved app=tipsybuddy entitlements=[]
+11-12 01:21:53.386  8176  9283 I DirectBilling: license saved app=tipsybuddy entitlements=["tipsybuddy_ad_free_monthly"]

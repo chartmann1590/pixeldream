@@ -1,0 +1,5 @@
+com.tipsybuddy.app|Restore purchases||false|[138,561][942,635]
+com.tipsybuddy.app|Enter the email you used at checkout.||false|[72,635][1008,694]
+com.tipsybuddy.app|hartmannstudios+tipsybuddy1110q@mail.tab.bot||true|[120,783][960,907]
+com.tipsybuddy.app|CANCEL||true|[506,918][719,1067]
+com.tipsybuddy.app|CONTINUE||true|[719,918][975,1067]

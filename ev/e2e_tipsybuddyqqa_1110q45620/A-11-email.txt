@@ -1,0 +1,5 @@
+com.tipsybuddy.app|Checkout with Stripe||false|[138,888][942,962]
+com.tipsybuddy.app|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[72,962][1008,1125]
+com.tipsybuddy.app|you@example.com||true|[120,1141][960,1265]
+com.tipsybuddy.app|CANCEL||true|[506,1276][719,1425]
+com.tipsybuddy.app|CONTINUE||true|[719,1276][975,1425]

@@ -1,0 +1,5 @@
+com.tipsybuddy.app|Restore purchases||false|[138,903][942,977]
+com.tipsybuddy.app|Enter the email you used at checkout.||false|[72,977][1008,1036]
+com.tipsybuddy.app|you@example.com||true|[120,1125][960,1249]
+com.tipsybuddy.app|CANCEL||true|[506,1260][719,1409]
+com.tipsybuddy.app|CONTINUE||true|[719,1260][975,1409]

@@ -1,0 +1,1 @@
+11-12 01:19:03.871  7442  7465 I DirectBilling: license saved app=tipsybuddy entitlements=["tipsybuddy_ad_free_monthly"]
