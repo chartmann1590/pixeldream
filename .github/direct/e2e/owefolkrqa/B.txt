@@ -1,0 +1,73 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+launch
+wait 20
+taploop (?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$
+wait 3
+shot 02-auth
+tap (?i)^email address$
+wait 1
+type direct-ci-owefolk@mail.tab.bot
+back
+wait 1
+tap (?i)^password$
+wait 1
+type DirectCi2026test
+back
+wait 1
+shot 02b-auth-filled
+tap (?i)^create account$
+wait 10
+tap (?i)^sign in$
+wait 10
+taploop (?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it|skip|continue|done|next)$
+shot 02c-setup
+tap (?i)^your name$
+wait 1
+type Alex
+back
+wait 1
+launch
+wait 6
+tap (?i)^continue$
+wait 3
+shot 02d-payment
+scrollto (?i)^cash$
+wait 2
+shot 02d2-cash
+tap (?i)^continue$
+wait 3
+shot 02e-group
+tap (?i)^skip for now$
+wait 3
+taploop (?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$
+wait 3
+adclose
+shot 20-home
+tapxy 880 897
+wait 3
+adclose
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-email
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-owefolk-1110r@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+owefolk1110r@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 15
+shot 22-after-restore
+shot 23-profile-premium
+sh logcat -d -s DirectBilling

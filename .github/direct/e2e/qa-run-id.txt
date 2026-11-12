@@ -1,4 +1,4 @@
-E2E_ID=1110r48835
-E2E_APP=fieldkeyrqa
-E2E_PKG=com.charles.fieldkey
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/fieldkey-direct-2/Fieldkey-direct-release.apk
+E2E_ID=1110r48932
+E2E_APP=owefolkrqa
+E2E_PKG=com.charles.owefolk
+E2E_APK=https://github.com/chartmann1590/owefolk/releases/download/direct-13/Owefolk-direct-release.apk
