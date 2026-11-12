@@ -1,0 +1,1 @@
+11-12 08:43:18.856  7675  7700 I DirectBilling: license saved app=featherdeck entitlements=[]

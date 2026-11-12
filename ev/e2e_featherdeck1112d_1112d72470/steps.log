@@ -1,0 +1,153 @@
+[08:38:13] screen 1080x2340
+[08:38:13] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:39:00] launch
+[08:39:17] not found /(?i)^wait$/
+[08:39:23] not found /(?i)^wait$/
+[08:39:26] launch
+[08:39:33] shot 01-first-card (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:39:35] tapped /(?i)^name$/ at 431 486
+[08:39:39] type
+[08:39:42] tapped /(?i)^breed$/ at 429 662
+[08:39:46] type
+[08:39:47] back
+[08:39:51] tapped /(?i)^make the card$/ at 540 1495
+[08:39:59] shot 02-deck (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:40:01] tapped /(?i)^henrietta$/ at 540 1448
+[08:40:07] shot 03-flipped (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:40:09] tapped /(?i)timeline$/ at 487 880
+[08:40:15] tapped /(?i)^carton$/ at 540 376
+[08:40:21] tapped /(?i)^\+ egg$/ at 159 1340
+[08:40:25] tapped /(?i)^\+ egg$/ at 159 1340
+[08:40:30] tapped /(?i)^\+ egg$/ at 159 1340
+[08:40:35] shot 04-carton (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:40:37] tapped /(?i)^\+ feed cost$/ at 176 1767
+[08:40:42] tapped /(?i)^amount/ at 328 1066
+[08:40:45] type
+[08:40:48] tapped /(?i)^save$/ at 834 1169
+[08:40:54] shot 05-ledger (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:40:56] tapped /(?i)^hatch$/ at 900 376
+[08:41:02] tapped /(?i)^start a hatch/ at 540 553
+[08:41:09] shot 06-paywall (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:41:11] tapped /(?i)^subscribe monthly$/ at 540 1101
+[08:41:18] shot 07-email (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:41:21] type
+[08:41:24] tapped /(?i)^continue$/ at 847 1047
+[08:41:53] shot 08-stripe-checkout (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+[08:41:55] tapped /(?i)^close$/ at 943 219
+[08:42:00] back
+[08:42:06] tapped /(?i)^settings$/ at 970 228
+[08:42:12] shot 09-settings (fg:  mResumedActivity: ActivityRecord{8b7a362 u0 com.hartmannstudios.featherdeck/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 08:41:25.119  5464  5464 I DirectBilling: checkout opened app=featherdeck product=featherdeck_pro_monthly session=cs_live_achItKHzYKZ17JtKvJVcDY95V6iaiJQ8y9mvQ56AlMAUoGSWe3HJspb1aO
+[08:42:14] pidof com.hartmannstudios.featherdeck: 5464
+[08:42:14] fatal lines: 0 crash-buffer lines: 0
+[08:42:14] ads lines: 152
+[08:42:58] screen 1080x2340
+[08:42:58] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:43:16] force-stop
+[08:43:18] launch
+[08:43:34] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:43:36] ad on screen (try 1)
+[08:43:46] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:43:51] ad on screen (try 2)
+[08:44:00] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:44:05] ad on screen (try 3)
+[08:44:15] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:44:20] ad on screen (try 4)
+[08:44:30] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:44:35] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{61e1204 u0 com.hartmannstudios.featherdeck/.MainActivity t10})
+[08:44:37] tapped /(?i)^settings$/ at 970 228
+[08:44:45] shot 11-settings (fg:  mResumedActivity: ActivityRecord{61e1204 u0 com.hartmannstudios.featherdeck/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 08:43:18.856  7675  7700 I DirectBilling: license saved app=featherdeck entitlements=[]
+[08:44:47] pidof com.hartmannstudios.featherdeck: 7675
+[08:44:47] fatal lines: 0 crash-buffer lines: 0
+[08:44:47] ads lines: 89
+[08:44:48] screen 1080x2340
+[08:44:48] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:45:06] launch
+[08:45:23] not found /(?i)^wait$/
+[08:45:29] not found /(?i)^wait$/
+[08:45:31] launch
+[08:45:39] shot 01-first-card (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:45:41] tapped /(?i)^name$/ at 431 486
+[08:45:44] type
+[08:45:47] tapped /(?i)^breed$/ at 429 662
+[08:45:50] type
+[08:45:52] back
+[08:45:56] tapped /(?i)^make the card$/ at 540 1495
+[08:46:03] shot 02-deck (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:46:06] tapped /(?i)^henrietta$/ at 540 1448
+[08:46:11] shot 03-flipped (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:46:13] tapped /(?i)timeline$/ at 487 880
+[08:46:19] tapped /(?i)^carton$/ at 540 376
+[08:46:26] tapped /(?i)^\+ egg$/ at 159 1340
+[08:46:30] tapped /(?i)^\+ egg$/ at 159 1340
+[08:46:34] tapped /(?i)^\+ egg$/ at 159 1340
+[08:46:40] shot 04-carton (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:46:42] tapped /(?i)^\+ feed cost$/ at 176 1767
+[08:46:47] tapped /(?i)^amount/ at 328 1066
+[08:46:49] type
+[08:46:52] tapped /(?i)^save$/ at 834 1169
+[08:46:58] shot 05-ledger (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:47:00] tapped /(?i)^hatch$/ at 900 376
+[08:47:06] tapped /(?i)^start a hatch/ at 540 553
+[08:47:13] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:47:15] not found /(?i)^restore purchases$/
+[08:47:19] tapped /(?i)^restore purchases$/ at 540 1790
+[08:47:26] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:47:28] tapped /@/ at 540 1227
+[08:47:38] typefix field='nobody-featherdeck-1112d@example.com'
+[08:47:40] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:47:42] tapped /(?i)^continue$/ at 847 1031
+[08:47:48] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:47:58] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:48:00] tapped /(?i)^restore purchases$/ at 540 1790
+[08:48:07] tapped /@/ at 540 1227
+[08:48:20] typefix field='hartmannstudios+featherdeck1112d@mail.tab.bot'
+[08:48:22] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:48:24] tapped /(?i)^continue$/ at 847 1031
+[08:48:31] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+[08:48:48] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{7128874 u0 com.hartmannstudios.featherdeck/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 08:47:43.348  8734 10340 I DirectBilling: license saved app=featherdeck entitlements=[]
+11-12 08:48:24.518  8734 10571 I DirectBilling: license saved app=featherdeck entitlements=[]
+[08:48:50] pidof com.hartmannstudios.featherdeck: 8734
+[08:48:50] fatal lines: 0 crash-buffer lines: 0
+[08:48:50] ads lines: 104
+[08:48:50] screen 1080x2340
+[08:48:51] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:49:09] force-stop
+[08:49:11] launch
+[08:49:27] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:49:29] ad on screen (try 1)
+[08:49:38] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:49:44] ad on screen (try 2)
+[08:49:53] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:49:58] ad on screen (try 3)
+[08:50:08] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:50:13] ad on screen (try 4)
+[08:50:23] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:50:28] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{fc053c4 u0 com.hartmannstudios.featherdeck/.MainActivity t12})
+[08:50:30] tapped /(?i)^settings$/ at 970 228
+[08:50:38] shot 31-settings (fg:  mResumedActivity: ActivityRecord{fc053c4 u0 com.hartmannstudios.featherdeck/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:50:40] pidof com.hartmannstudios.featherdeck: 10923
+[08:50:40] fatal lines: 0 crash-buffer lines: 0
+[08:50:40] ads lines: 103

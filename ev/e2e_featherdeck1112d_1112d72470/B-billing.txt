@@ -1,0 +1,2 @@
+11-12 08:47:43.348  8734 10340 I DirectBilling: license saved app=featherdeck entitlements=[]
+11-12 08:48:24.518  8734 10571 I DirectBilling: license saved app=featherdeck entitlements=[]
