@@ -1,0 +1,2 @@
+11-12 01:22:19.587  9001 10113 I DirectBilling: license saved app=dosely entitlements=[]
+11-12 01:23:00.914  9001 10369 I DirectBilling: license saved app=dosely entitlements=["dosely_ad_free"]

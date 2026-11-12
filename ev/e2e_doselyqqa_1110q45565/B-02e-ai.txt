@@ -1,0 +1,7 @@
+com.charles.dosely|Meet your on-device AI coach||false|[66,294][1000,377]
+com.charles.dosely|Dosely can run Google's Gemma model fully offline so you can ask questions about your journey. Nothing is sent to any server.||false|[66,405][1014,589]
+com.charles.dosely|Uses about 2.6 GB of storage||false|[66,655][558,700]
+com.charles.dosely|Download AI model (2.6 GB)||false|[132,778][627,833]
+com.charles.dosely|Skip for now||true|[66,856][277,988]
+com.charles.dosely|Back||false|[0,0][0,0]
+com.charles.dosely|Next||false|[0,0][0,0]

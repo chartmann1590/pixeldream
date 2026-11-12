@@ -1,0 +1,5 @@
+com.charles.dosely|Stay on track with reminders||false|[66,294][963,377]
+com.charles.dosely|Allow notifications so Dosely can remind you about injections, low pen stock and weekly weigh-ins.||false|[66,405][1014,589]
+com.charles.dosely|Maybe later||false|[66,655][263,700]
+com.charles.dosely|Back||false|[0,0][0,0]
+com.charles.dosely|Allow notifications||false|[0,0][0,0]

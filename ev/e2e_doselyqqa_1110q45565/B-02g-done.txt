@@ -1,0 +1,3 @@
+com.charles.dosely|You are all set||false|[319,1200][762,1283]
+com.charles.dosely|Your first reminder is scheduled. Welcome aboard!||false|[77,1311][1003,1429]
+com.charles.dosely|Open Dosely||false|[430,2032][650,2072]

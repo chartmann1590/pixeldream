@@ -1,0 +1,4 @@
+com.android.chrome|Welcome to Chrome||false|[258,609][821,684]
+com.android.chrome|By using Chrome, you agree to the Google Terms of Service, and the Google Chrome and Chrome OS Additional Terms of Service.||false|[66,1190][1014,1371]
+com.android.chrome|Help make Chrome better by sending usage statistics and crash reports to Google.||true|[66,1459][1014,1579]
+com.android.chrome|Accept &amp; continue||true|[340,2048][740,2072]

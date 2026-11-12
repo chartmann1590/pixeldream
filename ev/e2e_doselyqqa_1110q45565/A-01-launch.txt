@@ -1,0 +1,5 @@
+com.charles.dosely|&#128137;||false|[77,866][193,976]
+com.charles.dosely|Welcome to Dosely||false|[77,1026][676,1109]
+com.charles.dosely|A private companion for your GLP-1 journey. Track injections, weight and pen stock — all on your device.||false|[77,1142][1003,1326]
+com.charles.dosely|Your doses, weight and chats never leave your phone. No account, no cloud sync.||false|[77,1354][1003,1454]
+com.charles.dosely|Get started||false|[442,2032][639,2072]

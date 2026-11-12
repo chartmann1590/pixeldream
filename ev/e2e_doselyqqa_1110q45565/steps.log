@@ -1,0 +1,168 @@
+[01:08:04] screen 1080x2340
+[01:08:04] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:08:46] launch
+[01:09:03] shot 01-launch (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:05] tapped /(?i)^get started$/ at 540 2052
+[01:09:12] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:09:14] shot 02-medication (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:14] tapxy permille 655 897
+[01:09:21] shot 02b-dose-schedule (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:21] tapxy permille 655 897
+[01:09:28] shot 02c-weight (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:30] tapped /(?i)^weight \(/ at 225 900
+[01:09:34] type
+[01:09:36] back
+[01:09:40] tapxy permille 655 897
+[01:09:47] shot 02d-language (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:47] tapxy permille 655 897
+[01:09:54] shot 02e-ai (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:09:56] tapped /(?i)^skip for now$/ at 171 922
+[01:10:03] shot 02f-reminders (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:04] tapxy permille 655 897
+[01:10:10] shot 02g-done (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:11] tapxy permille 500 880
+[01:10:19] not found /(?i)^(allow|ok|while using the app|only this time|not now|no thanks|got it)$/
+[01:10:22] shot 03-home (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:23] tapxy permille 300 895
+[01:10:31] shot 04-doses (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:32] tapxy permille 500 895
+[01:10:38] shot 05-journal (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:39] tapxy permille 700 895
+[01:10:46] shot 06-weight (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:46] tapxy permille 900 895
+[01:10:55] shot 07-settings (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:10:57] tapped /(?i)^subscribe for/ at 540 1079
+[01:11:03] shot 08-paywall (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:11:04] not found /(?i)^subscribe for/
+[01:11:11] shot 11-email (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:11:15] type
+[01:11:18] tapped /(?i)^continue$/ at 847 1047
+[01:11:47] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+[01:11:49] tapped /(?i)^close$/ at 943 219
+[01:11:56] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{38512aa u0 com.charles.dosely/com.dosely.app.MainActivity t9})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:11:18.309  5535  5535 I DirectBilling: checkout opened app=dosely product=dosely_ad_free session=cs_live_ac6yTtfQ7LeeMF51rdHxJVIGZySPoMTw9MJ0ipnUOeps6S5S83GAeTVD3U
+[01:11:58] pidof com.charles.dosely: 5535
+[01:11:58] fatal lines: 0 crash-buffer lines: 0
+[01:11:58] ads lines: 40
+[01:18:08] screen 1080x2340
+[01:18:08] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:18:25] force-stop
+[01:18:28] launch
+[01:18:44] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:18:48] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{e2a48f1 u0 com.charles.dosely/com.dosely.app.MainActivity t10})
+[01:18:49] not found /(?i)active subscription/
+[01:18:53] not found /(?i)active subscription/
+[01:18:56] not found /(?i)active subscription/
+[01:19:00] not found /(?i)active subscription/
+[01:19:03] not found /(?i)active subscription/
+[01:19:07] not found /(?i)active subscription/
+[01:19:10] not found /(?i)active subscription/
+[01:19:14] not found /(?i)active subscription/
+[01:19:17] not found /(?i)active subscription/
+[01:19:21] not found /(?i)active subscription/
+[01:19:24] not found /(?i)active subscription/
+[01:19:28] not found /(?i)active subscription/
+[01:19:30] scrollto: never found /(?i)active subscription/
+[01:19:33] shot 23-settings-adfree (fg:  mResumedActivity: ActivityRecord{e2a48f1 u0 com.charles.dosely/com.dosely.app.MainActivity t10})
+[01:19:35] not found /(?i)^home$/
+[01:19:42] shot 24-home-no-ads (fg:  mResumedActivity: ActivityRecord{e2a48f1 u0 com.charles.dosely/com.dosely.app.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:18:28.563  7879  7918 I DirectBilling: license saved app=dosely entitlements=["dosely_ad_free"]
+[01:19:44] pidof com.charles.dosely: 7879
+[01:19:44] fatal lines: 0 crash-buffer lines: 0
+[01:19:44] ads lines: 9
+[01:19:45] screen 1080x2340
+[01:19:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:20:03] launch
+[01:20:19] shot 01-launch (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:20:21] tapped /(?i)^get started$/ at 540 2052
+[01:20:28] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:20:30] shot 02-medication (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:20:30] tapxy permille 655 897
+[01:20:37] shot 02b-dose-schedule (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:20:38] tapxy permille 655 897
+[01:20:45] shot 02c-weight (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:20:47] tapped /(?i)^weight \(/ at 225 900
+[01:20:50] type
+[01:20:52] back
+[01:20:56] tapxy permille 655 897
+[01:21:03] shot 02d-language (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:04] tapxy permille 655 897
+[01:21:10] shot 02e-ai (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:12] tapped /(?i)^skip for now$/ at 171 922
+[01:21:19] shot 02f-reminders (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:20] tapxy permille 655 897
+[01:21:27] shot 02g-done (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:27] tapxy permille 500 880
+[01:21:35] not found /(?i)^(allow|ok|while using the app|only this time|not now|no thanks|got it)$/
+[01:21:38] shot 03-home (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:39] tapxy permille 900 895
+[01:21:47] tapped /(?i)^restore purchases$/ at 306 1228
+[01:21:53] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:21:55] tapped /(?i)^restore purchases$/ at 540 980
+[01:22:02] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:22:04] tapped /@/ at 540 1227
+[01:22:15] typefix field='nobody-dosely-1110q@example.com'
+[01:22:17] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:22:19] tapped /(?i)^continue$/ at 847 1031
+[01:22:25] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:22:35] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:22:37] tapped /(?i)^restore purchases$/ at 306 1228
+[01:22:44] tapped /@/ at 540 1227
+[01:22:57] typefix field='hartmannstudios+dosely1110q@mail.tab.bot'
+[01:22:59] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:23:01] tapped /(?i)^continue$/ at 847 1031
+[01:23:20] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{16ec036 u0 com.charles.dosely/com.dosely.app.MainActivity t11})
+[01:23:22] tapped /(?i)active subscription/ at 540 1079
+[01:23:26] shot 23-settings-adfree (fg:  mResumedActivity: ActivityRecord{8107532 u0 com.android.chrome/org.chromium.chrome.browser.firstrun.FirstRunActivity t13})
+[01:23:28] not found /(?i)^home$/
+[01:23:35] shot 24-home-no-ads (fg:  mResumedActivity: ActivityRecord{8107532 u0 com.android.chrome/org.chromium.chrome.browser.firstrun.FirstRunActivity t13})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:22:19.587  9001 10113 I DirectBilling: license saved app=dosely entitlements=[]
+11-12 01:23:00.914  9001 10369 I DirectBilling: license saved app=dosely entitlements=["dosely_ad_free"]
+[01:23:37] pidof com.charles.dosely: 9001
+[01:23:37] fatal lines: 0 crash-buffer lines: 0
+[01:23:37] ads lines: 29
+[01:23:37] screen 1080x2340
+[01:23:37] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:23:54] force-stop
+[01:23:56] launch
+[01:24:13] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:24:16] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{269f5f8 u0 com.charles.dosely/com.dosely.app.MainActivity t14})
+[01:24:18] not found /(?i)active subscription/
+[01:24:21] not found /(?i)active subscription/
+[01:24:25] not found /(?i)active subscription/
+[01:24:28] not found /(?i)active subscription/
+[01:24:32] not found /(?i)active subscription/
+[01:24:35] not found /(?i)active subscription/
+[01:24:39] not found /(?i)active subscription/
+[01:24:42] not found /(?i)active subscription/
+[01:24:46] not found /(?i)active subscription/
+[01:24:49] not found /(?i)active subscription/
+[01:24:53] not found /(?i)active subscription/
+[01:24:56] not found /(?i)active subscription/
+[01:24:58] scrollto: never found /(?i)active subscription/
+[01:25:02] shot 323-settings-adfree (fg:  mResumedActivity: ActivityRecord{269f5f8 u0 com.charles.dosely/com.dosely.app.MainActivity t14})
+[01:25:04] not found /(?i)^home$/
+[01:25:11] shot 324-home-no-ads (fg:  mResumedActivity: ActivityRecord{269f5f8 u0 com.charles.dosely/com.dosely.app.MainActivity t14})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:25:13] pidof com.charles.dosely: 10960
+[01:25:13] fatal lines: 0 crash-buffer lines: 0
+[01:25:13] ads lines: 6
