@@ -1,0 +1,5 @@
+com.charles.nutrisnap|Restore purchases||false|[138,600][942,674]
+com.charles.nutrisnap|Enter the email you used at checkout.||false|[72,674][1008,733]
+com.charles.nutrisnap|nobody-nutrisnap-1110q@example.com||true|[120,822][960,946]
+com.charles.nutrisnap|CANCEL||true|[506,957][719,1106]
+com.charles.nutrisnap|CONTINUE||true|[719,957][975,1106]

@@ -1,0 +1,125 @@
+[01:09:40] screen 1080x2340
+[01:09:40] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:10:21] launch
+[01:10:37] shot 01-launch (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:10:38] tapxy permille 500 923
+[01:10:45] shot 01b-onboarding-step2 (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:10:45] tapxy permille 500 923
+[01:10:52] shot 01c-onboarding-step3 (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:10:52] tapxy permille 500 923
+[01:10:59] shot 01d-onboarding-step4 (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:11:00] tapxy permille 500 923
+[01:11:06] shot 01e-onboarding-step5 (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:11:07] tapxy permille 500 923
+[01:11:15] not found /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time|start tracking)$/
+[01:11:23] shot 02-model-download (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:13:26] shot 02b-download-2m (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:16:28] shot 02c-download-5m (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:19:30] shot 02d-download-8m (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:25:32] shot 02e-download-14m (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:31:33] shot 02f-download-20m (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:31:35] not found /(?i)^(next|continue|get started|skip|ok|got it|done|not now|maybe later|no thanks|allow|while using the app)$/
+[01:31:40] shot 03-home (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:31:41] tapxy permille 300 892
+[01:31:49] shot 04-diary (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:31:49] tapxy permille 700 892
+[01:31:58] shot 05-trends (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:31:58] tapxy permille 900 892
+[01:32:07] shot 06-me (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+findtap ok 0
+[01:32:16] shot 07-settings (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+findtap ok 1
+[01:32:28] shot 11-email (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:32:33] type
+[01:32:36] tapped /(?i)^continue$/ at 847 1047
+[01:33:05] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{5ce08dc u0 com.charles.nutrisnap/.MainActivity t9})
+[01:33:07] pidof com.charles.nutrisnap: 5640
+[01:33:07] fatal lines: 0 crash-buffer lines: 0
+[01:33:07] ads lines: 121
+[01:34:52] screen 1080x2340
+[01:34:52] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:35:10] force-stop
+[01:35:12] launch
+[01:35:28] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:35:32] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{2ef688b u0 com.charles.nutrisnap/.MainActivity t10})
+[01:35:32] tapxy permille 900 892
+findtap ok 0
+[01:35:48] shot 15-settings (fg:  mResumedActivity: ActivityRecord{2ef688b u0 com.charles.nutrisnap/.MainActivity t10})
+[01:35:56] shot 16-settings-premium (fg:  mResumedActivity: ActivityRecord{2ef688b u0 com.charles.nutrisnap/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:35:12.557  8496  8557 I DirectBilling: license saved app=nutrisnap entitlements=["nutrisnap_premium:premium_yearly"]
+[01:35:58] pidof com.charles.nutrisnap: 8496
+[01:35:58] fatal lines: 0 crash-buffer lines: 0
+[01:35:58] ads lines: 20
+[01:35:59] screen 1080x2340
+[01:35:59] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:36:17] launch
+[01:36:33] tapxy permille 500 923
+[01:36:40] shot 01b-onboarding-step2 (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:36:40] tapxy permille 500 923
+[01:36:47] shot 01c-onboarding-step3 (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:36:47] tapxy permille 500 923
+[01:36:54] shot 01d-onboarding-step4 (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:36:55] tapxy permille 500 923
+[01:37:01] shot 01e-onboarding-step5 (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:37:02] tapxy permille 500 923
+[01:37:10] not found /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time|start tracking)$/
+[01:37:19] shot 02-model-download (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:39:21] shot 02b-download-2m (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:42:23] shot 02c-download-5m (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:45:25] shot 02d-download-8m (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:51:27] shot 02e-download-14m (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:57:29] shot 02f-download-20m (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:57:30] not found /(?i)^(next|continue|get started|skip|ok|got it|done|not now|maybe later|no thanks|allow|while using the app)$/
+[01:57:35] shot 20-home (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:57:36] tapxy permille 900 892
+findtap ok 0
+findtap ok 3
+[01:58:12] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:58:14] tapped /@/ at 540 1227
+[01:58:25] typefix field='nobody-nutrisnap-1110q@example.com'
+[01:58:26] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:58:28] tapped /(?i)^continue$/ at 847 1031
+[01:58:34] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:58:44] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+findtap ok 0
+[01:58:51] tapped /@/ at 540 1227
+[01:59:05] typefix field='hartmannstudios+nutrisnap1110q@mail.tab.bot'
+[01:59:07] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:59:09] tapped /(?i)^continue$/ at 847 1031
+[01:59:28] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+[01:59:31] shot 23-settings-premium-active (fg:  mResumedActivity: ActivityRecord{1cfb00e u0 com.charles.nutrisnap/.MainActivity t11})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:58:29.228  9547 11476 I DirectBilling: license saved app=nutrisnap entitlements=[]
+11-12 01:59:08.402  9547 11714 I DirectBilling: license saved app=nutrisnap entitlements=["nutrisnap_premium:premium_yearly"]
+[01:59:33] pidof com.charles.nutrisnap: 9547
+[01:59:33] fatal lines: 0 crash-buffer lines: 0
+[01:59:33] ads lines: 105
+[01:59:33] screen 1080x2340
+[01:59:33] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:59:51] force-stop
+[01:59:53] launch
+[02:00:10] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[02:00:13] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{31e8c16 u0 com.charles.nutrisnap/.MainActivity t12})
+[02:00:14] tapxy permille 900 892
+findtap ok 0
+[02:00:30] shot 35-settings (fg:  mResumedActivity: ActivityRecord{31e8c16 u0 com.charles.nutrisnap/.MainActivity t12})
+[02:00:38] shot 36-settings-premium (fg:  mResumedActivity: ActivityRecord{31e8c16 u0 com.charles.nutrisnap/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[02:00:40] pidof com.charles.nutrisnap: 12142
+[02:00:40] fatal lines: 0 crash-buffer lines: 0
+[02:00:40] ads lines: 18

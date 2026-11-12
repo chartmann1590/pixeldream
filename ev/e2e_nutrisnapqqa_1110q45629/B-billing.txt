@@ -1,0 +1,2 @@
+11-12 01:58:29.228  9547 11476 I DirectBilling: license saved app=nutrisnap entitlements=[]
+11-12 01:59:08.402  9547 11714 I DirectBilling: license saved app=nutrisnap entitlements=["nutrisnap_premium:premium_yearly"]

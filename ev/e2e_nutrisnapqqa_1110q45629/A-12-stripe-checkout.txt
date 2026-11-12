@@ -1,0 +1,2 @@
+com.charles.nutrisnap|Secure checkout (Stripe)||false|[16,192][822,245]
+com.charles.nutrisnap|CLOSE||true|[822,153][1064,285]

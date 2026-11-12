@@ -1,0 +1,6 @@
+com.charles.nutrisnap|Teaching your phone&#10;to see food…||false|[247,998][834,1152]
+com.charles.nutrisnap|Downloading the Gemma 4 brain so NutriSnap works fully offline — no photos ever leave your phone.||false|[83,1180][997,1288]
+com.charles.nutrisnap|86%||false|[83,1426][164,1479]
+com.charles.nutrisnap|2.2 / 2.6 GB||false|[800,1426][997,1479]
+com.charles.nutrisnap|&#128246; On Wi-Fi · safe to download||false|[280,1548][801,1601]
+com.charles.nutrisnap|You can keep using your phone — we'll keep going in the background.||false|[83,1653][997,1756]
