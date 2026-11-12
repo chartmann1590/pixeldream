@@ -1,0 +1,2 @@
+com.charles.photobooth|Secure checkout (Stripe)||false|[152,124][1950,177]
+com.charles.photobooth|CLOSE||true|[1950,85][2072,217]

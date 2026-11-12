@@ -1,0 +1,5 @@
+com.charles.photobooth||Back|false|[85,151][135,201]
+com.charles.photobooth|Gallery||false|[220,138][430,215]
+com.charles.photobooth|0 photos||false|[2009,154][2072,199]
+com.charles.photobooth|No photos yet||false|[964,739][1245,791]
+com.charles.photobooth|Start capturing to see them here||false|[823,791][1385,836]

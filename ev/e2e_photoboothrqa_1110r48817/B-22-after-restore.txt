@@ -1,0 +1,4 @@
+com.charles.photobooth|Get more photos||false|[853,349][1367,437]
+com.charles.photobooth|Unlimited photos are unlocked.||false|[853,481][1488,533]
+com.charles.photobooth|No fill.||false|[853,555][966,610]
+com.charles.photobooth|Not now||false|[1291,715][1436,770]

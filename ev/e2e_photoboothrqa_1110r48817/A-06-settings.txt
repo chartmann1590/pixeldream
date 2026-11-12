@@ -1,0 +1,8 @@
+com.charles.photobooth||Back|false|[74,140][124,190]
+com.charles.photobooth|Settings||false|[198,127][446,204]
+com.charles.photobooth|Event||false|[231,376][344,428]
+com.charles.photobooth|My Event||true|[99,484][2072,660]
+com.charles.photobooth|Event name||false|[143,484][328,528]
+com.charles.photobooth|Event date||false|[143,759][361,825]
+com.charles.photobooth|EVENT_yyyyMMdd_HHmmss||true|[99,902][2072,1078]
+com.charles.photobooth|Filename pattern||false|[143,902][411,946]

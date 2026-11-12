@@ -1,0 +1,7 @@
+com.charles.photobooth|Get more photos||false|[798,144][1312,232]
+com.charles.photobooth|15 photos left today||false|[798,276][1205,328]
+com.charles.photobooth|You get 15 free photos each day. Watch rewarded ads for 15 more photos each, up to 75 total photos per day, or buy unlimited photos forever.||false|[798,350][1546,364]
+com.charles.photobooth|Buy unlimited - $9.99||false|[1055,469][1423,524]
+com.charles.photobooth|Watch ad for +15 photos||false|[1055,623][1335,678]
+com.charles.photobooth|Restore purchases||false|[1022,755][1345,810]
+com.charles.photobooth|Not now||false|[1368,634][1513,689]

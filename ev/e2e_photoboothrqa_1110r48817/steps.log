@@ -1,0 +1,145 @@
+[02:02:17] screen 1080x2340
+[02:02:17] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:02:59] launch
+[02:03:16] shot 01-launch (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:03:18] tapped /(?i)^no thanks$/ at 1171 1006
+[02:03:24] not found /(?i)^(allow|while using the app|only this time|ok)$/
+[02:03:26] tapped /(?i)^next$/ at 1631 970
+[02:03:30] tapped /(?i)^next$/ at 1631 970
+[02:03:34] tapped /(?i)^next$/ at 1631 970
+[02:03:38] tapped /(?i)^next$/ at 1631 970
+[02:03:42] tapped /(?i)^next$/ at 1631 970
+[02:03:46] tapped /(?i)^next$/ at 1631 970
+[02:03:50] tapped /(?i)^next$/ at 1631 970
+[02:03:54] tapped /(?i)^next$/ at 1631 970
+[02:03:58] tapped /(?i)^next$/ at 1631 970
+[02:04:02] tapped /(?i)^next$/ at 1631 970
+[02:04:06] tapped /(?i)^next$/ at 1631 970
+[02:04:10] tapped /(?i)^next$/ at 1631 970
+[02:04:14] tapped /(?i)^next$/ at 1631 970
+[02:04:18] tapped /(?i)^next$/ at 1631 970
+[02:04:22] tapped /(?i)^next$/ at 1631 970
+[02:04:26] tapped /(?i)^next$/ at 1631 970
+[02:04:31] tapped /(?i)^next$/ at 1631 970
+[02:04:35] tapped /(?i)^next$/ at 1631 970
+[02:04:38] not found /(?i)^next$/
+[02:04:40] tapped /(?i)^get started$/ at 1631 970
+[02:04:49] not found /(?i)^(allow|while using the app|only this time|ok|not now|got it)$/
+[02:04:51] shot 03-home (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:04:53] tapped /(?i)^view gallery$/ at 1671 375
+[02:05:02] shot 05-gallery (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:05:03] back
+[02:05:07] tapped /(?i)^settings$/ at 1671 562
+[02:05:16] shot 06-settings (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:05:17] back
+[02:05:23] tapped /(?i)^get more photos$/ at 1671 936
+[02:05:31] shot 08-paywall (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:05:33] tapped /(?i)^buy unlimited/ at 1239 496
+[02:05:40] shot 11-email (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:05:44] type
+Failed to write while dumping service input_method: Broken pipe
+[02:05:50] shot 11b-email-filled (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:05:52] tapped /(?i)^continue$/ at 1639 776
+[02:06:21] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+[02:06:23] tapped /(?i)^close$/ at 2011 151
+[02:06:30] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{546f604 u0 com.charles.photobooth/.MainActivity t9})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 02:05:52.596  5508  5508 I DirectBilling: checkout opened app=photobooth product=unlimited_photos session=cs_live_acAhdru85fT4YOpcNrWrzDgaLthcRdzek2IuJEKZlmEzsx11W0xGMw2Pj7
+[02:06:32] pidof com.charles.photobooth: 5508
+[02:06:32] fatal lines: 0 crash-buffer lines: 0
+[02:06:32] ads lines: 33
+[02:56:48] screen 1080x2340
+[02:56:48] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:57:07] force-stop
+[02:57:09] launch
+[02:57:25] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[02:57:29] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{2b50d7f u0 com.charles.photobooth/.MainActivity t10})
+[02:57:30] not found /(?i)^get more photos$/
+[02:57:37] shot 23-unlimited-owned (fg:  mResumedActivity: ActivityRecord{2b50d7f u0 com.charles.photobooth/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 02:57:10.763  8111  8241 I DirectBilling: license saved app=photobooth entitlements=["unlimited_photos"]
+[02:57:39] pidof com.charles.photobooth: 8111
+[02:57:39] fatal lines: 0 crash-buffer lines: 0
+[02:57:39] ads lines: 16
+[02:57:41] screen 1080x2340
+[02:57:41] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[02:57:58] launch
+[02:58:15] shot 01-launch (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[02:58:17] tapped /(?i)^no thanks$/ at 1171 1006
+[02:58:23] not found /(?i)^(allow|while using the app|only this time|ok)$/
+[02:58:25] tapped /(?i)^next$/ at 1631 970
+[02:58:29] tapped /(?i)^next$/ at 1631 970
+[02:58:33] tapped /(?i)^next$/ at 1631 970
+[02:58:37] tapped /(?i)^next$/ at 1631 970
+[02:58:41] tapped /(?i)^next$/ at 1631 970
+[02:58:45] tapped /(?i)^next$/ at 1631 970
+[02:58:49] tapped /(?i)^next$/ at 1631 970
+[02:58:53] tapped /(?i)^next$/ at 1631 970
+[02:58:57] tapped /(?i)^next$/ at 1631 970
+[02:59:01] tapped /(?i)^next$/ at 1631 970
+[02:59:05] tapped /(?i)^next$/ at 1631 970
+[02:59:09] tapped /(?i)^next$/ at 1631 970
+[02:59:13] tapped /(?i)^next$/ at 1631 970
+[02:59:17] tapped /(?i)^next$/ at 1631 970
+[02:59:21] tapped /(?i)^next$/ at 1631 970
+[02:59:25] tapped /(?i)^next$/ at 1631 970
+[02:59:29] tapped /(?i)^next$/ at 1631 970
+[02:59:33] tapped /(?i)^next$/ at 1631 970
+[02:59:37] not found /(?i)^next$/
+[02:59:39] tapped /(?i)^get started$/ at 1631 970
+[02:59:48] not found /(?i)^(allow|while using the app|only this time|ok|not now|got it)$/
+[02:59:50] tapped /(?i)^get more photos$/ at 1671 936
+[02:59:58] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:00:00] tapped /(?i)^restore purchases$/ at 1183 782
+[03:00:07] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:00:09] tapped /@/ at 1171 637
+[03:00:21] typefix field='nobody-photobooth-1110r@example.com'
+[03:00:23] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+Failed to write while dumping service input_method: Broken pipe
+[03:00:27] tapped /(?i)^continue$/ at 1639 776
+[03:00:33] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:00:43] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:00:45] tapped /(?i)^restore purchases$/ at 1183 782
+[03:00:52] tapped /@/ at 1171 637
+[03:01:06] typefix field='hartmannstudios+photobooth1110r@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[03:01:10] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:01:13] shot 11b-email-filled (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:01:15] tapped /(?i)^continue$/ at 1639 776
+[03:01:34] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+[03:01:36] tapped /(?i)^get more photos$/ at 1110 393
+[03:01:43] shot 23-unlimited-owned (fg:  mResumedActivity: ActivityRecord{473cf6f u0 com.charles.photobooth/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 03:00:27.462  8936 10441 I DirectBilling: license saved app=photobooth entitlements=[]
+11-12 03:01:14.812  8936 10727 I DirectBilling: license saved app=photobooth entitlements=["unlimited_photos"]
+[03:01:45] pidof com.charles.photobooth: 8936
+[03:01:45] fatal lines: 0 crash-buffer lines: 0
+[03:01:45] ads lines: 15
+[03:01:45] screen 1080x2340
+[03:01:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[03:02:03] force-stop
+[03:02:05] launch
+[03:02:22] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[03:02:25] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{9c1245a u0 com.charles.photobooth/.MainActivity t12})
+[03:02:27] not found /(?i)^get more photos$/
+[03:02:33] shot 323-unlimited-owned (fg:  mResumedActivity: ActivityRecord{9c1245a u0 com.charles.photobooth/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[03:02:35] pidof com.charles.photobooth: 11230
+[03:02:35] fatal lines: 0 crash-buffer lines: 0
+[03:02:35] ads lines: 22

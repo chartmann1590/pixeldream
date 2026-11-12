@@ -1,0 +1,5 @@
+com.charles.photobooth|Checkout with Stripe||false|[609,353][1734,427]
+com.charles.photobooth|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[543,427][1800,538]
+com.charles.photobooth|hartmannstudios+photobooth1110r@mail.tab.bot||true|[591,575][1752,699]
+com.charles.photobooth|CANCEL||true|[1298,710][1511,842]
+com.charles.photobooth|CONTINUE||true|[1511,710][1767,842]
