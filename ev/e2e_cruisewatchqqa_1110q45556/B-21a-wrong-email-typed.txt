@@ -1,0 +1,5 @@
+com.cruisewatch.app|Restore purchases||false|[138,600][942,674]
+com.cruisewatch.app|Enter the email you used at checkout.||false|[72,674][1008,733]
+com.cruisewatch.app|nobody-cruisewatch-1110q@example.com||true|[120,822][960,946]
+com.cruisewatch.app|CANCEL||true|[506,957][719,1106]
+com.cruisewatch.app|CONTINUE||true|[719,957][975,1106]

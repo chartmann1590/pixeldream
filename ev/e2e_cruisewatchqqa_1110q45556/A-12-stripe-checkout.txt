@@ -1,0 +1,2 @@
+com.cruisewatch.app|Secure checkout (Stripe)||false|[16,192][822,245]
+com.cruisewatch.app|CLOSE||true|[822,153][1064,285]

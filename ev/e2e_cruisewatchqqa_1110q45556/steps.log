@@ -1,0 +1,125 @@
+[01:09:41] screen 1080x2340
+[01:09:41] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:10:28] launch
+[01:10:45] shot 01-launch (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:10:47] tapped /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/ at 159 602
+[01:10:51] tapped /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/ at 934 277
+[01:10:55] not found /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/
+[01:11:01] shot 02-sign-in (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:11:03] tapped /(?i)^email$/ at 165 1564
+[01:11:09] type
+[01:11:10] back
+[01:11:17] tapped /(?i)^password$/ at 208 1762
+[01:11:20] type
+[01:11:23] back
+[01:11:29] tapped /(?i)^sign in$/ at 540 1954
+[01:11:43] not found /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/
+[01:11:48] shot 03-cruises (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:11:49] not found /(?i)^alerts$/
+[01:11:59] shot 04-alerts (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:12:01] not found /(?i)^policies$/
+[01:12:09] shot 05-policies (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:12:10] not found /(?i)^cruises$/
+[01:12:17] tapped /(?i)^settings$/ at 981 244
+[01:12:25] ad on screen (try 1)
+[01:12:34] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:12:40] ad on screen (try 2)
+[01:12:49] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:12:54] ad on screen (try 3)
+[01:13:04] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:13:09] ad on screen (try 4)
+[01:13:19] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:13:24] shot 07-settings (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:13:26] tapped /(?i)^subscribe for .*month$/ at 540 1289
+[01:13:33] shot 11-email (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:13:35] type
+[01:13:38] tapped /(?i)^continue$/ at 847 1047
+[01:14:07] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:14:09] tapped /(?i)^close$/ at 943 219
+[01:14:16] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{4939e30 u0 com.cruisewatch.app/.MainActivity t9})
+[01:14:18] pidof com.cruisewatch.app: 5484
+[01:14:18] fatal lines: 0 crash-buffer lines: 0
+[01:14:18] ads lines: 39
+[01:21:31] screen 1080x2340
+[01:21:31] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:21:50] force-stop
+[01:21:52] launch
+[01:22:09] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:22:12] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{c9b05c9 u0 com.cruisewatch.app/.MainActivity t10})
+[01:22:16] shot 23-settings-active (fg:  mResumedActivity: ActivityRecord{c9b05c9 u0 com.cruisewatch.app/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:21:53.500  7983  8106 I DirectBilling: license saved app=cruisewatch entitlements=["ad_free_monthly"]
+[01:22:18] pidof com.cruisewatch.app: 7983
+[01:22:18] fatal lines: 0 crash-buffer lines: 0
+[01:22:18] ads lines: 27
+[01:22:19] screen 1080x2340
+[01:22:19] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:22:38] launch
+[01:22:55] tapped /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/ at 159 602
+[01:22:59] tapped /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/ at 934 277
+[01:23:03] not found /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/
+[01:23:10] shot 02-sign-in (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:23:12] tapped /(?i)^email$/ at 165 1564
+[01:23:16] type
+[01:23:18] back
+[01:23:24] tapped /(?i)^password$/ at 208 1762
+[01:23:28] type
+[01:23:31] back
+[01:23:37] tapped /(?i)^sign in$/ at 540 1954
+[01:23:50] not found /(?i)^(next|continue|get started|skip|allow|while using the app|only this time|ok|got it|not now|later|no thanks|done|english)$/
+[01:23:55] shot 20-cruises (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:23:57] tapped /(?i)^settings$/ at 981 244
+[01:24:05] ad on screen (try 1)
+[01:24:15] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:24:20] ad on screen (try 2)
+[01:24:29] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:24:34] ad on screen (try 3)
+[01:24:44] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:24:49] ad on screen (try 4)
+[01:24:59] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[01:25:04] tapped /(?i)^restore purchases$/ at 540 1443
+[01:25:11] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:25:13] tapped /@/ at 540 1227
+[01:25:23] typefix field='nobody-cruisewatch-1110q@example.com'
+[01:25:25] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:25:27] tapped /(?i)^continue$/ at 847 1031
+[01:25:33] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:25:43] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:25:45] tapped /(?i)^restore purchases$/ at 540 1443
+[01:25:52] tapped /@/ at 540 1227
+[01:26:05] typefix field='hartmannstudios+cruisewatch1110q@mail.tab.bot'
+[01:26:07] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:26:09] tapped /(?i)^continue$/ at 847 1031
+[01:26:28] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+[01:26:32] shot 23-settings-active (fg:  mResumedActivity: ActivityRecord{9273842 u0 com.cruisewatch.app/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:25:27.647  8761  9996 I DirectBilling: license saved app=cruisewatch entitlements=[]
+11-12 01:26:08.897  8761 10263 I DirectBilling: license saved app=cruisewatch entitlements=["ad_free_monthly"]
+[01:26:34] pidof com.cruisewatch.app: 8761
+[01:26:34] fatal lines: 0 crash-buffer lines: 0
+[01:26:34] ads lines: 23
+[01:26:34] screen 1080x2340
+[01:26:34] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:26:53] force-stop
+[01:26:55] launch
+[01:27:12] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:27:16] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{d5c4d48 u0 com.cruisewatch.app/.MainActivity t12})
+[01:27:19] shot 323-settings-active (fg:  mResumedActivity: ActivityRecord{d5c4d48 u0 com.cruisewatch.app/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:27:21] pidof com.cruisewatch.app: 10728
+[01:27:21] fatal lines: 0 crash-buffer lines: 0
+[01:27:21] ads lines: 9
