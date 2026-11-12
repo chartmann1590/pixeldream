@@ -1,0 +1,2 @@
+11-12 01:43:18.386  9778 11345 I DirectBilling: license saved app=aria entitlements=[]
+11-12 01:43:59.061  9778 11646 I DirectBilling: license saved app=aria entitlements=["aria_premium_monthly"]

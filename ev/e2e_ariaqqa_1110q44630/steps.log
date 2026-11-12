@@ -1,0 +1,137 @@
+[00:53:03] screen 1080x2340
+[00:53:03] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:53:42] launch
+[00:54:01] shot 01-meet-aria (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[00:54:03] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[00:54:06] tapped /(?i)^get started$/ at 540 1966
+[00:54:12] shot 02-language (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[00:54:15] not found /(?i)^get started$/
+[00:55:21] shot 03-downloading (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[00:57:04] not found /(?i)^continue$/
+[00:58:48] not found /(?i)^continue$/
+[01:00:33] not found /(?i)^continue$/
+[01:02:17] not found /(?i)^continue$/
+[01:04:02] not found /(?i)^continue$/
+[01:05:46] not found /(?i)^continue$/
+[01:07:30] not found /(?i)^continue$/
+[01:09:14] not found /(?i)^continue$/
+[01:10:57] not found /(?i)^continue$/
+[01:11:21] shot 04-after-model (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:11:23] tapped /(?i)^allow microphone access$/ at 540 1663
+[01:11:30] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:11:33] not found /(?i)^(allow|ok|while using the app|only this time|deny|don.t allow)$/
+[01:11:35] tapped /(?i)^skip$/ at 540 1643
+[01:11:42] tapped /(?i)^skip$/ at 540 1616
+[01:11:50] tapped /(?i)^done/ at 540 1765
+[01:12:08] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:12:13] shot 05-main (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:12:17] tapped /(?i)^(type a message|message|ask aria).*/ at 413 2061
+[01:12:25] type
+[01:12:29] tapped /(?i)^send$/ at 835 1389
+[01:14:36] shot 05b-chat-reply (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:15:10] shot 05c-chat-reply-2 (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:15:13] tapped /(?i)^premium$/ at 849 239
+[01:15:21] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:15:25] shot 10b-paywall-bottom (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:15:27] tapped /(?i)^subscribe$/ at 284 2038
+[01:15:34] shot 11-email (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:15:36] type
+[01:15:39] tapped /(?i)^continue$/ at 320 1122
+[01:16:08] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:16:10] tapped /(?i)^close$/ at 985 219
+[01:16:17] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{5b8e110 u0 com.aria.assistant/.presentation.MainActivity t9})
+[01:16:19] pidof com.aria.assistant: 5776
+[01:16:19] fatal lines: 0 crash-buffer lines: 0
+[01:16:19] ads lines: 122
+[01:22:45] screen 1080x2340
+[01:22:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:23:03] force-stop
+[01:23:05] launch
+[01:23:24] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:23:30] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{d4162f0 u0 com.aria.assistant/.presentation.MainActivity t10})
+[01:23:34] tapped /(?i)^premium$/ at 849 239
+[01:23:41] shot 15-premium-tab (fg:  mResumedActivity: ActivityRecord{d4162f0 u0 com.aria.assistant/.presentation.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:23:06.373  8903  8950 I DirectBilling: license saved app=aria entitlements=["aria_premium_monthly"]
+[01:23:43] pidof com.aria.assistant: 8903
+[01:23:43] fatal lines: 0 crash-buffer lines: 0
+[01:23:43] ads lines: 27
+[01:23:44] screen 1080x2340
+[01:23:44] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:24:02] launch
+[01:24:20] shot 01-meet-aria (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:24:23] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:24:26] tapped /(?i)^get started$/ at 540 1966
+[01:24:32] shot 02-language (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:24:35] not found /(?i)^get started$/
+[01:25:41] shot 03-downloading (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:27:24] not found /(?i)^continue$/
+[01:29:08] not found /(?i)^continue$/
+[01:30:53] not found /(?i)^continue$/
+[01:32:37] not found /(?i)^continue$/
+[01:34:22] not found /(?i)^continue$/
+[01:36:06] not found /(?i)^continue$/
+[01:37:50] not found /(?i)^continue$/
+[01:39:34] not found /(?i)^continue$/
+[01:41:18] not found /(?i)^continue$/
+[01:41:41] shot 04-after-model (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:41:43] tapped /(?i)^allow microphone access$/ at 540 1663
+[01:41:50] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:41:54] not found /(?i)^(allow|ok|while using the app|only this time|deny|don.t allow)$/
+[01:41:56] tapped /(?i)^skip$/ at 540 1643
+[01:42:03] tapped /(?i)^skip$/ at 540 1616
+[01:42:11] tapped /(?i)^done/ at 540 1765
+[01:42:29] not found /(?i)^(allow|ok|while using the app|only this time)$/
+[01:42:34] shot 05-main (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:42:37] tapped /(?i)^premium$/ at 849 239
+[01:42:46] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:42:47] not found /(?i)^restore purchases$/
+[01:42:51] not found /(?i)^restore purchases$/
+[01:42:55] tapped /(?i)^restore purchases$/ at 330 2052
+[01:43:02] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:43:04] tapped /@/ at 542 1278
+[01:43:14] typefix field='nobody-aria-1110q@example.com'
+[01:43:16] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:43:18] tapped /(?i)^continue$/ at 320 1093
+[01:43:24] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:43:33] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:43:36] tapped /(?i)^restore purchases$/ at 330 2052
+[01:43:43] tapped /@/ at 542 1278
+[01:43:56] typefix field='hartmannstudios+aria1110q@mail.tab.bot'
+[01:43:57] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:44:00] tapped /(?i)^continue$/ at 320 1093
+[01:44:18] shot 22-after-restore-premium-active (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+[01:44:19] back
+[01:44:28] shot 23-main (fg:  mResumedActivity: ActivityRecord{f00b6d5 u0 com.aria.assistant/.presentation.MainActivity t11})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:43:18.386  9778 11345 I DirectBilling: license saved app=aria entitlements=[]
+11-12 01:43:59.061  9778 11646 I DirectBilling: license saved app=aria entitlements=["aria_premium_monthly"]
+[01:44:30] pidof com.aria.assistant: 9778
+[01:44:31] fatal lines: 0 crash-buffer lines: 0
+[01:44:31] ads lines: 48
+[01:44:31] screen 1080x2340
+[01:44:31] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:44:54] force-stop
+[01:44:56] launch
+[01:45:13] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:45:20] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{dcc9383 u0 com.aria.assistant/.presentation.MainActivity t12})
+[01:45:23] tapped /(?i)^premium$/ at 849 239
+[01:45:31] shot 35-premium-tab (fg:  mResumedActivity: ActivityRecord{dcc9383 u0 com.aria.assistant/.presentation.MainActivity t12})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:45:33] pidof com.aria.assistant: 12021
+[01:45:33] fatal lines: 0 crash-buffer lines: 0
+[01:45:33] ads lines: 22
