@@ -1,0 +1,3 @@
+com.google.android.apps.nexuslauncher|Home settings||false|[463,637][1068,791]
+com.google.android.apps.nexuslauncher|Widgets||false|[463,791][1068,945]
+com.google.android.apps.nexuslauncher|Wallpapers||false|[463,945][1068,1099]

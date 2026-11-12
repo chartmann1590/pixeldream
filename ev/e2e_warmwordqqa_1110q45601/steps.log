@@ -1,0 +1,144 @@
+[01:08:46] screen 1080x2340
+[01:08:46] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl785379796.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:09:07] launch
+[01:09:24] shot 01-launch (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:09:26] not found /(?i)^get started$/
+[01:09:36] shot 02-model-download (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:38] shot 02b-download-2m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:13:40] shot 02c-download-4m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:16:42] shot 02d-download-7m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:32:44] shot 02d2-download-23m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:40:46] shot 02d3-download-31m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:40:47] not found /(?i)^continue$/
+[01:40:55] shot 02e-language (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:40:57] not found /(?i)^no translation$/
+[01:41:03] not found /(?i)^continue$/
+[01:41:11] shot 03-name (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:41:12] not found /(?i)^enter your name$/
+[01:41:17] type
+[01:41:21] not found /(?i)^finish$/
+[01:41:30] not found /(?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$/
+[01:41:38] not found /(?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$/
+[01:41:45] shot 04-main (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:41:47] not found /(?i)^chat$/
+[01:41:53] shot 05-chat (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:41:55] not found /(?i)^journal$/
+[01:42:04] shot 06-journal (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:42:05] not found /(?i)^insights$/
+[01:42:12] shot 07-insights (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:42:15] not found /(?i)^find help$/
+[01:42:22] shot 08-findhelp (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:42:26] not found /(?i)^settings$/
+[01:42:34] shot 09-settings (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:42:37] not found /(?i)^upgrade to premium$/
+[01:42:45] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:42:47] not found /(?i)^subscribe monthly$/
+[01:42:51] not found /(?i)^subscribe monthly$/
+[01:42:55] not found /(?i)^subscribe monthly$/
+[01:42:58] not found /(?i)^subscribe monthly$/
+[01:43:02] not found /(?i)^subscribe monthly$/
+[01:43:06] not found /(?i)^subscribe monthly$/
+[01:43:10] not found /(?i)^subscribe monthly$/
+[01:43:14] not found /(?i)^subscribe monthly$/
+[01:43:17] not found /(?i)^subscribe monthly$/
+[01:43:21] not found /(?i)^subscribe monthly$/
+[01:43:25] not found /(?i)^subscribe monthly$/
+[01:43:28] not found /(?i)^subscribe monthly$/
+[01:43:31] scrollto: never found /(?i)^subscribe monthly$/
+[01:43:37] shot 11-email (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:43:45] type
+[01:43:48] not found /(?i)^continue$/
+[01:44:17] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:44:18] not found /(?i)^close$/
+[01:44:25] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{2c6e88c u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t9})
+[01:44:27] pidof com.charles.warmwords: not running
+[01:44:27] fatal lines: 0 crash-buffer lines: 0
+[01:44:27] ads lines: 18
+[01:49:58] screen 1080x2340
+[01:49:58] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl1849736490.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:50:14] force-stop
+[01:50:16] launch
+[01:50:33] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:50:36] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:50:43] shot 23-paywall-premium (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:50:43] back
+[01:50:51] shot 24-settings-premium (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:50:53] pidof com.charles.warmwords: not running
+[01:50:53] fatal lines: 0 crash-buffer lines: 0
+[01:50:53] ads lines: 0
+[01:50:53] screen 1080x2340
+[01:50:53] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl723944663.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:51:09] launch
+[01:51:26] not found /(?i)^get started$/
+[01:51:35] shot 02-model-download (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:53:37] shot 02b-download-2m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:55:39] shot 02c-download-4m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:58:41] shot 02d-download-7m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:14:43] shot 02d2-download-23m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:22:45] shot 02d3-download-31m (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:22:46] not found /(?i)^continue$/
+[02:22:54] shot 02e-language (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:22:56] not found /(?i)^no translation$/
+[02:23:02] not found /(?i)^continue$/
+[02:23:10] shot 03-name (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:23:11] not found /(?i)^enter your name$/
+[02:23:17] type
+[02:23:20] not found /(?i)^finish$/
+[02:23:29] not found /(?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$/
+[02:23:37] not found /(?i)^(next|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|finish|while using the app|only this time)$/
+[02:23:44] shot 20-main (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:23:45] not found /(?i)^settings$/
+[02:23:55] not found /(?i)^upgrade to premium$/
+[02:24:09] not found /(?i)^restore/
+[02:24:16] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:24:18] not found /@/
+[02:24:35] typefix field='nobody-warmword-1110q@example.com'
+[02:24:37] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:24:38] not found /(?i)^continue$/
+[02:24:44] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:24:54] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:24:55] not found /(?i)^restore/
+[02:25:03] tapped /@/ at 545 233
+[02:25:27] typefix field='hartmannstudios+warmword1110q@mail.tab.bot'
+[02:25:29] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:25:30] not found /(?i)^continue$/
+[02:25:49] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:25:55] shot 23-paywall-premium (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+[02:25:55] back
+[02:26:02] shot 24-settings-premium (fg:  mResumedActivity: ActivityRecord{a2d929d u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.queryentry.QueryEntryActivity t10})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[02:26:04] pidof com.charles.warmwords: not running
+[02:26:04] fatal lines: 0 crash-buffer lines: 0
+[02:26:04] ads lines: 0
+[02:26:04] screen 1080x2340
+[02:26:04] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl1339562391.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[02:26:21] force-stop
+[02:26:23] launch
+[02:26:39] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[02:26:43] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:26:49] shot 323-paywall-premium (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[02:26:49] back
+[02:26:56] shot 324-settings-premium (fg:  mResumedActivity: ActivityRecord{a6ce625 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[02:26:58] pidof com.charles.warmwords: not running
+[02:26:58] fatal lines: 0 crash-buffer lines: 0
+[02:26:58] ads lines: 0

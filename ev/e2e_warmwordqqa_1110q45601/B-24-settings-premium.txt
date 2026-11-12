@@ -1,0 +1,3 @@
+com.google.android.googlequicksearchbox||Go to Discover|true|[22,167][154,299]
+com.google.android.googlequicksearchbox|hartmannstudios+warmword1110q@mail.tab.bot||true|[198,167][893,299]
+com.google.android.googlequicksearchbox||Clear|true|[915,167][1047,299]
