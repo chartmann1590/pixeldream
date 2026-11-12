@@ -1,0 +1,1 @@
+11-12 09:20:28.999  7338  7362 I DirectBilling: license saved app=doorframe entitlements=["doorframe_pro_monthly"]

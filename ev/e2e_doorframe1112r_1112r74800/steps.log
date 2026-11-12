@@ -1,0 +1,100 @@
+[09:15:17] screen 1080x2340
+[09:15:17] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:15:52] launch
+[09:16:06] shot 01-setup (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:16:08] tapped /(?i)^name this place$/ at 279 1234
+[09:16:12] type
+[09:16:16] tapped /(?i)^start walkthrough$/ at 540 1421
+[09:16:25] not found /(?i)^(while using the app|only this time|allow)$/
+[09:16:32] shot 02-viewfinder (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:16:34] tapped /(?i)^settings$/ at 981 244
+[09:16:41] shot 03-settings-free (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:16:43] tapped /(?i)^upgrade to pro$/ at 540 632
+[09:16:50] shot 11-paywall (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:16:52] tapped /(?i)^subscribe monthly$/ at 540 1167
+[09:16:59] shot 12-email (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:17:00] type
+[09:17:03] tapped /(?i)^continue$/ at 847 1047
+[09:17:32] shot 13-stripe-checkout (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[09:17:34] tapped /(?i)^close$/ at 943 219
+[09:17:41] shot 14-after-close (fg:  mResumedActivity: ActivityRecord{a1a4d0 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 09:17:04.288  5673  5673 I DirectBilling: checkout opened app=doorframe product=doorframe_pro_monthly session=cs_live_acqhncdM4BClDPTnDUO3i2eqayY0eHtpSiTEyjeT7afHLxd9jo8Nm1OV9k
+[09:17:43] pidof com.hartmannstudios.doorframe: 5673
+[09:17:43] fatal lines: 0 crash-buffer lines: 0
+[09:17:43] ads lines: 76
+[09:20:08] screen 1080x2340
+[09:20:08] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:20:26] force-stop
+[09:20:28] launch
+[09:20:45] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[09:20:48] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{7bcb6f6 u0 com.hartmannstudios.doorframe/.MainActivity t10})
+[09:20:50] tapped /(?i)^settings$/ at 981 244
+[09:20:58] shot 11-settings (fg:  mResumedActivity: ActivityRecord{7bcb6f6 u0 com.hartmannstudios.doorframe/.MainActivity t10})
+--------- beginning of system
+--------- beginning of kernel
+--------- beginning of main
+11-12 09:20:28.999  7338  7362 I DirectBilling: license saved app=doorframe entitlements=["doorframe_pro_monthly"]
+[09:21:00] pidof com.hartmannstudios.doorframe: 7338
+[09:21:00] fatal lines: 0 crash-buffer lines: 0
+[09:21:00] ads lines: 26
+[09:21:01] screen 1080x2340
+[09:21:01] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:21:18] launch
+[09:21:32] shot 01-setup (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:21:34] tapped /(?i)^name this place$/ at 279 1234
+[09:21:38] type
+[09:21:42] tapped /(?i)^start walkthrough$/ at 540 1421
+[09:21:51] not found /(?i)^(while using the app|only this time|allow)$/
+[09:21:58] shot 02-viewfinder (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:00] tapped /(?i)^settings$/ at 981 244
+[09:22:07] shot 03-settings-free (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:09] tapped /(?i)^upgrade to pro$/ at 540 632
+[09:22:15] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:17] tapped /(?i)^restore purchases$/ at 540 1797
+[09:22:24] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:26] tapped /@/ at 540 1227
+[09:22:36] typefix field='nobody-doorframe-1112r@example.com'
+[09:22:38] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:40] tapped /(?i)^continue$/ at 847 1031
+[09:22:46] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:56] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:22:58] tapped /(?i)^restore purchases$/ at 540 1797
+[09:23:05] tapped /@/ at 540 1227
+[09:23:17] typefix field='hartmannstudios+doorframe1112r@mail.tab.bot'
+[09:23:19] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:23:21] tapped /(?i)^continue$/ at 847 1031
+[09:23:28] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[09:23:45] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{d647ae7 u0 com.hartmannstudios.doorframe/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 09:22:41.077  8085  8927 I DirectBilling: license saved app=doorframe entitlements=[]
+11-12 09:23:21.002  8085  9164 I DirectBilling: license saved app=doorframe entitlements=["doorframe_pro_monthly"]
+[09:23:47] pidof com.hartmannstudios.doorframe: 8085
+[09:23:47] fatal lines: 0 crash-buffer lines: 0
+[09:23:47] ads lines: 60
+[09:23:47] screen 1080x2340
+[09:23:47] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:24:05] force-stop
+[09:24:07] launch
+[09:24:23] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[09:24:26] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{6fd113e u0 com.hartmannstudios.doorframe/.MainActivity t12})
+[09:24:29] tapped /(?i)^settings$/ at 981 244
+[09:24:36] shot 31-settings (fg:  mResumedActivity: ActivityRecord{6fd113e u0 com.hartmannstudios.doorframe/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[09:24:38] pidof com.hartmannstudios.doorframe: 9504
+[09:24:38] fatal lines: 0 crash-buffer lines: 0
+[09:24:38] ads lines: 5
