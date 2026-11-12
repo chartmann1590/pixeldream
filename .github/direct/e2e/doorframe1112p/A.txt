@@ -1,0 +1,32 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 12
+shot 01-setup
+tap (?i)^name this place$
+wait 1
+type 12%sElm%sSt
+wait 1
+tap (?i)^start walkthrough$
+wait 6
+taploop (?i)^(while using the app|only this time|allow)$
+wait 5
+shot 02-viewfinder
+tap (?i)^settings$
+wait 3
+shot 03-settings-free
+tap (?i)^upgrade to pro$
+wait 3
+shot 11-paywall
+scrollto (?i)^subscribe monthly$
+wait 3
+shot 12-email
+type hartmannstudios+doorframe1112p@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 13-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 14-after-close
+
+sh logcat -d -s DirectBilling
