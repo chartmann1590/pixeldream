@@ -1,0 +1,8 @@
+com.charles.morrowkept|morrowkept||false|[66,202][373,270]
+com.charles.morrowkept|A little closer&#10;at hand.||false|[66,408][675,652]
+com.charles.morrowkept|Watch connection unavailable. Check pairing and try again.||false|[66,911][1014,1055]
+com.charles.morrowkept|Check connection||false|[132,1149][443,1204]
+com.charles.morrowkept|This is the direct-download build of Morrowkept for your phone. The Wear OS watch app isn't part of the direct download yet.||false|[66,1297][1014,1513]
+com.charles.morrowkept|Open watch setup guide||false|[99,1607][512,1662]
+com.charles.morrowkept|Back||false|[132,2115][219,2170]
+com.charles.morrowkept|Continue · watch optional||false|[446,2115][886,2170]

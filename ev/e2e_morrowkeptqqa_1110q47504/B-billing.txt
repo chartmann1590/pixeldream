@@ -1,0 +1,2 @@
+11-12 01:53:57.261  9868 11211 I DirectBilling: license saved app=morrowkept entitlements=[]
+11-12 01:54:37.856  9868 11462 I DirectBilling: license saved app=morrowkept entitlements=["morrowkept_ad_free_monthly"]

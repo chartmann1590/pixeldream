@@ -1,0 +1,3 @@
+android 13
+MemTotal:        7098780 kB
+MemFree:         1914076 kB

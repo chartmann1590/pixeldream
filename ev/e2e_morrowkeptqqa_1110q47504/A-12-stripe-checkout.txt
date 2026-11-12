@@ -1,0 +1,2 @@
+com.charles.morrowkept|Secure checkout (Stripe)||false|[16,183][822,236]
+com.charles.morrowkept|CLOSE||true|[822,144][1064,276]

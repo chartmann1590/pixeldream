@@ -1,0 +1,5 @@
+com.charles.morrowkept|Restore purchases||false|[137,588][943,662]
+com.charles.morrowkept|Enter the email you used at checkout.||false|[71,662][1009,721]
+com.charles.morrowkept|hartmannstudios+morrowkept1110q@mail.tab.bot||true|[119,810][961,934]
+com.charles.morrowkept|CANCEL||true|[509,945][721,1094]
+com.charles.morrowkept|CONTINUE||true|[721,945][976,1094]

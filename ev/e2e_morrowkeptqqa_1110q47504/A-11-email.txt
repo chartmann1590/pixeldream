@@ -1,0 +1,5 @@
+com.charles.morrowkept|Checkout with Stripe||false|[137,956][943,1030]
+com.charles.morrowkept|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[71,1030][1009,1193]
+com.charles.morrowkept|you@example.com||true|[119,1209][961,1333]
+com.charles.morrowkept|CANCEL||true|[509,1344][721,1493]
+com.charles.morrowkept|CONTINUE||true|[721,1344][976,1493]

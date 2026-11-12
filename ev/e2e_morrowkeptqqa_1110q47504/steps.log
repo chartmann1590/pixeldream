@@ -1,0 +1,151 @@
+[01:41:49] screen 1080x2340
+[01:41:49] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:42:14] launch
+[01:42:37] shot 01-launch (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:42:39] tapped /(?i)^continue$/ at 540 2142
+[01:42:46] shot 02-onboard-device (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:42:48] tapped /(?i)^continue$/ at 666 2142
+[01:42:55] tapped /(?i)^continue$/ at 666 2142
+[01:43:02] tapped /(?i)^I accept the terms/ at 606 1404
+checkbox  67 1339  198 1471 
+[01:43:10] shot 03-onboard-privacy (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:43:12] tapped /(?i)^continue$/ at 666 2142
+[01:43:20] shot 04-onboard-watch (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:43:22] tapped /(?i)^continue/ at 666 2142
+[01:43:28] tapped /(?i)^continue$/ at 666 2142
+[01:43:36] shot 05-onboard-model (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:43:38] tapped /(?i)^(continue|open my journal)$/ at 666 2142
+[01:43:42] tapped /(?i)^(continue|open my journal)$/ at 802 1606
+[01:43:46] not found /(?i)^(continue|open my journal)$/
+[01:43:55] shot 06-timeline (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:43:57] tapped /(?i)^collections$/ at 540 2208
+[01:44:04] shot 07-collections (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:44:06] tapped /(?i)^ask$/ at 907 2208
+[01:44:13] shot 08-ask (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:44:15] tapped /(?i)^timeline$/ at 172 2208
+[01:44:21] tapped /(?i)^settings$/ at 1003 224
+[01:44:29] shot 09-settings (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:44:31] not found /(?i)^go ad-free$/
+[01:44:35] not found /(?i)^go ad-free$/
+[01:44:38] tapped /(?i)^go ad-free$/ at 225 2084
+[01:44:44] shot 10-paywall (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:44:46] not found /(?i)^subscribe \(/
+[01:44:50] tapped /(?i)^subscribe \(/ at 540 511
+[01:44:58] shot 11-email (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:45:00] type
+[01:45:03] tapped /(?i)^continue$/ at 848 1034
+[01:45:32] shot 12-stripe-checkout (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+[01:45:34] tapped /(?i)^close$/ at 943 210
+[01:45:41] shot 13-after-close (fg:  topResumedActivity=ActivityRecord{a692dc0 u0 com.charles.morrowkept/.MainActivity} t9})
+--------- beginning of main
+11-12 01:45:04.384  5176  5176 I DirectBilling: checkout opened app=morrowkept product=morrowkept_ad_free_monthly session=cs_live_acw5qTuhnd8ZVPgU4rvpQYz79xg1eRT8T7sidGZ8wmCixqusrTs53jk5By
+[01:45:43] pidof com.charles.morrowkept: 5176
+[01:45:43] fatal lines: 0 crash-buffer lines: 0
+[01:45:43] ads lines: 55
+[01:49:31] screen 1080x2340
+[01:49:31] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:49:48] force-stop
+[01:49:50] launch
+[01:50:07] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:50:12] shot 14-relaunch-after-purchase (fg:  topResumedActivity=ActivityRecord{f48bc7c u0 com.charles.morrowkept/.MainActivity} t10})
+[01:50:14] not found /(?i)^ad-free subscription active$/
+[01:50:17] not found /(?i)^ad-free subscription active$/
+[01:50:20] not found /(?i)^ad-free subscription active$/
+[01:50:24] not found /(?i)^ad-free subscription active$/
+[01:50:27] not found /(?i)^ad-free subscription active$/
+[01:50:31] not found /(?i)^ad-free subscription active$/
+[01:50:34] not found /(?i)^ad-free subscription active$/
+[01:50:38] not found /(?i)^ad-free subscription active$/
+[01:50:41] not found /(?i)^ad-free subscription active$/
+[01:50:44] not found /(?i)^ad-free subscription active$/
+[01:50:48] not found /(?i)^ad-free subscription active$/
+[01:50:51] not found /(?i)^ad-free subscription active$/
+[01:50:53] scrollto: never found /(?i)^ad-free subscription active$/
+[01:50:59] shot 11-ad-free-active (fg:  topResumedActivity=ActivityRecord{f48bc7c u0 com.charles.morrowkept/.MainActivity} t10})
+[01:51:01] not found /(?i)^back$/
+[01:51:08] shot 12-timeline-no-banner (fg:  topResumedActivity=ActivityRecord{f48bc7c u0 com.charles.morrowkept/.MainActivity} t10})
+--------- beginning of main
+11-12 01:49:52.005  8903  8952 I DirectBilling: license saved app=morrowkept entitlements=["morrowkept_ad_free_monthly"]
+[01:51:10] pidof com.charles.morrowkept: 8903
+[01:51:10] fatal lines: 0 crash-buffer lines: 0
+[01:51:10] ads lines: 3
+[01:51:11] screen 1080x2340
+[01:51:11] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:51:31] launch
+[01:51:54] shot 01-launch (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:51:56] tapped /(?i)^continue$/ at 540 2142
+[01:52:03] shot 02-onboard-device (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:52:05] tapped /(?i)^continue$/ at 666 2142
+[01:52:12] tapped /(?i)^continue$/ at 666 2142
+[01:52:19] tapped /(?i)^I accept the terms/ at 606 1404
+checkbox  67 1339  198 1471 
+[01:52:27] shot 03-onboard-privacy (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:52:29] tapped /(?i)^continue$/ at 666 2142
+[01:52:36] shot 04-onboard-watch (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:52:38] tapped /(?i)^continue/ at 666 2142
+[01:52:45] tapped /(?i)^continue$/ at 666 2142
+[01:52:52] shot 05-onboard-model (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:52:54] tapped /(?i)^(continue|open my journal)$/ at 666 2142
+[01:52:58] tapped /(?i)^(continue|open my journal)$/ at 802 1606
+[01:53:02] not found /(?i)^(continue|open my journal)$/
+[01:53:11] tapped /(?i)^settings$/ at 1003 224
+[01:53:19] not found /(?i)^go ad-free$/
+[01:53:22] not found /(?i)^go ad-free$/
+[01:53:26] tapped /(?i)^go ad-free$/ at 225 668
+[01:53:32] shot 09-paywall-before (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:53:34] tapped /(?i)^restore purchases$/ at 540 1181
+[01:53:42] tapped /@/ at 540 1255
+[01:53:51] typefix field='nobody-morrowkept-1110q@example.com'
+[01:53:54] shot 21a-wrong-email-typed (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:53:56] tapped /(?i)^continue$/ at 848 1019
+[01:54:02] shot 21b-wrong-email-result (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:54:12] shot 21c-after-wrong-email (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:54:14] tapped /(?i)^restore purchases$/ at 540 1181
+[01:54:21] tapped /@/ at 540 1255
+[01:54:33] typefix field='hartmannstudios+morrowkept1110q@mail.tab.bot'
+[01:54:35] shot 21d-right-email-typed (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:54:37] tapped /(?i)^continue$/ at 848 1019
+[01:54:56] shot 10-restored (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:54:58] tapped /(?i)^ad-free subscription active$/ at 486 668
+[01:55:05] shot 11-ad-free-active (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+[01:55:07] tapped /(?i)^back$/ at 77 224
+[01:55:14] shot 12-timeline-no-banner (fg:  topResumedActivity=ActivityRecord{db0c219 u0 com.charles.morrowkept/.MainActivity} t11})
+--------- beginning of main
+11-12 01:53:57.261  9868 11211 I DirectBilling: license saved app=morrowkept entitlements=[]
+11-12 01:54:37.856  9868 11462 I DirectBilling: license saved app=morrowkept entitlements=["morrowkept_ad_free_monthly"]
+[01:55:16] pidof com.charles.morrowkept: 9868
+[01:55:16] fatal lines: 0 crash-buffer lines: 0
+[01:55:16] ads lines: 24
+[01:55:16] screen 1080x2340
+[01:55:16] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:55:34] force-stop
+[01:55:36] launch
+[01:55:53] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:55:57] shot 30-relaunch-after-restore (fg:  topResumedActivity=ActivityRecord{cca906 u0 com.charles.morrowkept/.MainActivity} t12})
+[01:55:59] not found /(?i)^ad-free subscription active$/
+[01:56:03] not found /(?i)^ad-free subscription active$/
+[01:56:06] not found /(?i)^ad-free subscription active$/
+[01:56:09] not found /(?i)^ad-free subscription active$/
+[01:56:13] not found /(?i)^ad-free subscription active$/
+[01:56:16] not found /(?i)^ad-free subscription active$/
+[01:56:20] not found /(?i)^ad-free subscription active$/
+[01:56:23] not found /(?i)^ad-free subscription active$/
+[01:56:27] not found /(?i)^ad-free subscription active$/
+[01:56:30] not found /(?i)^ad-free subscription active$/
+[01:56:33] not found /(?i)^ad-free subscription active$/
+[01:56:37] not found /(?i)^ad-free subscription active$/
+[01:56:38] scrollto: never found /(?i)^ad-free subscription active$/
+[01:56:45] shot 311-ad-free-active (fg:  topResumedActivity=ActivityRecord{cca906 u0 com.charles.morrowkept/.MainActivity} t12})
+[01:56:46] not found /(?i)^back$/
+[01:56:54] shot 312-timeline-no-banner (fg:  topResumedActivity=ActivityRecord{cca906 u0 com.charles.morrowkept/.MainActivity} t12})
+[01:56:56] pidof com.charles.morrowkept: 11944
+[01:56:56] fatal lines: 0 crash-buffer lines: 0
+[01:56:56] ads lines: 3
