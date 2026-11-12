@@ -1,0 +1,7 @@
+com.hartmannstudios.regday||Close navigation menu|true|[990,0][1080,2072]
+com.hartmannstudios.regday|REGDAY||false|[55,200][289,272]
+com.hartmannstudios.regday|GEAR||false|[44,371][167,437]
+com.hartmannstudios.regday|TRIPS||false|[44,525][178,591]
+com.hartmannstudios.regday|CARDS||false|[44,679][199,745]
+com.hartmannstudios.regday|LOG||false|[44,833][136,899]
+com.hartmannstudios.regday|SETTINGS||false|[44,987][270,1053]

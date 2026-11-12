@@ -1,0 +1,2 @@
+11-12 09:26:28.701  8812 10225 I DirectBilling: license saved app=regday entitlements=[]
+11-12 09:27:10.121  8812 10460 I DirectBilling: license saved app=regday entitlements=["regday_pro_monthly"]

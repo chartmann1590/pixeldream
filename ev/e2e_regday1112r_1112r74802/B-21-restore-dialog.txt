@@ -1,0 +1,5 @@
+com.hartmannstudios.regday|Restore purchases||false|[138,943][942,1017]
+com.hartmannstudios.regday|Enter the email you used at checkout.||false|[72,1017][1008,1076]
+com.hartmannstudios.regday|you@example.com||true|[120,1165][960,1289]
+com.hartmannstudios.regday|CANCEL||true|[506,1300][719,1449]
+com.hartmannstudios.regday|CONTINUE||true|[719,1300][975,1449]
