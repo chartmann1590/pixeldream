@@ -1,0 +1,93 @@
+[01:38:12] screen 1080x2340
+[01:38:12] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:38:56] launch
+[01:39:21] shot 01-launch (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:39:25] tapped /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/ at 959 250
+[01:39:29] not found /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/
+[01:39:34] shot 02-home (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:39:36] tapped /(?i)go pro/ at 805 249
+[01:39:44] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:39:46] tapped /(?i)monthly/ at 540 1940
+[01:39:52] shot 10b-monthly (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:39:53] not found /(?i)^continue$/
+[01:39:57] tapped /(?i)^continue$/ at 540 1673
+[01:40:05] shot 11-email (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:40:07] not found /@/
+[01:40:20] typefix field='hartmannstudios+fieldkey1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[01:40:24] shot 11b-email-typed (fg:  mResumedActivity: ActivityRecord{7736b16 u0 com.charles.fieldkey/.MainActivity t9})
+[01:40:26] tapped /(?i)^continue$/ at 785 1397
+[01:41:00] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{9222c3e u0 com.charles.fieldkey/io.flutter.plugins.urllauncher.WebViewActivity t9})
+[01:41:02] pidof com.charles.fieldkey: 5182
+[01:41:02] fatal lines: 0 crash-buffer lines: 0
+[01:41:02] ads lines: 35
+[01:42:47] screen 1080x2340
+[01:42:47] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:43:05] force-stop
+[01:43:07] launch
+[01:43:29] not found /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/
+[01:43:31] shot 14-home-relaunch (fg:  mResumedActivity: ActivityRecord{7140b38 u0 com.charles.fieldkey/.MainActivity t10})
+[01:43:33] not found /(?i)go pro/
+[01:43:41] shot 15-paywall-after-relaunch (fg:  mResumedActivity: ActivityRecord{7140b38 u0 com.charles.fieldkey/.MainActivity t10})
+[01:43:41] back
+[01:43:48] shot 16-home-pro (fg:  mResumedActivity: ActivityRecord{76e6efa u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:43:50] pidof com.charles.fieldkey: 6578
+[01:43:50] fatal lines: 0 crash-buffer lines: 0
+[01:43:50] ads lines: 23
+[01:43:51] screen 1080x2340
+[01:43:51] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:44:10] launch
+[01:44:34] shot 01-launch (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:44:37] tapped /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/ at 959 250
+[01:44:41] not found /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/
+[01:44:45] shot 02-home (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:44:48] tapped /(?i)go pro/ at 805 249
+[01:44:56] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:44:57] not found /(?i)restore/
+[01:45:01] tapped /(?i)restore/ at 347 1842
+[01:45:08] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:45:10] not found /@/
+[01:45:22] typefix field='nobody-fieldkey-1110q@example.com'
+Failed to write while dumping service input_method: Broken pipe
+[01:45:25] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:45:27] tapped /(?i)^continue$/ at 785 1369
+[01:45:33] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:45:43] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:45:46] tapped /(?i)restore/ at 347 1842
+[01:45:53] tapped /@/ at 540 829
+[01:46:09] typefix field='hartmannstudios+fieldkey1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[01:46:12] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:46:15] tapped /(?i)^continue$/ at 785 1369
+[01:46:34] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+[01:46:34] back
+[01:46:41] shot 23-home-after-restore (fg:  mResumedActivity: ActivityRecord{5e9c17b u0 com.charles.fieldkey/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:46:43] pidof com.charles.fieldkey: 7823
+[01:46:43] fatal lines: 0 crash-buffer lines: 0
+[01:46:43] ads lines: 16
+[01:46:43] screen 1080x2340
+[01:46:43] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:47:02] force-stop
+[01:47:04] launch
+[01:47:26] not found /(?i)^(skip|allow|ok|while using the app|only this time|continue|get started|not now|got it|next|done)$/
+[01:47:28] shot 30-home-relaunch (fg:  mResumedActivity: ActivityRecord{996c64e u0 com.charles.fieldkey/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:47:30] pidof com.charles.fieldkey: 9235
+[01:47:30] fatal lines: 0 crash-buffer lines: 0
+[01:47:30] ads lines: 15

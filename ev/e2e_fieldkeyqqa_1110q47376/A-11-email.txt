@@ -1,0 +1,5 @@
+com.charles.fieldkey||Your email|false|[176,548][904,636]
+com.charles.fieldkey||Your purchase is tied to this email so you can restore it on any phone.|false|[176,680][904,790]
+com.charles.fieldkey||Cancel|true|[451,988][645,1120]
+com.charles.fieldkey||Continue|true|[667,988][904,1120]
+com.charles.fieldkey||Dismiss|true|[0,0][1080,2072]

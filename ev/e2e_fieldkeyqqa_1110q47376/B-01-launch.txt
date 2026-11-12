@@ -1,0 +1,4 @@
+com.charles.fieldkey||Fieldkey|false|[66,214][261,285]
+com.charles.fieldkey||Skip|true|[871,184][1047,316]
+com.charles.fieldkey||Know what&#10;you’re looking at.&#10;Point your camera at a plant, a rock or a coin. Fieldkey tells you what it most likely is, in about a second.|false|[0,1249][1080,1996]
+com.charles.fieldkey||Next|true|[758,1996][1003,2072]

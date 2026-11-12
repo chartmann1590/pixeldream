@@ -1,0 +1,3 @@
+android 11
+MemTotal:        7114444 kB
+MemFree:         4233612 kB
