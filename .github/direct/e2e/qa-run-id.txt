@@ -1,4 +1,4 @@
-E2E_ID=1112d72464
-E2E_APP=doorframe1112d
-E2E_PKG=com.hartmannstudios.doorframe
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/doorframe-direct-1/Doorframe-direct-release.apk
+E2E_ID=1112d72466
+E2E_APP=regday1112d
+E2E_PKG=com.hartmannstudios.regday
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/regday-direct-1/Regday-direct-release.apk
