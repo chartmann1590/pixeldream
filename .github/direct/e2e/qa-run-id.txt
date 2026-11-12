@@ -1,4 +1,4 @@
-E2E_ID=1112p74016
-E2E_APP=acreage1112p
-E2E_PKG=com.hartmannstudios.acreage
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/acreage-direct-1/Acreage-direct-release.apk
+E2E_ID=1112p74018
+E2E_APP=lidline1112p
+E2E_PKG=com.hartmannstudios.lidline
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/lidline-direct-1/Lidline-direct-release.apk

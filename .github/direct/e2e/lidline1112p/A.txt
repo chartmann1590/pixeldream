@@ -1,0 +1,58 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 20
+tap (?i)^wait$
+wait 3
+shot 01-first-run
+tapxy 500 901
+wait 3
+shot 02-roll-empty
+tapxy 117 897
+wait 3
+tap (?i)^what's in the jars$
+type Green%sbeans
+back
+tap (?i)^fill the rack$
+wait 1
+shot 03-rack
+scrollto (?i)^source followed
+type NCHFP%sgreen%sbeans%sp.2
+back
+scrollto (?i)^save batch$
+wait 4
+shot 04-batch
+tap ^Q$
+wait 2
+shot 05-seal-jar1-tapped
+tap ^Q$
+wait 2
+shot 05b-seal-jar2-tapped
+back
+wait 2
+shot 06-roll
+tapxy 888 897
+wait 4
+taploop (?i)^(while using the app|only this time|allow)$
+wait 3
+shot 07-scan
+back
+wait 2
+tapxy 437 897
+wait 2
+shot 08-settings
+tap (?i)^upgrade to pro$
+wait 3
+shot 09-paywall
+scrollto (?i)^subscribe yearly$
+wait 3
+shot 10-email
+type hartmannstudios+lidline1112p@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 11-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 12-after
+
+sh logcat -d -s DirectBilling
