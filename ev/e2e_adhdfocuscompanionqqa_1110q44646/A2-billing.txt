@@ -1,0 +1,1 @@
+11-12 01:03:56.857  7849  7882 I DirectBilling: license saved app=adhdfocuscompanion entitlements=["adhd_pro_monthly"]

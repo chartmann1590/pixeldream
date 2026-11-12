@@ -1,0 +1,2 @@
+11-12 01:06:23.642  8752  9636 I DirectBilling: license saved app=adhdfocuscompanion entitlements=[]
+11-12 01:07:05.668  8752  9877 I DirectBilling: license saved app=adhdfocuscompanion entitlements=["adhd_pro_monthly"]

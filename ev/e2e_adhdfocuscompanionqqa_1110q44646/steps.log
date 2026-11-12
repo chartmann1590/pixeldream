@@ -1,0 +1,115 @@
+[00:54:33] screen 1080x2340
+[00:54:33] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:55:13] launch
+[00:55:29] shot 01-launch (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:55:32] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 905 2071
+[00:55:36] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 865 2071
+[00:55:40] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 901 2071
+[00:55:44] not found /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/
+[00:55:50] not found /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/
+[00:55:54] shot 02-focus (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:55:55] not found /(?i)^history$/
+[00:56:05] shot 04-history (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:56:06] not found /(?i)^stats$/
+[00:56:16] shot 05-stats (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:56:17] not found /(?i)^meds$/
+[00:56:25] shot 06-meds (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:56:26] tapxy permille 900 892
+[00:56:35] shot 07-settings (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:56:37] tapped /(?i)^focus pro$/ at 345 1634
+[00:56:44] shot 08-paywall (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:56:47] tapped /(?i)^monthly ·/ at 540 1330
+[00:56:50] not found /(?i)^monthly ·/
+[00:56:57] shot 11-email (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:57:04] type
+[00:57:07] tapped /(?i)^continue$/ at 847 1047
+[00:57:36] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+[00:57:38] tapped /(?i)^close$/ at 943 219
+[00:57:45] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{502585a u0 com.chartmann.adhdfocuscompanion/.MainActivity t9})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 00:57:07.033  5350  5350 I DirectBilling: checkout opened app=adhdfocuscompanion product=adhd_pro_monthly session=cs_live_ac5cdD5ziF1ehCnoAYabgHsDhniaifAJhq8YjYHRjqyNFbgEAq2qtR1taF
+[00:57:47] pidof com.chartmann.adhdfocuscompanion: 5350
+[00:57:47] fatal lines: 0 crash-buffer lines: 0
+[00:57:47] ads lines: 48
+[01:03:36] screen 1080x2340
+[01:03:36] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:03:54] force-stop
+[01:03:57] launch
+[01:04:13] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:04:17] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{e6cc9a6 u0 com.chartmann.adhdfocuscompanion/.MainActivity t10})
+[01:04:18] not found /(?i)^(done|not now)$/
+[01:04:24] shot 23-settings-pro-active (fg:  mResumedActivity: ActivityRecord{e6cc9a6 u0 com.chartmann.adhdfocuscompanion/.MainActivity t10})
+[01:04:26] not found /(?i)^stats$/
+[01:04:34] shot 24-stats-pro (fg:  mResumedActivity: ActivityRecord{e6cc9a6 u0 com.chartmann.adhdfocuscompanion/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:03:56.857  7849  7882 I DirectBilling: license saved app=adhdfocuscompanion entitlements=["adhd_pro_monthly"]
+[01:04:36] pidof com.chartmann.adhdfocuscompanion: 7849
+[01:04:36] fatal lines: 0 crash-buffer lines: 0
+[01:04:36] ads lines: 39
+[01:04:37] screen 1080x2340
+[01:04:37] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:04:55] launch
+[01:05:12] shot 01-launch (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:05:14] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 905 2071
+[01:05:19] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 865 2071
+[01:05:23] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/ at 901 2071
+[01:05:26] not found /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/
+[01:05:33] not found /(?i)^(next|continue|get started|skip|allow|ok|got it|start|not now|later|no thanks|done)$/
+[01:05:35] tapxy permille 900 892
+[01:05:45] tapped /(?i)^focus pro$/ at 345 1634
+[01:05:52] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:05:54] tapped /(?i)^restore purchases$/ at 540 1641
+[01:05:58] tapped /(?i)^restore purchases$/ at 540 980
+[01:06:05] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:06:07] tapped /@/ at 540 1227
+[01:06:20] typefix field='nobody-adhdfocuscompanion-1110q@example.com'
+[01:06:21] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:06:24] tapped /(?i)^continue$/ at 847 1031
+[01:06:30] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:06:39] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:06:42] tapped /(?i)^restore purchases$/ at 540 1606
+[01:06:49] tapped /@/ at 540 1227
+[01:07:02] typefix field='hartmannstudios+adhdfocuscompanion1110q@mail.tab.bot'
+[01:07:04] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:07:06] tapped /(?i)^continue$/ at 847 1031
+[01:07:25] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:07:28] tapped /(?i)^(done|not now)$/ at 834 1710
+[01:07:33] shot 23-settings-pro-active (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+[01:07:35] not found /(?i)^stats$/
+[01:07:43] shot 24-stats-pro (fg:  mResumedActivity: ActivityRecord{5aba655 u0 com.chartmann.adhdfocuscompanion/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:06:23.642  8752  9636 I DirectBilling: license saved app=adhdfocuscompanion entitlements=[]
+11-12 01:07:05.668  8752  9877 I DirectBilling: license saved app=adhdfocuscompanion entitlements=["adhd_pro_monthly"]
+[01:07:45] pidof com.chartmann.adhdfocuscompanion: 8752
+[01:07:45] fatal lines: 0 crash-buffer lines: 0
+[01:07:45] ads lines: 33
+[01:07:45] screen 1080x2340
+[01:07:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:08:04] force-stop
+[01:08:06] launch
+[01:08:23] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:08:26] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{5cf766b u0 com.chartmann.adhdfocuscompanion/.MainActivity t12})
+[01:08:28] not found /(?i)^(done|not now)$/
+[01:08:34] shot 323-settings-pro-active (fg:  mResumedActivity: ActivityRecord{5cf766b u0 com.chartmann.adhdfocuscompanion/.MainActivity t12})
+[01:08:35] not found /(?i)^stats$/
+[01:08:43] shot 324-stats-pro (fg:  mResumedActivity: ActivityRecord{5cf766b u0 com.chartmann.adhdfocuscompanion/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:08:45] pidof com.chartmann.adhdfocuscompanion: 10316
+[01:08:45] fatal lines: 0 crash-buffer lines: 0
+[01:08:45] ads lines: 5
