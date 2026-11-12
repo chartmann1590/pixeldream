@@ -1,0 +1,111 @@
+[00:51:48] screen 1080x2340
+[00:51:48] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:52:43] launch
+[00:53:00] shot 01-launch (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:53:02] tapped /(?i)^continue in english$/ at 540 2071
+[00:53:10] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$/ at 934 277
+[00:53:14] not found /(?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$/
+[00:53:21] shot 03-home (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:53:22] not found /(?i)^pantry$/
+[00:53:29] shot 05-pantry (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:53:31] not found /(?i)^shopping$/
+[00:53:37] shot 06-shopping (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:53:39] not found /(?i)^insights$/
+[00:53:46] shot 07-insights (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:53:47] not found /(?i)^home$/
+[00:53:55] tapped /(?i)upgrade to pro|pantry pro|go pro/ at 871 233
+[00:54:01] shot 08-paywall (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:54:04] tapped /(?i)^monthly/ at 343 1528
+[00:54:09] tapped /(?i)^subscribe monthly$/ at 540 1736
+[00:54:12] not found /(?i)^subscribe monthly$/
+[00:54:19] shot 11-email (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:54:25] type
+Failed to write while dumping service input_method: Broken pipe
+[00:54:30] tapped /(?i)^continue$/ at 847 1389
+[00:54:59] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+[00:55:01] tapped /(?i)^close$/ at 943 219
+[00:55:08] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{272ecd4 u0 com.chartmann.pantrytracker/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 00:54:30.823  5501  5501 I DirectBilling: checkout opened app=pantrytracker product=pantry_pro:monthly session=cs_live_ac5P0kPAOOVmwhqReKHjVauXQfHtAHEIhmdnCOiMI28lQoQPInW8hiUDmO
+[00:55:10] pidof com.chartmann.pantrytracker: 5501
+[00:55:10] fatal lines: 0 crash-buffer lines: 0
+[00:55:10] ads lines: 48
+[00:59:16] screen 1080x2340
+[00:59:16] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:59:35] force-stop
+[00:59:38] launch
+[00:59:54] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[00:59:58] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{1883961 u0 com.chartmann.pantrytracker/.MainActivity t10})
+[00:59:59] not found /(?i)^(done|not now)$/
+[01:00:05] tapped /(?i)^settings$/ at 1003 233
+[01:00:12] shot 23-settings-pro (fg:  mResumedActivity: ActivityRecord{1883961 u0 com.chartmann.pantrytracker/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 00:59:21.300  7188  7302 I DirectBilling: license saved app=pantrytracker entitlements=["pantry_pro:monthly"]
+[01:00:14] pidof com.chartmann.pantrytracker: 7461
+[01:00:14] fatal lines: 0 crash-buffer lines: 0
+[01:00:14] ads lines: 5
+[01:00:15] screen 1080x2340
+[01:00:15] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:00:35] launch
+[01:00:52] shot 01-launch (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:00:54] tapped /(?i)^continue in english$/ at 540 2071
+[01:01:02] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$/ at 934 277
+[01:01:06] not found /(?i)^(skip|next|continue|get started|allow|ok|got it|not now|later|no thanks|done)$/
+[01:01:13] tapped /(?i)upgrade to pro|pantry pro|go pro/ at 871 233
+[01:01:19] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:01:22] tapped /(?i)^restore purchases$/ at 315 2052
+[01:01:26] tapped /(?i)^restore purchases$/ at 540 980
+[01:01:32] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:01:35] tapped /@/ at 540 1227
+[01:01:46] typefix field='nobody-pantrytracker-1110q@example.com'
+Failed to write while dumping service input_method: Broken pipe
+[01:01:49] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:01:52] tapped /(?i)^continue$/ at 847 1374
+[01:01:58] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:02:07] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:02:09] not found /(?i)^restore purchases$/
+[01:02:13] tapped /(?i)^restore purchases$/ at 315 1990
+[01:02:20] tapped /@/ at 540 1227
+[01:02:33] typefix field='hartmannstudios+pantrytracker1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[01:02:37] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:02:39] tapped /(?i)^continue$/ at 847 1374
+[01:02:58] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+[01:03:00] tapped /(?i)^(done|not now)$/ at 889 1725
+[01:03:06] tapped /(?i)^settings$/ at 1003 233
+[01:03:13] shot 23-settings-pro (fg:  mResumedActivity: ActivityRecord{d3d69ed u0 com.chartmann.pantrytracker/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:01:52.567  8181  8937 I DirectBilling: license saved app=pantrytracker entitlements=[]
+11-12 01:02:38.885  8181  9273 I DirectBilling: license saved app=pantrytracker entitlements=["pantry_pro:monthly"]
+[01:03:15] pidof com.chartmann.pantrytracker: 8181
+[01:03:15] fatal lines: 0 crash-buffer lines: 0
+[01:03:15] ads lines: 32
+[01:03:15] screen 1080x2340
+[01:03:15] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:03:35] force-stop
+[01:03:37] launch
+[01:03:54] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:03:57] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{622d53 u0 com.chartmann.pantrytracker/.MainActivity t12})
+[01:03:59] not found /(?i)^(done|not now)$/
+[01:04:05] tapped /(?i)^settings$/ at 1003 233
+[01:04:12] shot 323-settings-pro (fg:  mResumedActivity: ActivityRecord{622d53 u0 com.chartmann.pantrytracker/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:04:14] pidof com.chartmann.pantrytracker: 9771
+[01:04:14] fatal lines: 0 crash-buffer lines: 0
+[01:04:14] ads lines: 5

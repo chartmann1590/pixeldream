@@ -1,0 +1,2 @@
+11-12 01:01:52.567  8181  8937 I DirectBilling: license saved app=pantrytracker entitlements=[]
+11-12 01:02:38.885  8181  9273 I DirectBilling: license saved app=pantrytracker entitlements=["pantry_pro:monthly"]

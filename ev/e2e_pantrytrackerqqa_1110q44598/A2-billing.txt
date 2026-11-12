@@ -1,0 +1,1 @@
+11-12 00:59:21.300  7188  7302 I DirectBilling: license saved app=pantrytracker entitlements=["pantry_pro:monthly"]
