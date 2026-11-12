@@ -1,0 +1,104 @@
+[01:07:55] screen 1080x2340
+[01:07:55] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:08:37] launch
+[01:08:54] shot 01-launch (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:08:56] tapped /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time)$/ at 934 277
+[01:08:59] not found /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time)$/
+[01:09:06] shot 02-after-onboarding (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:09:08] tapped /(?i)^choose$/ at 859 1693
+[01:09:15] shot 11-email (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:09:19] type
+[01:09:22] tapped /(?i)^continue$/ at 847 1047
+[01:09:51] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:09:53] tapped /(?i)^close$/ at 943 219
+[01:10:00] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:00] back
+[01:10:07] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:10:10] shot 03-main (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:12] not found /(?i)^history$/
+[01:10:18] shot 04-history (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:20] not found /(?i)^trends$/
+[01:10:27] shot 05-trends (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:28] not found /(?i)^settings$/
+[01:10:35] shot 06-settings (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:40] shot 07-settings-bottom (fg:  mResumedActivity: ActivityRecord{77f3a04 u0 com.charles.nightsay/.MainActivity t9})
+[01:10:43] pidof com.charles.nightsay: 5536
+[01:10:43] fatal lines: 0 crash-buffer lines: 0
+[01:10:43] ads lines: 58
+[01:13:47] screen 1080x2340
+[01:13:47] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:14:05] force-stop
+[01:14:07] launch
+[01:14:24] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:14:27] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{f597970 u0 com.charles.nightsay/.MainActivity t10})
+[01:14:29] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:14:30] shot 23-main-premium (fg:  mResumedActivity: ActivityRecord{f597970 u0 com.charles.nightsay/.MainActivity t10})
+[01:14:32] not found /(?i)^settings$/
+[01:14:39] shot 24-settings (fg:  mResumedActivity: ActivityRecord{f597970 u0 com.charles.nightsay/.MainActivity t10})
+[01:14:42] shot 25-settings-2 (fg:  mResumedActivity: ActivityRecord{f597970 u0 com.charles.nightsay/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:13:52.596  7010  7060 I DirectBilling: license saved app=nightsay entitlements=["nightsay_premium:monthly"]
+[01:14:44] pidof com.charles.nightsay: 7210
+[01:14:44] fatal lines: 0 crash-buffer lines: 0
+[01:14:44] ads lines: 6
+[01:14:45] screen 1080x2340
+[01:14:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:15:03] launch
+[01:15:20] tapped /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time)$/ at 934 277
+[01:15:23] not found /(?i)^(next|next step|continue|get started|skip|skip for now|allow|ok|accept|agree|got it|start|i agree|not now|later|maybe later|no thanks|done|while using the app|only this time)$/
+[01:15:30] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:15:31] not found /(?i)^restore purchases$/
+[01:15:35] tapped /(?i)^restore purchases$/ at 238 1966
+[01:15:42] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:15:44] tapped /@/ at 540 1227
+[01:15:55] typefix field='nobody-nightsay-1110q@example.com'
+[01:15:57] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:15:59] tapped /(?i)^continue$/ at 847 1031
+[01:16:05] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:16:15] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:16:17] tapped /(?i)^restore purchases$/ at 238 1966
+[01:16:24] tapped /@/ at 540 1227
+[01:16:38] typefix field='hartmannstudios+nightsay1110q@mail.tab.bot'
+[01:16:40] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:16:42] tapped /(?i)^continue$/ at 847 1031
+[01:17:01] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:17:02] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:17:04] shot 23-main-premium (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:17:06] not found /(?i)^settings$/
+[01:17:12] shot 24-settings (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+[01:17:16] shot 25-settings-2 (fg:  mResumedActivity: ActivityRecord{a3c4c66 u0 com.charles.nightsay/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:16:00.258  7928  8602 I DirectBilling: license saved app=nightsay entitlements=[]
+11-12 01:16:42.083  7928  9119 I DirectBilling: license saved app=nightsay entitlements=["nightsay_premium:monthly"]
+[01:17:18] pidof com.charles.nightsay: 7928
+[01:17:18] fatal lines: 0 crash-buffer lines: 0
+[01:17:18] ads lines: 40
+[01:17:18] screen 1080x2340
+[01:17:18] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:17:35] force-stop
+[01:17:38] launch
+[01:17:54] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:17:58] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{c8e7021 u0 com.charles.nightsay/.MainActivity t12})
+[01:17:59] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:18:01] shot 323-main-premium (fg:  mResumedActivity: ActivityRecord{c8e7021 u0 com.charles.nightsay/.MainActivity t12})
+[01:18:02] not found /(?i)^settings$/
+[01:18:09] shot 324-settings (fg:  mResumedActivity: ActivityRecord{c8e7021 u0 com.charles.nightsay/.MainActivity t12})
+[01:18:13] shot 325-settings-2 (fg:  mResumedActivity: ActivityRecord{c8e7021 u0 com.charles.nightsay/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:18:15] pidof com.charles.nightsay: 9595
+[01:18:15] fatal lines: 0 crash-buffer lines: 0
+[01:18:15] ads lines: 6

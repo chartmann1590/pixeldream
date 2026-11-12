@@ -1,0 +1,1 @@
+11-12 01:13:52.596  7010  7060 I DirectBilling: license saved app=nightsay entitlements=["nightsay_premium:monthly"]

@@ -1,0 +1,2 @@
+com.charles.nightsay|Secure checkout (Stripe)||false|[16,192][822,245]
+com.charles.nightsay|CLOSE||true|[822,153][1064,285]

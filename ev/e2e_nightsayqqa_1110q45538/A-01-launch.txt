@@ -1,0 +1,5 @@
+com.charles.nightsay|Skip||false|[896,250][973,305]
+com.charles.nightsay||Doze, the Nightsay moon. Tap to say hi.|false|[362,519][720,877]
+com.charles.nightsay|Sleep. Nightsay listens.||false|[190,954][891,1042]
+com.charles.nightsay|Start before bed and leave the phone on the nightstand. It keeps only the moments it hears something: snoring, sleep talk, coughs, loud sounds.||false|[66,1075][1014,1339]
+com.charles.nightsay|Next||false|[499,2049][581,2072]
