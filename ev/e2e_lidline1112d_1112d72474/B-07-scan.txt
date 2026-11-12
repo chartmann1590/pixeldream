@@ -1,0 +1,4 @@
+com.hartmannstudios.lidline|‹ Back||false|[66,217][175,272]
+com.hartmannstudios.lidline|Point at a jar's Lidline label||false|[33,310][856,376]
+com.hartmannstudios.lidline|Or type the code (LL-…)||false|[0,0][0,0]
+com.hartmannstudios.lidline|Open||false|[0,0][0,0]

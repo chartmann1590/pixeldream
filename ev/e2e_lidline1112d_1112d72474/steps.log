@@ -1,0 +1,152 @@
+[08:38:57] screen 1080x2340
+[08:38:57] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:39:41] launch
+[08:40:03] not found /(?i)^wait$/
+[08:40:10] shot 01-first-run (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:40:10] tapxy permille 500 901
+[08:40:17] shot 02-roll-empty (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:40:18] tapxy permille 117 897
+[08:40:25] tapped /(?i)^what's in the jars$/ at 267 676
+[08:40:28] type
+[08:40:30] back
+[08:40:34] tapped /(?i)^fill the rack$/ at 177 1910
+[08:40:39] shot 03-rack (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:40:41] not found /(?i)^source followed/
+[08:40:45] tapped /(?i)^source followed/ at 364 1322
+[08:40:50] type
+[08:40:51] back
+[08:40:55] tapped /(?i)^save batch$/ at 540 1845
+[08:41:03] shot 04-batch (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:04] tapxy permille 120 420
+[08:41:08] shot 05-seal (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:09] back
+[08:41:15] shot 06-roll (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:15] tapxy permille 888 897
+[08:41:23] not found /(?i)^(while using the app|only this time|allow)$/
+[08:41:28] shot 07-scan (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:28] back
+[08:41:33] tapxy permille 437 897
+[08:41:39] shot 08-settings (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:41] tapped /(?i)^upgrade to pro$/ at 540 603
+[08:41:48] shot 09-paywall (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:50] tapped /(?i)^subscribe yearly$/ at 540 1246
+[08:41:57] shot 10-email (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:41:59] type
+[08:42:02] tapped /(?i)^continue$/ at 847 1047
+[08:42:31] shot 11-stripe-checkout (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+[08:42:34] tapped /(?i)^close$/ at 943 219
+[08:42:41] shot 12-after (fg:  mResumedActivity: ActivityRecord{e0342e5 u0 com.hartmannstudios.lidline/.MainActivity t9})
+--------- beginning of system
+--------- beginning of main
+--------- beginning of kernel
+11-12 08:42:03.277  5495  5495 I DirectBilling: checkout opened app=lidline product=lidline_pro_yearly session=cs_live_acrLvrEXbBA1niYO8iQyCi9DwmwwrQyACl4fvOtNq6JI88xjdo50O5pFjf
+[08:42:43] pidof com.hartmannstudios.lidline: 5495
+[08:42:43] fatal lines: 0 crash-buffer lines: 0
+[08:42:43] ads lines: 137
+[08:44:07] screen 1080x2340
+[08:44:07] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:44:26] force-stop
+[08:44:28] launch
+[08:44:44] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:44:46] ad on screen (try 1)
+[08:44:56] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:02] ad on screen (try 2)
+[08:45:11] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:16] ad on screen (try 3)
+[08:45:26] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:31] ad on screen (try 4)
+[08:45:41] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:47] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{885023a u0 com.hartmannstudios.lidline/.MainActivity t10})
+[08:45:47] tapxy permille 437 897
+[08:45:55] shot 11-settings (fg:  mResumedActivity: ActivityRecord{885023a u0 com.hartmannstudios.lidline/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 08:44:28.729  7325  7348 I DirectBilling: license saved app=lidline entitlements=[]
+[08:45:57] pidof com.hartmannstudios.lidline: 7325
+[08:45:57] fatal lines: 0 crash-buffer lines: 0
+[08:45:57] ads lines: 98
+[08:45:58] screen 1080x2340
+[08:45:58] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:46:17] launch
+[08:46:39] not found /(?i)^wait$/
+[08:46:46] shot 01-first-run (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:46:46] tapxy permille 500 901
+[08:46:53] shot 02-roll-empty (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:46:54] tapxy permille 117 897
+[08:47:01] tapped /(?i)^what's in the jars$/ at 267 676
+[08:47:04] type
+[08:47:05] back
+[08:47:09] tapped /(?i)^fill the rack$/ at 177 1910
+[08:47:14] shot 03-rack (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:47:16] not found /(?i)^source followed/
+[08:47:20] tapped /(?i)^source followed/ at 364 1322
+[08:47:25] type
+[08:47:27] back
+[08:47:31] tapped /(?i)^save batch$/ at 540 1845
+[08:47:39] shot 04-batch (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:47:39] tapxy permille 120 420
+[08:47:44] shot 05-seal (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:47:45] back
+[08:47:51] shot 06-roll (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:47:51] tapxy permille 888 897
+[08:47:59] not found /(?i)^(while using the app|only this time|allow)$/
+[08:48:04] shot 07-scan (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:48:04] back
+[08:48:09] tapxy permille 437 897
+[08:48:15] shot 08-settings (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:48:17] tapped /(?i)^upgrade to pro$/ at 540 603
+[08:48:24] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:48:26] tapped /(?i)^restore purchases$/ at 540 1876
+[08:48:33] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:48:35] tapped /@/ at 540 1227
+[08:48:45] typefix field='nobody-lidline-1112d@example.com'
+[08:48:47] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:48:49] tapped /(?i)^continue$/ at 847 1031
+[08:48:55] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:49:05] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:49:07] tapped /(?i)^restore purchases$/ at 540 1876
+[08:49:15] tapped /@/ at 540 1227
+[08:49:28] typefix field='hartmannstudios+lidline1112d@mail.tab.bot'
+[08:49:30] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:49:32] tapped /(?i)^continue$/ at 847 1031
+[08:49:39] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+[08:49:56] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{50f48bf u0 com.hartmannstudios.lidline/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 08:48:50.249  8355  9861 I DirectBilling: license saved app=lidline entitlements=[]
+11-12 08:49:31.970  8355 10095 I DirectBilling: license saved app=lidline entitlements=[]
+[08:49:58] pidof com.hartmannstudios.lidline: 8355
+[08:49:58] fatal lines: 0 crash-buffer lines: 0
+[08:49:58] ads lines: 130
+[08:49:59] screen 1080x2340
+[08:49:59] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:50:18] force-stop
+[08:50:20] launch
+[08:50:36] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:50:38] ad on screen (try 1)
+[08:50:48] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:50:53] ad on screen (try 2)
+[08:51:02] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:51:08] ad on screen (try 3)
+[08:51:17] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:51:22] ad on screen (try 4)
+[08:51:32] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:51:37] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{8d247a6 u0 com.hartmannstudios.lidline/.MainActivity t12})
+[08:51:38] tapxy permille 437 897
+[08:51:46] shot 31-settings (fg:  mResumedActivity: ActivityRecord{8d247a6 u0 com.hartmannstudios.lidline/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:51:48] pidof com.hartmannstudios.lidline: 10436
+[08:51:48] fatal lines: 0 crash-buffer lines: 0
+[08:51:48] ads lines: 109
