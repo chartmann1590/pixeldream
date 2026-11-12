@@ -1,0 +1,2 @@
+11-12 01:14:41.935  9076 10455 I DirectBilling: license saved app=photobooth entitlements=[]
+11-12 01:15:33.351  9076 10747 I DirectBilling: license saved app=photobooth entitlements=[]

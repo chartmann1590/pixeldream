@@ -1,0 +1,1 @@
+11-12 01:11:18.149  8251  8379 I DirectBilling: license saved app=photobooth entitlements=[]

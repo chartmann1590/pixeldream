@@ -1,0 +1,16 @@
+[00:53:07] phase A
+versionCode=263141817 minSdk=24 targetSdk=36
+versionName=1.0.39
+firstInstallTime=2026-11-12 00:53:11
+lastUpdateTime=2026-11-12 00:53:11
+[00:57:36] ready posted; waiting for go
+[01:10:53] go=unlockfail
+[01:10:53] phase A2
+versionCode=263141817 minSdk=24 targetSdk=36
+versionName=1.0.39
+firstInstallTime=2026-11-12 00:53:11
+lastUpdateTime=2026-11-12 01:10:54
+[01:11:47] uninstall
+Success
+[01:11:48] phase B
+[01:16:04] phase B2
