@@ -1,0 +1,86 @@
+[09:02:52] screen 1080x2340
+[09:02:52] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:03:36] launch
+[09:03:50] shot 01-bag (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:03:52] tapped /(?i)^regulator set$/ at 192 552
+[09:03:56] tapped /(?i)^bcd$/ at 423 585
+[09:04:00] tapped /(?i)^computer battery$/ at 798 552
+[09:04:04] tapped /(?i)^tank \(visual\)$/ at 192 828
+[09:04:09] tapped /(?i)^add 4 to the horizon$/ at 540 1451
+[09:04:17] shot 02-horizon (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:04:19] tapped /(?i)^regulator set$/ at 178 388
+[09:04:25] shot 03-gear (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:04:27] tapped /(?i)^or: last serviced/ at 511 1374
+[09:04:30] type
+[09:04:34] tapped /(?i)^set last service date$/ at 253 1517
+[09:04:39] back
+[09:04:46] shot 04-horizon-due (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:04:48] tapped /(?i)^menu$/ at 66 211
+[09:04:54] shot 05-drawer (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:04:56] tapped /(?i)^trips$/ at 111 558
+[09:05:03] tapped /(?i)^\+ add a trip$/ at 540 465
+[09:05:09] tapped /(?i)^destination$/ at 329 1017
+[09:05:11] type
+[09:05:14] tapped /(?i)^add$/ at 834 1158
+[09:05:22] shot 06-trip-gate (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:05:22] back
+[09:05:28] shot 07-home-banner (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:05:30] tapped /(?i)^menu$/ at 66 211
+[09:05:36] tapped /(?i)^cards$/ at 121 712
+[09:05:43] shot 08-paywall (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:05:45] tapped /(?i)^subscribe monthly$/ at 540 1312
+[09:05:52] shot 09-email (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:05:55] type
+[09:05:58] tapped /(?i)^continue$/ at 847 1047
+[09:06:27] shot 10-stripe-checkout (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+[09:06:29] tapped /(?i)^close$/ at 943 219
+[09:06:34] back
+[09:06:41] tapped /(?i)^menu$/ at 66 211
+[09:06:47] tapped /(?i)^settings$/ at 157 1020
+[09:06:53] shot 11-settings (fg:  mResumedActivity: ActivityRecord{a066e7 u0 com.hartmannstudios.regday/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 09:05:58.932  5485  5485 I DirectBilling: checkout opened app=regday product=regday_pro_monthly session=cs_live_acufCYkgdzaS7pwZh0W2huzvmx4jMOSyqc2Fgg90ZbnUzBOANcdPr8g5iG
+[09:06:55] pidof com.hartmannstudios.regday: 5485
+[09:06:55] fatal lines: 0 crash-buffer lines: 0
+[09:06:55] ads lines: 180
+[09:08:19] screen 1080x2340
+[09:08:19] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:08:37] force-stop
+[09:08:39] launch
+[09:09:01] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[09:09:03] ad on screen (try 1)
+[09:09:12] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[09:09:17] ad on screen (try 2)
+[09:09:27] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[09:09:32] ad on screen (try 3)
+[09:09:42] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[09:09:47] ad on screen (try 4)
+[09:09:57] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[09:10:02] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{3cb6dd8 u0 com.hartmannstudios.regday/.MainActivity t10})
+[09:10:04] tapped /(?i)^menu$/ at 66 211
+[09:10:10] tapped /(?i)^settings$/ at 157 1020
+[09:10:18] shot 11-settings (fg:  mResumedActivity: ActivityRecord{3cb6dd8 u0 com.hartmannstudios.regday/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 09:08:40.411  8008  8030 I DirectBilling: license saved app=regday entitlements=[]
+[09:10:20] pidof com.hartmannstudios.regday: 8008
+[09:10:20] fatal lines: 0 crash-buffer lines: 0
+[09:10:20] ads lines: 94
+[09:10:21] screen 1080x2340
+[09:10:21] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:10:39] launch
+[09:10:53] shot 01-bag (fg:  mResumedActivity: ActivityRecord{d045afc u0 com.hartmannstudios.regday/.MainActivity t11})
+[09:10:55] tapped /(?i)^regulator set$/ at 192 552
+[09:10:59] tapped /(?i)^bcd$/ at 423 585
+[09:11:03] tapped /(?i)^computer battery$/ at 798 552
+[09:11:07] tapped /(?i)^tank \(visual\)$/ at 192 828
+[09:11:12] tapped /(?i)^add 4 to the horizon$/ at 540 1451

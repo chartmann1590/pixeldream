@@ -1,0 +1,15 @@
+[09:02:51] phase A
+versionCode=10000 minSdk=26 targetSdk=35
+versionName=1.0.0
+firstInstallTime=2026-11-12 09:02:55
+lastUpdateTime=2026-11-12 09:02:55
+[09:06:57] ready posted; waiting for go
+[09:08:19] go=unlockfail
+[09:08:19] phase A2
+versionCode=10000 minSdk=26 targetSdk=35
+versionName=1.0.0
+firstInstallTime=2026-11-12 09:02:55
+lastUpdateTime=2026-11-12 09:08:19
+[09:10:20] uninstall
+Success
+[09:10:20] phase B
