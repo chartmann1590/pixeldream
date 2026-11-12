@@ -1,0 +1,1 @@
+11-12 01:18:08.306  7418  7444 I DirectBilling: license saved app=shapeshade entitlements=["shapeshade_pro:monthly"]

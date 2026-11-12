@@ -1,0 +1,2 @@
+11-12 01:20:22.862  8150  9016 I DirectBilling: license saved app=shapeshade entitlements=[]
+11-12 01:21:05.158  8150  9257 I DirectBilling: license saved app=shapeshade entitlements=["shapeshade_pro:monthly"]

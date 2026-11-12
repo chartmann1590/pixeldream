@@ -1,0 +1,104 @@
+[01:08:32] screen 1080x2340
+[01:08:32] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:09:15] launch
+[01:09:37] shot 01-launch (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:09:39] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:09:44] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:09:48] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:09:51] not found /(?i)^(next|continue|get started|skip|allow|ok|got it)$/
+[01:09:58] not found /(?i)^(allow|ok|not now|later|no thanks|got it|consent|accept)$/
+[01:10:00] shot 02-home (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:02] tapped /(?i)^my scans$/ at 840 1832
+[01:10:11] shot 03-history (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:11] back
+[01:10:19] tapped /(?i)^settings$/ at 992 233
+[01:10:28] shot 04-settings (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:30] tapped /(?i)^shape & shade pro$/ at 587 443
+[01:10:37] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:41] shot 10b-paywall-bottom (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:43] tapped /(?i)^monthly$/ at 186 1413
+[01:10:50] shot 11-email (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:10:55] type
+[01:10:58] tapped /(?i)^continue$/ at 847 1047
+[01:11:27] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:11:29] tapped /(?i)^close$/ at 943 219
+[01:11:36] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{3548480 u0 com.charles.shapeshade/.MainActivity t9})
+[01:11:38] pidof com.charles.shapeshade: 5196
+[01:11:38] fatal lines: 0 crash-buffer lines: 0
+[01:11:38] ads lines: 52
+[01:17:48] screen 1080x2340
+[01:17:48] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:18:06] force-stop
+[01:18:08] launch
+[01:18:25] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:18:28] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{e8deca8 u0 com.charles.shapeshade/.MainActivity t10})
+[01:18:36] shot 24-settings-pro-active (fg:  mResumedActivity: ActivityRecord{e8deca8 u0 com.charles.shapeshade/.MainActivity t10})
+[01:18:36] back
+[01:18:42] shot 25-home-premium (fg:  mResumedActivity: ActivityRecord{dfe23cd u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:18:08.306  7418  7444 I DirectBilling: license saved app=shapeshade entitlements=["shapeshade_pro:monthly"]
+[01:18:44] pidof com.charles.shapeshade: 7418
+[01:18:44] fatal lines: 0 crash-buffer lines: 0
+[01:18:44] ads lines: 33
+[01:18:45] screen 1080x2340
+[01:18:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:19:02] launch
+[01:19:24] shot 01-launch (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:19:26] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:19:30] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:19:34] tapped /(?i)^(next|continue|get started|skip|allow|ok|got it)$/ at 540 2057
+[01:19:38] not found /(?i)^(next|continue|get started|skip|allow|ok|got it)$/
+[01:19:45] not found /(?i)^(allow|ok|not now|later|no thanks|got it|consent|accept)$/
+[01:19:47] shot 20-home (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:19:49] tapped /(?i)^settings$/ at 992 233
+[01:19:58] shot 21-settings-before (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:20:00] tapped /(?i)^restore purchases$/ at 565 823
+[01:20:05] shot 22-restore-email (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:20:08] tapped /@/ at 540 1227
+[01:20:19] typefix field='nobody-shapeshade-1110q@example.com'
+[01:20:20] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:20:23] tapped /(?i)^continue$/ at 847 1031
+[01:20:28] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:20:38] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:20:40] tapped /(?i)^restore purchases$/ at 565 823
+[01:20:47] tapped /@/ at 540 1227
+[01:21:02] typefix field='hartmannstudios+shapeshade1110q@mail.tab.bot'
+[01:21:04] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:21:06] tapped /(?i)^continue$/ at 847 1031
+[01:21:25] shot 23-after-restore (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:21:32] shot 24-settings-pro-active (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+[01:21:33] back
+[01:21:39] shot 25-home-premium (fg:  mResumedActivity: ActivityRecord{e7d49e7 u0 com.charles.shapeshade/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 01:20:22.862  8150  9016 I DirectBilling: license saved app=shapeshade entitlements=[]
+11-12 01:21:05.158  8150  9257 I DirectBilling: license saved app=shapeshade entitlements=["shapeshade_pro:monthly"]
+[01:21:41] pidof com.charles.shapeshade: 8150
+[01:21:41] fatal lines: 0 crash-buffer lines: 0
+[01:21:41] ads lines: 31
+[01:21:41] screen 1080x2340
+[01:21:41] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:21:58] force-stop
+[01:22:01] launch
+[01:22:17] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:22:21] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{1f29868 u0 com.charles.shapeshade/.MainActivity t12})
+[01:22:28] shot 324-settings-pro-active (fg:  mResumedActivity: ActivityRecord{1f29868 u0 com.charles.shapeshade/.MainActivity t12})
+[01:22:29] back
+[01:22:35] shot 325-home-premium (fg:  mResumedActivity: ActivityRecord{dfe23cd u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:22:37] pidof com.charles.shapeshade: 9604
+[01:22:37] fatal lines: 0 crash-buffer lines: 0
+[01:22:37] ads lines: 3
