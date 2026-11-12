@@ -1,0 +1,1 @@
+11-12 01:03:34.818  8306  8423 I DirectBilling: license saved app=scamradar entitlements=["scamradar_premium_monthly"]

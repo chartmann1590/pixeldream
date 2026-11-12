@@ -1,0 +1,2 @@
+11-12 01:07:06.869  9187 10883 I DirectBilling: license saved app=scamradar entitlements=[]
+11-12 01:07:44.713  9187 11129 I DirectBilling: license saved app=scamradar entitlements=["scamradar_premium_monthly"]

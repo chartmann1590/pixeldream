@@ -1,0 +1,141 @@
+[00:53:00] screen 1080x2340
+[00:53:00] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:53:33] launch
+[00:53:51] shot 01-launch (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:53:53] tapped /(?i)^(next)$/ at 540 2060
+[00:53:57] tapped /(?i)^(next)$/ at 540 2060
+[00:54:01] tapped /(?i)^(next)$/ at 540 2060
+[00:54:05] not found /(?i)^(next)$/
+[00:54:06] shot 02-story-end (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:54:08] tapped /(?i)^start protecting me$/ at 540 2060
+[00:54:16] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1752
+[00:54:20] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[00:54:24] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[00:54:28] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1686
+[00:54:32] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1818
+[00:54:36] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1719
+[00:54:40] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1752
+[00:54:44] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1653
+[00:54:48] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[00:54:52] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[00:54:56] not found /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/
+[00:55:01] shot 03-model-setup (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:55:03] tapped /(?i)^start with lite mode$/ at 540 1342
+[00:55:11] tapped /(?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$/ at 541 1450
+[00:55:14] not found /(?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$/
+[00:55:17] not found /(?i)^(skip|not now|later|no thanks|got it|done|close)$/
+[00:55:19] tapped /(?i)^maybe later$/ at 540 2046
+[00:55:28] shot 04-scan-home (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:55:28] tapxy permille 300 892
+[00:55:37] shot 06-today (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:55:38] tapxy permille 500 892
+[00:55:47] shot 07-library (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:55:48] tapxy permille 700 892
+[00:55:57] shot 08-history (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:55:57] tapxy permille 900 892
+[00:56:06] shot 09-settings (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+findtap ok 0
+[00:56:14] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+findtap ok 0
+[00:56:21] shot 11-email (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:56:24] type
+[00:56:27] tapped /(?i)^continue$/ at 847 1047
+[00:56:55] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:56:57] tapped /(?i)^close$/ at 943 219
+[00:57:04] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{5d1b2bb u0 com.charles.scamradar.app/.MainActivity t9})
+[00:57:06] pidof com.charles.scamradar.app: 5242
+[00:57:06] fatal lines: 0 crash-buffer lines: 0
+[00:57:06] ads lines: 65
+[01:03:15] screen 1080x2340
+[01:03:15] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:03:32] force-stop
+[01:03:34] launch
+[01:03:51] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:03:54] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{d7f41cd u0 com.charles.scamradar.app/.MainActivity t10})
+[01:03:59] shot 23-premium-active (fg:  mResumedActivity: ActivityRecord{d7f41cd u0 com.charles.scamradar.app/.MainActivity t10})
+[01:04:00] back
+[01:04:07] shot 24-settings-premium (fg:  mResumedActivity: ActivityRecord{ba330a4 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 01:03:34.818  8306  8423 I DirectBilling: license saved app=scamradar entitlements=["scamradar_premium_monthly"]
+[01:04:09] pidof com.charles.scamradar.app: 8306
+[01:04:09] fatal lines: 0 crash-buffer lines: 0
+[01:04:09] ads lines: 33
+[01:04:09] screen 1080x2340
+[01:04:09] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:04:26] launch
+[01:04:45] tapped /(?i)^(next)$/ at 540 2060
+[01:04:49] tapped /(?i)^(next)$/ at 540 2060
+[01:04:53] tapped /(?i)^(next)$/ at 540 2060
+[01:04:56] not found /(?i)^(next)$/
+[01:04:58] shot 02-story-end (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:05:00] tapped /(?i)^start protecting me$/ at 540 2060
+[01:05:08] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1752
+[01:05:12] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[01:05:16] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[01:05:20] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1686
+[01:05:24] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1818
+[01:05:28] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1719
+[01:05:32] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1752
+[01:05:36] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1653
+[01:05:40] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[01:05:44] tapped /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/ at 540 1785
+[01:05:47] not found /(?i)^(get started|continue|allow|ok|got it|not now|while using the app)$/
+[01:05:52] shot 03-model-setup (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:05:54] tapped /(?i)^start with lite mode$/ at 540 1342
+[01:06:02] tapped /(?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$/ at 541 1450
+[01:06:06] not found /(?i)^(start scanning|continue|allow|ok|got it|not now|skip|done)$/
+[01:06:09] not found /(?i)^(skip|not now|later|no thanks|got it|done|close)$/
+[01:06:11] tapped /(?i)^maybe later$/ at 540 2046
+[01:06:19] shot 20-scan-home (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:06:19] tapxy permille 900 892
+findtap ok 0
+findtap ok 3
+[01:06:50] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:06:52] tapped /@/ at 540 1227
+[01:07:02] typefix field='nobody-scamradar-1110q@example.com'
+[01:07:04] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:07:06] tapped /(?i)^continue$/ at 847 1031
+[01:07:12] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:07:22] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+findtap ok 0
+[01:07:29] tapped /@/ at 540 1227
+[01:07:41] typefix field='hartmannstudios+scamradar1110q@mail.tab.bot'
+[01:07:43] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:07:45] tapped /(?i)^continue$/ at 847 1031
+[01:08:04] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:08:09] shot 23-premium-active (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+[01:08:09] back
+[01:08:16] shot 24-settings-premium (fg:  mResumedActivity: ActivityRecord{fd0e6ca u0 com.charles.scamradar.app/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 01:07:06.869  9187 10883 I DirectBilling: license saved app=scamradar entitlements=[]
+11-12 01:07:44.713  9187 11129 I DirectBilling: license saved app=scamradar entitlements=["scamradar_premium_monthly"]
+[01:08:18] pidof com.charles.scamradar.app: 9187
+[01:08:18] fatal lines: 0 crash-buffer lines: 0
+[01:08:18] ads lines: 27
+[01:08:18] screen 1080x2340
+[01:08:18] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:08:36] force-stop
+[01:08:38] launch
+[01:08:54] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:08:57] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{3fdeb29 u0 com.charles.scamradar.app/.MainActivity t12})
+[01:09:03] shot 323-premium-active (fg:  mResumedActivity: ActivityRecord{3fdeb29 u0 com.charles.scamradar.app/.MainActivity t12})
+[01:09:03] back
+[01:09:10] shot 324-settings-premium (fg:  mResumedActivity: ActivityRecord{ba330a4 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:09:12] pidof com.charles.scamradar.app: 11633
+[01:09:12] fatal lines: 0 crash-buffer lines: 0
+[01:09:12] ads lines: 11
