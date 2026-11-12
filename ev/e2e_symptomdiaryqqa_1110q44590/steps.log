@@ -1,0 +1,104 @@
+[00:52:20] screen 1080x2340
+[00:52:20] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:53:13] launch
+[00:53:35] shot 01-launch (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:53:37] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it)$/ at 540 2063
+[00:53:41] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it)$/ at 945 233
+[00:53:45] not found /(?i)^(skip|next|continue|get started|allow|ok|got it)$/
+[00:53:52] not found /(?i)^(allow|ok|not now|later|no thanks|got it|consent|accept|done)$/
+[00:53:54] shot 02-today (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:53:56] not found /(?i)^journal$/
+[00:54:04] shot 04-journal (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:54:06] not found /(?i)^insights$/
+[00:54:15] shot 05-insights (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:54:16] not found /(?i)^reports$/
+[00:54:25] shot 08-reports (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:54:27] tapped /(?i)^today$/ at 161 618
+[00:54:34] tapped /(?i)^upgrade to pro$/ at 871 233
+[00:54:41] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:54:43] tapped /(?i)^monthly$/ at 294 1228
+[00:54:48] tapped /(?i)^subscribe$/ at 540 1425
+[00:54:55] shot 11-email (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:55:00] type
+[00:55:04] tapped /(?i)^continue$/ at 847 1047
+[00:55:33] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+[00:55:35] tapped /(?i)^close$/ at 943 219
+[00:55:42] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{bcbb634 u0 com.chartmann.symptomdiary/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 00:55:05.136  5543  5543 I DirectBilling: checkout opened app=symptomdiary product=symptom_pro:monthly session=cs_live_acChl4Ql44qI0pLxhN9pwqdCRaL0cAGPfoOWRQUYTjMbssrBKzV1T7uOwJ
+[00:55:44] pidof com.chartmann.symptomdiary: 5543
+[00:55:44] fatal lines: 0 crash-buffer lines: 0
+[00:55:44] ads lines: 53
+[01:01:34] screen 1080x2340
+[01:01:34] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:01:53] force-stop
+[01:01:55] launch
+[01:02:12] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:02:15] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{d21fcab u0 com.chartmann.symptomdiary/.MainActivity t10})
+[01:02:17] not found /(?i)^(done|not now)$/
+[01:02:23] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{d21fcab u0 com.chartmann.symptomdiary/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:01:56.944  7789  7817 I DirectBilling: license saved app=symptomdiary entitlements=["symptom_pro:monthly"]
+[01:02:25] pidof com.chartmann.symptomdiary: 7789
+[01:02:25] fatal lines: 0 crash-buffer lines: 0
+[01:02:25] ads lines: 24
+[01:02:26] screen 1080x2340
+[01:02:26] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:02:45] launch
+[01:03:07] shot 01-launch (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:03:09] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it)$/ at 540 2063
+[01:03:13] tapped /(?i)^(skip|next|continue|get started|allow|ok|got it)$/ at 945 233
+[01:03:16] not found /(?i)^(skip|next|continue|get started|allow|ok|got it)$/
+[01:03:24] not found /(?i)^(allow|ok|not now|later|no thanks|got it|consent|accept|done)$/
+[01:03:26] tapped /(?i)^upgrade to pro$/ at 871 233
+[01:03:33] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:03:35] tapped /(?i)^restore$/ at 571 1983
+[01:03:42] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:03:44] tapped /@/ at 540 1227
+[01:03:51] type
+[01:03:54] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:03:56] tapped /(?i)^continue$/ at 847 1031
+[01:04:02] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:04:12] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:04:14] tapped /(?i)^restore$/ at 571 2018
+[01:04:21] tapped /@/ at 540 1227
+[01:04:30] type
+[01:04:33] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:04:35] tapped /(?i)^continue$/ at 847 1031
+[01:04:54] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+[01:04:56] tapped /(?i)^(done|not now)$/ at 834 1646
+[01:05:02] shot 23-pro-active (fg:  mResumedActivity: ActivityRecord{3a75a18 u0 com.chartmann.symptomdiary/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 01:03:56.916  8407  9102 I DirectBilling: license saved app=symptomdiary entitlements=[]
+11-12 01:04:35.465  8407  9360 I DirectBilling: license saved app=symptomdiary entitlements=["symptom_pro:monthly"]
+[01:05:04] pidof com.chartmann.symptomdiary: 8407
+[01:05:04] fatal lines: 0 crash-buffer lines: 0
+[01:05:04] ads lines: 31
+[01:05:04] screen 1080x2340
+[01:05:04] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:05:23] force-stop
+[01:05:25] launch
+[01:05:42] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:05:45] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{205463e u0 com.chartmann.symptomdiary/.MainActivity t12})
+[01:05:47] not found /(?i)^(done|not now)$/
+[01:05:53] shot 323-pro-active (fg:  mResumedActivity: ActivityRecord{205463e u0 com.chartmann.symptomdiary/.MainActivity t12})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+[01:05:55] pidof com.chartmann.symptomdiary: 9617
+[01:05:55] fatal lines: 0 crash-buffer lines: 0
+[01:05:55] ads lines: 5

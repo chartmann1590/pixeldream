@@ -1,0 +1,2 @@
+11-12 01:03:56.916  8407  9102 I DirectBilling: license saved app=symptomdiary entitlements=[]
+11-12 01:04:35.465  8407  9360 I DirectBilling: license saved app=symptomdiary entitlements=["symptom_pro:monthly"]
