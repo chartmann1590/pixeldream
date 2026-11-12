@@ -1,0 +1,39 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 15
+tap (?i)^wait$
+wait 3
+tap (?i)^wait$
+launch
+wait 6
+shot 01-onboarding
+tap (?i)^next$
+wait 2
+sh input keyevent 24
+wait 2
+shot 02-volume-test
+tap (?i)^go to the yard$
+wait 3
+tap (?i)^\+ hive$
+wait 2
+tap (?i)^name$
+type Hive%s1
+tap (?i)^save$
+wait 3
+shot 03-yard
+tap (?i)^season$
+wait 3
+shot 09-paywall
+scrollto (?i)^subscribe monthly$
+wait 3
+shot 10-email
+type hartmannstudios+hivecall1112p@mail.tab.bot
+tap (?i)^continue$
+wait 25
+shot 11-stripe-checkout
+tap (?i)^close$
+wait 3
+shot 12-after-close
+
+sh logcat -d -s DirectBilling
