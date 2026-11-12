@@ -1,4 +1,4 @@
-E2E_ID=1110r48932
-E2E_APP=owefolkrqa
+E2E_ID=1110s53448
+E2E_APP=owefolksqa
 E2E_PKG=com.charles.owefolk
 E2E_APK=https://github.com/chartmann1590/owefolk/releases/download/direct-13/Owefolk-direct-release.apk
