@@ -1,0 +1,76 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 15
+tap (?i)^wait$
+wait 3
+tap (?i)^wait$
+launch
+wait 6
+shot 01-first-launch
+tapxy 500 400
+wait 3
+shot 02-house-dropped
+tap (?i)^\+ well$
+wait 1
+tapxy 300 300
+wait 3
+tap (?i)^\+ septic tank$
+wait 1
+tapxy 650 480
+wait 3
+shot 03-pins
+tapxy 300 300
+wait 2
+shot 04-pin-selected
+tap (?i)^open card$
+wait 3
+shot 05-card
+tap (?i)^log a service$
+wait 2
+type Inspected
+tap (?i)^save$
+wait 2
+shot 06-logged
+back
+wait 2
+tap (?i)^power out$
+wait 3
+shot 07-power-out
+tap (?i)^outage checklist$
+wait 2
+shot 08-checklist
+back
+tap (?i)^systems$
+wait 2
+tap (?i)^freeze watch$
+wait 3
+shot 20-paywall-fresh-install
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-dialog
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-acreage-1112d@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+acreage1112d@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 3
+shot 22-right-email-result
+wait 8
+swipedown
+swipedown
+swipedown
+wait 2
+shot 23-paywall-after-restore
+sh logcat -d -s DirectBilling
