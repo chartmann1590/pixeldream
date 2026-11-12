@@ -1,0 +1,8 @@
+com.hartmannstudios.lidline|Lidline||false|[55,211][437,341]
+com.hartmannstudios.lidline|From lid to label. Log the batch, check every seal, print labels with a batch QR, and scan a jar later to see its record.||false|[55,341][1025,539]
+com.hartmannstudios.lidline|PICK YOUR LABEL SIZE||false|[55,583][484,649]
+com.hartmannstudios.lidline|Avery 5160 (30/sheet)||false|[88,847][664,913]
+com.hartmannstudios.lidline|Avery 22807 (12 round)||false|[88,1001][692,1067]
+com.hartmannstudios.lidline|Thermal 2x1||false|[88,1155][391,1221]
+com.hartmannstudios.lidline|Lidline is a record keeper, not a canning authority. Follow a tested recipe from a recognised source.||false|[88,1447][992,1579]
+com.hartmannstudios.lidline|Continue||false|[0,0][0,0]

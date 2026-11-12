@@ -1,0 +1,1 @@
+11-12 09:26:07.818  7619  7641 I DirectBilling: license saved app=lidline entitlements=["lidline_pro_yearly"]

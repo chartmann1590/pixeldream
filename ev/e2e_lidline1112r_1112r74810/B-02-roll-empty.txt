@@ -1,0 +1,7 @@
+com.hartmannstudios.lidline|Lidline is a record keeper, not a canning authority. Follow a tested recipe from a recognised source.||false|[33,162][1047,294]
+com.hartmannstudios.lidline|Label roll||false|[44,344][432,442]
+com.hartmannstudios.lidline|No batches yet. Start one with + Batch.||false|[44,486][855,552]
+com.hartmannstudios.lidline|Test Ad||false|[465,1821][614,1877]
+com.hartmannstudios.lidline|+ Batch||false|[0,0][0,0]
+com.hartmannstudios.lidline|Labels &amp; settings||false|[0,0][0,0]
+com.hartmannstudios.lidline||Scan a jar|false|[926,2065][992,2072]
