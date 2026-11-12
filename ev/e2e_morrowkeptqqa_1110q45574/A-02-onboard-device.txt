@@ -1,0 +1,7 @@
+com.google.android.apps.nexuslauncher||Apps list|true|[515,1740][565,1757]
+com.google.android.apps.nexuslauncher|Thursday, Nov 12|Thursday, Nov 12|true|[125,167][699,478]
+com.google.android.apps.nexuslauncher|70°F|Clear, 70°F|true|[699,167][956,478]
+com.google.android.apps.nexuslauncher|Messages|Messages|true|[239,1757][440,1972]
+com.google.android.apps.nexuslauncher|Chrome|Chrome|true|[641,1757][842,1972]
+com.google.android.apps.nexuslauncher||Search|true|[52,2006][1028,2072]
+com.google.android.apps.nexuslauncher||Voice search|true|[865,2006][1019,2072]

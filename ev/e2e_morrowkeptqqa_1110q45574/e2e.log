@@ -1,0 +1,8 @@
+[01:08:23] phase A
+[01:14:30] ready posted; waiting for go
+[01:23:01] go=unlockfail
+[01:23:01] phase A2
+[01:24:38] uninstall
+Failure [DELETE_FAILED_INTERNAL_ERROR]
+[01:24:38] phase B
+[01:32:49] phase B2

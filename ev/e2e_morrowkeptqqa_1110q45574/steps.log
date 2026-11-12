@@ -1,0 +1,279 @@
+[01:08:24] screen 1080x2340
+[01:08:24] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl1633450396.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:08:46] launch
+[01:09:08] shot 01-launch (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:09:10] not found /(?i)^continue$/
+[01:09:17] shot 02-onboard-device (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:09:18] not found /(?i)^continue$/
+[01:09:25] not found /(?i)^continue$/
+[01:09:32] not found /(?i)^I accept the terms/
+[01:09:35] not found /(?i)^I accept the terms/
+[01:09:39] not found /(?i)^I accept the terms/
+[01:09:42] not found /(?i)^I accept the terms/
+[01:09:46] not found /(?i)^I accept the terms/
+[01:09:49] not found /(?i)^I accept the terms/
+[01:09:53] not found /(?i)^I accept the terms/
+[01:09:57] not found /(?i)^I accept the terms/
+[01:10:00] not found /(?i)^I accept the terms/
+[01:10:04] not found /(?i)^I accept the terms/
+[01:10:07] not found /(?i)^I accept the terms/
+[01:10:11] not found /(?i)^I accept the terms/
+[01:10:13] scrollto: never found /(?i)^I accept the terms/
+checkbox 
+/system/bin/sh:  (+)/2 : unexpected ')'
+[01:10:20] shot 03-onboard-privacy (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:10:22] not found /(?i)^continue$/
+[01:10:25] not found /(?i)^continue$/
+[01:10:29] not found /(?i)^continue$/
+[01:10:32] not found /(?i)^continue$/
+[01:10:36] not found /(?i)^continue$/
+[01:10:39] not found /(?i)^continue$/
+[01:10:43] not found /(?i)^continue$/
+[01:10:47] not found /(?i)^continue$/
+[01:10:50] not found /(?i)^continue$/
+[01:10:54] not found /(?i)^continue$/
+[01:10:57] not found /(?i)^continue$/
+[01:11:01] not found /(?i)^continue$/
+[01:11:03] scrollto: never found /(?i)^continue$/
+[01:11:10] shot 04-onboard-watch (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:11] not found /(?i)^continue/
+[01:11:18] not found /(?i)^continue$/
+[01:11:25] shot 05-onboard-model (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:26] not found /(?i)^(continue|open my journal)$/
+[01:11:34] shot 06-timeline (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:36] not found /(?i)^collections$/
+[01:11:43] shot 07-collections (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:44] not found /(?i)^ask$/
+[01:11:51] shot 08-ask (fg:  mResumedActivity: ActivityRecord{becf81c u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:11:53] not found /(?i)^timeline$/
+[01:11:59] tapped /(?i)^settings$/ at 740 1120
+[01:12:07] shot 09-settings (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:12:08] not found /(?i)^go ad-free$/
+[01:12:12] not found /(?i)^go ad-free$/
+[01:12:15] not found /(?i)^go ad-free$/
+[01:12:19] not found /(?i)^go ad-free$/
+[01:12:22] not found /(?i)^go ad-free$/
+[01:12:26] not found /(?i)^go ad-free$/
+[01:12:29] not found /(?i)^go ad-free$/
+[01:12:33] not found /(?i)^go ad-free$/
+[01:12:37] not found /(?i)^go ad-free$/
+[01:12:40] not found /(?i)^go ad-free$/
+[01:12:44] not found /(?i)^go ad-free$/
+[01:12:47] not found /(?i)^go ad-free$/
+[01:12:49] scrollto: never found /(?i)^go ad-free$/
+[01:12:55] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:12:56] not found /(?i)^subscribe \(/
+[01:13:00] not found /(?i)^subscribe \(/
+[01:13:04] not found /(?i)^subscribe \(/
+[01:13:07] not found /(?i)^subscribe \(/
+[01:13:11] not found /(?i)^subscribe \(/
+[01:13:14] not found /(?i)^subscribe \(/
+[01:13:18] not found /(?i)^subscribe \(/
+[01:13:21] not found /(?i)^subscribe \(/
+[01:13:25] not found /(?i)^subscribe \(/
+[01:13:28] not found /(?i)^subscribe \(/
+[01:13:32] not found /(?i)^subscribe \(/
+[01:13:36] not found /(?i)^subscribe \(/
+[01:13:38] scrollto: never found /(?i)^subscribe \(/
+[01:13:45] shot 11-email (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:13:46] type
+[01:13:48] not found /(?i)^continue$/
+[01:14:17] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:14:19] not found /(?i)^close$/
+[01:14:26] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:14:28] pidof com.charles.morrowkept: not running
+[01:14:28] fatal lines: 0 crash-buffer lines: 0
+[01:14:28] ads lines: 16
+[01:23:01] screen 1080x2340
+[01:23:01] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl1032005081.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:23:17] force-stop
+[01:23:19] launch
+[01:23:36] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:23:39] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:23:40] not found /(?i)^ad-free subscription active$/
+[01:23:44] not found /(?i)^ad-free subscription active$/
+[01:23:47] not found /(?i)^ad-free subscription active$/
+[01:23:51] not found /(?i)^ad-free subscription active$/
+[01:23:55] not found /(?i)^ad-free subscription active$/
+[01:23:58] not found /(?i)^ad-free subscription active$/
+[01:24:02] not found /(?i)^ad-free subscription active$/
+[01:24:05] not found /(?i)^ad-free subscription active$/
+[01:24:09] not found /(?i)^ad-free subscription active$/
+[01:24:12] not found /(?i)^ad-free subscription active$/
+[01:24:16] not found /(?i)^ad-free subscription active$/
+[01:24:19] not found /(?i)^ad-free subscription active$/
+[01:24:21] scrollto: never found /(?i)^ad-free subscription active$/
+[01:24:27] shot 11-ad-free-active (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:24:29] not found /(?i)^back$/
+[01:24:36] shot 12-timeline-no-banner (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+[01:24:38] pidof com.charles.morrowkept: not running
+[01:24:38] fatal lines: 0 crash-buffer lines: 0
+[01:24:38] ads lines: 0
+[01:24:38] screen 1080x2340
+[01:24:38] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl1453911069.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:24:54] launch
+[01:25:15] shot 01-launch (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:25:17] not found /(?i)^continue$/
+[01:25:24] shot 02-onboard-device (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:25:25] not found /(?i)^continue$/
+[01:25:32] not found /(?i)^continue$/
+[01:25:38] not found /(?i)^I accept the terms/
+[01:25:42] not found /(?i)^I accept the terms/
+[01:25:46] not found /(?i)^I accept the terms/
+[01:25:49] not found /(?i)^I accept the terms/
+[01:25:53] not found /(?i)^I accept the terms/
+[01:25:56] not found /(?i)^I accept the terms/
+[01:26:00] not found /(?i)^I accept the terms/
+[01:26:03] not found /(?i)^I accept the terms/
+[01:26:07] not found /(?i)^I accept the terms/
+[01:26:10] not found /(?i)^I accept the terms/
+[01:26:14] not found /(?i)^I accept the terms/
+[01:26:18] not found /(?i)^I accept the terms/
+[01:26:20] scrollto: never found /(?i)^I accept the terms/
+checkbox 
+/system/bin/sh:  (+)/2 : unexpected ')'
+[01:26:27] shot 03-onboard-privacy (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:26:28] not found /(?i)^continue$/
+[01:26:32] not found /(?i)^continue$/
+[01:26:35] not found /(?i)^continue$/
+[01:26:39] not found /(?i)^continue$/
+[01:26:43] not found /(?i)^continue$/
+[01:26:46] not found /(?i)^continue$/
+[01:26:50] not found /(?i)^continue$/
+[01:26:53] not found /(?i)^continue$/
+[01:26:57] not found /(?i)^continue$/
+[01:27:00] not found /(?i)^continue$/
+[01:27:04] not found /(?i)^continue$/
+[01:27:07] not found /(?i)^continue$/
+[01:27:09] scrollto: never found /(?i)^continue$/
+[01:27:16] shot 04-onboard-watch (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:27:18] not found /(?i)^continue/
+[01:27:24] not found /(?i)^continue$/
+[01:27:31] shot 05-onboard-model (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:27:33] not found /(?i)^(continue|open my journal)$/
+[01:27:41] not found /(?i)^settings$/
+[01:27:48] not found /(?i)^go ad-free$/
+[01:27:52] not found /(?i)^go ad-free$/
+[01:27:55] not found /(?i)^go ad-free$/
+[01:27:59] not found /(?i)^go ad-free$/
+[01:28:02] not found /(?i)^go ad-free$/
+[01:28:06] not found /(?i)^go ad-free$/
+[01:28:09] not found /(?i)^go ad-free$/
+[01:28:13] not found /(?i)^go ad-free$/
+[01:28:17] not found /(?i)^go ad-free$/
+[01:28:20] not found /(?i)^go ad-free$/
+[01:28:24] not found /(?i)^go ad-free$/
+[01:28:27] not found /(?i)^go ad-free$/
+[01:28:29] scrollto: never found /(?i)^go ad-free$/
+[01:28:35] shot 09-paywall-before (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:28:36] not found /(?i)^restore purchases$/
+[01:28:40] not found /(?i)^restore purchases$/
+[01:28:44] not found /(?i)^restore purchases$/
+[01:28:47] not found /(?i)^restore purchases$/
+[01:28:51] not found /(?i)^restore purchases$/
+[01:28:54] not found /(?i)^restore purchases$/
+[01:28:58] not found /(?i)^restore purchases$/
+[01:29:01] not found /(?i)^restore purchases$/
+[01:29:05] not found /(?i)^restore purchases$/
+[01:29:08] not found /(?i)^restore purchases$/
+[01:29:12] not found /(?i)^restore purchases$/
+[01:29:15] not found /(?i)^restore purchases$/
+[01:29:17] scrollto: never found /(?i)^restore purchases$/
+[01:29:25] not found /@/
+[01:29:34] typefix field=''
+[01:29:40] typefix field=''
+[01:29:46] typefix field=''
+[01:29:52] typefix field=''
+[01:29:54] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:29:56] not found /(?i)^continue$/
+[01:30:01] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:30:11] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:30:13] not found /(?i)^restore purchases$/
+[01:30:16] not found /(?i)^restore purchases$/
+[01:30:20] not found /(?i)^restore purchases$/
+[01:30:23] not found /(?i)^restore purchases$/
+[01:30:27] not found /(?i)^restore purchases$/
+[01:30:30] not found /(?i)^restore purchases$/
+[01:30:34] not found /(?i)^restore purchases$/
+[01:30:38] not found /(?i)^restore purchases$/
+[01:30:41] not found /(?i)^restore purchases$/
+[01:30:45] not found /(?i)^restore purchases$/
+[01:30:48] not found /(?i)^restore purchases$/
+[01:30:52] not found /(?i)^restore purchases$/
+[01:30:54] scrollto: never found /(?i)^restore purchases$/
+[01:31:00] not found /@/
+[01:31:09] typefix field=''
+[01:31:15] typefix field=''
+[01:31:21] typefix field=''
+[01:31:27] typefix field=''
+[01:31:30] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:31:31] not found /(?i)^continue$/
+[01:31:50] shot 10-restored (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:31:51] not found /(?i)^ad-free subscription active$/
+[01:31:55] not found /(?i)^ad-free subscription active$/
+[01:31:58] not found /(?i)^ad-free subscription active$/
+[01:32:02] not found /(?i)^ad-free subscription active$/
+[01:32:06] not found /(?i)^ad-free subscription active$/
+[01:32:09] not found /(?i)^ad-free subscription active$/
+[01:32:13] not found /(?i)^ad-free subscription active$/
+[01:32:16] not found /(?i)^ad-free subscription active$/
+[01:32:20] not found /(?i)^ad-free subscription active$/
+[01:32:23] not found /(?i)^ad-free subscription active$/
+[01:32:27] not found /(?i)^ad-free subscription active$/
+[01:32:30] not found /(?i)^ad-free subscription active$/
+[01:32:32] scrollto: never found /(?i)^ad-free subscription active$/
+[01:32:38] shot 11-ad-free-active (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:32:40] not found /(?i)^back$/
+[01:32:46] shot 12-timeline-no-banner (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:32:49] pidof com.charles.morrowkept: not running
+[01:32:49] fatal lines: 0 crash-buffer lines: 0
+[01:32:49] ads lines: 0
+[01:32:49] screen 1080x2340
+[01:32:49] install dsk-apk/app.apk
+Performing Streamed Install
+adb: failed to install dsk-apk/app.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse during installPackageLI: /data/app/vmdl806698760.tmp/base.apk (at Binary XML file line #7): Requires newer sdk version #31 (current version is #30)]
+
+[01:33:04] force-stop
+[01:33:06] launch
+[01:33:23] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:33:26] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:33:28] not found /(?i)^ad-free subscription active$/
+[01:33:31] not found /(?i)^ad-free subscription active$/
+[01:33:35] not found /(?i)^ad-free subscription active$/
+[01:33:39] not found /(?i)^ad-free subscription active$/
+[01:33:42] not found /(?i)^ad-free subscription active$/
+[01:33:46] not found /(?i)^ad-free subscription active$/
+[01:33:49] not found /(?i)^ad-free subscription active$/
+[01:33:53] not found /(?i)^ad-free subscription active$/
+[01:33:56] not found /(?i)^ad-free subscription active$/
+[01:34:00] not found /(?i)^ad-free subscription active$/
+[01:34:03] not found /(?i)^ad-free subscription active$/
+[01:34:07] not found /(?i)^ad-free subscription active$/
+[01:34:09] scrollto: never found /(?i)^ad-free subscription active$/
+[01:34:15] shot 311-ad-free-active (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+[01:34:16] not found /(?i)^back$/
+[01:34:23] shot 312-timeline-no-banner (fg:  mResumedActivity: ActivityRecord{b0b3147 u0 com.android.settings/.Settings t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:34:25] pidof com.charles.morrowkept: not running
+[01:34:25] fatal lines: 0 crash-buffer lines: 0
+[01:34:25] ads lines: 0
