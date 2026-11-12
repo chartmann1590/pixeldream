@@ -1,0 +1,1 @@
+11-12 09:06:53.861  7579  7593 E AndroidRuntime: FATAL EXCEPTION: UiAutomation
