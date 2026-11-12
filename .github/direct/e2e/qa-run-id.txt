@@ -1,4 +1,4 @@
-E2E_ID=1110q45592
-E2E_APP=shapeshadeqqa
-E2E_PKG=com.charles.shapeshade
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/shapeshade-direct-2/ShapeShade-direct-release.apk
+E2E_ID=1110q45601
+E2E_APP=warmwordqqa
+E2E_PKG=com.charles.warmwords
+E2E_APK=https://github.com/chartmann1590/warmword/releases/download/direct-6/WarmWord-direct-release.apk
