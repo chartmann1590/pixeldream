@@ -1,4 +1,4 @@
-E2E_ID=1112d72466
-E2E_APP=regday1112d
-E2E_PKG=com.hartmannstudios.regday
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/regday-direct-1/Regday-direct-release.apk
+E2E_ID=1112d72468
+E2E_APP=hivecall1112d
+E2E_PKG=com.hartmannstudios.hivecall
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/hivecall-direct-1/Hivecall-direct-release.apk
