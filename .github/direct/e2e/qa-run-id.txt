@@ -1,4 +1,4 @@
-E2E_ID=1110q45547
-E2E_APP=crowdtransitqqa
-E2E_PKG=com.charles.crowdtransit.app
-E2E_APK=https://github.com/chartmann1590/crowdsource-transit/releases/download/direct-4/CrowdTransit-direct-release.apk
+E2E_ID=1110q45556
+E2E_APP=cruisewatchqqa
+E2E_PKG=com.cruisewatch.app
+E2E_APK=https://github.com/chartmann1590/cruise-monitor/releases/download/direct-9/CruiseWatch-direct-release.apk
