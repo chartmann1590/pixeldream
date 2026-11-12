@@ -1,0 +1,5 @@
+com.hartmannstudios.acreage|Checkout with Stripe||false|[138,927][942,1001]
+com.hartmannstudios.acreage|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[72,1001][1008,1164]
+com.hartmannstudios.acreage|you@example.com||true|[120,1180][960,1304]
+com.hartmannstudios.acreage|CANCEL||true|[506,1315][719,1464]
+com.hartmannstudios.acreage|CONTINUE||true|[719,1315][975,1464]

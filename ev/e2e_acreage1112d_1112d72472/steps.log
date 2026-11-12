@@ -1,0 +1,139 @@
+[08:38:21] screen 1080x2340
+[08:38:21] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:39:09] launch
+[08:39:26] not found /(?i)^wait$/
+[08:39:33] not found /(?i)^wait$/
+[08:39:35] launch
+[08:39:43] shot 01-first-launch (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:39:43] tapxy permille 500 400
+[08:39:50] shot 02-house-dropped (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:39:52] tapped /(?i)^\+ well$/ at 130 2017
+[08:39:56] tapxy permille 300 300
+[08:40:03] tapped /(?i)^\+ septic tank$/ at 725 2017
+[08:40:06] tapxy permille 650 480
+[08:40:13] shot 03-pins (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:40:14] tapxy permille 300 300
+[08:40:20] shot 04-pin-selected (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:40:22] tapped /(?i)^open card$/ at 163 2052
+[08:40:28] shot 05-card (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:40:30] tapped /(?i)^log a service$/ at 540 569
+[08:40:36] type
+[08:40:39] tapped /(?i)^save$/ at 834 1197
+[08:40:45] shot 06-logged (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:40:45] back
+[08:40:51] tapped /(?i)^power out$/ at 579 370
+[08:40:58] shot 07-power-out (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:41:00] tapped /(?i)^outage checklist$/ at 524 1950
+[08:41:06] shot 08-checklist (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:41:06] back
+[08:41:10] tapped /(?i)^systems$/ at 153 370
+[08:41:17] tapped /(?i)^freeze watch$/ at 849 244
+[08:41:23] shot 09-paywall (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:41:25] tapped /(?i)^subscribe monthly$/ at 540 1233
+[08:41:32] shot 10-email (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:41:35] type
+[08:41:38] tapped /(?i)^continue$/ at 847 1047
+[08:42:07] shot 11-stripe-checkout (fg:  mResumedActivity: ActivityRecord{1d5f43a u0 com.hartmannstudios.acreage/.MainActivity t9})
+[08:42:09] tapped /(?i)^close$/ at 943 219
+[08:42:15] back
+[08:42:18] back
+[08:42:21] not found /(?i)^settings$/
+[08:42:27] shot 12-settings (fg:  mResumedActivity: ActivityRecord{dae7318 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 08:41:39.142  5570  5570 I DirectBilling: checkout opened app=acreage product=acreage_pro_monthly session=cs_live_ac68Utjjj8buaimS7bHDuuRM48H2PZydnGhtmedvFzltwkYz9zbt1bUogD
+[08:42:29] pidof com.hartmannstudios.acreage: 5570
+[08:42:29] fatal lines: 0 crash-buffer lines: 0
+[08:42:29] ads lines: 200
+[08:43:33] screen 1080x2340
+[08:43:33] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:43:51] force-stop
+[08:43:53] launch
+[08:44:10] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:44:13] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{1345faf u0 com.hartmannstudios.acreage/.MainActivity t10})
+[08:44:15] tapped /(?i)^settings$/ at 981 244
+[08:44:23] shot 11-settings (fg:  mResumedActivity: ActivityRecord{1345faf u0 com.hartmannstudios.acreage/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 08:43:53.924  7756  7779 I DirectBilling: license saved app=acreage entitlements=[]
+[08:44:25] pidof com.hartmannstudios.acreage: 7756
+[08:44:25] fatal lines: 0 crash-buffer lines: 0
+[08:44:25] ads lines: 83
+[08:44:26] screen 1080x2340
+[08:44:26] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:44:44] launch
+[08:45:01] not found /(?i)^wait$/
+[08:45:07] not found /(?i)^wait$/
+[08:45:09] launch
+[08:45:17] shot 01-first-launch (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:45:18] tapxy permille 500 400
+[08:45:25] shot 02-house-dropped (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:45:27] tapped /(?i)^\+ well$/ at 130 2017
+[08:45:30] tapxy permille 300 300
+[08:45:37] tapped /(?i)^\+ septic tank$/ at 725 2017
+[08:45:41] tapxy permille 650 480
+[08:45:48] shot 03-pins (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:45:48] tapxy permille 300 300
+[08:45:54] shot 04-pin-selected (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:45:56] tapped /(?i)^open card$/ at 163 2052
+[08:46:03] shot 05-card (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:46:05] tapped /(?i)^log a service$/ at 540 569
+[08:46:10] type
+[08:46:13] tapped /(?i)^save$/ at 834 1197
+[08:46:19] shot 06-logged (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:46:19] back
+[08:46:25] tapped /(?i)^power out$/ at 579 370
+[08:46:32] shot 07-power-out (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:46:34] tapped /(?i)^outage checklist$/ at 524 1950
+[08:46:40] shot 08-checklist (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:46:40] back
+[08:46:45] tapped /(?i)^systems$/ at 153 370
+[08:46:51] tapped /(?i)^freeze watch$/ at 849 244
+[08:46:57] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:46:59] tapped /(?i)^restore purchases$/ at 540 1863
+[08:47:06] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:47:08] tapped /@/ at 540 1227
+[08:47:18] typefix field='nobody-acreage-1112d@example.com'
+[08:47:20] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:47:22] tapped /(?i)^continue$/ at 847 1031
+[08:47:28] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:47:38] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:47:40] tapped /(?i)^restore purchases$/ at 540 1863
+[08:47:47] tapped /@/ at 540 1227
+[08:48:00] typefix field='hartmannstudios+acreage1112d@mail.tab.bot'
+[08:48:01] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:48:03] tapped /(?i)^continue$/ at 847 1031
+[08:48:10] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+[08:48:28] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{a97822f u0 com.hartmannstudios.acreage/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 08:47:23.138  8592 10147 I DirectBilling: license saved app=acreage entitlements=[]
+11-12 08:48:03.503  8592 10388 I DirectBilling: license saved app=acreage entitlements=[]
+[08:48:30] pidof com.hartmannstudios.acreage: 8592
+[08:48:30] fatal lines: 0 crash-buffer lines: 0
+[08:48:30] ads lines: 156
+[08:48:30] screen 1080x2340
+[08:48:30] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:48:48] force-stop
+[08:48:50] launch
+[08:49:07] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:49:10] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{47ddfa4 u0 com.hartmannstudios.acreage/.MainActivity t12})
+[08:49:12] tapped /(?i)^settings$/ at 981 244
+[08:49:20] shot 31-settings (fg:  mResumedActivity: ActivityRecord{47ddfa4 u0 com.hartmannstudios.acreage/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:49:22] pidof com.hartmannstudios.acreage: 10728
+[08:49:22] fatal lines: 0 crash-buffer lines: 0
+[08:49:22] ads lines: 86
