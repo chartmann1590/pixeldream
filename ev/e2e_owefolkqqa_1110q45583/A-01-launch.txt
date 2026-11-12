@@ -1,0 +1,6 @@
+com.charles.owefolk|Help us improve Owefolk||false|[175,874][905,962]
+com.charles.owefolk|Owefolk can collect anonymous crash reports and usage data to fix bugs and improve the app.||false|[166,1006][914,1171]
+com.charles.owefolk|No personal data, payment details, or expense amounts are ever collected.||false|[166,1193][914,1281]
+com.charles.owefolk|You can change this anytime in Profile &gt; Privacy.||false|[166,1303][914,1391]
+com.charles.owefolk|Decline||false|[506,1496][632,1551]
+com.charles.owefolk|Allow||false|[753,1496][848,1551]

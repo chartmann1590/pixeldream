@@ -1,0 +1,199 @@
+[01:08:47] screen 1080x2340
+[01:08:47] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:09:24] launch
+[01:09:45] shot 01-launch (fg:  mResumedActivity: ActivityRecord{82c28fa u0 com.charles.owefolk/.MainActivity t9})
+[01:09:47] tapped /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/ at 800 1523
+[01:09:51] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/
+[01:09:56] shot 02-auth (fg:  mResumedActivity: ActivityRecord{82c28fa u0 com.charles.owefolk/.MainActivity t9})
+[01:09:58] tapped /(?i)^email address$/ at 420 1345
+[01:10:02] type
+[01:10:04] back
+[01:10:09] tapped /(?i)^password$/ at 280 1560
+[01:10:13] type
+[01:10:14] back
+[01:10:19] shot 02b-auth-filled (fg:  mResumedActivity: ActivityRecord{82c28fa u0 com.charles.owefolk/.MainActivity t9})
+[01:10:21] tapped /(?i)^create account$/ at 332 1747
+[01:10:35] tapped /(?i)^sign in$/ at 748 1678
+[01:10:49] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it|skip|continue|done|next)$/
+[01:10:50] shot 02c-setup (fg:  mResumedActivity: ActivityRecord{82c28fa u0 com.charles.owefolk/.MainActivity t9})
+[01:10:52] not found /(?i)^your name$/
+[01:10:55] type
+[01:10:57] back
+[01:11:00] launch
+[01:11:08] not found /(?i)^continue$/
+[01:11:15] shot 02d-payment (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:11:16] not found /(?i)^cash$/
+[01:11:20] not found /(?i)^cash$/
+[01:11:23] not found /(?i)^cash$/
+[01:11:27] not found /(?i)^cash$/
+[01:11:30] not found /(?i)^cash$/
+[01:11:33] not found /(?i)^cash$/
+[01:11:37] not found /(?i)^cash$/
+[01:11:40] not found /(?i)^cash$/
+[01:11:44] not found /(?i)^cash$/
+[01:11:47] not found /(?i)^cash$/
+[01:11:51] not found /(?i)^cash$/
+[01:11:54] not found /(?i)^cash$/
+[01:11:56] scrollto: never found /(?i)^cash$/
+[01:12:02] shot 02d2-cash (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:03] not found /(?i)^continue$/
+[01:12:10] shot 02e-group (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:12] not found /(?i)^skip for now$/
+[01:12:19] not found /(?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$/
+[01:12:25] shot 03-home (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:26] not found /(?i)^groups$/
+[01:12:33] shot 04-groups (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:35] not found /(?i)^activity$/
+[01:12:41] shot 05-activity (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:43] not found /(?i)^profile$/
+[01:12:51] shot 06-profile (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:12:53] not found /(?i)^upgrade$/
+[01:12:56] not found /(?i)^upgrade$/
+[01:13:00] not found /(?i)^upgrade$/
+[01:13:03] not found /(?i)^upgrade$/
+[01:13:07] not found /(?i)^upgrade$/
+[01:13:10] not found /(?i)^upgrade$/
+[01:13:14] not found /(?i)^upgrade$/
+[01:13:17] not found /(?i)^upgrade$/
+[01:13:20] not found /(?i)^upgrade$/
+[01:13:24] not found /(?i)^upgrade$/
+[01:13:27] not found /(?i)^upgrade$/
+[01:13:31] not found /(?i)^upgrade$/
+[01:13:33] scrollto: never found /(?i)^upgrade$/
+[01:13:40] shot 11-email (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:13:40] type
+[01:13:43] not found /(?i)^continue$/
+[01:14:11] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:14:13] not found /(?i)^close$/
+[01:14:20] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{547293c u0 com.charles.owefolk/.MainActivity t10})
+[01:14:22] pidof com.charles.owefolk: 5414
+[01:14:22] fatal lines: 0 crash-buffer lines: 0
+[01:14:22] ads lines: 19
+[01:23:17] screen 1080x2340
+[01:23:17] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:23:34] force-stop
+[01:23:37] launch
+[01:23:53] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:23:57] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{59b74fc u0 com.charles.owefolk/.MainActivity t11})
+[01:23:58] shot 23-profile-premium (fg:  mResumedActivity: ActivityRecord{59b74fc u0 com.charles.owefolk/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:24:00] pidof com.charles.owefolk: 9362
+[01:24:00] fatal lines: 0 crash-buffer lines: 0
+[01:24:00] ads lines: 2
+[01:24:01] screen 1080x2340
+[01:24:01] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:24:19] launch
+[01:24:41] tapped /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/ at 800 1523
+[01:24:44] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it)$/
+[01:24:49] shot 02-auth (fg:  mResumedActivity: ActivityRecord{6cb7b3b u0 com.charles.owefolk/.MainActivity t12})
+[01:24:51] tapped /(?i)^email address$/ at 420 1345
+[01:24:55] type
+[01:24:57] back
+[01:25:02] tapped /(?i)^password$/ at 280 1560
+[01:25:06] type
+[01:25:07] back
+[01:25:12] shot 02b-auth-filled (fg:  mResumedActivity: ActivityRecord{6cb7b3b u0 com.charles.owefolk/.MainActivity t12})
+[01:25:14] tapped /(?i)^create account$/ at 332 1747
+[01:25:28] tapped /(?i)^sign in$/ at 748 1678
+[01:25:42] not found /(?i)^(allow|ok|not now|later|maybe later|no thanks|accept|agree|consent|got it|skip|continue|done|next)$/
+[01:25:44] shot 02c-setup (fg:  mResumedActivity: ActivityRecord{6cb7b3b u0 com.charles.owefolk/.MainActivity t12})
+[01:25:45] not found /(?i)^your name$/
+[01:25:49] type
+[01:25:50] back
+[01:25:53] launch
+[01:26:01] not found /(?i)^continue$/
+[01:26:08] shot 02d-payment (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:26:09] not found /(?i)^cash$/
+[01:26:13] not found /(?i)^cash$/
+[01:26:16] not found /(?i)^cash$/
+[01:26:20] not found /(?i)^cash$/
+[01:26:23] not found /(?i)^cash$/
+[01:26:27] not found /(?i)^cash$/
+[01:26:30] not found /(?i)^cash$/
+[01:26:34] not found /(?i)^cash$/
+[01:26:37] not found /(?i)^cash$/
+[01:26:41] not found /(?i)^cash$/
+[01:26:44] not found /(?i)^cash$/
+[01:26:48] not found /(?i)^cash$/
+[01:26:50] scrollto: never found /(?i)^cash$/
+[01:26:55] shot 02d2-cash (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:26:57] not found /(?i)^continue$/
+[01:27:04] shot 02e-group (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:27:05] not found /(?i)^skip for now$/
+[01:27:12] not found /(?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$/
+[01:27:18] shot 20-home (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:27:20] not found /(?i)^profile$/
+[01:27:28] not found /(?i)^restore purchases$/
+[01:27:31] not found /(?i)^restore purchases$/
+[01:27:35] not found /(?i)^restore purchases$/
+[01:27:38] not found /(?i)^restore purchases$/
+[01:27:42] not found /(?i)^restore purchases$/
+[01:27:45] not found /(?i)^restore purchases$/
+[01:27:49] not found /(?i)^restore purchases$/
+[01:27:52] not found /(?i)^restore purchases$/
+[01:27:56] not found /(?i)^restore purchases$/
+[01:27:59] not found /(?i)^restore purchases$/
+[01:28:03] not found /(?i)^restore purchases$/
+[01:28:06] not found /(?i)^restore purchases$/
+[01:28:08] scrollto: never found /(?i)^restore purchases$/
+[01:28:15] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:28:17] not found /@/
+[01:28:25] typefix field=''
+[01:28:31] typefix field=''
+[01:28:37] typefix field=''
+[01:28:43] typefix field=''
+[01:28:46] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:28:47] not found /(?i)^continue$/
+[01:28:53] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:29:03] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:29:04] not found /(?i)^restore purchases$/
+[01:29:08] not found /(?i)^restore purchases$/
+[01:29:11] not found /(?i)^restore purchases$/
+[01:29:15] not found /(?i)^restore purchases$/
+[01:29:18] not found /(?i)^restore purchases$/
+[01:29:22] not found /(?i)^restore purchases$/
+[01:29:25] not found /(?i)^restore purchases$/
+[01:29:29] not found /(?i)^restore purchases$/
+[01:29:32] not found /(?i)^restore purchases$/
+[01:29:36] not found /(?i)^restore purchases$/
+[01:29:39] not found /(?i)^restore purchases$/
+[01:29:43] not found /(?i)^restore purchases$/
+[01:29:45] scrollto: never found /(?i)^restore purchases$/
+[01:29:51] not found /@/
+[01:30:00] typefix field=''
+[01:30:06] typefix field=''
+[01:30:12] typefix field=''
+[01:30:18] typefix field=''
+[01:30:20] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:30:22] not found /(?i)^continue$/
+[01:30:41] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+[01:30:42] shot 23-profile-premium (fg:  mResumedActivity: ActivityRecord{a924d37 u0 com.charles.owefolk/.MainActivity t13})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:30:44] pidof com.charles.owefolk: 10165
+[01:30:44] fatal lines: 0 crash-buffer lines: 0
+[01:30:44] ads lines: 1
+[01:30:45] screen 1080x2340
+[01:30:45] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:31:02] force-stop
+[01:31:04] launch
+[01:31:21] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:31:24] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{4a0cead u0 com.charles.owefolk/.MainActivity t14})
+[01:31:26] shot 323-profile-premium (fg:  mResumedActivity: ActivityRecord{4a0cead u0 com.charles.owefolk/.MainActivity t14})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:31:28] pidof com.charles.owefolk: 13646
+[01:31:28] fatal lines: 0 crash-buffer lines: 0
+[01:31:28] ads lines: 2
