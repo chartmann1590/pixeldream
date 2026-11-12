@@ -1,0 +1,70 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 15
+tap (?i)^wait$
+wait 3
+tap (?i)^wait$
+launch
+wait 6
+shot 01-first-card
+tap (?i)^name$
+type Henrietta
+tap (?i)^breed$
+type Buff%sOrpington
+back
+tap (?i)^make the card$
+wait 4
+shot 02-deck
+tap (?i)^henrietta$
+wait 2
+shot 03-flipped
+tap (?i)timeline$
+wait 2
+tap (?i)^carton$
+wait 2
+tap (?i)^\+ egg$
+tap (?i)^\+ egg$
+tap (?i)^\+ egg$
+wait 2
+shot 04-carton
+tap (?i)^\+ feed cost$
+wait 1
+tap (?i)^amount
+type 18.50
+tap (?i)^save$
+wait 2
+shot 05-ledger
+tap (?i)^hatch$
+wait 2
+tap (?i)^start a hatch
+wait 3
+shot 20-paywall-fresh-install
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-dialog
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-featherdeck-1112p@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+featherdeck1112p@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 3
+shot 22-right-email-result
+wait 8
+swipedown
+swipedown
+swipedown
+wait 2
+shot 23-paywall-after-restore
+sh logcat -d -s DirectBilling

@@ -1,4 +1,4 @@
-E2E_ID=1112p74012
-E2E_APP=hivecall1112p
-E2E_PKG=com.hartmannstudios.hivecall
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/hivecall-direct-1/Hivecall-direct-release.apk
+E2E_ID=1112p74014
+E2E_APP=featherdeck1112p
+E2E_PKG=com.hartmannstudios.featherdeck
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/featherdeck-direct-1/Featherdeck-direct-release.apk
