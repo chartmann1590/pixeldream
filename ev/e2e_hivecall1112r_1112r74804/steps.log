@@ -1,0 +1,110 @@
+[09:16:32] screen 1080x2340
+[09:16:32] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:17:17] launch
+[09:17:34] not found /(?i)^wait$/
+[09:17:40] not found /(?i)^wait$/
+[09:17:42] launch
+[09:17:50] shot 01-onboarding (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:17:52] tapped /(?i)^next$/ at 540 2033
+[09:18:01] shot 02-volume-test (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:18:03] tapped /(?i)^go to the yard$/ at 540 2021
+[09:18:10] tapped /(?i)^\+ hive$/ at 540 515
+[09:18:16] tapped /(?i)^name$/ at 279 934
+[09:18:20] type
+[09:18:23] tapped /(?i)^save$/ at 829 1241
+[09:18:30] shot 03-yard (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:18:32] tapped /(?i)^season$/ at 784 228
+[09:18:39] shot 09-paywall (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:18:41] tapped /(?i)^subscribe monthly$/ at 540 1312
+[09:18:48] shot 10-email (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:18:50] type
+[09:18:53] tapped /(?i)^continue$/ at 847 1047
+[09:19:22] shot 11-stripe-checkout (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[09:19:25] tapped /(?i)^close$/ at 943 219
+[09:19:32] shot 12-after-close (fg:  mResumedActivity: ActivityRecord{201ec65 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 09:18:54.256  5271  5271 I DirectBilling: checkout opened app=hivecall product=hivecall_pro_monthly session=cs_live_aco7sBTJJ6gK1QUpejhIjIxi9AILTbIXfKd2VhiwoLTOvGdLZkWBlYtiOr
+[09:19:34] pidof com.hartmannstudios.hivecall: 5271
+[09:19:34] fatal lines: 0 crash-buffer lines: 0
+[09:19:34] ads lines: 94
+[09:21:58] screen 1080x2340
+[09:21:58] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:22:16] force-stop
+[09:22:18] launch
+[09:22:35] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[09:22:38] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{ebfa676 u0 com.hartmannstudios.hivecall/.MainActivity t10})
+[09:22:40] tapped /(?i)^more$/ at 981 228
+[09:22:46] tapped /(?i)^settings$/ at 153 382
+[09:22:54] shot 11-settings (fg:  mResumedActivity: ActivityRecord{ebfa676 u0 com.hartmannstudios.hivecall/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+11-12 09:22:18.604  7035  7059 I DirectBilling: license saved app=hivecall entitlements=["hivecall_pro_monthly"]
+[09:22:56] pidof com.hartmannstudios.hivecall: 7035
+[09:22:56] fatal lines: 0 crash-buffer lines: 0
+[09:22:56] ads lines: 25
+[09:22:57] screen 1080x2340
+[09:22:57] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:23:15] launch
+[09:23:32] not found /(?i)^wait$/
+[09:23:38] not found /(?i)^wait$/
+[09:23:40] launch
+[09:23:48] shot 01-onboarding (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:23:50] tapped /(?i)^next$/ at 540 2033
+[09:23:59] shot 02-volume-test (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:24:01] tapped /(?i)^go to the yard$/ at 540 2021
+[09:24:08] tapped /(?i)^\+ hive$/ at 540 515
+[09:24:14] tapped /(?i)^name$/ at 279 934
+[09:24:18] type
+[09:24:21] tapped /(?i)^save$/ at 829 1241
+[09:24:28] shot 03-yard (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:24:30] tapped /(?i)^season$/ at 784 228
+[09:24:37] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:24:39] tapped /(?i)^restore purchases$/ at 540 1942
+[09:24:46] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:24:48] tapped /@/ at 540 1227
+[09:24:59] typefix field='nobody-hivecall-1112r@example.com'
+[09:25:01] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:25:03] tapped /(?i)^continue$/ at 847 1031
+[09:25:09] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:25:18] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:25:20] tapped /(?i)^restore purchases$/ at 540 1942
+[09:25:28] tapped /@/ at 540 1227
+[09:25:40] typefix field='hartmannstudios+hivecall1112r@mail.tab.bot'
+[09:25:42] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:25:44] tapped /(?i)^continue$/ at 847 1031
+[09:25:51] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[09:26:08] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{38571f0 u0 com.hartmannstudios.hivecall/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 09:25:03.327  7874  8962 I DirectBilling: license saved app=hivecall entitlements=[]
+11-12 09:25:44.020  7874  9244 I DirectBilling: license saved app=hivecall entitlements=["hivecall_pro_monthly"]
+[09:26:11] pidof com.hartmannstudios.hivecall: 7874
+[09:26:11] fatal lines: 0 crash-buffer lines: 0
+[09:26:11] ads lines: 74
+[09:26:11] screen 1080x2340
+[09:26:11] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[09:26:29] force-stop
+[09:26:31] launch
+[09:26:47] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[09:26:51] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{7a1d2d u0 com.hartmannstudios.hivecall/.MainActivity t12})
+[09:26:53] tapped /(?i)^more$/ at 981 228
+[09:26:59] tapped /(?i)^settings$/ at 153 382
+[09:27:07] shot 31-settings (fg:  mResumedActivity: ActivityRecord{7a1d2d u0 com.hartmannstudios.hivecall/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[09:27:09] pidof com.hartmannstudios.hivecall: 9606
+[09:27:09] fatal lines: 0 crash-buffer lines: 0
+[09:27:09] ads lines: 5

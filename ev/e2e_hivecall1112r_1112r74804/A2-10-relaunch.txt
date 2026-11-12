@@ -1,0 +1,8 @@
+com.hartmannstudios.hivecall|HIVECALL||false|[33,192][358,264]
+com.hartmannstudios.hivecall|Yard||true|[480,162][653,294]
+com.hartmannstudios.hivecall|Season||true|[665,162][903,294]
+com.hartmannstudios.hivecall||More|false|[948,195][1014,261]
+com.hartmannstudios.hivecall|Hive 1||false|[277,449][425,515]
+com.hartmannstudios.hivecall|never||false|[301,515][401,581]
+com.hartmannstudios.hivecall|+ Hive||false|[657,482][804,548]
+com.hartmannstudios.hivecall|Start inspection||false|[0,0][0,0]

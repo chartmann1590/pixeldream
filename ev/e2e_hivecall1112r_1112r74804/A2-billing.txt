@@ -1,0 +1,1 @@
+11-12 09:22:18.604  7035  7059 I DirectBilling: license saved app=hivecall entitlements=["hivecall_pro_monthly"]
