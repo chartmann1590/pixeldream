@@ -1,0 +1,105 @@
+[00:52:13] screen 1080x2340
+[00:52:13] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:53:02] launch
+[00:53:31] shot 01-launch (fg:  mResumedActivity: ActivityRecord{4feb68b u0 com.deadtide.hordesurvivor/.MainActivity t9})
+[00:53:33] not found /(?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$/
+[00:53:39] shot 02-menu (fg:  mResumedActivity: ActivityRecord{4feb68b u0 com.deadtide.hordesurvivor/.MainActivity t9})
+[00:53:40] tapxy permille 857 790
+    mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9}
+[00:53:57] shot 10-shop (fg:  mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9})
+[00:54:00] tapped /(?i)^BUY .*2\.99$/ at 540 774
+[00:54:10] shot 11-email (fg:  mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9})
+[00:54:14] tapped /@/ at 542 1307
+[00:54:35] typefix field='hartmannstudios'
+[00:54:53] typefix field='hartmannstudios+deadtide1110q@m'
+[00:55:06] typefix field='hartmannstudios+deadtide1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[00:55:13] shot 11b-email-typed (fg:  mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9})
+[00:55:16] tapped /(?i)^continue$/ at 320 1464
+[00:55:54] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9})
+[00:56:00] tapped /(?i)^close$/ at 985 219
+[00:56:10] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{716e2ec u0 com.deadtide.hordesurvivor/.ShopActivity t9})
+[00:56:13] pidof com.deadtide.hordesurvivor: 5762
+[00:56:13] fatal lines: 0 crash-buffer lines: 0
+[00:56:13] ads lines: 111
+[01:10:09] screen 1080x2340
+[01:10:09] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:10:26] force-stop
+[01:10:28] launch
+[01:10:56] not found /(?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$/
+[01:10:59] shot 14-menu-relaunch (fg:  mResumedActivity: ActivityRecord{cf34a62 u0 com.deadtide.hordesurvivor/.MainActivity t10})
+[01:11:00] tapxy permille 857 790
+    mResumedActivity: ActivityRecord{2986789 u0 com.deadtide.hordesurvivor/.ShopActivity t10}
+Failed to write while dumping service activity: Broken pipe
+[01:11:17] shot 15-shop (fg:  mResumedActivity: ActivityRecord{2986789 u0 com.deadtide.hordesurvivor/.ShopActivity t10})
+[01:11:18] back
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:10:29.608  7757  7871 I DirectBilling: license saved app=deadtide entitlements=[]
+[01:11:25] pidof com.deadtide.hordesurvivor: 7757
+[01:11:25] fatal lines: 0 crash-buffer lines: 0
+[01:11:25] ads lines: 121
+[01:11:27] screen 1080x2340
+[01:11:27] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:11:45] launch
+[01:12:14] shot 01-launch (fg:  mResumedActivity: ActivityRecord{da4fdaf u0 com.deadtide.hordesurvivor/.MainActivity t11})
+[01:12:16] not found /(?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$/
+[01:12:23] shot 02-menu-banner (fg:  mResumedActivity: ActivityRecord{da4fdaf u0 com.deadtide.hordesurvivor/.MainActivity t11})
+[01:12:25] tapxy permille 857 790
+    mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11}
+Failed to write while dumping service activity: Broken pipe
+[01:12:42] shot 20-shop (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:12:45] tapped /(?i)^RESTORE PURCHASES$/ at 540 1767
+[01:12:54] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:12:57] tapped /@/ at 542 1278
+[01:13:32] typefix field='nobody-deadtide-1'
+[01:13:47] typefix field='nobody-deadtide-1110q@example.com'
+Failed to write while dumping service input_method: Broken pipe
+[01:13:53] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:13:57] tapped /(?i)^continue$/ at 320 1435
+[01:14:04] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:14:16] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:14:19] tapped /(?i)^RESTORE PURCHASES$/ at 540 1767
+[01:14:28] tapped /@/ at 542 1278
+[01:15:12] typefix field='hartmannstudios+d'
+[01:15:29] typefix field='hartmannstudios+deadtide1110q@mail.'
+[01:15:40] typefix field='hartmannstudios+deadtide1110q@mail.tab.bot'
+Failed to write while dumping service input_method: Broken pipe
+[01:15:46] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:15:49] tapped /(?i)^continue$/ at 320 1435
+[01:16:09] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{a7a6ba7 u0 com.deadtide.hordesurvivor/.ShopActivity t11})
+[01:16:10] back
+[01:16:21] shot 23-menu-after-restore (fg:  mResumedActivity: ActivityRecord{da4fdaf u0 com.deadtide.hordesurvivor/.MainActivity t11})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+11-12 01:13:57.796  8736  9541 I DirectBilling: license saved app=deadtide entitlements=[]
+11-12 01:15:49.264  8736  9876 I DirectBilling: license saved app=deadtide entitlements=[]
+[01:16:24] pidof com.deadtide.hordesurvivor: 8736
+[01:16:24] fatal lines: 0 crash-buffer lines: 0
+[01:16:24] ads lines: 118
+[01:16:24] screen 1080x2340
+[01:16:24] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:16:41] force-stop
+[01:16:44] launch
+[01:17:12] not found /(?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$/
+[01:17:15] shot 30-menu-relaunch (fg:  mResumedActivity: ActivityRecord{d13d3b4 u0 com.deadtide.hordesurvivor/.MainActivity t12})
+[01:17:16] tapxy permille 857 790
+    mResumedActivity: ActivityRecord{f6347f5 u0 com.deadtide.hordesurvivor/.ShopActivity t12}
+[01:17:33] shot 31-shop (fg:  mResumedActivity: ActivityRecord{f6347f5 u0 com.deadtide.hordesurvivor/.ShopActivity t12})
+[01:17:34] back
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+[01:17:41] pidof com.deadtide.hordesurvivor: 10272
+[01:17:41] fatal lines: 0 crash-buffer lines: 0
+[01:17:41] ads lines: 114

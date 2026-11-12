@@ -1,0 +1,2 @@
+11-12 01:13:57.796  8736  9541 I DirectBilling: license saved app=deadtide entitlements=[]
+11-12 01:15:49.264  8736  9876 I DirectBilling: license saved app=deadtide entitlements=[]
