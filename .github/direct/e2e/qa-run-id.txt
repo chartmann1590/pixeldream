@@ -1,4 +1,4 @@
-E2E_ID=1110q45538
-E2E_APP=nightsayqqa
-E2E_PKG=com.charles.nightsay
-E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/nightsay-direct-6/Nightsay-direct-release.apk
+E2E_ID=1110q45547
+E2E_APP=crowdtransitqqa
+E2E_PKG=com.charles.crowdtransit.app
+E2E_APK=https://github.com/chartmann1590/crowdsource-transit/releases/download/direct-4/CrowdTransit-direct-release.apk
