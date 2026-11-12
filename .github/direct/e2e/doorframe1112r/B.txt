@@ -1,0 +1,48 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+launch
+wait 12
+shot 01-setup
+tap (?i)^name this place$
+wait 1
+type 12%sElm%sSt
+wait 1
+tap (?i)^start walkthrough$
+wait 6
+taploop (?i)^(while using the app|only this time|allow)$
+wait 5
+shot 02-viewfinder
+tap (?i)^settings$
+wait 3
+shot 03-settings-free
+tap (?i)^upgrade to pro$
+wait 3
+shot 20-paywall-fresh-install
+scrollto (?i)^restore purchases$
+wait 3
+shot 21-restore-dialog
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix nobody-doorframe-1112r@example.com
+shot 21a-wrong-email-typed
+tap (?i)^continue$
+wait 2
+shot 21b-wrong-email-result
+wait 8
+shot 21c-after-wrong-email
+scrollto (?i)^restore purchases$
+wait 3
+tap @
+sh input keyevent 123 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+typefix hartmannstudios+doorframe1112r@mail.tab.bot
+shot 21d-right-email-typed
+tap (?i)^continue$
+wait 3
+shot 22-right-email-result
+wait 8
+swipedown
+swipedown
+swipedown
+wait 2
+shot 23-paywall-after-restore
+sh logcat -d -s DirectBilling
