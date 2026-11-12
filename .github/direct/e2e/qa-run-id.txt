@@ -1,4 +1,4 @@
-E2E_ID=1110s53448
-E2E_APP=owefolksqa
-E2E_PKG=com.charles.owefolk
-E2E_APK=https://github.com/chartmann1590/owefolk/releases/download/direct-13/Owefolk-direct-release.apk
+E2E_ID=1112d72464
+E2E_APP=doorframe1112d
+E2E_PKG=com.hartmannstudios.doorframe
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/doorframe-direct-1/Doorframe-direct-release.apk
