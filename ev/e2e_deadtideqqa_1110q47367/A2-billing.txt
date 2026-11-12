@@ -1,0 +1,1 @@
+11-12 01:47:53.040  7330  7446 I DirectBilling: license saved app=deadtide entitlements=["remove_ads"]

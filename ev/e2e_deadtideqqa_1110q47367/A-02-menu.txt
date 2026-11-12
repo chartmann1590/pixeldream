@@ -1,0 +1,6 @@
+com.deadtide.hordesurvivor||SchoolsTrader Find the perfect Open Day OPEN|true|[0,0][0,0]
+com.deadtide.hordesurvivor|SchoolsTrader||false|[0,0][0,0]
+com.deadtide.hordesurvivor|SchoolsTrader||false|[0,0][0,0]
+com.deadtide.hordesurvivor|Find the perfect Open Day||false|[0,0][0,0]
+com.deadtide.hordesurvivor|OPEN||false|[0,0][0,0]
+com.deadtide.hordesurvivor|Test Ad||false|[465,2071][614,2072]

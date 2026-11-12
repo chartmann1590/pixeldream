@@ -1,0 +1,5 @@
+com.deadtide.hordesurvivor|Checkout with Stripe||false|[120,834][964,933]
+com.deadtide.hordesurvivor|Your receipt and license are tied to this email. Use the same email to restore on another phone.||false|[131,967][964,1178]
+com.deadtide.hordesurvivor|you@example.com||true|[140,1241][944,1373]
+com.deadtide.hordesurvivor|Continue||true|[98,1398][542,1530]
+com.deadtide.hordesurvivor|Cancel||true|[542,1398][986,1530]

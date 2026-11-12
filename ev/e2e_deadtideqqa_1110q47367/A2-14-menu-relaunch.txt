@@ -1,0 +1,7 @@
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor||%3Fppc_keyword%3D%26gad_source%3D5%26gad_campaignid%3D22018902440|true|[0,0][0,0]
+com.deadtide.hordesurvivor|Test Ad||false|[465,2071][614,2072]

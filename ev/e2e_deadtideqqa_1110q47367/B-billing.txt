@@ -1,0 +1,2 @@
+11-12 01:51:26.434  8242  9085 I DirectBilling: license saved app=deadtide entitlements=[]
+11-12 01:53:24.400  8242  9417 W DirectBilling: POST /v2/entitlement -> 429 {"error":"Too many requests for this email. Try again later."}
