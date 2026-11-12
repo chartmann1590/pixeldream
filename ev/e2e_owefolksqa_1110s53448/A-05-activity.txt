@@ -1,0 +1,6 @@
+com.charles.owefolk|Activity||false|[55,200][335,297]
+com.charles.owefolk|A clear history of every shared tab.||false|[55,314][731,380]
+com.charles.owefolk|Home||false|[0,0][0,0]
+com.charles.owefolk|Groups||false|[0,0][0,0]
+com.charles.owefolk|Activity||false|[0,0][0,0]
+com.charles.owefolk|Profile||false|[0,0][0,0]

@@ -1,0 +1,7 @@
+com.charles.owefolk|Groups||false|[55,218][735,315]
+com.charles.owefolk|New||false|[884,239][959,294]
+com.charles.owefolk|Shared tabs, without the awkward math.||false|[55,365][837,431]
+com.charles.owefolk|Home||false|[0,0][0,0]
+com.charles.owefolk|Groups||false|[0,0][0,0]
+com.charles.owefolk|Activity||false|[0,0][0,0]
+com.charles.owefolk|Profile||false|[0,0][0,0]
