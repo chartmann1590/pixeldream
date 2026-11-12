@@ -1,4 +1,4 @@
-E2E_ID=1110q45611
-E2E_APP=auracastweatherqqa
-E2E_PKG=com.auracast.weather
-E2E_APK=https://github.com/chartmann1590/auracast-weather/releases/download/direct-11/AuraCastWeather-direct-release.apk
+E2E_ID=1110q45620
+E2E_APP=tipsybuddyqqa
+E2E_PKG=com.tipsybuddy.app
+E2E_APK=https://github.com/chartmann1590/TipsyBuddy/releases/download/direct-11/TipsyBuddy-direct-release.apk
