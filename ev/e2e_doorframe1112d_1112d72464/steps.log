@@ -1,0 +1,200 @@
+[08:36:16] screen 1080x2340
+[08:36:16] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:37:10] launch
+[08:37:24] shot 01-setup (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:37:26] tapped /(?i)^name this place$/ at 279 1234
+[08:37:30] type
+[08:37:34] tapped /(?i)^start walkthrough$/ at 540 1421
+[08:37:44] not found /(?i)^(while using the app|only this time|allow)$/
+[08:37:51] shot 02-viewfinder (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:37:53] tapped /(?i)^take photo$/ at 510 1910
+[08:38:03] shot 03-after-capture (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:38:05] tapped /(?i)^take photo$/ at 510 1910
+[08:38:15] tapped /(?i)^take photo$/ at 510 1910
+[08:38:25] shot 04-three-shots (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:38:27] tapped /(?i)move-in$/ at 238 244
+[08:38:33] tapped /(?i)^move-out$/ at 148 651
+[08:38:41] shot 05-moveout-ghost (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:38:43] tapped /(?i)^take photo$/ at 510 1910
+[08:38:56] tapped /(?i)^record$/ at 918 1910
+[08:39:03] ad on screen (try 1)
+[08:39:12] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:39:18] ad on screen (try 2)
+[08:39:27] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:39:32] ad on screen (try 3)
+[08:39:42] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:39:47] ad on screen (try 4)
+[08:39:57] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:40:02] shot 06-record (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:04] tapped /(?i)^entry/ at 284 748
+[08:40:11] shot 07-room (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:13] not found /(?i)^compare$/
+[08:40:19] shot 08-compare (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:21] not found /(?i)^changed$/
+[08:40:27] shot 09-changed (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:27] back
+[08:40:30] back
+[08:40:34] not found /(?i)^build report$/
+[08:40:41] shot 10-packet (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:42] not found /(?i)^export pdf/
+[08:40:49] shot 11-paywall (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:40:51] not found /(?i)^subscribe monthly$/
+[08:40:54] not found /(?i)^subscribe monthly$/
+[08:40:58] not found /(?i)^subscribe monthly$/
+[08:41:01] not found /(?i)^subscribe monthly$/
+[08:41:05] not found /(?i)^subscribe monthly$/
+[08:41:08] not found /(?i)^subscribe monthly$/
+[08:41:12] not found /(?i)^subscribe monthly$/
+[08:41:15] not found /(?i)^subscribe monthly$/
+[08:41:19] not found /(?i)^subscribe monthly$/
+[08:41:22] not found /(?i)^subscribe monthly$/
+[08:41:26] not found /(?i)^subscribe monthly$/
+[08:41:29] not found /(?i)^subscribe monthly$/
+[08:41:31] scrollto: never found /(?i)^subscribe monthly$/
+[08:41:38] shot 12-email (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:41:38] type
+[08:41:41] not found /(?i)^continue$/
+[08:42:10] shot 13-stripe-checkout (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:42:12] not found /(?i)^close$/
+[08:42:18] shot 14-after-close (fg:  mResumedActivity: ActivityRecord{ae8f079 u0 com.hartmannstudios.doorframe/.MainActivity t9})
+[08:42:19] back
+[08:42:22] back
+[08:42:25] not found /(?i)^verify a photo$/
+[08:42:31] shot 15-verify (fg:  mResumedActivity: ActivityRecord{1b727ee u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[08:42:32] back
+[08:42:34] back
+[08:42:38] not found /(?i)^settings$/
+[08:42:44] shot 16-settings (fg:  mResumedActivity: ActivityRecord{1b727ee u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:42:46] pidof com.hartmannstudios.doorframe: 5830
+[08:42:46] fatal lines: 0 crash-buffer lines: 0
+[08:42:46] ads lines: 200
+[08:43:51] screen 1080x2340
+[08:43:51] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:44:09] force-stop
+[08:44:11] launch
+[08:44:28] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:44:31] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{59fd079 u0 com.hartmannstudios.doorframe/.MainActivity t10})
+[08:44:33] tapped /(?i)^settings$/ at 981 244
+[08:44:41] shot 11-settings (fg:  mResumedActivity: ActivityRecord{59fd079 u0 com.hartmannstudios.doorframe/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[08:44:43] pidof com.hartmannstudios.doorframe: 8807
+[08:44:43] fatal lines: 0 crash-buffer lines: 0
+[08:44:43] ads lines: 53
+[08:44:44] screen 1080x2340
+[08:44:44] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:45:03] launch
+[08:45:17] shot 01-setup (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:45:19] tapped /(?i)^name this place$/ at 279 1234
+[08:45:23] type
+[08:45:27] tapped /(?i)^start walkthrough$/ at 540 1421
+[08:45:37] not found /(?i)^(while using the app|only this time|allow)$/
+[08:45:44] shot 02-viewfinder (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:45:46] tapped /(?i)^take photo$/ at 510 1910
+[08:45:56] shot 03-after-capture (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:45:58] tapped /(?i)^take photo$/ at 510 1910
+[08:46:08] tapped /(?i)^take photo$/ at 510 1910
+[08:46:18] shot 04-three-shots (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:46:20] tapped /(?i)move-in$/ at 238 244
+[08:46:26] tapped /(?i)^move-out$/ at 148 651
+[08:46:34] shot 05-moveout-ghost (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:46:36] tapped /(?i)^take photo$/ at 510 1910
+[08:46:50] tapped /(?i)^record$/ at 918 1910
+[08:46:56] ad on screen (try 1)
+[08:47:06] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:47:11] ad on screen (try 2)
+[08:47:21] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:47:26] ad on screen (try 3)
+[08:47:35] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:47:41] ad on screen (try 4)
+[08:47:50] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:47:56] shot 06-record (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:47:58] tapped /(?i)^entry/ at 284 748
+[08:48:05] shot 07-room (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:48:06] not found /(?i)^compare$/
+[08:48:13] shot 08-compare (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:48:15] not found /(?i)^changed$/
+[08:48:21] shot 09-changed (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:48:21] back
+[08:48:24] back
+[08:48:27] not found /(?i)^build report$/
+[08:48:34] shot 10-packet (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:48:36] not found /(?i)^export pdf/
+[08:48:43] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:48:44] not found /(?i)^restore purchases$/
+[08:48:48] not found /(?i)^restore purchases$/
+[08:48:51] not found /(?i)^restore purchases$/
+[08:48:55] not found /(?i)^restore purchases$/
+[08:48:58] not found /(?i)^restore purchases$/
+[08:49:02] not found /(?i)^restore purchases$/
+[08:49:05] not found /(?i)^restore purchases$/
+[08:49:09] not found /(?i)^restore purchases$/
+[08:49:12] not found /(?i)^restore purchases$/
+[08:49:16] not found /(?i)^restore purchases$/
+[08:49:19] not found /(?i)^restore purchases$/
+[08:49:23] not found /(?i)^restore purchases$/
+[08:49:25] scrollto: never found /(?i)^restore purchases$/
+[08:49:32] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:49:33] not found /@/
+[08:49:42] typefix field=''
+[08:49:48] typefix field=''
+[08:49:54] typefix field=''
+[08:50:01] typefix field=''
+[08:50:03] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:50:04] not found /(?i)^continue$/
+[08:50:10] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:50:20] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:50:22] not found /(?i)^restore purchases$/
+[08:50:25] not found /(?i)^restore purchases$/
+[08:50:29] not found /(?i)^restore purchases$/
+[08:50:32] not found /(?i)^restore purchases$/
+[08:50:36] not found /(?i)^restore purchases$/
+[08:50:39] not found /(?i)^restore purchases$/
+[08:50:43] not found /(?i)^restore purchases$/
+[08:50:46] not found /(?i)^restore purchases$/
+[08:50:50] not found /(?i)^restore purchases$/
+[08:50:53] not found /(?i)^restore purchases$/
+[08:50:57] not found /(?i)^restore purchases$/
+[08:51:00] not found /(?i)^restore purchases$/
+[08:51:02] scrollto: never found /(?i)^restore purchases$/
+[08:51:09] not found /@/
+[08:51:18] typefix field=''
+[08:51:24] typefix field=''
+[08:51:30] typefix field=''
+[08:51:36] typefix field=''
+[08:51:39] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:51:40] not found /(?i)^continue$/
+[08:51:47] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+[08:52:05] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{4d0d0ad u0 com.hartmannstudios.doorframe/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[08:52:07] pidof com.hartmannstudios.doorframe: 9598
+[08:52:07] fatal lines: 0 crash-buffer lines: 0
+[08:52:07] ads lines: 200
+[08:52:07] screen 1080x2340
+[08:52:07] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:52:25] force-stop
+[08:52:28] launch
+[08:52:44] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:52:48] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{7b2b u0 com.hartmannstudios.doorframe/.MainActivity t12})
+[08:52:50] tapped /(?i)^settings$/ at 981 244
+[08:52:58] shot 31-settings (fg:  mResumedActivity: ActivityRecord{7b2b u0 com.hartmannstudios.doorframe/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:53:00] pidof com.hartmannstudios.doorframe: 12988
+[08:53:00] fatal lines: 0 crash-buffer lines: 0
+[08:53:00] ads lines: 54

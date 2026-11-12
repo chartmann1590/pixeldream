@@ -1,0 +1,6 @@
+com.hartmannstudios.doorframe|DOORFRAME||false|[371,391][709,471]
+com.hartmannstudios.doorframe|Walk the place once. Leave with a dated, fingerprinted photo record.||false|[66,717][1014,849]
+com.hartmannstudios.doorframe|Every photo gets a timestamp and a SHA-256 fingerprint the moment you take it. Works offline. No account.||false|[66,871][1014,1069]
+com.hartmannstudios.doorframe|Name this place||false|[110,1201][449,1267]
+com.hartmannstudios.doorframe|Start walkthrough||false|[385,1394][695,1449]
+com.hartmannstudios.doorframe|Not legal advice. Doorframe keeps a tamper-evident, dated record; no outcome is guaranteed.||false|[66,1531][1014,1663]
