@@ -1,4 +1,4 @@
-E2E_ID=1110q44638
-E2E_APP=photoboothqqa
-E2E_PKG=com.charles.photobooth
-E2E_APK=https://github.com/chartmann1590/android-photobooth/releases/download/direct-10/Photobooth-direct-release.apk
+E2E_ID=1110q44646
+E2E_APP=adhdfocuscompanionqqa
+E2E_PKG=com.chartmann.adhdfocuscompanion
+E2E_APK=https://github.com/chartmann1590/hartmann-studios-apps/releases/download/adhdfocuscompanion-direct-2/ADHDFocus-direct-release.apk
