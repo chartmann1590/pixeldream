@@ -1,0 +1,5 @@
+com.hartmannstudios.featherdeck|Restore purchases||false|[138,600][942,674]
+com.hartmannstudios.featherdeck|Enter the email you used at checkout.||false|[72,674][1008,733]
+com.hartmannstudios.featherdeck|hartmannstudios+featherdeck1112r@mail.tab.bot||true|[120,822][960,946]
+com.hartmannstudios.featherdeck|CANCEL||true|[506,957][719,1106]
+com.hartmannstudios.featherdeck|CONTINUE||true|[719,957][975,1106]

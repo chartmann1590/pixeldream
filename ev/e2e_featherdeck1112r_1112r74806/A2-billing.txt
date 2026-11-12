@@ -1,0 +1,1 @@
+11-12 09:25:20.284  8041  8065 I DirectBilling: license saved app=featherdeck entitlements=["featherdeck_pro_monthly"]
