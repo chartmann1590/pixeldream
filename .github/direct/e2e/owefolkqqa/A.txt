@@ -46,13 +46,13 @@ taploop (?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$
 wait 3
 adclose
 shot 03-home
-tap (?i)^groups$
+tapxy permille 370 897
 wait 3
 shot 04-groups
-tap (?i)^activity$
+tapxy permille 626 897
 wait 3
 shot 05-activity
-tap (?i)^profile$
+tapxy permille 880 897
 wait 3
 adclose
 shot 06-profile

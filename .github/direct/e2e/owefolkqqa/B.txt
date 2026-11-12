@@ -45,7 +45,7 @@ taploop (?i)^(finish|continue|done|got it|ok|not now|later|no thanks)$
 wait 3
 adclose
 shot 20-home
-tap (?i)^profile$
+tapxy permille 880 897
 wait 3
 adclose
 scrollto (?i)^restore purchases$
