@@ -1,0 +1,235 @@
+[00:53:51] screen 1080x2340
+[00:53:51] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[00:54:33] launch
+[00:54:50] shot 01-launch (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[00:54:52] tapped /(?i)^got it$/ at 834 1605
+[00:55:01] shot 02-welcome (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[00:55:03] tapped /(?i)^set up pixeldream$/ at 540 2060
+[00:55:11] tapped /(?i)^i agree and understand$/ at 540 2060
+[00:55:21] shot 03-device-check (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[00:55:23] tapped /(?i)^(continue|continue anyway|next)$/ at 540 2060
+[00:55:35] not found /(?i)^(got it|ok)$/
+[00:55:37] shot 04-model-download (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[00:55:38] not found /(?i)^(start download|retry downloads)$/
+[00:55:42] not found /(?i)^(start download|retry downloads)$/
+[00:55:46] not found /(?i)^(start download|retry downloads)$/
+[00:55:50] not found /(?i)^(start download|retry downloads)$/
+[00:55:53] not found /(?i)^(start download|retry downloads)$/
+[00:55:57] not found /(?i)^(start download|retry downloads)$/
+[00:56:01] not found /(?i)^(start download|retry downloads)$/
+[00:56:05] not found /(?i)^(start download|retry downloads)$/
+[00:56:08] not found /(?i)^(start download|retry downloads)$/
+[00:56:12] not found /(?i)^(start download|retry downloads)$/
+[00:56:15] not found /(?i)^(start download|retry downloads)$/
+[00:56:19] not found /(?i)^(start download|retry downloads)$/
+[00:56:21] scrollto: never found /(?i)^(start download|retry downloads)$/
+912 MB of 2.4 GB 
+1.2 GB of 2.4 GB 
+1.6 GB of 2.4 GB 
+waitc not yet
+1.9 GB of 2.4 GB 
+2.1 GB of 2.4 GB 
+2.2 GB of 2.4 GB 
+waitc not yet
+75 MB of 1.6 GB 
+422 MB of 1.6 GB 
+786 MB of 1.6 GB 
+waitc not yet
+1.1 GB of 1.6 GB 
+1.4 GB of 1.6 GB 
+waitc tapped 2
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+[01:06:04] not found /(?i)^(start creating|retry downloads)$/
+[01:06:12] not found /(?i)^(got it|ok|allow|consent|accept)$/
+[01:06:16] shot 05-main (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:06:16] tapxy permille 500 905
+[01:06:23] shot 06-gallery (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:06:24] tapxy permille 833 905
+[01:06:30] shot 07-settings (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+findtap ok 10
+[01:07:11] tapped /(?i)^open$/ at 865 1814
+[01:07:19] shot 10-paywall (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:07:21] tapped /(?i)^continue$/ at 540 1933
+[01:07:28] shot 11-email (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:07:33] type
+[01:07:36] tapped /(?i)^continue$/ at 847 1047
+[01:08:05] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:08:08] tapped /(?i)^close$/ at 943 219
+[01:08:15] shot 13-after-close (fg:  mResumedActivity: ActivityRecord{b75e09f u0 com.hartmann.pixeldream/.MainActivity t9})
+[01:08:17] pidof com.hartmann.pixeldream: 5755
+[01:08:17] fatal lines: 0 crash-buffer lines: 0
+[01:08:17] ads lines: 45
+[01:11:23] screen 1080x2340
+[01:11:23] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:11:41] force-stop
+[01:11:43] launch
+[01:12:00] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 834 1605
+[01:12:04] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/
+[01:12:07] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{5502711 u0 com.hartmann.pixeldream/.MainActivity t10})
+[01:12:08] back
+[01:12:12] tapxy permille 167 905
+[01:12:19] shot 23-create-no-banner (fg:  mResumedActivity: ActivityRecord{436992f u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:12:20] back
+[01:12:25] tapxy permille 833 905
+findtap none
+[01:13:42] not found /(?i)^open$/
+[01:13:50] shot 24-pixeldream-plus-screen (fg:  mResumedActivity: ActivityRecord{6fe11f6 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.OpaActivity t11})
+[01:13:55] shot 24b-pixeldream-plus-bottom (fg:  mResumedActivity: ActivityRecord{6fe11f6 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.OpaActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:11:43.721  8838  8970 I DirectBilling: license saved app=pixeldream entitlements=["pixeldream_ad_free_monthly"]
+11-12 01:11:43.724  8838  8966 I DirectBilling: license saved app=pixeldream entitlements=["pixeldream_ad_free_monthly"]
+--------- beginning of crash
+[01:13:57] pidof com.hartmann.pixeldream: 8838
+[01:13:57] fatal lines: 0 crash-buffer lines: 0
+[01:13:57] ads lines: 24
+[01:13:58] screen 1080x2340
+[01:13:58] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:14:15] launch
+[01:14:32] shot 01-launch (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:14:34] tapped /(?i)^got it$/ at 834 1605
+[01:14:43] shot 02-welcome (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:14:45] tapped /(?i)^set up pixeldream$/ at 540 2060
+[01:14:53] tapped /(?i)^i agree and understand$/ at 540 2060
+[01:15:03] shot 03-device-check (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:15:05] tapped /(?i)^(continue|continue anyway|next)$/ at 540 2060
+[01:15:16] not found /(?i)^(got it|ok)$/
+[01:15:19] shot 04-model-download (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:15:20] not found /(?i)^(start download|retry downloads)$/
+[01:15:24] not found /(?i)^(start download|retry downloads)$/
+[01:15:28] not found /(?i)^(start download|retry downloads)$/
+[01:15:32] not found /(?i)^(start download|retry downloads)$/
+[01:15:35] not found /(?i)^(start download|retry downloads)$/
+[01:15:39] not found /(?i)^(start download|retry downloads)$/
+[01:15:43] not found /(?i)^(start download|retry downloads)$/
+[01:15:47] not found /(?i)^(start download|retry downloads)$/
+[01:15:50] not found /(?i)^(start download|retry downloads)$/
+[01:15:54] not found /(?i)^(start download|retry downloads)$/
+[01:15:58] not found /(?i)^(start download|retry downloads)$/
+[01:16:01] not found /(?i)^(start download|retry downloads)$/
+[01:16:03] scrollto: never found /(?i)^(start download|retry downloads)$/
+897 MB of 2.4 GB 
+1.2 GB of 2.4 GB 
+1.6 GB of 2.4 GB 
+waitc not yet
+1.9 GB of 2.4 GB 
+2.2 GB of 2.4 GB 
+104 MB of 1.6 GB 
+waitc not yet
+466 MB of 1.6 GB 
+816 MB of 1.6 GB 
+1.2 GB of 1.6 GB 
+waitc not yet
+1.5 GB of 1.6 GB 
+waitc tapped 1
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+waitc already
+[01:24:59] not found /(?i)^(start creating|retry downloads)$/
+[01:25:08] not found /(?i)^(got it|ok|allow|consent|accept)$/
+[01:25:11] shot 05-main (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:25:12] tapxy permille 833 905
+findtap ok 10
+[01:25:58] tapped /(?i)^open$/ at 865 1701
+[01:26:06] shot 20-paywall (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:26:08] tapped /(?i)^restore purchases$/ at 327 2060
+[01:26:15] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:26:17] tapped /@/ at 540 1227
+[01:26:28] typefix field='nobody-pixeldream-1110q@example.com'
+[01:26:30] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:26:32] tapped /(?i)^continue$/ at 847 1031
+[01:26:38] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:26:48] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:26:50] tapped /(?i)^restore purchases$/ at 327 2060
+[01:26:57] tapped /@/ at 540 1227
+[01:27:12] typefix field='hartmannstudios+pixeldream1110q@mail.tab.bot'
+[01:27:14] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:27:16] tapped /(?i)^continue$/ at 847 1031
+[01:27:34] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:27:39] shot 22b-pixeldream-plus-after-restore (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+[01:27:40] back
+[01:27:44] tapxy permille 167 905
+[01:27:51] shot 23-create-no-banner (fg:  mResumedActivity: ActivityRecord{7a48c39 u0 com.hartmann.pixeldream/.MainActivity t12})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:26:32.452 10628 12921 I DirectBilling: license saved app=pixeldream entitlements=[]
+11-12 01:27:15.157 10628 13164 I DirectBilling: license saved app=pixeldream entitlements=["pixeldream_ad_free_monthly"]
+[01:27:53] pidof com.hartmann.pixeldream: 10628
+[01:27:53] fatal lines: 0 crash-buffer lines: 0
+[01:27:53] ads lines: 27
+[01:27:53] screen 1080x2340
+[01:27:53] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:28:10] force-stop
+[01:28:12] launch
+[01:28:29] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/ at 834 1605
+[01:28:33] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:28:36] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{e9af6b7 u0 com.hartmann.pixeldream/.MainActivity t13})
+[01:28:37] back
+[01:28:42] tapxy permille 167 905
+[01:28:49] shot 323-create-no-banner (fg:  mResumedActivity: ActivityRecord{436992f u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t8})
+[01:28:49] back
+[01:28:54] tapxy permille 833 905
+findtap none
+[01:30:09] not found /(?i)^open$/
+[01:30:17] shot 34-pixeldream-plus-screen (fg:  mResumedActivity: ActivityRecord{fd4998a u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.OpaActivity t14})
+[01:30:22] shot 34b-pixeldream-plus-bottom (fg:  mResumedActivity: ActivityRecord{fd4998a u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.OpaActivity t14})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:30:24] pidof com.hartmann.pixeldream: 13527
+[01:30:24] fatal lines: 0 crash-buffer lines: 0
+[01:30:24] ads lines: 8

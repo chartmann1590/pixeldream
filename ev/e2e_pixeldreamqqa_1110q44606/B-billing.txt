@@ -1,0 +1,2 @@
+11-12 01:26:32.452 10628 12921 I DirectBilling: license saved app=pixeldream entitlements=[]
+11-12 01:27:15.157 10628 13164 I DirectBilling: license saved app=pixeldream entitlements=["pixeldream_ad_free_monthly"]
