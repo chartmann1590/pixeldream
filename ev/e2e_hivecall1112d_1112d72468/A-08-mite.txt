@@ -1,0 +1,7 @@
+com.hartmannstudios.hivecall|Mite wash||false|[166,771][469,859]
+com.hartmannstudios.hivecall|Mites counted||false|[210,969][541,1035]
+com.hartmannstudios.hivecall|300||true|[166,1079][914,1255]
+com.hartmannstudios.hivecall|Bees sampled (½ cup ≈ 300)||false|[210,1079][660,1123]
+com.hartmannstudios.hivecall|0.0%||false|[166,1255][409,1384]
+com.hartmannstudios.hivecall|Cancel||false|[545,1489][690,1544]
+com.hartmannstudios.hivecall|Save||false|[778,1489][881,1544]

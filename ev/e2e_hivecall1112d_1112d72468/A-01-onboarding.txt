@@ -1,0 +1,4 @@
+com.hartmannstudios.hivecall|HIVECALL||false|[55,200][458,290]
+com.hartmannstudios.hivecall|Hive notes by voice. The phone asks, you answer, gloves on.||false|[55,329][1025,473]
+com.hartmannstudios.hivecall|Mic check||false|[345,766][736,864]
+com.hartmannstudios.hivecall|Next||false|[451,1994][630,2072]

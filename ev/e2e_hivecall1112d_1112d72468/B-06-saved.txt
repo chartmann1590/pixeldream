@@ -1,0 +1,5 @@
+com.hartmannstudios.hivecall|Hive 1 · Langstroth||false|[44,189][488,255]
+com.hartmannstudios.hivecall|Inspection saved||false|[44,255][437,321]
+com.hartmannstudios.hivecall|Queen seen: yes||false|[331,1042][749,1108]
+com.hartmannstudios.hivecall|Eggs: yes||false|[418,1108][662,1174]
+com.hartmannstudios.hivecall|Done||false|[442,1964][638,2062]

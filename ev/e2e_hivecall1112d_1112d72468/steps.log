@@ -1,0 +1,215 @@
+[08:37:17] screen 1080x2340
+[08:37:17] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:38:09] launch
+[08:38:25] not found /(?i)^wait$/
+[08:38:32] not found /(?i)^wait$/
+[08:38:34] launch
+[08:38:42] shot 01-onboarding (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:38:44] tapped /(?i)^next$/ at 540 2033
+[08:38:53] shot 02-volume-test (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:38:55] tapped /(?i)^go to the yard$/ at 540 2021
+[08:39:02] tapped /(?i)^\+ hive$/ at 540 515
+[08:39:08] tapped /(?i)^name$/ at 279 934
+[08:39:11] type
+[08:39:14] tapped /(?i)^save$/ at 829 1241
+[08:39:21] shot 03-yard (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:39:23] tapped /(?i)^start inspection$/ at 540 1854
+[08:39:31] not found /(?i)^(while using the app|only this time|allow)$/
+[08:39:36] shot 04-inspect-q1 (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:39:39] tapped /(?i)^yes/ at 540 1023
+[08:39:46] tapped /(?i)^yes/ at 540 1023
+[08:39:53] tapped /(?i)^no/ at 540 580
+[08:39:59] not found /(?i)^spotty$/
+[08:40:06] shot 05-number (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:40:08] tapped /(?i)^finish$/ at 880 2063
+[08:40:16] shot 06-saved (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:40:18] tapped /(?i)^done$/ at 540 2013
+[08:40:25] ad on screen (try 1)
+[08:40:34] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:40:40] ad on screen (try 2)
+[08:40:49] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:40:54] ad on screen (try 3)
+[08:41:04] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:41:09] ad on screen (try 4)
+[08:41:19] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:41:24] tapped /(?i)^hive 1$/ at 351 482
+[08:41:31] shot 07-hive-stack (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:41:33] not found /(?i)log a mite wash/
+[08:41:37] tapped /(?i)log a mite wash/ at 266 1894
+[08:41:43] shot 08-mite (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:41:43] back
+[08:41:49] not found /(?i)^season$/
+[08:41:56] shot 09-paywall (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:41:57] not found /(?i)^subscribe monthly$/
+[08:42:01] not found /(?i)^subscribe monthly$/
+[08:42:04] not found /(?i)^subscribe monthly$/
+[08:42:08] not found /(?i)^subscribe monthly$/
+[08:42:12] not found /(?i)^subscribe monthly$/
+[08:42:15] not found /(?i)^subscribe monthly$/
+[08:42:19] not found /(?i)^subscribe monthly$/
+[08:42:22] not found /(?i)^subscribe monthly$/
+[08:42:26] not found /(?i)^subscribe monthly$/
+[08:42:29] not found /(?i)^subscribe monthly$/
+[08:42:33] not found /(?i)^subscribe monthly$/
+[08:42:36] not found /(?i)^subscribe monthly$/
+[08:42:38] scrollto: never found /(?i)^subscribe monthly$/
+[08:42:45] shot 10-email (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:42:46] type
+[08:42:48] not found /(?i)^continue$/
+[08:43:17] shot 11-stripe-checkout (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+[08:43:19] not found /(?i)^close$/
+[08:43:24] back
+[08:43:30] shot 12-yard-end (fg:  mResumedActivity: ActivityRecord{3dedfd6 u0 com.hartmannstudios.hivecall/.MainActivity t9})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:43:32] pidof com.hartmannstudios.hivecall: 5471
+[08:43:32] fatal lines: 0 crash-buffer lines: 0
+[08:43:32] ads lines: 160
+[08:44:36] screen 1080x2340
+[08:44:36] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:44:55] force-stop
+[08:44:57] launch
+[08:45:13] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:45:15] ad on screen (try 1)
+[08:45:25] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:30] ad on screen (try 2)
+[08:45:39] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:45] ad on screen (try 3)
+[08:45:54] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:45:59] ad on screen (try 4)
+[08:46:09] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:46:14] shot 10-relaunch (fg:  mResumedActivity: ActivityRecord{2575cc4 u0 com.hartmannstudios.hivecall/.MainActivity t10})
+[08:46:16] tapped /(?i)^more$/ at 981 228
+[08:46:22] tapped /(?i)^settings$/ at 153 382
+[08:46:30] shot 11-settings (fg:  mResumedActivity: ActivityRecord{2575cc4 u0 com.hartmannstudios.hivecall/.MainActivity t10})
+--------- beginning of main
+--------- beginning of kernel
+--------- beginning of system
+[08:46:32] pidof com.hartmannstudios.hivecall: 8284
+[08:46:32] fatal lines: 0 crash-buffer lines: 0
+[08:46:32] ads lines: 131
+[08:46:33] screen 1080x2340
+[08:46:33] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:46:52] launch
+[08:47:09] not found /(?i)^wait$/
+[08:47:15] not found /(?i)^wait$/
+[08:47:17] launch
+[08:47:25] shot 01-onboarding (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:47:27] tapped /(?i)^next$/ at 540 2033
+[08:47:36] shot 02-volume-test (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:47:38] tapped /(?i)^go to the yard$/ at 540 2021
+[08:47:45] tapped /(?i)^\+ hive$/ at 540 515
+[08:47:51] tapped /(?i)^name$/ at 279 934
+[08:47:55] type
+[08:47:58] tapped /(?i)^save$/ at 829 1241
+[08:48:06] shot 03-yard (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:48:08] tapped /(?i)^start inspection$/ at 540 1854
+[08:48:15] not found /(?i)^(while using the app|only this time|allow)$/
+[08:48:21] shot 04-inspect-q1 (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:48:23] tapped /(?i)^yes/ at 540 1023
+[08:48:30] tapped /(?i)^yes/ at 540 1023
+[08:48:37] tapped /(?i)^no/ at 540 580
+[08:48:44] not found /(?i)^spotty$/
+[08:48:51] shot 05-number (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:48:53] tapped /(?i)^finish$/ at 880 2063
+[08:49:01] shot 06-saved (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:49:03] tapped /(?i)^done$/ at 540 2013
+[08:49:09] ad on screen (try 1)
+[08:49:19] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:49:24] ad on screen (try 2)
+[08:49:34] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:49:39] ad on screen (try 3)
+[08:49:48] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:49:54] ad on screen (try 4)
+[08:50:03] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:50:09] tapped /(?i)^hive 1$/ at 351 482
+[08:50:16] shot 07-hive-stack (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:50:17] not found /(?i)log a mite wash/
+[08:50:21] tapped /(?i)log a mite wash/ at 266 1894
+[08:50:27] shot 08-mite (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:50:28] back
+[08:50:33] not found /(?i)^season$/
+[08:50:40] shot 20-paywall-fresh-install (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:50:42] not found /(?i)^restore purchases$/
+[08:50:45] not found /(?i)^restore purchases$/
+[08:50:49] not found /(?i)^restore purchases$/
+[08:50:52] not found /(?i)^restore purchases$/
+[08:50:56] not found /(?i)^restore purchases$/
+[08:50:59] not found /(?i)^restore purchases$/
+[08:51:03] not found /(?i)^restore purchases$/
+[08:51:07] not found /(?i)^restore purchases$/
+[08:51:10] not found /(?i)^restore purchases$/
+[08:51:14] not found /(?i)^restore purchases$/
+[08:51:17] not found /(?i)^restore purchases$/
+[08:51:21] not found /(?i)^restore purchases$/
+[08:51:23] scrollto: never found /(?i)^restore purchases$/
+[08:51:30] shot 21-restore-dialog (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:51:31] not found /@/
+[08:51:40] typefix field=''
+[08:51:46] typefix field=''
+[08:51:52] typefix field=''
+[08:51:58] typefix field=''
+[08:52:01] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:52:02] not found /(?i)^continue$/
+[08:52:08] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:52:18] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:52:20] not found /(?i)^restore purchases$/
+[08:52:23] not found /(?i)^restore purchases$/
+[08:52:27] not found /(?i)^restore purchases$/
+[08:52:30] not found /(?i)^restore purchases$/
+[08:52:34] not found /(?i)^restore purchases$/
+[08:52:38] not found /(?i)^restore purchases$/
+[08:52:41] not found /(?i)^restore purchases$/
+[08:52:45] not found /(?i)^restore purchases$/
+[08:52:48] not found /(?i)^restore purchases$/
+[08:52:52] not found /(?i)^restore purchases$/
+[08:52:55] not found /(?i)^restore purchases$/
+[08:52:59] not found /(?i)^restore purchases$/
+[08:53:01] scrollto: never found /(?i)^restore purchases$/
+[08:53:08] not found /@/
+[08:53:16] typefix field=''
+[08:53:23] typefix field=''
+[08:53:29] typefix field=''
+[08:53:35] typefix field=''
+[08:53:37] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:53:39] not found /(?i)^continue$/
+[08:53:46] shot 22-right-email-result (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+[08:54:03] shot 23-paywall-after-restore (fg:  mResumedActivity: ActivityRecord{ebd008e u0 com.hartmannstudios.hivecall/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[08:54:05] pidof com.hartmannstudios.hivecall: 9417
+[08:54:05] fatal lines: 0 crash-buffer lines: 0
+[08:54:05] ads lines: 116
+[08:54:05] screen 1080x2340
+[08:54:05] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[08:54:24] force-stop
+[08:54:26] launch
+[08:54:43] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$/
+[08:54:44] ad on screen (try 1)
+[08:54:54] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:54:59] ad on screen (try 2)
+[08:55:09] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:55:14] ad on screen (try 3)
+[08:55:23] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:55:29] ad on screen (try 4)
+[08:55:38] not found /(?i)^(close|close ad|skip ad|skip video|dismiss|interstitial close button)$/
+[08:55:44] shot 30-relaunch (fg:  mResumedActivity: ActivityRecord{bde4baa u0 com.hartmannstudios.hivecall/.MainActivity t12})
+[08:55:46] tapped /(?i)^more$/ at 981 228
+[08:55:52] tapped /(?i)^settings$/ at 153 382
+[08:56:00] shot 31-settings (fg:  mResumedActivity: ActivityRecord{bde4baa u0 com.hartmannstudios.hivecall/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[08:56:02] pidof com.hartmannstudios.hivecall: 12823
+[08:56:02] fatal lines: 0 crash-buffer lines: 0
+[08:56:02] ads lines: 97

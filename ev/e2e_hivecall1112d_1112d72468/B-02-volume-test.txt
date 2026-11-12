@@ -1,0 +1,6 @@
+com.hartmannstudios.hivecall|HIVECALL||false|[55,200][458,290]
+com.hartmannstudios.hivecall|Step 2: volume keys||false|[55,329][678,407]
+com.hartmannstudios.hivecall|For wind and noise: volume up means yes, volume down means no. Try one now.||false|[55,446][1025,578]
+com.hartmannstudios.hivecall|Volume up = YES ✓||false|[55,617][702,715]
+com.hartmannstudios.hivecall|The screen text follows your phone's language; the voice uses your phone's speech voice when it has one.||false|[55,754][1025,952]
+com.hartmannstudios.hivecall|Go to the yard||false|[274,1972][807,2070]
