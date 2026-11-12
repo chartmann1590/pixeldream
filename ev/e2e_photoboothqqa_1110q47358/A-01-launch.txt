@@ -1,0 +1,5 @@
+com.charles.photobooth|Help us improve||false|[890,374][1451,464]
+com.charles.photobooth|We'd like to collect anonymous crash reports and usage data to improve Photobooth. No personal information or photos are ever shared.||false|[132,508][2072,626]
+com.charles.photobooth|You can change this later in Settings. See our Privacy Policy for details.||false|[610,648][1731,687]
+com.charles.photobooth|Allow||false|[1122,814][1220,869]
+com.charles.photobooth|No thanks||false|[1082,979][1260,1034]

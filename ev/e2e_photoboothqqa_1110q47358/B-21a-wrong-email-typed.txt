@@ -1,0 +1,5 @@
+com.charles.photobooth|Restore purchases||false|[609,353][1734,427]
+com.charles.photobooth|Enter the email you used at checkout.||false|[543,427][1800,486]
+com.charles.photobooth|nobody-photobooth-1110q@example.com||true|[591,575][1752,699]
+com.charles.photobooth|CANCEL||true|[1298,710][1511,842]
+com.charles.photobooth|CONTINUE||true|[1511,710][1767,842]

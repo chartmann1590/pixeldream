@@ -1,0 +1,4 @@
+versionCode=263141817 minSdk=24 targetSdk=36
+versionName=1.0.39
+firstInstallTime=2026-11-12 01:38:06
+lastUpdateTime=2026-11-12 01:38:06

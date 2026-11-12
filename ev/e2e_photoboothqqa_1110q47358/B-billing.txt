@@ -1,0 +1,2 @@
+11-12 01:49:05.544  8657  9995 I DirectBilling: license saved app=photobooth entitlements=[]
+11-12 01:49:53.590  8657 10378 W DirectBilling: POST /v2/entitlement -> 429 {"error":"Too many requests for this email. Try again later."}

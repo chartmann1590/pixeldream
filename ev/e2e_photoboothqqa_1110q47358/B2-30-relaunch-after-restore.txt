@@ -1,0 +1,7 @@
+com.charles.photobooth|PHOTOBOOTH||false|[176,588][994,704]
+com.charles.photobooth|Capture the moment||false|[378,726][792,778]
+com.charles.photobooth|Start Photobooth||false|[1498,129][1848,181]
+com.charles.photobooth|View Gallery||false|[1563,353][1779,398]
+com.charles.photobooth|Settings||false|[1598,540][1744,585]
+com.charles.photobooth|Tutorial||false|[1603,727][1738,772]
+com.charles.photobooth|Get More Photos||false|[1525,914][1817,959]
