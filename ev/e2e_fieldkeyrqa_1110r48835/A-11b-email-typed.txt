@@ -1,0 +1,6 @@
+com.charles.fieldkey||Your email|false|[176,891][904,979]
+com.charles.fieldkey||Your purchase is tied to this email so you can restore it on any phone.|false|[176,1023][904,1133]
+com.charles.fieldkey|hartmannstudios+fieldkey1110r@mail.tab.bot||true|[176,1133][904,1265]
+com.charles.fieldkey||Cancel|true|[451,1331][645,1463]
+com.charles.fieldkey||Continue|true|[667,1331][904,1463]
+com.charles.fieldkey||Dismiss|true|[0,0][1080,2072]

@@ -1,0 +1,5 @@
+com.charles.fieldkey||Restore purchases|false|[195,576][885,664]
+com.charles.fieldkey||Enter the email you used at checkout.|false|[195,708][885,763]
+com.charles.fieldkey||Cancel|true|[432,961][626,1093]
+com.charles.fieldkey||Continue|true|[648,961][885,1093]
+com.charles.fieldkey||Dismiss|true|[0,0][1080,2072]
