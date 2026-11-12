@@ -1,0 +1,13 @@
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+stop
+wait 2
+launch
+wait 15
+taploop (?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|wait)$
+adclose
+shot 30-relaunch
+tapxy 437 897
+wait 4
+shot 31-settings
+sh logcat -d -s DirectBilling
