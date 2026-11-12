@@ -1,0 +1,19 @@
+sh settings put global hide_error_dialogs 1
+sh am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null
+sh am force-stop com.google.android.googlequicksearchbox
+sh am force-stop com.android.chrome
+sh am force-stop com.brave.browser
+stop
+wait 2
+launch
+wait 25
+taploop (?i)^(ok|continue|got it|skip|allow|accept|agree|while using the app|only this time|not now|get started|play|start)$
+shot 30-menu-relaunch
+tapxy 857 790
+wait 5
+sh dumpsys activity activities | grep -m1 -E 'mResumedActivity|topResumedActivity'
+wait 6
+shot 31-shop
+back
+wait 3
+sh logcat -d -s DirectBilling
