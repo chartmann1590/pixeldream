@@ -1,0 +1,2 @@
+11-12 01:24:29.393  8608  9611 I DirectBilling: license saved app=auracastweather entitlements=[]
+11-12 01:25:09.488  8608  9886 I DirectBilling: license saved app=auracastweather entitlements=[]

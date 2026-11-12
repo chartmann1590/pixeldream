@@ -1,0 +1,5 @@
+com.auracast.weather|Choose Your Language||false|[198,244][882,332]
+com.auracast.weather|Select your native language. AuraCast uses free on-device ML Kit to translate every screen.||false|[66,349][1014,459]
+com.auracast.weather|Free ~30 MB pack downloads once, then works 100% offline.||false|[92,470][989,514]
+com.auracast.weather|vvvvvvvv||true|[66,553][1014,696]
+com.auracast.weather|Continue||false|[462,1927][619,1982]

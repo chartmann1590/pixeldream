@@ -1,0 +1,106 @@
+[01:09:06] screen 1080x2340
+[01:09:06] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:09:53] launch
+[01:10:10] shot 01-launch (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:10:11] not found /(?i)^english$/
+[01:10:17] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:10:23] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:10:34] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:10:38] shot 02-home (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:10:38] tapxy permille 400 900
+[01:10:48] shot 04-radar (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:10:49] tapxy permille 620 900
+[01:10:57] shot 05-report (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:10:58] tapxy permille 880 900
+[01:11:07] shot 06-settings (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+findtap none
+[01:11:54] shot 11-email (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:11:54] type
+[01:11:57] not found /(?i)^continue$/
+[01:12:26] shot 12-stripe-checkout (fg:  mResumedActivity: ActivityRecord{d77d587 u0 com.auracast.weather/.MainActivity t9})
+[01:12:28] pidof com.auracast.weather: 5276
+[01:12:28] fatal lines: 0 crash-buffer lines: 0
+[01:12:28] ads lines: 32
+[01:20:59] screen 1080x2340
+[01:20:59] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:21:17] force-stop
+[01:21:19] launch
+[01:21:36] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:21:41] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:21:45] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:21:49] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:21:53] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:21:57] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:22:01] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:22:05] tapped /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it|skip|continue|next)$/ at 540 1954
+[01:22:11] shot 14-relaunch-after-purchase (fg:  mResumedActivity: ActivityRecord{29f46d2 u0 com.auracast.weather/.MainActivity t10})
+[01:22:15] shot 23-settings-plus-active (fg:  mResumedActivity: ActivityRecord{29f46d2 u0 com.auracast.weather/.MainActivity t10})
+[01:22:16] not found /(?i)^home$/
+[01:22:24] shot 24-home-no-ads (fg:  mResumedActivity: ActivityRecord{29f46d2 u0 com.auracast.weather/.MainActivity t10})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+[01:22:26] pidof com.auracast.weather: 7375
+[01:22:26] fatal lines: 0 crash-buffer lines: 0
+[01:22:26] ads lines: 16
+[01:22:27] screen 1080x2340
+[01:22:27] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:22:45] launch
+[01:23:02] tapped /(?i)^english$/ at 217 795
+[01:23:08] tapped /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/ at 540 1954
+[01:23:13] tapped /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/ at 540 1421
+[01:23:17] tapped /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/ at 540 1215
+[01:23:21] tapped /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/ at 541 1515
+[01:23:24] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:23:31] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:23:42] not found /(?i)^(continue|next|get started|skip|skip for now|allow|while using the app|only this time|ok|got it|enable location|not now|later|no thanks|done)$/
+[01:23:45] shot 20-home (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:23:46] tapxy permille 880 900
+findtap ok 3
+[01:24:11] shot 21-restore-email (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:24:13] tapped /@/ at 540 1227
+[01:24:25] typefix field='nobody-auracastweather-1110q@example.com'
+[01:24:27] shot 21a-wrong-email-typed (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:24:29] tapped /(?i)^continue$/ at 847 1031
+[01:24:35] shot 21b-wrong-email-result (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:24:44] shot 21c-after-wrong-email (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+findtap ok 0
+[01:24:52] tapped /@/ at 540 1227
+[01:25:06] typefix field='hartmannstudios+auracastweather1110q@mail.tab.bot'
+[01:25:08] shot 21d-right-email-typed (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:25:10] tapped /(?i)^continue$/ at 847 1031
+[01:25:29] shot 22-after-restore (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:25:32] shot 23-settings-plus-active (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+[01:25:34] not found /(?i)^home$/
+[01:25:42] shot 24-home-no-ads (fg:  mResumedActivity: ActivityRecord{105ccb9 u0 com.auracast.weather/.MainActivity t11})
+--------- beginning of kernel
+--------- beginning of main
+--------- beginning of system
+11-12 01:24:29.393  8608  9611 I DirectBilling: license saved app=auracastweather entitlements=[]
+11-12 01:25:09.488  8608  9886 I DirectBilling: license saved app=auracastweather entitlements=[]
+[01:25:44] pidof com.auracast.weather: 8608
+[01:25:44] fatal lines: 0 crash-buffer lines: 0
+[01:25:44] ads lines: 27
+[01:25:44] screen 1080x2340
+[01:25:44] install dsk-apk/app.apk
+Performing Streamed Install
+Success
+[01:26:01] force-stop
+[01:26:04] launch
+[01:26:20] not found /(?i)^(allow|ok|while using the app|only this time|not now|later|no thanks|got it)$/
+[01:26:24] shot 30-relaunch-after-restore (fg:  mResumedActivity: ActivityRecord{8000a87 u0 com.auracast.weather/.MainActivity t12})
+[01:26:27] shot 323-settings-plus-active (fg:  mResumedActivity: ActivityRecord{8000a87 u0 com.auracast.weather/.MainActivity t12})
+[01:26:29] not found /(?i)^home$/
+[01:26:37] shot 324-home-no-ads (fg:  mResumedActivity: ActivityRecord{8000a87 u0 com.auracast.weather/.MainActivity t12})
+--------- beginning of main
+--------- beginning of system
+--------- beginning of kernel
+[01:26:39] pidof com.auracast.weather: 10324
+[01:26:39] fatal lines: 0 crash-buffer lines: 0
+[01:26:39] ads lines: 22

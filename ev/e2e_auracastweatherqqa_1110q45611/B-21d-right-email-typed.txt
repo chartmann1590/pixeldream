@@ -1,0 +1,5 @@
+com.auracast.weather|Restore purchases||false|[138,600][942,674]
+com.auracast.weather|Enter the email you used at checkout.||false|[72,674][1008,733]
+com.auracast.weather|hartmannstudios+auracastweather1110q@mail.tab.bot||true|[120,822][960,946]
+com.auracast.weather|CANCEL||true|[506,957][719,1106]
+com.auracast.weather|CONTINUE||true|[719,957][975,1106]
