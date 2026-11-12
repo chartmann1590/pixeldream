@@ -1,0 +1,4 @@
+11-12 00:59:45.980  7962  7962 I flutter : DirectBilling: license saved app=fieldkey entitlements=[]
+11-12 01:00:30.032  7962  7962 I flutter : DirectBilling: license saved app=fieldkey entitlements=[fieldkey_pro:monthly]
+11-12 01:00:49.537  7962  7962 W BillingClient: There was an exception while unbinding service!
+11-12 01:00:49.537  7962  7962 W BillingClient: java.lang.IllegalArgumentException: Service not registered: com.android.billingclient.api.zzbz@9fd1236

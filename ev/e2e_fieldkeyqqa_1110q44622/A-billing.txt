@@ -1,0 +1,1 @@
+11-12 00:54:30.230  5402  5402 I flutter : DirectBilling: checkout opened app=fieldkey product=fieldkey_pro:monthly
