@@ -1,0 +1,2 @@
+11-12 09:29:14.459  8767 10117 I DirectBilling: license saved app=acreage entitlements=[]
+11-12 09:29:56.741  8767 10354 I DirectBilling: license saved app=acreage entitlements=["acreage_pro_monthly"]

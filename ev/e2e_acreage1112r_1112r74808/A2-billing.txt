@@ -1,0 +1,1 @@
+11-12 09:25:42.800  8070  8093 I DirectBilling: license saved app=acreage entitlements=["acreage_pro_monthly"]
