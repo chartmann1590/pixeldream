@@ -1,4 +1,4 @@
-E2E_ID=1110q45601
-E2E_APP=warmwordqqa
-E2E_PKG=com.charles.warmwords
-E2E_APK=https://github.com/chartmann1590/warmword/releases/download/direct-6/WarmWord-direct-release.apk
+E2E_ID=1110q45611
+E2E_APP=auracastweatherqqa
+E2E_PKG=com.auracast.weather
+E2E_APK=https://github.com/chartmann1590/auracast-weather/releases/download/direct-11/AuraCastWeather-direct-release.apk
